@@ -12,6 +12,21 @@ struct HomeView: View {
         ZStack {
             Color.washedGreen
             
+            Rectangle()
+                .foregroundStyle(Color.washedGreen)
+                .frame(width: 783, height: 347)
+                .position(x: 200, y: 398)
+                .rotationEffect(Angle(degrees: -36.57))
+                .shadow(color: Color.black.opacity(0.05), radius: 10, x: -5, y: -5)
+            
+            
+            Rectangle()
+                .foregroundStyle(Color.washedGreen)
+                .frame(width: 783, height: 347)
+                .position(x: 200, y: 720)
+                .rotationEffect(Angle(degrees: -36.57))
+                .shadow(color: Color.black.opacity(0.05), radius: 10, x: -5, y: -5)
+            
             VStack (alignment: .leading) {
                 
                 // TODO: Logo and Menu Button
@@ -70,7 +85,7 @@ struct HomeView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .background(Color.barometerGreen)
                 .clipShape(RoundedRectangle(cornerRadius: 16))
-                .shadow(radius: 7, x: 3, y: 4) // Shadow doesn't match the design yet?
+                .shadow(color: Color.black.opacity(0.2), radius: 7, x: 3, y: 4)
                 .padding(.bottom, 40)
                 
                 // Stats Section

@@ -13,6 +13,7 @@
 		DD7AECB92C0DCAE2002AB8F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD7AECB82C0DCAE2002AB8F1 /* Preview Assets.xcassets */; };
 		DD7AECC12C0DDE55002AB8F1 /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECC02C0DDE55002AB8F1 /* FontHelper.swift */; };
 		DD7AECC32C0DE3D1002AB8F1 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECC22C0DE3D1002AB8F1 /* StatView.swift */; };
+		DD7AECC52C0DF3BB002AB8F1 /* FlightLogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECC42C0DF3BB002AB8F1 /* FlightLogsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		DD7AECB82C0DCAE2002AB8F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DD7AECC02C0DDE55002AB8F1 /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		DD7AECC22C0DE3D1002AB8F1 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
+		DD7AECC42C0DF3BB002AB8F1 /* FlightLogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightLogsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +58,8 @@
 			isa = PBXGroup;
 			children = (
 				DD7AECB12C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift */,
-				DD7AECB32C0DCAE1002AB8F1 /* HomeView.swift */,
-				DD7AECC22C0DE3D1002AB8F1 /* StatView.swift */,
+				DD7AECC62C0DF3CA002AB8F1 /* Home */,
+				DD7AECC72C0DF3F4002AB8F1 /* FlightLogs */,
 				DD7AECBF2C0DDE41002AB8F1 /* Helpers */,
 				DD7AECB52C0DCAE2002AB8F1 /* Assets.xcassets */,
 				DD7AECB72C0DCAE2002AB8F1 /* Preview Content */,
@@ -79,6 +81,23 @@
 				DD7AECC02C0DDE55002AB8F1 /* FontHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DD7AECC62C0DF3CA002AB8F1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DD7AECB32C0DCAE1002AB8F1 /* HomeView.swift */,
+				DD7AECC22C0DE3D1002AB8F1 /* StatView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DD7AECC72C0DF3F4002AB8F1 /* FlightLogs */ = {
+			isa = PBXGroup;
+			children = (
+				DD7AECC42C0DF3BB002AB8F1 /* FlightLogsView.swift */,
+			);
+			path = FlightLogs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD7AECC52C0DF3BB002AB8F1 /* FlightLogsView.swift in Sources */,
 				DD7AECC32C0DE3D1002AB8F1 /* StatView.swift in Sources */,
 				DD7AECC12C0DDE55002AB8F1 /* FontHelper.swift in Sources */,
 				DD7AECB42C0DCAE1002AB8F1 /* HomeView.swift in Sources */,

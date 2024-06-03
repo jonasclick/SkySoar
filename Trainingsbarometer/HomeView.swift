@@ -9,56 +9,90 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        VStack {
+        ZStack {
+            Color.washedGreen
             
-            Spacer()
-            
-            // Headline Section
-            Text("Übungsstand")
-            Text("Dein Übungsstand ist gut – trotzdem Vorsicht.")
-            Spacer()
-            
-            // InfoCardView
-            VStack {
-                // Title
-                HStack {
-                    Image(systemName: "info.circle")
-                    Text("Geübte Piloten machen folgende Fehler")
-                }
+            VStack (alignment: .leading) {
                 
-                // Text List
-                HStack {
-                    Image(systemName: "chevron.forward")
-                    Text("Segelflugzeug fehlerhaft ausgerüstet")
+                // TODO: Logo and Menu Button
+                
+                
+                // Headline Section
+                Text("Übungsstand")
+                    .font(.sectionHeadline)
+                    .padding(.bottom, 13)
+                Text("Dein Übungsstand \nist gut – trotzdem Vorsicht.")
+                    .font(.mainHeadline)
+                    .padding(.bottom, 40)
+                
+                // InfoCardView
+                VStack (alignment: .leading) {
+                    // Title
+                    HStack {
+                        Image(systemName: "info.circle")
+                        Text("Geübte Piloten machen folgende Fehler")
+                            .font(.infoBoxHeadline)
+                    }
+                    .padding(.bottom, 15)
+                    
+                    VStack (alignment: .leading) {
+                        // Text List
+                        HStack {
+                            Image(systemName: "chevron.forward")
+                                .scaleEffect(0.7)
+                            Text("Segelflugzeug fehlerhaft ausgerüstet")
+                        }
+                        .padding(.bottom, 2)
+                        HStack {
+                            Image(systemName: "chevron.forward")
+                                .scaleEffect(0.7)
+                            Text("mangelhafter Cockpitcheck")
+                        }
+                        .padding(.bottom, 2)
+                        HStack {
+                            Image(systemName: "chevron.forward")
+                                .scaleEffect(0.7)
+                            Text("Fehlverhalten bei Startunterbrechungen")
+                        }
+                        .padding(.bottom, 2)
+                        HStack {
+                            Image(systemName: "chevron.forward")
+                                .scaleEffect(0.7)
+                            Text("Fehler bei der Landeeinteilung (vor allem bei Aussenlandungen)")
+                        }
+                    }
+                    .padding(.leading, 19)
+                    .font(.infoBoxContent)
+                    
+                    
                 }
+                .padding()
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(Color.barometerGreen)
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .shadow(radius: 7, x: 3, y: 4) // Shadow doesn't match the design yet?
+                .padding(.bottom, 40)
+                
+                // Stats Section
+                Text("In den letzten sechs Monaten")
+                    .font(.sectionHeadline)
+                    .padding(.bottom, 0.5)
+                Text("03.12.2023 – 03.06.2023")
+                    .font(.sectionHeadline)
+                    .opacity(0.5)
+                    .padding(.bottom, 15)
+                
                 HStack {
-                    Image(systemName: "chevron.forward")
-                    Text("mangelhafter Cockpitcheck")
-                }
-                HStack {
-                    Image(systemName: "chevron.forward")
-                    Text("Fehlverhalten bei Startunterbrechungen")
-                }
-                HStack {
-                    Image(systemName: "chevron.forward")
-                    Text("Fehler bei der Landeeinteilung (vor allem bei Aussenlandungen)")
+                    // Stat Stunden
+                    StatView(image: "clock", number: 23, label: "Stunden")
+                        .padding(.trailing, 50)
+                    // Stat Starts
+                    StatView(image: "airplane.departure", number: 11, label: "Starts")
                 }
             }
-            .padding()
-            .background {
-                Color.blue
-                    .clipShape(Rectangle())
-            }
-            .padding()
-            
-            Spacer()
-            
-            // Stats Section
-            Text("In den letzten sechs Monaten")
-            // Stat Hours
-            // Stat Starts
-            Spacer()
+            .padding(.horizontal, 20)
         }
+        .ignoresSafeArea()
     }
 }
 

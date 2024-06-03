@@ -11,6 +11,8 @@
 		DD7AECB42C0DCAE1002AB8F1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECB32C0DCAE1002AB8F1 /* HomeView.swift */; };
 		DD7AECB62C0DCAE2002AB8F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD7AECB52C0DCAE2002AB8F1 /* Assets.xcassets */; };
 		DD7AECB92C0DCAE2002AB8F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD7AECB82C0DCAE2002AB8F1 /* Preview Assets.xcassets */; };
+		DD7AECC12C0DDE55002AB8F1 /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECC02C0DDE55002AB8F1 /* FontHelper.swift */; };
+		DD7AECC32C0DE3D1002AB8F1 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECC22C0DE3D1002AB8F1 /* StatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		DD7AECB32C0DCAE1002AB8F1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DD7AECB52C0DCAE2002AB8F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD7AECB82C0DCAE2002AB8F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DD7AECC02C0DDE55002AB8F1 /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
+		DD7AECC22C0DE3D1002AB8F1 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				DD7AECB12C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift */,
 				DD7AECB32C0DCAE1002AB8F1 /* HomeView.swift */,
+				DD7AECC22C0DE3D1002AB8F1 /* StatView.swift */,
+				DD7AECBF2C0DDE41002AB8F1 /* Helpers */,
 				DD7AECB52C0DCAE2002AB8F1 /* Assets.xcassets */,
 				DD7AECB72C0DCAE2002AB8F1 /* Preview Content */,
 			);
@@ -65,6 +71,14 @@
 				DD7AECB82C0DCAE2002AB8F1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DD7AECBF2C0DDE41002AB8F1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DD7AECC02C0DDE55002AB8F1 /* FontHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +151,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD7AECC32C0DE3D1002AB8F1 /* StatView.swift in Sources */,
+				DD7AECC12C0DDE55002AB8F1 /* FontHelper.swift in Sources */,
 				DD7AECB42C0DCAE1002AB8F1 /* HomeView.swift in Sources */,
 				DD7AECB22C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift in Sources */,
 			);

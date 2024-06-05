@@ -6,10 +6,18 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct FlightLogsView: View {
+    
+    @Query private var flightLogs: [FlightLog]
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(flightLogs) { f in
+                Text("Test")
+            }
+        }
     }
 }
 

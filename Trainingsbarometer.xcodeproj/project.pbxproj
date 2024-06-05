@@ -14,6 +14,7 @@
 		DD7AECC12C0DDE55002AB8F1 /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECC02C0DDE55002AB8F1 /* FontHelper.swift */; };
 		DD7AECC32C0DE3D1002AB8F1 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECC22C0DE3D1002AB8F1 /* StatView.swift */; };
 		DD7AECC52C0DF3BB002AB8F1 /* FlightLogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECC42C0DF3BB002AB8F1 /* FlightLogsView.swift */; };
+		DDB60F7E2C0E1D3F00ACD9D0 /* FlightLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB60F7D2C0E1D3F00ACD9D0 /* FlightLog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		DD7AECC02C0DDE55002AB8F1 /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		DD7AECC22C0DE3D1002AB8F1 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
 		DD7AECC42C0DF3BB002AB8F1 /* FlightLogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightLogsView.swift; sourceTree = "<group>"; };
+		DDB60F7D2C0E1D3F00ACD9D0 /* FlightLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightLog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				DD7AECB12C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift */,
 				DD7AECC62C0DF3CA002AB8F1 /* Home */,
 				DD7AECC72C0DF3F4002AB8F1 /* FlightLogs */,
+				DDB60F7C2C0E1D2500ACD9D0 /* Model */,
 				DD7AECBF2C0DDE41002AB8F1 /* Helpers */,
 				DD7AECB52C0DCAE2002AB8F1 /* Assets.xcassets */,
 				DD7AECB72C0DCAE2002AB8F1 /* Preview Content */,
@@ -98,6 +101,14 @@
 				DD7AECC42C0DF3BB002AB8F1 /* FlightLogsView.swift */,
 			);
 			path = FlightLogs;
+			sourceTree = "<group>";
+		};
+		DDB60F7C2C0E1D2500ACD9D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DDB60F7D2C0E1D3F00ACD9D0 /* FlightLog.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +183,7 @@
 			files = (
 				DD7AECC52C0DF3BB002AB8F1 /* FlightLogsView.swift in Sources */,
 				DD7AECC32C0DE3D1002AB8F1 /* StatView.swift in Sources */,
+				DDB60F7E2C0E1D3F00ACD9D0 /* FlightLog.swift in Sources */,
 				DD7AECC12C0DDE55002AB8F1 /* FontHelper.swift in Sources */,
 				DD7AECB42C0DCAE1002AB8F1 /* HomeView.swift in Sources */,
 				DD7AECB22C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift in Sources */,

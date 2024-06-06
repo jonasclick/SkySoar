@@ -21,12 +21,8 @@ class FlightLog: Identifiable {
     
     var aircraftModel: String = ""
     var aircraftRegistration: String = ""
-    
-    // Computed property to calculate flight time in minutes
-    var flightTime: Int {
-        let timeInterval = arrivalDate.timeIntervalSince(departureDate)
-        return Int(timeInterval / 60)
-    }
+
+    var flightTime: Int = 0
 
     var departureMode = DepartureMode.aerotow
     

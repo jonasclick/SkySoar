@@ -18,6 +18,11 @@ extension Font {
     static var statNumber = Font.system(size: 37, weight: .semibold)
     
     
+    // FlightLogsView
+    static var flightLogPrimary = Font.system(size: 14, weight: .medium)
+    static var flightLogSecondary = Font.system(size: 14, weight: .light) // Set opacity to 70%
+    
+    
     // Add FlightLog Sheet
     static var sheetHeadline = Font.system(size: 15, weight: .medium)
     static var paragraphHeadline = Font.system(size: 15)

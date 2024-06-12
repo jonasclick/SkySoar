@@ -12,28 +12,70 @@ struct FlightLogsView: View {
     
     @Query private var flightLogs: [FlightLog]
     @State private var newFlightLog: FlightLog?
-
+    
+    private var testArray = [1, 2, 3]
+    
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(flightLogs) { f in
-                    Text("Test")
+        
+        
+        ZStack {
+            Color.washedGreen
+            
+            Rectangle()
+                .foregroundStyle(Color.washedGreen)
+                .frame(width: 783, height: 347)
+                .position(x: 200, y: 398)
+                .rotationEffect(Angle(degrees: -36.57))
+                .shadow(color: Color.black.opacity(0.05), radius: 10, x: -5, y: -5)
+            
+            
+            Rectangle()
+                .foregroundStyle(Color.washedGreen)
+                .frame(width: 783, height: 347)
+                .position(x: 200, y: 720)
+                .rotationEffect(Angle(degrees: -36.57))
+                .shadow(color: Color.black.opacity(0.05), radius: 10, x: -5, y: -5)
+            
+            
+            VStack (alignment: .leading) {
+                
+                Text("Flights")
+                    .font(.mainHeadline)
+                    .padding(.top, 80)
+                    .padding(.bottom, 20)
+                    .padding(.horizontal)
+                
+                // Flight Logs List
+                ScrollView {
+                    LazyVStack {
+                        ForEach(flightLogs, id: \.self) { _ in
+                            FlightLogCardView()
+                        }
+                    }
                 }
             }
             
-            Spacer()
             
-            Button(action: {
-                self.newFlightLog = FlightLog()
-            }, label: {
-                Image(systemName: "note.text.badge.plus")
-            })
-            .buttonStyle(PlainButtonStyle())
+            // Add Button
+            VStack (alignment: .trailing) {
+                Spacer()
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        self.newFlightLog = FlightLog()
+                    }, label: {
+                        Image(systemName: "plus.circle")
+                            .font(.system(size: 30))
+                    })
+                    .buttonStyle(PlainButtonStyle())
+                    .padding(20)
+                }
+            }
         }
+        .ignoresSafeArea()
         .sheet(item: $newFlightLog) { _ in
             AddFlightLogView()
         }
-
     }
 }
 

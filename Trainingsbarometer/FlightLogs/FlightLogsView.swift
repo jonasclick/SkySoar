@@ -13,8 +13,6 @@ struct FlightLogsView: View {
     @Query private var flightLogs: [FlightLog]
     @State private var newFlightLog: FlightLog?
     
-    private var testArray = [1, 2, 3]
-    
     var body: some View {
         
         
@@ -48,8 +46,8 @@ struct FlightLogsView: View {
                 // Flight Logs List
                 ScrollView {
                     LazyVStack {
-                        ForEach(flightLogs, id: \.self) { _ in
-                            FlightLogCardView()
+                        ForEach(flightLogs, id: \.self) { f in
+                            FlightLogCardView(flightLog: f)
                         }
                     }
                 }
@@ -62,6 +60,7 @@ struct FlightLogsView: View {
                 HStack {
                     Spacer()
                     Button(action: {
+                        // Create an empty FlighLog
                         self.newFlightLog = FlightLog()
                     }, label: {
                         Image(systemName: "plus.circle")
@@ -73,8 +72,8 @@ struct FlightLogsView: View {
             }
         }
         .ignoresSafeArea()
-        .sheet(item: $newFlightLog) { _ in
-            AddFlightLogView()
+        .sheet(item: $newFlightLog) { flightlog in
+            AddFlightLogView(flightLog: flightlog)
         }
     }
 }

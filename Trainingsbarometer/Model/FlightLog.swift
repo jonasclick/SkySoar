@@ -13,16 +13,16 @@ class FlightLog: Identifiable {
     
     @Attribute(.unique) var id: String
     
-    var departurePlace: String = ""
+    var departureLocation: String = ""
     var departureDate: Date = Date()
 
-    var arrivalPlace: String = ""
+    var arrivalLocation: String = ""
     var arrivalDate: Date = Date()
     
     var aircraftModel: String = ""
     var aircraftRegistration: String = ""
 
-    var flightTime: Int = 0
+    var flightTime: Date = Date()
 
     var departureMode = DepartureMode.aerotow
     
@@ -33,6 +33,18 @@ class FlightLog: Identifiable {
     init() {
         id = UUID().uuidString
     }
+    
+    var pilotFunctionString: String {
+            switch pilotFunctionTime {
+            case .pic:
+                return "PIC"
+            case .dual:
+                return "Dual"
+            case .instructorAndPic:
+                return "Instructor"
+            }
+        }
+    
 }
 
 enum DepartureMode: Codable {

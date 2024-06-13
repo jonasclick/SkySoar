@@ -11,6 +11,9 @@ import SwiftData
 struct AddFlightLogView: View {
     
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.modelContext) private var context
+    
+    var flightLog: FlightLog
     
     @State private var aircraftModel = ""
     @State private var aircraftRegistration = ""
@@ -259,7 +262,25 @@ struct AddFlightLogView: View {
             VStack {
                 Spacer()
                 Button(action: {
-                    print("Add Flight")
+                    flightLog.departureLocation = departureLocation
+                    flightLog.departureDate = departureDate
+                    
+                    flightLog.arrivalLocation = arrivalLocation
+                    flightLog.arrivalDate = arrivalDate
+                    
+                    flightLog.aircraftModel = aircraftModel
+                    flightLog.aircraftRegistration = aircraftRegistration
+                    
+                    flightLog.flightTime = flightTime
+                    
+                    // TODO: Implement departureMode
+                    flightLog.pilotFunctionTime = pilotFunctionTime
+                    
+                    flightLog.remarks = remarks
+                    
+                    context.insert(flightLog)
+                    dismiss()
+                    
                 }, label: {
                     Text("Add Flight")
                         .font(.headline)
@@ -284,6 +305,6 @@ struct AddFlightLogView: View {
     }
 }
 
-#Preview {
-    AddFlightLogView()
-}
+//#Preview {
+//    AddFlightLogView()
+//}

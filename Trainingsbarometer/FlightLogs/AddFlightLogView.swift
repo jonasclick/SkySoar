@@ -31,18 +31,34 @@ struct AddFlightLogView: View {
     @State private var pilotFunctionInput = "PIC"
     let pilotFunctions = ["PIC", "Dual", "Instructor"]
     private var pilotFunctionTime: PilotFunctionTime {
-            switch pilotFunctionInput {
-            case "PIC":
-                return .pic
-            case "Dual":
-                return .dual
-            case "Instructor":
-                return .instructorAndPic
-            default:
-                return .pic // Default case, adjust as needed
-            }
+        switch pilotFunctionInput {
+        case "PIC":
+            return .pic
+        case "Dual":
+            return .dual
+        case "Instructor":
+            return .instructorAndPic
+        default:
+            return .pic // Default case
+        }
     }
-
+    
+    @State private var departureModeInput = "W"
+    let departureModes = ["W", "A", "S"]
+    private var departureMode: DepartureMode {
+        switch departureModeInput {
+        case "W":
+            return .winch
+        case "A":
+            return .aerotow
+        case "S":
+            return .selfLaunching
+        default:
+            return .winch // Default case
+        }
+    }
+    
+    
     @State private var remarks = ""
     
     @State private var showConfirmation = false
@@ -67,7 +83,7 @@ struct AddFlightLogView: View {
                     }
                 }
                 .padding(.top, 15)
-
+                
                 
                 ScrollView {
                     
@@ -213,11 +229,24 @@ struct AddFlightLogView: View {
                                 .opacity(0.4)
                                 .padding(.trailing, 10)
                             
-                            
-                            
                             Picker("Pilot Function", selection: $pilotFunctionInput) {
                                 ForEach(pilotFunctions, id: \.self) { f in
-                                    Text(String(f))
+                                    Text(f)
+                                }
+                            }
+                            .pickerStyle(SegmentedPickerStyle())
+                            
+                        }
+                        
+                        HStack {
+                            Text("Departure Mode")
+                                .font(.paragraphText)
+                                .opacity(0.4)
+                                .padding(.trailing, 10)
+                            
+                            Picker("Departure Mode", selection: $departureModeInput) {
+                                ForEach(departureModes, id: \.self) { m in
+                                    Text(m)
                                 }
                             }
                             .pickerStyle(SegmentedPickerStyle())
@@ -273,7 +302,7 @@ struct AddFlightLogView: View {
                     
                     flightLog.flightTime = flightTime
                     
-                    // TODO: Implement departureMode
+                    flightLog.departureMode = departureMode
                     flightLog.pilotFunctionTime = pilotFunctionTime
                     
                     flightLog.remarks = remarks

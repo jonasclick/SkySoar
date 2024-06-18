@@ -27,8 +27,7 @@ struct FlightLogCardView: View {
                 }
                 
                 HStack (spacing: 0) {
-                    Circle()
-                        .frame(height: 5)
+                    Image(systemName: flightLog.departureModeSymbol)
                     Rectangle()
                         .frame(height: 1)
                     Circle()

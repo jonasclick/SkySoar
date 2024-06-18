@@ -24,7 +24,7 @@ class FlightLog: Identifiable {
 
     var flightTime: Date = Date()
 
-    var departureMode = DepartureMode.aerotow
+    var departureMode = DepartureMode.winch
     
     var pilotFunctionTime = PilotFunctionTime.pic
     
@@ -45,11 +45,22 @@ class FlightLog: Identifiable {
             }
         }
     
+    var departureModeSymbol: String {
+        switch departureMode {
+        case .winch:
+            return "w.square"
+        case .aerotow:
+            return "a.square"
+        case .selfLaunching:
+            return "s.square"
+        }
+    }
+    
 }
 
 enum DepartureMode: Codable {
-    case aerotow
     case winch
+    case aerotow
     case selfLaunching
 }
 

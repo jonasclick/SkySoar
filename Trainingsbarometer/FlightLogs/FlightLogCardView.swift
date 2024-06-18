@@ -78,6 +78,7 @@ struct FlightLogCardView: View {
         .frame(width: 370, height: 124)
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 16))
+        .shadow(color: Color.black.opacity(0.1), radius: 10, x: 5, y: 5)
     }
     
     // Helper method to format Date to "HH:mm"

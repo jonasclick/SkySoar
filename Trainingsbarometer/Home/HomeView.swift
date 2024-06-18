@@ -110,20 +110,15 @@ struct HomeView: View {
                 VStack {
                     Spacer()
                     HStack {
-    //                    Image(systemName: "gear")
-    //                        .font(.system(size: 35))
-    //                        .opacity(0.5)
                         Spacer()
                         
                         NavigationLink (destination: FlightLogsView()) {
-                            Image(systemName: "list.bullet.circle")
-                                .font(.system(size: 35))
-                                .opacity(0.5)
+                            Image(systemName: "list.bullet")
+                                .font(.system(size: 30))
                         }
                         .buttonStyle(PlainButtonStyle())
                     }
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 30)
+                    .padding(35)
                 }
             }
             .ignoresSafeArea()

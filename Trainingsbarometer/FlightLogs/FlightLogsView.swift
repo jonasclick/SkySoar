@@ -10,6 +10,8 @@ import SwiftData
 
 struct FlightLogsView: View {
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
     @Query private var flightLogs: [FlightLog]
     @State private var newFlightLog: FlightLog?
     
@@ -40,7 +42,6 @@ struct FlightLogsView: View {
                 Text("Flights")
                     .font(.mainHeadline)
                     .padding(.top, 80)
-                    .padding(.bottom, 20)
                     .padding(.horizontal)
                 
                 // Flight Logs List
@@ -50,15 +51,26 @@ struct FlightLogsView: View {
                             FlightLogCardView(flightLog: f)
                         }
                     }
+                    .padding(.top)
                 }
             }
             
             
-            // Add Button
+            // Navigation Buttons
             VStack (alignment: .trailing) {
                 Spacer()
                 HStack {
+                    // Back Button
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                        HStack {
+                            Image(systemName: "arrow.left")
+                                .font(.system(size: 25))
+                        }
+                    }
                     Spacer()
+                    // Add FlightLog Button
                     Button(action: {
                         // Create an empty FlighLog
                         self.newFlightLog = FlightLog()
@@ -66,12 +78,13 @@ struct FlightLogsView: View {
                         Image(systemName: "plus.circle")
                             .font(.system(size: 30))
                     })
-                    .buttonStyle(PlainButtonStyle())
-                    .padding(20)
                 }
+                .buttonStyle(PlainButtonStyle())
+                .padding(35)
             }
         }
         .ignoresSafeArea()
+        .navigationBarBackButtonHidden(true) // Hide the default back button from NavigationLink in HomeView
         .sheet(item: $newFlightLog) { flightlog in
             AddFlightLogView(flightLog: flightlog)
         }

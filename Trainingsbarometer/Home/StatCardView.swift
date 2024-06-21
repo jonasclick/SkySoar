@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StatView: View {
+struct StatCardView: View {
     
     var image: String
     var number: Int
@@ -36,5 +36,5 @@ struct StatView: View {
 }
 
 #Preview {
-    StatView(image: "clock", number: 23, label: "Stunden")
+    StatCardView(image: "clock", number: 23, label: "Stunden")
 }

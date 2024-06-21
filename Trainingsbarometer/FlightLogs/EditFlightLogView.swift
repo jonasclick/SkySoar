@@ -1,5 +1,5 @@
 //
-//  AddFlightLogView.swift
+//  EditFlightLogView.swift
 //  Trainingsbarometer
 //
 //  Created by Jonas Vetsch on 05.06.2024.
@@ -8,12 +8,13 @@
 import SwiftUI
 import SwiftData
 
-struct AddFlightLogView: View {
+struct EditFlightLogView: View {
     
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
     
     var flightLog: FlightLog
+    var isEditMode: Bool
     
     @State private var aircraftModel = ""
     @State private var aircraftRegistration = ""
@@ -25,12 +26,11 @@ struct AddFlightLogView: View {
         var dateComponents = DateComponents()
         dateComponents.hour = 0
         dateComponents.minute = 0
-        return Calendar.current.date(from: dateComponents) ?? Date()
-    }()
+        return Calendar.current.date(from: dateComponents) ?? Date()}()
     
-    @State private var pilotFunctionInput = "PIC"
-    let pilotFunctions = ["PIC", "Dual", "Instructor"]
-    private var pilotFunctionTime: PilotFunctionTime {
+    @State private var pilotFunctionInput = "PIC" // Default value for the UI
+    let pilotFunctions = ["PIC", "Dual", "Instructor"] // Array of options for the picker
+    private var pilotFunctionTime: PilotFunctionTime { // Read value from the picker and get database-conform value
         switch pilotFunctionInput {
         case "PIC":
             return .pic
@@ -43,9 +43,9 @@ struct AddFlightLogView: View {
         }
     }
     
-    @State private var departureModeInput = "W"
-    let departureModes = ["W", "A", "S"]
-    private var departureMode: DepartureMode {
+    @State private var departureModeInput = "W" // Default value for the UI
+    let departureModes = ["W", "A", "S"] // Array of options for the picker
+    private var departureMode: DepartureMode { // Read value from the picker and get database-conform value
         switch departureModeInput {
         case "W":
             return .winch
@@ -65,11 +65,10 @@ struct AddFlightLogView: View {
     
     var body: some View {
         ZStack {
-            // Sheet Header and Content
             VStack {
                 // Sheet Header Title
                 ZStack {
-                    Text("Add a Flight")
+                    Text(isEditMode ? "Edit Flight" : "Add a Flight")
                         .font(.sheetHeadline)
                     HStack {
                         Spacer()
@@ -238,6 +237,7 @@ struct AddFlightLogView: View {
                             
                         }
                         
+                        // Departure Mode
                         HStack {
                             Text("Departure Mode")
                                 .font(.paragraphText)
@@ -250,14 +250,11 @@ struct AddFlightLogView: View {
                                 }
                             }
                             .pickerStyle(SegmentedPickerStyle())
-                            
                         }
                         
                         Divider()
                             .padding(.horizontal, -16)
                             .padding(.vertical, 30)
-                        
-                        
                         
                         // Remarks and Endorsements
                         VStack (alignment: .leading) {
@@ -273,8 +270,6 @@ struct AddFlightLogView: View {
                             TextField("Write your remarks here.", text: $remarks, axis: .vertical)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .padding(.bottom, 60)
-                            
-                            // TODO: TextField can't be exited, because it's multiline. Add "Done" button.
                         }
                         
                         
@@ -284,6 +279,24 @@ struct AddFlightLogView: View {
                     Spacer()
                 }
                 .scrollIndicators(.hidden)
+                
+                // When editing a flight, pre-fill all the existing data
+                .onAppear {
+                    aircraftModel = flightLog.aircraftModel
+                    aircraftRegistration = flightLog.aircraftRegistration
+                    departureDate = flightLog.departureDate ?? Date()
+                    departureLocation = flightLog.departureLocation
+                    arrivalDate = flightLog.arrivalDate ?? Date()
+                    arrivalLocation = flightLog.arrivalLocation
+                    flightTime = flightLog.flightTime ?? {
+                        var dateComponents = DateComponents()
+                        dateComponents.hour = 0
+                        dateComponents.minute = 0
+                        return Calendar.current.date(from: dateComponents) ?? Date()}()
+                    pilotFunctionInput = flightLog.pilotFunctionString
+                    departureModeInput = flightLog.departureModeString
+                    remarks = flightLog.remarks
+                }
             }
             
             
@@ -307,11 +320,11 @@ struct AddFlightLogView: View {
                     
                     flightLog.remarks = remarks
                     
-                    context.insert(flightLog)
+                    if !isEditMode {context.insert(flightLog)}
                     dismiss()
                     
                 }, label: {
-                    Text("Add Flight")
+                    Text(isEditMode ? "Save Flight" : "Add Flight")
                         .font(.headline)
                         .padding(.horizontal, 100)
                         .padding(.vertical, 5)
@@ -322,18 +335,18 @@ struct AddFlightLogView: View {
             .ignoresSafeArea()
             
         }
-        .confirmationDialog("Exit without saving?", isPresented: $showConfirmation, titleVisibility: .visible) {
-            Button("Don't save my flight.", role: .destructive) {
+        .confirmationDialog("Do you want to exit without saving your changes?", isPresented: $showConfirmation, titleVisibility: .visible) {
+            Button("Don't save.", role: .destructive) {
                 dismiss()
             }
             .foregroundStyle(.red)
         }
         .onDisappear {
-            showConfirmation = true
+            showConfirmation = true // TODO: Doesn't really work...
         }
     }
 }
 
 //#Preview {
-//    AddFlightLogView()
+//    EditFlightLogView()
 //}

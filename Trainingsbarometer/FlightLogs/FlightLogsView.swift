@@ -11,24 +11,23 @@ import SwiftData
 struct FlightLogsView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-
+    @Environment(\.modelContext) private var context
+    
     @Query private var flightLogs: [FlightLog]
     @State private var newFlightLog: FlightLog?
+    @State private var selectedFlight: FlightLog?
+    @State private var showConfirmation = false
     
     var body: some View {
-        
-        
         ZStack {
+            // Background
             Color.washedGreen
-            
             Rectangle()
                 .foregroundStyle(Color.washedGreen)
                 .frame(width: 783, height: 347)
                 .position(x: 200, y: 398)
                 .rotationEffect(Angle(degrees: -36.57))
                 .shadow(color: Color.black.opacity(0.05), radius: 10, x: -5, y: -5)
-            
-            
             Rectangle()
                 .foregroundStyle(Color.washedGreen)
                 .frame(width: 783, height: 347)
@@ -36,7 +35,7 @@ struct FlightLogsView: View {
                 .rotationEffect(Angle(degrees: -36.57))
                 .shadow(color: Color.black.opacity(0.05), radius: 10, x: -5, y: -5)
             
-            
+            // Content
             VStack (alignment: .leading) {
                 
                 Text("Flights")
@@ -44,15 +43,32 @@ struct FlightLogsView: View {
                     .padding(.top, 80)
                     .padding(.horizontal)
                 
-                // Flight Logs List
-                ScrollView {
-                    LazyVStack {
-                        ForEach(flightLogs, id: \.self) { f in
-                            FlightLogCardView(flightLog: f)
+                // –– Flight Logs List ––
+                List(flightLogs, id: \.self) { flightLog in
+                    FlightLogCardView(flightLog: flightLog)
+                        .padding(0)
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
+                        .swipeActions {
+                            // Edit flight log
+                            Button {
+                                newFlightLog = flightLog
+                            } label: {
+                                Label("Edit", systemImage: "pencil")
+                            }.tint(.blue)
+                            
+                            // Delete flight log
+                            Button(role: .destructive) {
+                                selectedFlight = flightLog
+                                showConfirmation = true
+                            } label: {
+                                Label("Delete", systemImage: "trash")
+                            }
                         }
-                    }
-                    .padding(.top)
                 }
+                .padding(.bottom, 80)
+                .listStyle(PlainListStyle())
+                .listRowSpacing(0)
             }
             
             
@@ -63,13 +79,12 @@ struct FlightLogsView: View {
                     // Back Button
                     Button(action: {
                         self.presentationMode.wrappedValue.dismiss()
-                    }) {
-                        HStack {
-                            Image(systemName: "arrow.left")
-                                .font(.system(size: 25))
-                        }
-                    }
+                    }, label: {
+                        Image(systemName: "arrow.left")
+                            .font(.system(size: 25))
+                    })
                     Spacer()
+                    
                     // Add FlightLog Button
                     Button(action: {
                         // Create an empty FlighLog
@@ -84,9 +99,16 @@ struct FlightLogsView: View {
             }
         }
         .ignoresSafeArea()
-        .navigationBarBackButtonHidden(true) // Hide the default back button from NavigationLink in HomeView
+        .navigationBarBackButtonHidden(true) // Hides the default back button from NavigationLink in HomeView
         .sheet(item: $newFlightLog) { flightlog in
-            AddFlightLogView(flightLog: flightlog)
+            let isEdit = flightlog.departureDate != nil // Check if it's a fresh instance of FlightLog
+            EditFlightLogView(flightLog: flightlog, isEditMode: isEdit)
+        }
+        .confirmationDialog("Are you sure you want to delete the flight?", isPresented: $showConfirmation, titleVisibility: .visible) {
+            Button("Delete", role: .destructive) {
+                context.delete(selectedFlight!)
+            }
+            .foregroundStyle(.red)
         }
     }
 }

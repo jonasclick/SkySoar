@@ -98,10 +98,10 @@ struct HomeView: View {
                     
                     HStack {
                         // Stat Stunden
-                        StatView(image: "clock", number: 23, label: "Stunden")
+                        StatCardView(image: "clock", number: 23, label: "Stunden")
                             .padding(.trailing, 50)
                         // Stat Starts
-                        StatView(image: "airplane.departure", number: 11, label: "Starts")
+                        StatCardView(image: "airplane.departure", number: 11, label: "Starts")
                     }
                 }
                 .padding(.horizontal, 20)

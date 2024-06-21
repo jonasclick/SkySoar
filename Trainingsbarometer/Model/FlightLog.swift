@@ -14,15 +14,15 @@ class FlightLog: Identifiable {
     @Attribute(.unique) var id: String
     
     var departureLocation: String = ""
-    var departureDate: Date = Date()
+    var departureDate: Date?
 
     var arrivalLocation: String = ""
-    var arrivalDate: Date = Date()
+    var arrivalDate: Date?
     
     var aircraftModel: String = ""
     var aircraftRegistration: String = ""
 
-    var flightTime: Date = Date()
+    var flightTime: Date?
 
     var departureMode = DepartureMode.winch
     
@@ -44,6 +44,17 @@ class FlightLog: Identifiable {
                 return "Instructor"
             }
         }
+    
+    var departureModeString: String {
+        switch departureMode {
+        case .winch:
+            return "W"
+        case .aerotow:
+            return "A"
+        case .selfLaunching:
+            return "S"
+        }
+    }
     
     var departureModeSymbol: String {
         switch departureMode {

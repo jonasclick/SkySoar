@@ -12,10 +12,10 @@
 		DD7AECB62C0DCAE2002AB8F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD7AECB52C0DCAE2002AB8F1 /* Assets.xcassets */; };
 		DD7AECB92C0DCAE2002AB8F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD7AECB82C0DCAE2002AB8F1 /* Preview Assets.xcassets */; };
 		DD7AECC12C0DDE55002AB8F1 /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECC02C0DDE55002AB8F1 /* FontHelper.swift */; };
-		DD7AECC32C0DE3D1002AB8F1 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECC22C0DE3D1002AB8F1 /* StatView.swift */; };
+		DD7AECC32C0DE3D1002AB8F1 /* StatCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECC22C0DE3D1002AB8F1 /* StatCardView.swift */; };
 		DD7AECC52C0DF3BB002AB8F1 /* FlightLogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECC42C0DF3BB002AB8F1 /* FlightLogsView.swift */; };
 		DDB60F7E2C0E1D3F00ACD9D0 /* FlightLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB60F7D2C0E1D3F00ACD9D0 /* FlightLog.swift */; };
-		DDB60F9A2C10977D00ACD9D0 /* AddFlightLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB60F992C10977D00ACD9D0 /* AddFlightLogView.swift */; };
+		DDB60F9A2C10977D00ACD9D0 /* EditFlightLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB60F992C10977D00ACD9D0 /* EditFlightLogView.swift */; };
 		DDBD0F5B2C1A216B0097432E /* FlightLogCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBD0F5A2C1A216B0097432E /* FlightLogCardView.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,10 +26,10 @@
 		DD7AECB52C0DCAE2002AB8F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD7AECB82C0DCAE2002AB8F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DD7AECC02C0DDE55002AB8F1 /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
-		DD7AECC22C0DE3D1002AB8F1 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
+		DD7AECC22C0DE3D1002AB8F1 /* StatCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCardView.swift; sourceTree = "<group>"; };
 		DD7AECC42C0DF3BB002AB8F1 /* FlightLogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightLogsView.swift; sourceTree = "<group>"; };
 		DDB60F7D2C0E1D3F00ACD9D0 /* FlightLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightLog.swift; sourceTree = "<group>"; };
-		DDB60F992C10977D00ACD9D0 /* AddFlightLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFlightLogView.swift; sourceTree = "<group>"; };
+		DDB60F992C10977D00ACD9D0 /* EditFlightLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFlightLogView.swift; sourceTree = "<group>"; };
 		DDBD0F5A2C1A216B0097432E /* FlightLogCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightLogCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,7 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				DD7AECB32C0DCAE1002AB8F1 /* HomeView.swift */,
-				DD7AECC22C0DE3D1002AB8F1 /* StatView.swift */,
+				DD7AECC22C0DE3D1002AB8F1 /* StatCardView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -104,7 +104,7 @@
 			children = (
 				DD7AECC42C0DF3BB002AB8F1 /* FlightLogsView.swift */,
 				DDBD0F5A2C1A216B0097432E /* FlightLogCardView.swift */,
-				DDB60F992C10977D00ACD9D0 /* AddFlightLogView.swift */,
+				DDB60F992C10977D00ACD9D0 /* EditFlightLogView.swift */,
 			);
 			path = FlightLogs;
 			sourceTree = "<group>";
@@ -188,9 +188,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD7AECC52C0DF3BB002AB8F1 /* FlightLogsView.swift in Sources */,
-				DD7AECC32C0DE3D1002AB8F1 /* StatView.swift in Sources */,
+				DD7AECC32C0DE3D1002AB8F1 /* StatCardView.swift in Sources */,
 				DDB60F7E2C0E1D3F00ACD9D0 /* FlightLog.swift in Sources */,
-				DDB60F9A2C10977D00ACD9D0 /* AddFlightLogView.swift in Sources */,
+				DDB60F9A2C10977D00ACD9D0 /* EditFlightLogView.swift in Sources */,
 				DD7AECC12C0DDE55002AB8F1 /* FontHelper.swift in Sources */,
 				DD7AECB42C0DCAE1002AB8F1 /* HomeView.swift in Sources */,
 				DD7AECB22C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift in Sources */,

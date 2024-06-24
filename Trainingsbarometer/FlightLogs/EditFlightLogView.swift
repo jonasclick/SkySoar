@@ -22,13 +22,11 @@ struct EditFlightLogView: View {
     @State private var departureLocation = ""
     @State private var arrivalDate = Date()
     @State private var arrivalLocation = ""
-    @State private var flightTime = {
-        var dateComponents = DateComponents()
-        dateComponents.hour = 0
-        dateComponents.minute = 0
-        return Calendar.current.date(from: dateComponents) ?? Date()}()
     
-    @State private var pilotFunctionInput = "PIC" // Default value for the UI
+    @State private var hours: Int = 0
+    @State private var minutes: Int = 0
+    
+    @State private var pilotFunctionInput = "PIC" // Default value for the picker
     let pilotFunctions = ["PIC", "Dual", "Instructor"] // Array of options for the picker
     private var pilotFunctionTime: PilotFunctionTime { // Read value from the picker and get database-conform value
         switch pilotFunctionInput {
@@ -43,7 +41,7 @@ struct EditFlightLogView: View {
         }
     }
     
-    @State private var departureModeInput = "W" // Default value for the UI
+    @State private var departureModeInput = "W" // Default value for the picker
     let departureModes = ["W", "A", "S"] // Array of options for the picker
     private var departureMode: DepartureMode { // Read value from the picker and get database-conform value
         switch departureModeInput {
@@ -135,7 +133,6 @@ struct EditFlightLogView: View {
                                     DatePicker("Date and Time", selection: $departureDate)
                                         .environment(\.locale, Locale(identifier: "de_CH"))
                                         .labelsHidden()
-                                    Spacer()
                                 }
                             }
                         }
@@ -144,10 +141,11 @@ struct EditFlightLogView: View {
                             Text("Location")
                                 .font(.paragraphText)
                                 .opacity(0.4)
-                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.trailing, 115)
                             TextField("Mollis", text: $departureLocation)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .submitLabel(.done)
+                                .frame(maxWidth: .infinity, alignment: .trailing)
                             
                         }
                         .padding(.bottom, 20)
@@ -169,10 +167,9 @@ struct EditFlightLogView: View {
                             
                             VStack {
                                 HStack {
-                                    DatePicker("Date and Time", selection: $arrivalDate, displayedComponents: .hourAndMinute)
+                                    DatePicker("Date and Time", selection: $arrivalDate)
                                         .environment(\.locale, Locale(identifier: "de_CH"))
                                         .labelsHidden()
-                                    Spacer()
                                 }
                             }
                         }
@@ -181,16 +178,17 @@ struct EditFlightLogView: View {
                             Text("Location")
                                 .font(.paragraphText)
                                 .opacity(0.4)
-                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.trailing, 115)
                             TextField("Mollis", text: $arrivalLocation)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .submitLabel(.done)
+                                .frame(maxWidth: .infinity, alignment: .trailing)
                             
                         }
                         
                         Divider()
                             .padding(.horizontal, -16)
-                            .padding(.vertical, 30)
+                            .padding(.top, 30)
                         
                         
                         
@@ -207,26 +205,35 @@ struct EditFlightLogView: View {
                                     .frame(maxWidth: .infinity, alignment: .leading)
                             }
                             
-                            VStack {
-                                HStack {
-                                    DatePicker("Flight Time", selection: $flightTime, displayedComponents: .hourAndMinute)
-                                        .environment(\.locale, Locale(identifier: "de_CH"))
-                                        .labelsHidden()
-                                    Text("hh : mm")
-                                        .font(.paragraphText)
-                                        .opacity(0.4)
-                                        .frame(maxWidth: .infinity, alignment: .leading)
-                                    Spacer()
+                            // Hours Input
+                            Picker("Hours", selection: $hours) {
+                                ForEach(0..<24) { hour in
+                                    Text("\(hour)").tag(hour)
                                 }
                             }
+                            .pickerStyle(WheelPickerStyle())
+                            .frame(width: 50, height: 100)
+                            Text("h")
+                                .padding(.trailing, 20)
+                            
+                            // Minutes Input
+                            Picker("Minutes", selection: $minutes) {
+                                ForEach(0..<60) { minute in
+                                    Text("\(minute)").tag(minute)
+                                }
+                            }
+                            .pickerStyle(WheelPickerStyle())
+                            .frame(width: 50, height: 100)
+                            Text("min")
+                            
+                            Spacer()
                         }
-                        .padding(.bottom, 19)
                         
                         HStack {
                             Text("Pilot Function")
                                 .font(.paragraphText)
                                 .opacity(0.4)
-                                .padding(.trailing, 10)
+                                .padding(.trailing, 25)
                             
                             Picker("Pilot Function", selection: $pilotFunctionInput) {
                                 ForEach(pilotFunctions, id: \.self) { f in
@@ -288,11 +295,11 @@ struct EditFlightLogView: View {
                     departureLocation = flightLog.departureLocation
                     arrivalDate = flightLog.arrivalDate ?? Date()
                     arrivalLocation = flightLog.arrivalLocation
-                    flightTime = flightLog.flightTime ?? {
-                        var dateComponents = DateComponents()
-                        dateComponents.hour = 0
-                        dateComponents.minute = 0
-                        return Calendar.current.date(from: dateComponents) ?? Date()}()
+                    
+                    let totalMinutes = Int(flightLog.flightTime) / 60
+                    hours = totalMinutes / 60
+                    minutes = totalMinutes % 60
+                    
                     pilotFunctionInput = flightLog.pilotFunctionString
                     departureModeInput = flightLog.departureModeString
                     remarks = flightLog.remarks
@@ -313,7 +320,8 @@ struct EditFlightLogView: View {
                     flightLog.aircraftModel = aircraftModel
                     flightLog.aircraftRegistration = aircraftRegistration
                     
-                    flightLog.flightTime = flightTime
+                    let totalSeconds = (hours * 3600) + (minutes * 60)
+                    flightLog.flightTime = TimeInterval(totalSeconds)
                     
                     flightLog.departureMode = departureMode
                     flightLog.pilotFunctionTime = pilotFunctionTime
@@ -336,7 +344,7 @@ struct EditFlightLogView: View {
             
         }
         .confirmationDialog("Do you want to exit without saving your changes?", isPresented: $showConfirmation, titleVisibility: .visible) {
-            Button("Don't save.", role: .destructive) {
+            Button("Discard Changes", role: .destructive) {
                 dismiss()
             }
             .foregroundStyle(.red)

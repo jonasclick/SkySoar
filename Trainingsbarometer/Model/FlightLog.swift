@@ -22,7 +22,7 @@ class FlightLog: Identifiable {
     var aircraftModel: String = ""
     var aircraftRegistration: String = ""
 
-    var flightTime: Date?
+    var flightTime: TimeInterval = 0 // Flight duration in seconds
 
     var departureMode = DepartureMode.winch
     

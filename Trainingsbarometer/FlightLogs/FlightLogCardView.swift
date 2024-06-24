@@ -67,7 +67,7 @@ struct FlightLogCardView: View {
                         .font(.flightLogSecondary)
                         .opacity(0.7)
                     // Flight Time
-                    Text(formattedFlightTime(from: flightLog.flightTime!))
+                    Text(formattedFlightTime(flightLog.flightTime))
                         .font(.flightLogPrimary)
                 }
             }
@@ -99,10 +99,11 @@ struct FlightLogCardView: View {
     }
     
     // Helper method to format flight time string
-    private func formattedFlightTime(from date: Date) -> String {
-        let hours = returnHours(from: date)
-        let minutes = returnMinutes(from: date)
-        
+    private func formattedFlightTime(_ timeInterval: TimeInterval) -> String {
+        let totalMinutes = Int(timeInterval) / 60
+        let hours = totalMinutes / 60
+        let minutes = totalMinutes % 60
+
         if hours > 0 {
             return "\(hours) h \(minutes) min"
         } else {

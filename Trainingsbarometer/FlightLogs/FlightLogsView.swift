@@ -14,6 +14,7 @@ struct FlightLogsView: View {
     @Environment(\.modelContext) private var context
     
     @Query private var flightLogs: [FlightLog]
+    
     @State private var newFlightLog: FlightLog?
     @State private var selectedFlight: FlightLog?
     @State private var showConfirmation = false
@@ -21,19 +22,7 @@ struct FlightLogsView: View {
     var body: some View {
         ZStack {
             // Background
-            Color.washedGreen
-            Rectangle()
-                .foregroundStyle(Color.washedGreen)
-                .frame(width: 783, height: 347)
-                .position(x: 200, y: 398)
-                .rotationEffect(Angle(degrees: -36.57))
-                .shadow(color: Color.black.opacity(0.05), radius: 10, x: -5, y: -5)
-            Rectangle()
-                .foregroundStyle(Color.washedGreen)
-                .frame(width: 783, height: 347)
-                .position(x: 200, y: 720)
-                .rotationEffect(Angle(degrees: -36.57))
-                .shadow(color: Color.black.opacity(0.05), radius: 10, x: -5, y: -5)
+            BackgroundView()
             
             // Content
             VStack (alignment: .leading) {

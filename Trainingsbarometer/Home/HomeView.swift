@@ -18,6 +18,8 @@ struct HomeView: View {
     @State private var starts = Double()
     @State private var trainingState = Int()
     
+    @State private var settingsIsPresented = false
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -72,6 +74,14 @@ struct HomeView: View {
                 VStack {
                     Spacer()
                     HStack {
+                        
+                        Button(action: {
+                            settingsIsPresented = true
+                        }, label: {
+                            Image(systemName: "gearshape")
+                                .font(.system(size: 25))
+                        })
+                        .buttonStyle(PlainButtonStyle())
                         Spacer()
                         NavigationLink (destination: FlightLogsView()) {
                             Image(systemName: "list.bullet")
@@ -87,6 +97,9 @@ struct HomeView: View {
                 hours = flightHoursInSixMonths(flightLogs: flightLogs)
                 starts = flightLogsInSixMonths(flightLogs: flightLogs)
                 trainingState = calculateTrainingState(hours: hours, starts: starts)
+            }
+            .sheet(isPresented: $settingsIsPresented) {
+                SettingsView()
             }
         }
     }

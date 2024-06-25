@@ -29,7 +29,6 @@ struct InfoCardRedView: View {
                          
                          """)
                 }
-                .padding(.bottom, 2)
                 HStack {
                     Text("""
                         Falls der letzte Start mehr als drei Monate zurück liegt, ist Training mit einem Fluglehrer der beste Weg zu einem guten Übungsstand.

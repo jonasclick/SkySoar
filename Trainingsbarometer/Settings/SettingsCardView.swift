@@ -1,0 +1,42 @@
+//
+//  SettingsCardView.swift
+//  Trainingsbarometer
+//
+//  Created by Jonas Vetsch on 25.06.2024.
+//
+
+import SwiftUI
+
+struct SettingsCardView: View {
+    
+    var icon: String
+    var text: String
+    
+    var body: some View {
+        
+        // Settings Card
+        ZStack {
+            Rectangle()
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .foregroundStyle(.white)
+                .shadow(radius: 5, x: 2, y: 4)
+            HStack {
+                Image(systemName: icon)
+                    .frame(width: 11)
+                    .padding(.trailing, 5)
+                Text(text)
+                Spacer()
+            }
+            .padding(.horizontal)
+            .font(.flightLogSecondary)
+        }
+        .padding(.horizontal)
+        .frame(height: 41)
+        .padding(.bottom, -2)
+        
+    }
+}
+
+#Preview {
+    SettingsCardView(icon: "thermometer.medium", text: "Why should I use a Flight Practice Barometer?")
+}

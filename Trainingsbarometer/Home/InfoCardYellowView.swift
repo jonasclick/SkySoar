@@ -14,6 +14,7 @@ struct InfoCardYellowView: View {
             // Info Card Title
             HStack {
                 Image(systemName: "info.circle")
+                    .bold()
                 Text("Vorsicht ist geboten beim Start")
                     .font(.infoBoxHeadline)
             }

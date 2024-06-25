@@ -59,11 +59,11 @@ class FlightLog: Identifiable {
     var departureModeSymbol: String {
         switch departureMode {
         case .winch:
-            return "w.square"
+            return "w.circle.fill"
         case .aerotow:
-            return "a.square"
+            return "a.circle.fill"
         case .selfLaunching:
-            return "s.square"
+            return "s.circle.fill"
         }
     }
     

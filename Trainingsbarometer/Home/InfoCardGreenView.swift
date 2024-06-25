@@ -14,6 +14,7 @@ struct InfoCardGreenView: View {
             // Info Card Title
             HStack {
                 Image(systemName: "info.circle")
+                    .bold()
                 Text("Geübte Piloten machen folgende Fehler")
                     .font(.infoBoxHeadline)
             }

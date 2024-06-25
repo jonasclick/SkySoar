@@ -14,6 +14,7 @@ struct InfoCardRedView: View {
             // Info Card Title
             HStack {
                 Image(systemName: "info.circle")
+                    .bold()
                 Text("Für ungeübte Piloten gilt")
                     .font(.infoBoxHeadline)
             }

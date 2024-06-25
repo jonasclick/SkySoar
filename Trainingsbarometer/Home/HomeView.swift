@@ -54,11 +54,16 @@ struct HomeView: View {
                         .padding(.bottom, 15)
                     
                     HStack {
+                        Spacer()
+                        
                         // Stat Hours
                         StatCardView(image: "clock", number: flightHoursInSixMonths(flightLogs: flightLogs), label: "Stunden")
-                            .padding(.trailing, 50)
+                        Spacer()
+                        Spacer()
+                        
                         // Stat Starts
                         StatCardView(image: "airplane.departure", number: flightLogsInSixMonths(flightLogs: flightLogs), label: "Starts")
+                        Spacer()
                     }
                 }
                 .padding(.horizontal, 20)

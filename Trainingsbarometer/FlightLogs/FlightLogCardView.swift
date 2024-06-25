@@ -25,7 +25,7 @@ struct FlightLogCardView: View {
                         .opacity(0.7)
                 }
                 
-                HStack (spacing: 0) {
+                HStack (spacing: -1.5) {
                     Image(systemName: flightLog.departureModeSymbol)
                     Rectangle()
                         .frame(height: 1)

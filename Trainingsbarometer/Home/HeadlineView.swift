@@ -18,7 +18,7 @@ struct HeadlineView: View {
         markdown: "Mehr Übung könnte nicht")
     
     let stateTwoString2 = try! AttributedString(
-        markdown: "schaden __– Unerwartete Ereignisse__ können")
+        markdown: "schaden __– unerwartete Ereignisse__ können")
     
     let stateTwoString3 = try! AttributedString(
         markdown: "gefährlich werden.")

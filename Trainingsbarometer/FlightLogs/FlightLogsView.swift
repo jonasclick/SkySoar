@@ -19,6 +19,23 @@ struct FlightLogsView: View {
     @State private var selectedFlight: FlightLog?
     @State private var showConfirmation = false
     
+    @State private var sortRule: String? = "Newest First"
+    
+    var sortedFlightLogs: [FlightLog] {
+        switch sortRule {
+        case "Newest First":
+            return flightLogs.sorted { $0.departureDate! > $1.departureDate! }
+        case "Oldest First":
+            return flightLogs.sorted { $0.departureDate! < $1.departureDate! }
+        case "Longest First":
+            return flightLogs.sorted { $0.flightTime > $1.flightTime }
+        case "Shortest First":
+            return flightLogs.sorted { $0.flightTime < $1.flightTime }
+        default:
+            return flightLogs
+        }
+    }
+    
     var body: some View {
         ZStack {
             // Background
@@ -27,13 +44,55 @@ struct FlightLogsView: View {
             // Content
             VStack (alignment: .leading) {
                 
-                Text("Flights")
-                    .font(.mainHeadline)
-                    .padding(.top, 80)
-                    .padding(.horizontal)
+                HStack {
+                    Text("Flights")
+                        .font(.mainHeadline)
+                        
+                    Spacer()
+                    
+                    // Sort Menu
+                    Menu {
+                        Text("Sort Flights by")
+                        Button(action: {
+                            sortRule = "Newest First"
+                        }) {
+                            Label("Newest First", systemImage: "calendar")
+                        }
+                        
+                        Button(action: {
+                            sortRule = "Oldest First"
+                        }) {
+                            Label("Oldest First", systemImage: "calendar")
+                        }
+                        
+                        Button(action: {
+                            sortRule = "Longest First"
+                        }) {
+                            Label("Longest First", systemImage: "clock")
+                        }
+                        
+                        Button(action: {
+                            sortRule = "Shortest First"
+                        }) {
+                            Label("Shortest First", systemImage: "clock")
+                        }
+                        
+                        
+                    } label: {
+                        Image(systemName: "arrow.up.arrow.down.circle.fill")
+                            .font(.system(size: 20))
+                            .opacity(0.7)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    
+                    
+                    
+                }
+                .padding(.top, 80)
+                .padding(.horizontal)
                 
                 // –– Flight Logs List ––
-                List(flightLogs, id: \.self) { flightLog in
+                List(sortedFlightLogs, id: \.id) { flightLog in
                     FlightLogCardView(flightLog: flightLog)
                         .padding(0)
                         .listRowBackground(Color.clear)

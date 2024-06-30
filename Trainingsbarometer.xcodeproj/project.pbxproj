@@ -20,10 +20,20 @@
 		DDB60F9A2C10977D00ACD9D0 /* EditFlightLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB60F992C10977D00ACD9D0 /* EditFlightLogView.swift */; };
 		DDBD0F5B2C1A216B0097432E /* FlightLogCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBD0F5A2C1A216B0097432E /* FlightLogCardView.swift */; };
 		DDD323DD2C29DDF7008AE016 /* HeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD323DC2C29DDF7008AE016 /* HeadlineView.swift */; };
+		DDDD2D682C3115290008E135 /* CopyrightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD2D672C3115290008E135 /* CopyrightView.swift */; };
+		DDDD2D6C2C3148DB0008E135 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD2D6B2C3148DB0008E135 /* VideoPlayerView.swift */; };
+		DDDD2D732C314B190008E135 /* WebsiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD2D722C314B190008E135 /* WebsiteView.swift */; };
+		DDDD2D752C3151500008E135 /* ExplainerVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD2D742C3151500008E135 /* ExplainerVideoView.swift */; };
+		DDDD2D7A2C3158230008E135 /* CloseButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD2D792C3158230008E135 /* CloseButtonView.swift */; };
+		DDDD2D7C2C315CDE0008E135 /* Why TBARO.mov in Resources */ = {isa = PBXBuildFile; fileRef = DDDD2D7B2C315CDE0008E135 /* Why TBARO.mov */; };
+		DDDD2D7E2C315FE50008E135 /* DisclaimerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD2D7D2C315FE50008E135 /* DisclaimerCardView.swift */; };
 		DDE5A0532C27DA1100FF460B /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5A0522C27DA1100FF460B /* BackgroundView.swift */; };
 		DDE5A0572C29473800FF460B /* InfoCardGreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5A0562C29473800FF460B /* InfoCardGreenView.swift */; };
 		DDE5A05B2C2947AB00FF460B /* InfoCardYellowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5A05A2C2947AB00FF460B /* InfoCardYellowView.swift */; };
 		DDE5A05D2C2947F800FF460B /* InfoCardRedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5A05C2C2947F800FF460B /* InfoCardRedView.swift */; };
+		DDED46D42C2C17AE00441280 /* WebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED46D32C2C17AE00441280 /* WebKit.swift */; };
+		DDED46DC2C2C36FC00441280 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED46DB2C2C36FC00441280 /* DisclaimerView.swift */; };
+		DDED46DE2C2C3ECD00441280 /* JustifyTextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED46DD2C2C3ECD00441280 /* JustifyTextHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,10 +51,20 @@
 		DDB60F992C10977D00ACD9D0 /* EditFlightLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFlightLogView.swift; sourceTree = "<group>"; };
 		DDBD0F5A2C1A216B0097432E /* FlightLogCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightLogCardView.swift; sourceTree = "<group>"; };
 		DDD323DC2C29DDF7008AE016 /* HeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineView.swift; sourceTree = "<group>"; };
+		DDDD2D672C3115290008E135 /* CopyrightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyrightView.swift; sourceTree = "<group>"; };
+		DDDD2D6B2C3148DB0008E135 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		DDDD2D722C314B190008E135 /* WebsiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteView.swift; sourceTree = "<group>"; };
+		DDDD2D742C3151500008E135 /* ExplainerVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainerVideoView.swift; sourceTree = "<group>"; };
+		DDDD2D792C3158230008E135 /* CloseButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButtonView.swift; sourceTree = "<group>"; };
+		DDDD2D7B2C315CDE0008E135 /* Why TBARO.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "Why TBARO.mov"; sourceTree = "<group>"; };
+		DDDD2D7D2C315FE50008E135 /* DisclaimerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerCardView.swift; sourceTree = "<group>"; };
 		DDE5A0522C27DA1100FF460B /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		DDE5A0562C29473800FF460B /* InfoCardGreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardGreenView.swift; sourceTree = "<group>"; };
 		DDE5A05A2C2947AB00FF460B /* InfoCardYellowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardYellowView.swift; sourceTree = "<group>"; };
 		DDE5A05C2C2947F800FF460B /* InfoCardRedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardRedView.swift; sourceTree = "<group>"; };
+		DDED46D32C2C17AE00441280 /* WebKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKit.swift; sourceTree = "<group>"; };
+		DDED46DB2C2C36FC00441280 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
+		DDED46DD2C2C3ECD00441280 /* JustifyTextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustifyTextHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +82,11 @@
 			isa = PBXGroup;
 			children = (
 				DD1DB7BB2C2AC223000FF93F /* SettingsView.swift */,
+				DDDD2D7D2C315FE50008E135 /* DisclaimerCardView.swift */,
 				DD1DB7BE2C2AF8C3000FF93F /* SettingsCardView.swift */,
+				DDED46DB2C2C36FC00441280 /* DisclaimerView.swift */,
+				DDDD2D742C3151500008E135 /* ExplainerVideoView.swift */,
+				DDDD2D672C3115290008E135 /* CopyrightView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -110,6 +134,12 @@
 			isa = PBXGroup;
 			children = (
 				DD7AECC02C0DDE55002AB8F1 /* FontHelper.swift */,
+				DDED46DD2C2C3ECD00441280 /* JustifyTextHelper.swift */,
+				DDDD2D792C3158230008E135 /* CloseButtonView.swift */,
+				DDED46D32C2C17AE00441280 /* WebKit.swift */,
+				DDDD2D722C314B190008E135 /* WebsiteView.swift */,
+				DDDD2D6B2C3148DB0008E135 /* VideoPlayerView.swift */,
+				DDDD2D7B2C315CDE0008E135 /* Why TBARO.mov */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -205,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD7AECB92C0DCAE2002AB8F1 /* Preview Assets.xcassets in Resources */,
+				DDDD2D7C2C315CDE0008E135 /* Why TBARO.mov in Resources */,
 				DD7AECB62C0DCAE2002AB8F1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,19 +248,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDE5A0532C27DA1100FF460B /* BackgroundView.swift in Sources */,
+				DDDD2D732C314B190008E135 /* WebsiteView.swift in Sources */,
 				DD7AECC52C0DF3BB002AB8F1 /* FlightLogsView.swift in Sources */,
+				DDDD2D6C2C3148DB0008E135 /* VideoPlayerView.swift in Sources */,
 				DDD323DD2C29DDF7008AE016 /* HeadlineView.swift in Sources */,
 				DDE5A05D2C2947F800FF460B /* InfoCardRedView.swift in Sources */,
+				DDED46DE2C2C3ECD00441280 /* JustifyTextHelper.swift in Sources */,
 				DD7AECC32C0DE3D1002AB8F1 /* StatCardView.swift in Sources */,
 				DDB60F7E2C0E1D3F00ACD9D0 /* FlightLog.swift in Sources */,
 				DDB60F9A2C10977D00ACD9D0 /* EditFlightLogView.swift in Sources */,
 				DD1DB7BC2C2AC223000FF93F /* SettingsView.swift in Sources */,
+				DDDD2D752C3151500008E135 /* ExplainerVideoView.swift in Sources */,
 				DD7AECC12C0DDE55002AB8F1 /* FontHelper.swift in Sources */,
+				DDDD2D7E2C315FE50008E135 /* DisclaimerCardView.swift in Sources */,
+				DDDD2D7A2C3158230008E135 /* CloseButtonView.swift in Sources */,
 				DDE5A0572C29473800FF460B /* InfoCardGreenView.swift in Sources */,
 				DDE5A05B2C2947AB00FF460B /* InfoCardYellowView.swift in Sources */,
 				DD7AECB42C0DCAE1002AB8F1 /* HomeView.swift in Sources */,
+				DDED46DC2C2C36FC00441280 /* DisclaimerView.swift in Sources */,
 				DD7AECB22C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift in Sources */,
+				DDED46D42C2C17AE00441280 /* WebKit.swift in Sources */,
 				DDBD0F5B2C1A216B0097432E /* FlightLogCardView.swift in Sources */,
+				DDDD2D682C3115290008E135 /* CopyrightView.swift in Sources */,
 				DD1DB7BF2C2AF8C3000FF93F /* SettingsCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

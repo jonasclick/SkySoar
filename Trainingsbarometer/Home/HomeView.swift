@@ -18,7 +18,7 @@ struct HomeView: View {
     @State private var starts = Double()
     @State private var trainingState = Int()
     
-    @State private var settingsIsPresented = false
+    @State private var isSettingsPresented = false
     
     var body: some View {
         NavigationStack {
@@ -76,7 +76,7 @@ struct HomeView: View {
                     HStack {
                         
                         Button(action: {
-                            settingsIsPresented = true
+                            isSettingsPresented = true
                         }, label: {
                             Image(systemName: "gearshape")
                                 .font(.system(size: 25))
@@ -98,7 +98,7 @@ struct HomeView: View {
                 starts = flightLogsInSixMonths(flightLogs: flightLogs)
                 trainingState = calculateTrainingState(hours: hours, starts: starts)
             }
-            .sheet(isPresented: $settingsIsPresented) {
+            .sheet(isPresented: $isSettingsPresented) {
                 SettingsView()
             }
         }

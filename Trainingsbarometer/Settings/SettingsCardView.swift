@@ -34,9 +34,10 @@ struct SettingsCardView: View {
         .frame(height: 41)
         .padding(.bottom, -2)
         
+        
     }
 }
 
 #Preview {
-    SettingsCardView(icon: "thermometer.medium", text: "Why should I use a Flight Practice Barometer?")
+    SettingsCardView(icon: "thermometer.medium", text: "Why should I use Pilot Practice Barometer?")
 }

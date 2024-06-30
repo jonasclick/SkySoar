@@ -9,9 +9,12 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @Environment(\.dismiss) private var dismiss
+    @State private var isDisclaimerPresented = false
+    @State private var isExplainerPresented = false
+    @State private var isCopyrightPresented = false
+    @State private var isGitHubPresented = false
     
-    @State private var settingsIsPresented = false
+    private let emailURL: String = "mailto:jonas@vetschmedia.com?subject=Feedback%20Practice%20State%20Barometer%20App&body=Dear%20Developers"
     
     var body: some View {
         ZStack {
@@ -19,114 +22,69 @@ struct SettingsView: View {
             VStack (alignment: .leading) {
                 
                 
-                
                 // Title
                 Text("Settings")
                     .font(.mainHeadline)
-                    .padding(.top, 20)
+                    .padding(.top, 40)
                     .padding(.horizontal)
-                    .padding(.bottom, 23)
+                    .padding(.bottom, 50)
+                
                 
                 // Disclaimer Card
-                ZStack {
-                    Rectangle()
-                        .foregroundStyle(Color.disclaimerGray)
-                        .clipShape(RoundedRectangle(cornerRadius: 16))
-                    
-                    
-                    VStack (alignment: .leading) {
-                        HStack {
-                            Image(systemName: "exclamationmark.shield.fill")
-                                .opacity(0.7)
-                            Text("Disclaimer")
-                                .font(.system(size: 16, weight: .medium))
-                            Spacer()
-                        }
-                        .padding(.bottom, 5)
-                        
-                        Text("Do not rely solely on the information of this application.")
-                            .font(.infoBoxContent)
-                            .padding(.bottom, 2)
-                        Text("Verify all information independently, as data may be incorrect.")
-                            .font(.infoBoxContent)
-                            .tracking(-0.3)
-                            .padding(.bottom, 2)
-                        Text("The developers disclaim any liability.")
-                            .font(.infoBoxContent)
-                            .padding(.bottom, 2)
-                        HStack {
-                            Spacer()
-                            Text("Read the full disclaimer")
-                            Image(systemName: "arrow.right.circle")
-                        }
-                        .font(.system(size: 14))
-                        .padding(.top, 5)
+                DisclaimerCardView()
+                    .padding(.horizontal)
+                    .frame(height: 138)
+                    .onTapGesture {
+                        isDisclaimerPresented.toggle()
                     }
-                    .padding()
-                }
-                .padding(.horizontal)
-                .frame(height: 138)
-                .onTapGesture {
-                    // TODO: Show full disclaimer sheet
-                }
+                    .sheet(isPresented: $isDisclaimerPresented) {
+                        DisclaimerView()
+                            .presentationDetents([.fraction(0.6)])
+                    }
                 
                 
                 // Section "User Guide"
                 Text("User Guide")
                     .font(.flightLogPrimary)
-                    .padding(.top, 36)
+                    .padding(.top, 50)
                     .padding(.horizontal, 28)
                     .padding(.bottom, -3)
                 
-                SettingsCardView(icon: "thermometer.medium", text: "Why should I use a Flight Practice Barometer?")
-                SettingsCardView(icon: "book", text: "How this application works")
-
-                
-                
-                
-                // Section "Export Flight Log Data"
-                Text("Export Flight Log Data")
-                    .font(.flightLogPrimary)
-                    .padding(.top, 30)
-                    .padding(.horizontal, 28)
-                    .padding(.bottom, -3)
-                
-                SettingsCardView(icon: "square.and.arrow.up", text: "Export flight logs data")
-
-                // No SettingsCardView because of custom placement of icon
-                ZStack {
-                    Rectangle()
-                        .clipShape(RoundedRectangle(cornerRadius: 16))
-                        .foregroundStyle(.white)
-                        .shadow(radius: 5, x: 2, y: 4)
-                    HStack {
-                        Image(systemName: "square.and.arrow.down")
-                            .frame(width: 11)
-                            .padding(.trailing, 5)
-                            .padding(.bottom, 2)
-                        Text("Import flight logs data")
-                        Spacer()
+                // Why use Pilot Practice Barometer?
+                SettingsCardView(icon: "thermometer.medium", text: "Why should I use Pilot Practice Barometer?")
+                    .onTapGesture {
+                        isExplainerPresented.toggle()
                     }
-                    .padding(.horizontal)
-                    .font(.flightLogSecondary)
-                }
-                .padding(.horizontal)
-                .frame(height: 41)
-                
-                
+                    .sheet(isPresented: $isExplainerPresented) {
+                        ExplainerVideoView()
+                    }
                 
                 
                 // Section "About"
                 Text("About")
                     .font(.flightLogPrimary)
-                    .padding(.top, 30)
+                    .padding(.top, 50)
                     .padding(.horizontal, 28)
                     .padding(.bottom, -3)
                 
+                // Copyright
                 SettingsCardView(icon: "c.circle", text: "Copyright")
-                SettingsCardView(icon: "lightbulb.max", text: "Request a feature or report a bug")
-
-                // No SettingsCardView because of custom image
+                    .onTapGesture {
+                        isCopyrightPresented.toggle()
+                    }
+                    .sheet(isPresented: $isCopyrightPresented) {
+                        CopyrightView()
+                            .presentationDetents([.fraction(0.7)])
+                    }
+                
+                // Request a feature / report bug
+                Link(destination: URL(string: emailURL)!, label: {
+                    SettingsCardView(icon: "lightbulb.max", text: "Request a feature or report a bug")
+                        .foregroundStyle(.black)
+                })
+                
+                
+                // Link to Github Page Link (custom image)
                 ZStack {
                     Rectangle()
                         .clipShape(RoundedRectangle(cornerRadius: 16))
@@ -144,7 +102,12 @@ struct SettingsView: View {
                 }
                 .padding(.horizontal)
                 .frame(height: 41)
-                
+                .onTapGesture {
+                    isGitHubPresented.toggle()
+                }
+                .sheet(isPresented: $isGitHubPresented) {
+                    WebsiteView(title: "About this App", url: "https://github.com/jonasclick/Trainingsbarometer")
+                }
                 
                 
                 // Display Version Number
@@ -157,32 +120,16 @@ struct SettingsView: View {
                         .padding(.top, 5)
                 }
                 
-             Spacer()
-            }
-            
-            // Close Button Top Right of Sheet
-            VStack {
-                HStack {
-                    Spacer()
-                    Button(action: {
-                        dismiss()
-                    }, label: {
-                        Image("close button")
-                            .padding(.vertical, 15)
-                            .padding(.horizontal, 8)
-                    })
-                }
+                
                 Spacer()
             }
             
+            // Close Button Top Right of Sheet
+            CloseButtonView()
+            
         }
         .ignoresSafeArea()
-        .navigationBarBackButtonHidden(true) // Hides the default back button from NavigationLink in HomeView
-        // Disclaimer Sheet
-//        .sheet(isPresented: $settingsIsPresented) {
-////            SettingsView()
-//        }
-        // Copyright Sheet
+        .navigationBarBackButtonHidden(true) // Hide default back button from NavigationLink in HomeView
     }
 }
 

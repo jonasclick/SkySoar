@@ -15,7 +15,7 @@ struct InfoCardGreenView: View {
             HStack {
                 Image(systemName: "info.circle")
                     .bold()
-                Text("Geübte Piloten machen folgende Fehler")
+                Text("Experienced pilots make the following mistakes")
                     .font(.infoBoxHeadline)
             }
             .padding(.bottom, 15)
@@ -25,25 +25,25 @@ struct InfoCardGreenView: View {
                 HStack {
                     Image(systemName: "chevron.forward")
                         .scaleEffect(0.7)
-                    Text("Segelflugzeug fehlerhaft ausgerüstet")
+                    Text("Glider improperly equipped")
                 }
                 .padding(.bottom, 2)
                 HStack {
                     Image(systemName: "chevron.forward")
                         .scaleEffect(0.7)
-                    Text("mangelhafter Cockpitcheck")
+                    Text("Not performing cockpit check correctly")
                 }
                 .padding(.bottom, 2)
                 HStack {
                     Image(systemName: "chevron.forward")
                         .scaleEffect(0.7)
-                    Text("Fehlverhalten bei Startunterbrechungen")
+                    Text("Misbehavior during aborted takeoffs")
                 }
                 .padding(.bottom, 2)
                 HStack {
                     Image(systemName: "chevron.forward")
                         .scaleEffect(0.7)
-                    Text("Fehler bei der Landeeinteilung (vor allem bei Aussenlandungen)")
+                    Text("Poorly flown landing pattern (e.g. during outlanding)")
                 }
             }
             .padding(.leading, 5)

@@ -28,7 +28,7 @@ struct HomeView: View {
                 
                 VStack (alignment: .leading) {
                     // Headline Section
-                    Text("Übungsstand")
+                    Text("Practice State")
                         .font(.sectionHeadline)
                         .padding(.bottom, 13)
                     
@@ -47,7 +47,7 @@ struct HomeView: View {
                     
                     
                     // Stats Section
-                    Text("In den letzten sechs Monaten")
+                    Text("In the past six months")
                         .font(.sectionHeadline)
                         .padding(.bottom, 0.5)
                     Text(sixMonthsRange())
@@ -59,7 +59,7 @@ struct HomeView: View {
                         Spacer()
                         
                         // Stat Hours
-                        StatCardView(image: "clock", number: flightHoursInSixMonths(flightLogs: flightLogs), label: "Stunden")
+                        StatCardView(image: "clock", number: flightHoursInSixMonths(flightLogs: flightLogs), label: "Hours")
                         Spacer()
                         Spacer()
                         
@@ -111,7 +111,7 @@ struct HomeView: View {
         }
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy"
+        dateFormatter.dateFormat = "MMMM dd, yyyy"
         
         let todayString = dateFormatter.string(from: today)
         let sixMonthsAgoString = dateFormatter.string(from: sixMonthsAgo)

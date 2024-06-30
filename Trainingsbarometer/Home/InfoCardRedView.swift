@@ -15,7 +15,7 @@ struct InfoCardRedView: View {
             HStack {
                 Image(systemName: "info.circle")
                     .bold()
-                Text("Für ungeübte Piloten gilt")
+                Text("For inexperienced pilots")
                     .font(.infoBoxHeadline)
             }
             .padding(.bottom, 10)
@@ -25,13 +25,13 @@ struct InfoCardRedView: View {
             VStack (alignment: .leading) {
                 HStack {
                     Text("""
-                         Die ersten Starts nach einer längeren Pause nur mit vertrauten Mustern und bei unkritischen Wetterlagen durchführen.
+                         Perform the first take-offs after a long break only with familiar aircraft models and in non-critical weather conditions.
                          
                          """)
                 }
                 HStack {
                     Text("""
-                        Falls der letzte Start mehr als drei Monate zurück liegt, ist Training mit einem Fluglehrer der beste Weg zu einem guten Übungsstand.
+                        If the last take-off was more than three months ago, training with a flight instructor is the best way to achieve a good practice level.
                         """)
                 }
             }

@@ -19,17 +19,17 @@ struct FlightLogsView: View {
     @State private var selectedFlight: FlightLog?
     @State private var showConfirmation = false
     
-    @State private var sortRule: String? = "Newest First"
+    @State private var sortRule: String? = "Newest"
     
     var sortedFlightLogs: [FlightLog] {
         switch sortRule {
-        case "Newest First":
+        case "Newest":
             return flightLogs.sorted { $0.departureDate! > $1.departureDate! }
-        case "Oldest First":
+        case "Oldest":
             return flightLogs.sorted { $0.departureDate! < $1.departureDate! }
-        case "Longest First":
+        case "Longest":
             return flightLogs.sorted { $0.flightTime > $1.flightTime }
-        case "Shortest First":
+        case "Shortest":
             return flightLogs.sorted { $0.flightTime < $1.flightTime }
         default:
             return flightLogs
@@ -54,27 +54,27 @@ struct FlightLogsView: View {
                     Menu {
                         Text("Sort Flights by")
                         Button(action: {
-                            sortRule = "Newest First"
+                            sortRule = "Newest"
                         }) {
-                            Label("Newest First", systemImage: "calendar")
+                            Label("Newest", systemImage: "calendar")
                         }
                         
                         Button(action: {
-                            sortRule = "Oldest First"
+                            sortRule = "Oldest"
                         }) {
-                            Label("Oldest First", systemImage: "calendar")
+                            Label("Oldest", systemImage: "calendar")
                         }
                         
                         Button(action: {
-                            sortRule = "Longest First"
+                            sortRule = "Longest"
                         }) {
-                            Label("Longest First", systemImage: "clock")
+                            Label("Longest", systemImage: "clock")
                         }
                         
                         Button(action: {
-                            sortRule = "Shortest First"
+                            sortRule = "Shortest"
                         }) {
-                            Label("Shortest First", systemImage: "clock")
+                            Label("Shortest", systemImage: "clock")
                         }
                         
                         

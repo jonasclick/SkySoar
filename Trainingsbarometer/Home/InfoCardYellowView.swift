@@ -15,7 +15,7 @@ struct InfoCardYellowView: View {
             HStack {
                 Image(systemName: "info.circle")
                     .bold()
-                Text("Vorsicht ist geboten beim Start")
+                Text("Caution during takeoff")
                     .font(.infoBoxHeadline)
             }
             .padding(.bottom, 15)
@@ -25,25 +25,25 @@ struct InfoCardYellowView: View {
                 HStack {
                     Image(systemName: "chevron.forward")
                         .scaleEffect(0.7)
-                    Text("in unbekannten Landschaftsregionen (z.B. Alpen)")
+                    Text("in unfamiliar landscape regions (e.g. mountains)")
                 }
                 .padding(.bottom, 2)
                 HStack {
                     Image(systemName: "chevron.forward")
                         .scaleEffect(0.7)
-                    Text("auf unbekannten Fluggeländen")
+                    Text("at unfamiliar airfields")
                 }
                 .padding(.bottom, 2)
                 HStack {
                     Image(systemName: "chevron.forward")
                         .scaleEffect(0.7)
-                    Text("auf selten geflogenen Segelflugzeugmustern")
+                    Text("on rarely flown glider models")
                 }
                 .padding(.bottom, 2)
                 HStack {
                     Image(systemName: "chevron.forward")
                         .scaleEffect(0.7)
-                    Text("in einer selten durchgeführten Startart")
+                    Text("in a rarely performed launch method")
                 }
             }
             .padding(.leading, 5)

@@ -12,19 +12,19 @@ struct HeadlineView: View {
     @Binding var trainingState: Int
     
     let stateOneString = try! AttributedString(
-        markdown: "Übung tut not -\nFliegen kann zum __Risiko__ werden.")
+        markdown: "Practice is necessary - flying can become a __risk__.")
     
     let stateTwoString1 = try! AttributedString(
-        markdown: "Mehr Übung könnte nicht")
+        markdown: "More practice couldn't hurt – __unexpected events__ can become dangerous.")
     
     let stateTwoString2 = try! AttributedString(
-        markdown: "schaden __– unerwartete Ereignisse__ können")
+        markdown: "hurt – __unexpected events__ can")
     
     let stateTwoString3 = try! AttributedString(
-        markdown: "gefährlich werden.")
+        markdown: "become dangerous.")
     
     let stateThreeString = try! AttributedString(
-        markdown: "Dein Übungsstand \nist gut __– trotzdem Vorsicht.__")
+        markdown: "Your practice state is good – but still __be cautious.__")
     
     
     var body: some View {
@@ -32,12 +32,13 @@ struct HeadlineView: View {
         // Headline Text
         if trainingState == 1 {
             Text(stateOneString)
-                .font(.system(size: 34))
+                .font(.system(size: 32))
                 .padding(.bottom, 40)
         }
         else if trainingState == 2 {
-            Text("\(stateTwoString1)\n\(stateTwoString2)\n\(stateTwoString3)")
-                .font(.system(size: 29))
+//            Text("\(stateTwoString1)\n\(stateTwoString2)\n\(stateTwoString3)")
+            Text("\(stateTwoString1)")
+                .font(.system(size: 27))
                 .padding(.bottom, 40)
         }
         else if trainingState == 3 {
@@ -48,7 +49,3 @@ struct HeadlineView: View {
         
     }
 }
-
-//#Preview {
-//    HeadlineView(trainingState: 1)
-//}

@@ -20,7 +20,7 @@ struct FlightLogCardView: View {
                 VStack (alignment: .leading) {
                     Text(flightLog.departureLocation)
                         .font(.flightLogPrimary)
-                    Text("\(returnHoursMinutes(from: flightLog.departureDate!)) Uhr")
+                    Text("\(returnHoursMinutes(from: flightLog.departureDate!)) hrs")
                         .font(.flightLogSecondary)
                         .opacity(0.7)
                 }
@@ -37,7 +37,7 @@ struct FlightLogCardView: View {
                 VStack (alignment: .leading) {
                     Text(flightLog.arrivalLocation)
                         .font(.flightLogPrimary)
-                    Text("\(returnHoursMinutes(from: flightLog.arrivalDate!)) Uhr")
+                    Text("\(returnHoursMinutes(from: flightLog.arrivalDate!)) hrs")
                         .font(.flightLogSecondary)
                         .opacity(0.7)
                 }

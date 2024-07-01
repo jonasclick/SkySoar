@@ -6,9 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SettingsView: View {
     
+    @Environment(\.modelContext) private var context
+    
+    @Query private var flightLogs: [FlightLog]
+    
+    private var isSampleData: Bool {initializeIsSampleData()}
+    
+    @State private var showSampleDataAlert = false
     @State private var isDisclaimerPresented = false
     @State private var isExplainerPresented = false
     @State private var isCopyrightPresented = false
@@ -57,11 +65,23 @@ struct SettingsView: View {
                         ExplainerVideoView()
                     }
                 
+                // Toggle Sample Data
+                SettingsCardView(icon: "tray.and.arrow.\(isSampleData ? "up" : "down")", text: isSampleData ? "Remove sample flights to start using the app" : "Add sample flight logs to explore the app")
+                    .onTapGesture {
+                        toggleSampleData()
+                    }
+                    .alert(isPresented: $showSampleDataAlert) {
+                        Alert(
+                            title: Text(isSampleData ? "Sample Flights Added" : "Sample Flights Removed"),
+                            message: Text(isSampleData ? "\nTen sample flights have been added. Therefore: Do not mistake the training state shown in the app with your own training state!" : "\nAll sample flights have been removed. Double check your flight data before trusting the indicated practice state."),
+                            dismissButton: .destructive(Text(isSampleData ? "I understand: It's not my training state" : "OK"))
+                        )
+                    }
                 
                 // Section "About"
                 Text("About")
                     .font(.flightLogPrimary)
-                    .padding(.top, 50)
+                    .padding(.top, 30)
                     .padding(.horizontal, 28)
                     .padding(.bottom, -3)
                 
@@ -130,6 +150,40 @@ struct SettingsView: View {
         .navigationBarBackButtonHidden(true) // Hide default back button coming from NavigationLink in HomeView
     }
     
+    func toggleSampleData() {
+        
+        if !isSampleData {
+            
+            // 1
+            addFlightLog(departureD: setDateTime(dayOffset: 0, hour: 11, minute: 4), arrivalD: setDateTime(dayOffset: 0, hour: 14, minute: 44), flightTime: 13260, departureM: DepartureMode.aerotow)
+            // 2
+            addFlightLog(departureD: setDateTime(dayOffset: -14, hour: 10, minute: 37), arrivalD: setDateTime(dayOffset: -14, hour: 10, minute: 44), flightTime: 420, departureM: DepartureMode.winch)
+            // 3
+            addFlightLog(departureD: setDateTime(dayOffset: -14, hour: 11, minute: 14), arrivalD: setDateTime(dayOffset: -14, hour: 14, minute: 26), flightTime: 11520, departureM: DepartureMode.winch)
+            // 4
+            addFlightLog(departureD: setDateTime(dayOffset: -30, hour: 10, minute: 34), arrivalD: setDateTime(dayOffset: -30, hour: 15, minute: 05), flightTime: 16260, departureM: DepartureMode.winch)
+            // 5
+            addFlightLog(departureD: setDateTime(dayOffset: -44, hour: 11, minute: 03), arrivalD: setDateTime(dayOffset: -44, hour: 17, minute: 17), flightTime: 22440, departureM: DepartureMode.selfLaunching)
+            // 6
+            addFlightLog(departureD: setDateTime(dayOffset: -60, hour: 10, minute: 20), arrivalL: "Grenchen", arrivalD: setDateTime(dayOffset: -60, hour: 12, minute: 34), flightTime: 8040, departureM: DepartureMode.aerotow)
+            // 7
+            addFlightLog(departureL: "Grenchen", departureD: setDateTime(dayOffset: -60, hour: 14, minute: 33), arrivalD: setDateTime(dayOffset: -60, hour: 16, minute: 24), flightTime: 6660, departureM: DepartureMode.aerotow)
+            // 8
+            addFlightLog(departureL: "Amlikon", departureD: setDateTime(dayOffset: -74, hour: 11, minute: 15), arrivalL: "Amlikon", arrivalD: setDateTime(dayOffset: -74, hour: 12, minute: 33), flightTime: 4680, departureM: DepartureMode.winch)
+            // 9
+            addFlightLog(departureL: "Amlikon", departureD: setDateTime(dayOffset: -74, hour: 15, minute: 43), arrivalL: "Amlikon", arrivalD: setDateTime(dayOffset: -74, hour: 16, minute: 46), flightTime: 3720, departureM: DepartureMode.winch)
+            // 10
+            addFlightLog(departureD: setDateTime(dayOffset: -90, hour: 9, minute: 47), arrivalD: setDateTime(dayOffset: -90, hour: 10, minute: 46), flightTime: 3540, departureM: DepartureMode.aerotow)
+        }
+        
+        if isSampleData {
+            deleteSampleData()
+        }
+        
+        showSampleDataAlert.toggle()
+    }
+    
+    
     // Different frame height for DisclaimerCardView for Localizations EN and DE
     private func localizedFrameHeight() -> CGFloat {
         if let currentLanguage = Locale.current.language.languageCode?.identifier {
@@ -159,7 +213,69 @@ struct SettingsView: View {
         }
         return "mailto:jonas@vetschmedia.com?subject=Feedback%20Practice%20State%20Barometer%20App&body=Dear%20Developers"
     }
+    
+    // Helper to add samlpe data helper function to add flight data with a Date in relation to the creation date of the flight data.
+    private func setDateTime(dayOffset: Int, hour: Int, minute: Int) -> Date {
+        var components = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+        components.hour = hour
+        components.minute = minute
         
+        var date = Calendar.current.date(from: components)!
+        
+        if dayOffset != 0 {
+            date = Calendar.current.date(byAdding: .day, value: dayOffset, to: date)!
+        }
+        
+        return date
+    }
+    
+    private func initializeIsSampleData() -> Bool {
+        var count = 0
+        
+        for flightLog in flightLogs {
+            if flightLog.isSampleData {
+                count += 1
+            }
+        }
+        
+        return count != 0
+    }
+    
+    // Add sample flight log, some default values are defined
+    private func addFlightLog(departureL: String = "Mollis", departureD: Date, arrivalL: String = "Mollis", arrivalD: Date, flightTime: TimeInterval, departureM: DepartureMode = DepartureMode.aerotow) {
+        
+        let flightLog = FlightLog()
+        
+        flightLog.isSampleData = true
+        
+        flightLog.departureLocation = departureL
+        flightLog.departureDate = departureD
+        
+        flightLog.arrivalLocation = arrivalL
+        flightLog.arrivalDate = arrivalD
+        
+        flightLog.aircraftModel = "Arcus M"
+        flightLog.aircraftRegistration = "HB-1234"
+        
+        flightLog.flightTime = flightTime
+        
+        flightLog.departureMode = departureM
+        flightLog.pilotFunctionTime = PilotFunctionTime.pic
+        
+        flightLog.remarks = "CAUTION: THIS IS A DEMO FLIGHT"
+        
+        context.insert(flightLog)
+    }
+    
+    // Delete all sample flight data
+    private func deleteSampleData() {
+        for flightLog in flightLogs {
+            if flightLog.isSampleData {
+                context.delete(flightLog)
+            }
+        }
+    }
+    
 }
 
 #Preview {

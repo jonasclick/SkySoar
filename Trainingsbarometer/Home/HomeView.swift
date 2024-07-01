@@ -93,18 +93,14 @@ struct HomeView: View {
                 }
             }
             .ignoresSafeArea()
-            .onAppear {
-                hours = flightHoursInSixMonths(flightLogs: flightLogs)
-                starts = flightLogsInSixMonths(flightLogs: flightLogs)
-                trainingState = calculateTrainingState(hours: hours, starts: starts)
-            }
-            .sheet(isPresented: $isSettingsPresented) {
+            .onAppear {updateTrainingState()}
+            .sheet(isPresented: $isSettingsPresented, onDismiss: {updateTrainingState()}) {
                 SettingsView()
             }
         }
     }
     
-    func sixMonthsRange() -> String {
+    private func sixMonthsRange() -> String {
         let today = Date()
         // Get date 6 months ago
         guard let sixMonthsAgo = Calendar.current.date(byAdding: .month, value: -6, to: today) else {
@@ -127,7 +123,7 @@ struct HomeView: View {
         return "\(sixMonthsAgoString) – \(todayString)"
     }
     
-    func flightHoursInSixMonths(flightLogs: [FlightLog]) -> Double {
+    private func flightHoursInSixMonths(flightLogs: [FlightLog]) -> Double {
         let calendar = Calendar.current
         let today = Date()
         guard let sixMonthsAgo = calendar.date(byAdding: .month, value: -6, to: today) else {
@@ -146,7 +142,7 @@ struct HomeView: View {
         return round(totalHours * 10) / 10.0 // Round to one decimal place
     }
     
-    func flightLogsInSixMonths(flightLogs: [FlightLog]) -> Double {
+    private func flightLogsInSixMonths(flightLogs: [FlightLog]) -> Double {
         let calendar = Calendar.current
         let today = Date()
         guard let sixMonthsAgo = calendar.date(byAdding: .month, value: -6, to: today) else {
@@ -163,7 +159,7 @@ struct HomeView: View {
         return Double(filteredLogs.count)
     }
     
-    func calculateTrainingState(hours: Double, starts: Double) -> Int {
+    private func calculateTrainingStateInt(hours: Double, starts: Double) -> Int {
         // Boundary equations according to training barometer
         let redYellowBoundary = (20 - hours) / 0.7
         let yellowGreenBoundary = (39 - hours) / 0.65
@@ -175,6 +171,12 @@ struct HomeView: View {
         } else {
             return 1 // Training State Red
         }
+    }
+    
+    private func updateTrainingState() {
+        hours = flightHoursInSixMonths(flightLogs: flightLogs)
+        starts = flightLogsInSixMonths(flightLogs: flightLogs)
+        trainingState = calculateTrainingStateInt(hours: hours, starts: starts)
     }
 }
 

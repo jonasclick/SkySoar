@@ -13,6 +13,8 @@ class FlightLog: Identifiable {
     
     @Attribute(.unique) var id: String
     
+    var isSampleData: Bool = false
+    
     var departureLocation: String = ""
     var departureDate: Date?
 

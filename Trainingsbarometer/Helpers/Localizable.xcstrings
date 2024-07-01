@@ -1,6 +1,26 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "\nAll sample flights have been removed. Double check your flight data before trusting the indicated practice state." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle Beispiel-Flüge wurden entfernt. Überprüfen Sie stets Ihre Flugdaten, bevor Sie dem angezeigten Übungszustand vertrauen."
+          }
+        }
+      }
+    },
+    "\nTen sample flights have been added. Therefore: Do not mistake the training state shown in the app with your own training state!" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zehn Beispiel-Flüge wurden hinzugefügt. Der gezeigte Übungszustand entspricht nun nicht Ihrem eigenen!"
+          }
+        }
+      }
+    },
     "." : {
       "localizations" : {
         "de" : {
@@ -113,6 +133,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Flug hinzufügen"
+          }
+        }
+      }
+    },
+    "Add sample flight logs to explore the app" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beispiel-Flüge hinzufügen und App testen"
           }
         }
       }
@@ -417,6 +447,16 @@
         }
       }
     },
+    "I understand: It's not my training state" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ich habe verstanden"
+          }
+        }
+      }
+    },
     "If the last take-off was more than three months ago, training with a flight instructor is the best way to achieve a good practice level." : {
       "localizations" : {
         "de" : {
@@ -547,6 +587,16 @@
         }
       }
     },
+    "OK" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
+    },
     "Oldest" : {
       "localizations" : {
         "de" : {
@@ -647,12 +697,42 @@
         }
       }
     },
+    "Remove sample flights to start using the app" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beispiel-Flüge löschen und App selbst nutzen"
+          }
+        }
+      }
+    },
     "Request a feature or report a bug" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ein Feature vorschlagen oder Bug melden"
+          }
+        }
+      }
+    },
+    "Sample Flights Added" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beispiel-Flüge hinzugefügt"
+          }
+        }
+      }
+    },
+    "Sample Flights Removed" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beispiel-Flüge gelöscht"
           }
         }
       }

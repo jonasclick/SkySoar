@@ -34,6 +34,7 @@ struct InfoCardRedView: View {
                         If the last take-off was more than three months ago, training with a flight instructor is the best way to achieve a good practice level.
                         """)
                 }
+                .padding(.top, 2)
             }
             .font(.infoBoxContent)
         }

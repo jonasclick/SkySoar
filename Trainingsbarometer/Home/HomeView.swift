@@ -106,12 +106,20 @@ struct HomeView: View {
     
     func sixMonthsRange() -> String {
         let today = Date()
+        // Get date 6 months ago
         guard let sixMonthsAgo = Calendar.current.date(byAdding: .month, value: -6, to: today) else {
             return ""
         }
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM dd, yyyy"
+        dateFormatter.dateFormat = "MMMM dd, yyyy" // Format for English
+        
+        // Change Date format for German Localization
+        if let currentLanguage = Locale.current.language.languageCode?.identifier {
+            if currentLanguage == "de" {
+                dateFormatter.dateFormat = "dd.MM.yyyy"
+            }
+        }
         
         let todayString = dateFormatter.string(from: today)
         let sixMonthsAgoString = dateFormatter.string(from: sixMonthsAgo)

@@ -10,7 +10,7 @@ import SwiftUI
 struct SettingsCardView: View {
     
     var icon: String
-    var text: String
+    var text: LocalizedStringKey
     
     var body: some View {
         

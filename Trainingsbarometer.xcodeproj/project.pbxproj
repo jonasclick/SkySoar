@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DD1DB7BC2C2AC223000FF93F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1DB7BB2C2AC223000FF93F /* SettingsView.swift */; };
 		DD1DB7BF2C2AF8C3000FF93F /* SettingsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1DB7BE2C2AF8C3000FF93F /* SettingsCardView.swift */; };
+		DD78229F2C31B3530024A877 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DD78229E2C31B3530024A877 /* Localizable.xcstrings */; };
 		DD7AECB22C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECB12C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift */; };
 		DD7AECB42C0DCAE1002AB8F1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECB32C0DCAE1002AB8F1 /* HomeView.swift */; };
 		DD7AECB62C0DCAE2002AB8F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD7AECB52C0DCAE2002AB8F1 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		DD1DB7BB2C2AC223000FF93F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DD1DB7BE2C2AF8C3000FF93F /* SettingsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCardView.swift; sourceTree = "<group>"; };
+		DD78229E2C31B3530024A877 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		DD7AECAE2C0DCAE1002AB8F1 /* Trainingsbarometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trainingsbarometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD7AECB12C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingsbarometerApp.swift; sourceTree = "<group>"; };
 		DD7AECB32C0DCAE1002AB8F1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				DDED46D32C2C17AE00441280 /* WebKit.swift */,
 				DDDD2D722C314B190008E135 /* WebsiteView.swift */,
 				DDDD2D6B2C3148DB0008E135 /* VideoPlayerView.swift */,
+				DD78229E2C31B3530024A877 /* Localizable.xcstrings */,
 				DDDD2D7F2C316F630008E135 /* Why TBARO.mov */,
 			);
 			path = Helpers;
@@ -218,6 +221,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = DD7AECA52C0DCAE1002AB8F1;
 			productRefGroup = DD7AECAF2C0DCAE1002AB8F1 /* Products */;
@@ -236,6 +240,7 @@
 			files = (
 				DD7AECB92C0DCAE2002AB8F1 /* Preview Assets.xcassets in Resources */,
 				DDDD2D802C316F630008E135 /* Why TBARO.mov in Resources */,
+				DD78229F2C31B3530024A877 /* Localizable.xcstrings in Resources */,
 				DD7AECB62C0DCAE2002AB8F1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

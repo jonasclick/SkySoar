@@ -14,8 +14,6 @@ struct SettingsView: View {
     @State private var isCopyrightPresented = false
     @State private var isGitHubPresented = false
     
-    private let emailURL: String = "mailto:jonas@vetschmedia.com?subject=Feedback%20Practice%20State%20Barometer%20App&body=Dear%20Developers"
-    
     var body: some View {
         ZStack {
             BackgroundView()
@@ -27,13 +25,13 @@ struct SettingsView: View {
                     .font(.mainHeadline)
                     .padding(.top, 40)
                     .padding(.horizontal)
-                    .padding(.bottom, 50)
+                    .padding(.bottom, localizedPadding())
                 
                 
-                // Disclaimer Card
+                // Disclaimer Card, with different frame heights depending on localization
                 DisclaimerCardView()
                     .padding(.horizontal)
-                    .frame(height: 138)
+                    .frame(height: localizedFrameHeight())
                     .onTapGesture {
                         isDisclaimerPresented.toggle()
                     }
@@ -46,7 +44,7 @@ struct SettingsView: View {
                 // Section "User Guide"
                 Text("User Guide")
                     .font(.flightLogPrimary)
-                    .padding(.top, 50)
+                    .padding(.top, localizedPadding())
                     .padding(.horizontal, 28)
                     .padding(.bottom, -3)
                 
@@ -78,7 +76,7 @@ struct SettingsView: View {
                     }
                 
                 // Request a feature / report bug
-                Link(destination: URL(string: emailURL)!, label: {
+                Link(destination: URL(string: localizedEmailURLString())!, label: {
                     SettingsCardView(icon: "lightbulb.max", text: "Request a feature or report a bug")
                         .foregroundStyle(.black)
                 })
@@ -129,8 +127,39 @@ struct SettingsView: View {
             
         }
         .ignoresSafeArea()
-        .navigationBarBackButtonHidden(true) // Hide default back button from NavigationLink in HomeView
+        .navigationBarBackButtonHidden(true) // Hide default back button coming from NavigationLink in HomeView
     }
+    
+    // Different frame height for DisclaimerCardView for Localizations EN and DE
+    private func localizedFrameHeight() -> CGFloat {
+        if let currentLanguage = Locale.current.language.languageCode?.identifier {
+            if currentLanguage == "de" {
+                return 180
+            }
+        }
+        return 138
+    }
+    
+    // Different padding for DisclaimerCardView for Localizations EN and DE
+    private func localizedPadding() -> CGFloat {
+        if let currentLanguage = Locale.current.language.languageCode?.identifier {
+            if currentLanguage == "de" {
+                return 30
+            }
+        }
+        return 50
+    }
+    
+    // Different Email URL for Localizations EN and DE
+    private func localizedEmailURLString() -> String {
+        if let currentLanguage = Locale.current.language.languageCode?.identifier {
+            if currentLanguage == "de" {
+                return "mailto:jonas@vetschmedia.com?subject=Rückmeldung%20Trainingsbarometer%20App&body=Liebes%20Entwicklerteam"
+            }
+        }
+        return "mailto:jonas@vetschmedia.com?subject=Feedback%20Practice%20State%20Barometer%20App&body=Dear%20Developers"
+    }
+        
 }
 
 #Preview {

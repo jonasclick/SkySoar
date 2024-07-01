@@ -21,7 +21,7 @@ struct CopyrightView: View {
                     .padding(.top, 30)
                     .padding(.bottom, 10)
                 
-                JustifiedText(text: "The concept of the pilot practice barometer and the recommendation texts found in this application are made by\n\nDeutscher Aero Club e.V.\nHermann-Blenk-Str. 28\n38108 Braunschweig\nGermany")
+                JustifiedText(text: localizedTextOne())
                     .opacity(0.7)
                     .padding(.horizontal, -5)
                     .frame(height: 160)
@@ -56,7 +56,7 @@ struct CopyrightView: View {
                 }
                 
                 
-                JustifiedText(text: "This app uses the same logic as is used in the info poster by Deutscher Aero Club e.V. and therefore shows the same practice state, provided that the user inputs corect data.")
+                JustifiedText(text: localizedTextTwo())
                     .opacity(0.7)
                     .padding(.horizontal, -5)
                     .frame(height: 90)
@@ -86,6 +86,23 @@ struct CopyrightView: View {
             
         }
         
+    }
+    private func localizedTextOne() -> String {
+        if let currentLanguage = Locale.current.language.languageCode?.identifier {
+            if currentLanguage == "de" {
+                return "Das Konzept des Trainingsbarometers und die Empfehlungstexte in dieser App wurden erstellt gemäss dem Trainingsbarometerplakat des\n\nDeutscher Aero Club e.V.\nHermann-Blenk-Str. 28\n38108 Braunschweig\nDeutschland"
+            }
+        }
+        return "The concept of the pilot practice barometer and the recommendation texts found in this application are made by\n\nDeutscher Aero Club e.V.\nHermann-Blenk-Str. 28\n38108 Braunschweig\nGermany"
+    }
+    
+    private func localizedTextTwo() -> String {
+        if let currentLanguage = Locale.current.language.languageCode?.identifier {
+            if currentLanguage == "de" {
+                return "Diese App nutzt die Logik, die sich aus dem Plakat des Deutschen Aero Clubs ergibt and zeigt denselben Trainingsstand an, vorausgesetzt die*der Nutzer*in hat ihre*seine Flüge in dieser App korrekt erfasst."
+            }
+        }
+        return "This app uses the same logic as is used in the info poster by Deutscher Aero Club e.V. and therefore shows the same practice state, provided that the user inputs corect data."
     }
 }
 

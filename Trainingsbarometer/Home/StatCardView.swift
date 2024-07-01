@@ -11,7 +11,7 @@ struct StatCardView: View {
     
     var image: String
     var number: Double
-    var label: String
+    var label: LocalizedStringKey
     
     var body: some View {
         
@@ -48,5 +48,5 @@ struct StatCardView: View {
 }
 
 #Preview {
-    StatCardView(image: "clock", number: 23, label: "Stunden")
+    StatCardView(image: "clock", number: 23, label: "Hours")
 }

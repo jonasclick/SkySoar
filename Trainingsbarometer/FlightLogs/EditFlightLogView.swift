@@ -159,7 +159,7 @@ struct EditFlightLogView: View {
                                     .font(.paragraphHeadline)
                                     .padding(.bottom, 0.005)
                                 
-                                Text("Time")
+                                Text("Date and Time")
                                     .font(.paragraphText)
                                     .opacity(0.4)
                                     .frame(maxWidth: .infinity, alignment: .leading)

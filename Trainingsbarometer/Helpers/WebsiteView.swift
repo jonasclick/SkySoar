@@ -11,7 +11,7 @@ struct WebsiteView: View {
     
     @Environment(\.dismiss) private var dismiss
     
-    var title: String
+    var title: LocalizedStringKey
     var url: String
     
     var body: some View {
@@ -34,5 +34,5 @@ struct WebsiteView: View {
 }
 
 #Preview {
-    WebsiteView(title: "Test", url: "https://www.apple.com")
+    WebsiteView(title: "About this app", url: "https://www.apple.com")
 }

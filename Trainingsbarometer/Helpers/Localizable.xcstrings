@@ -1,0 +1,822 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "."
+          }
+        }
+      }
+    },
+    "%@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
+    },
+    "%@\n%@\n%@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@\n%2$@\n%3$@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@\n%2$@\n%3$@"
+          }
+        }
+      }
+    },
+    "%@ hrs" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Uhr"
+          }
+        }
+      }
+    },
+    "%lld" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
+    },
+    "About" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Über diese App"
+          }
+        }
+      }
+    },
+    "About this app" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Über diese App"
+          }
+        }
+      }
+    },
+    "About this App" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Über diese App"
+          }
+        }
+      }
+    },
+    "About this project and how to contribute" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Projektinformationen auf GitHub"
+          }
+        }
+      }
+    },
+    "Add a Flight" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einen Flug hinzufügen"
+          }
+        }
+      }
+    },
+    "Add Flight" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flug hinzufügen"
+          }
+        }
+      }
+    },
+    "Aircraft" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flugzeug"
+          }
+        }
+      }
+    },
+    "and Endorsements" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "und Bestätigungen"
+          }
+        }
+      }
+    },
+    "and the poster can be downloaded" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "und das Poster finden Sie"
+          }
+        }
+      }
+    },
+    "Arcus T" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arcus T"
+          }
+        }
+      }
+    },
+    "Are you sure you want to delete the flight?" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Den Flug wirklich löschen?"
+          }
+        }
+      }
+    },
+    "Arrival" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Landung"
+          }
+        }
+      }
+    },
+    "at unfamiliar airfields" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "auf unbekannten Fluggeländen"
+          }
+        }
+      }
+    },
+    "Caution during takeoff" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vorsicht ist geboten beim Start"
+          }
+        }
+      }
+    },
+    "Copyright" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copyright"
+          }
+        }
+      }
+    },
+    "Date and Time" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datum und Uhrzeit"
+          }
+        }
+      }
+    },
+    "Delete" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Löschen"
+          }
+        }
+      }
+    },
+    "Departure" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start"
+          }
+        }
+      }
+    },
+    "Departure Mode" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Startart"
+          }
+        }
+      }
+    },
+    "Developers Website" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Webseite der Entwickler"
+          }
+        }
+      }
+    },
+    "Discard Changes" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Änderungen verwerfen"
+          }
+        }
+      }
+    },
+    "Disclaimer" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haftungsausschluss"
+          }
+        }
+      }
+    },
+    "Do not rely solely on the information of this application." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verlassen Sie sich nicht ausschließlich auf die Informationen dieser Anwendung."
+          }
+        }
+      }
+    },
+    "Do you want to exit without saving your changes?" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abbrechen ohne zu Speichern?"
+          }
+        }
+      }
+    },
+    "Done" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fertig"
+          }
+        }
+      }
+    },
+    "Edit" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bearbeiten"
+          }
+        }
+      }
+    },
+    "Edit Flight" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flug bearbeiten"
+          }
+        }
+      }
+    },
+    "Experienced pilots make the following mistakes" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geübte Piloten machten folgende Fehler"
+          }
+        }
+      }
+    },
+    "Flight Time" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flugzeit"
+          }
+        }
+      }
+    },
+    "Flights" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flüge"
+          }
+        }
+      }
+    },
+    "For inexperienced pilots" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Für ungeübte Piloten gilt"
+          }
+        }
+      }
+    },
+    "Glider improperly equipped" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Segelflugzeug fehlerhaft ausgerüstet"
+          }
+        }
+      }
+    },
+    "h" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "h"
+          }
+        }
+      }
+    },
+    "HB-1234" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HB-1234"
+          }
+        }
+      }
+    },
+    "here" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hier"
+          }
+        }
+      }
+    },
+    "Hours" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stunden"
+          }
+        }
+      }
+    },
+    "If the last take-off was more than three months ago, training with a flight instructor is the best way to achieve a good practice level." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falls der letzte Start mehr als drei Monate zurück liegt, ist Training mit einem Fluglehrer der beste Weg zu einem guten Übungsstand."
+          }
+        }
+      }
+    },
+    "in a rarely performed launch method" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "in einer selten durchgeführten Startart"
+          }
+        }
+      }
+    },
+    "In the past six months" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In den letzten sechs Monaten"
+          }
+        }
+      }
+    },
+    "in unfamiliar landscape regions (e.g. mountains)" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "in unbekannten Landschaftsregionen (z.B. Alpen)"
+          }
+        }
+      }
+    },
+    "Location" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ort"
+          }
+        }
+      }
+    },
+    "Longest" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Längster"
+          }
+        }
+      }
+    },
+    "min" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "min"
+          }
+        }
+      }
+    },
+    "Minutes" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minuten"
+          }
+        }
+      }
+    },
+    "Misbehavior during aborted takeoffs" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fehlverhalten bei Startunterbrechnungen"
+          }
+        }
+      }
+    },
+    "Model" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modell"
+          }
+        }
+      }
+    },
+    "Mollis" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mollis"
+          }
+        }
+      }
+    },
+    "Newest" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neuster"
+          }
+        }
+      }
+    },
+    "Not performing cockpit check correctly" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mangelhafter Cockpitcheck"
+          }
+        }
+      }
+    },
+    "Oldest" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ältester"
+          }
+        }
+      }
+    },
+    "on rarely flown glider models" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auf selten geflogenen Segelflugzeugen"
+          }
+        }
+      }
+    },
+    "Perform the first take-offs after a long break only with familiar aircraft models and in non-critical weather conditions.\n" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die ersten Starts nach einer längeren Pause nur mit vertrauten Mustern und bei unkritischen Wetterlagen durchführen."
+          }
+        }
+      }
+    },
+    "Pilot Function" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Funktion"
+          }
+        }
+      }
+    },
+    "Poorly flown landing pattern (e.g. during outlanding)" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fehler bei der Landeeinteilung (vor allem bei Außenlandungen)"
+          }
+        }
+      }
+    },
+    "Practice State" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trainingsstand"
+          }
+        }
+      }
+    },
+    "Read the disclaimer" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haftungsausschluss lesen"
+          }
+        }
+      }
+    },
+    "Read the full disclaimer" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lesen Sie den Haftungsausschluss"
+          }
+        }
+      }
+    },
+    "Registration" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registration"
+          }
+        }
+      }
+    },
+    "Remarks" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bemerkungen"
+          }
+        }
+      }
+    },
+    "Request a feature or report a bug" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ein Feature vorschlagen oder Bug melden"
+          }
+        }
+      }
+    },
+    "Save Flight" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flug speichern"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen"
+          }
+        }
+      }
+    },
+    "Shortest" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kürzester"
+          }
+        }
+      }
+    },
+    "Sort Flights by" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flüge sortieren nach"
+          }
+        }
+      }
+    },
+    "Starts" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starts"
+          }
+        }
+      }
+    },
+    "The developers disclaim any liability." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Entwickler lehnen jegliche Haftung ab."
+          }
+        }
+      }
+    },
+    "The pilot practice barometer can be found" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Den Downloadbereich finden Sie"
+          }
+        }
+      }
+    },
+    "Total Time of Flight" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flugzeit Total"
+          }
+        }
+      }
+    },
+    "User Guide" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tutorial"
+          }
+        }
+      }
+    },
+    "v1.0.0" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "v1.0.0"
+          }
+        }
+      }
+    },
+    "Verify all information independently, as data may be incorrect." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Überprüfen Sie alle Informationen unabhängig, da die Daten fehlerhaft sein können."
+          }
+        }
+      }
+    },
+    "We're sorry, the explainer video is currently unavailable." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Es tut uns leid, das Erklärvideo ist derzeit nicht verfügbar."
+          }
+        }
+      }
+    },
+    "Website" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Webseite"
+          }
+        }
+      }
+    },
+    "Why Pilot Practice Barometer?" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wozu dient das Trainingsbarometer?"
+          }
+        }
+      }
+    },
+    "Why should I use Pilot Practice Barometer?" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wozu dient das Trainingsbarometer?"
+          }
+        }
+      }
+    },
+    "Write your remarks here." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bemerkungen hier eintragen"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

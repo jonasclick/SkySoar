@@ -15,7 +15,7 @@ struct HeadlineView: View {
         
         if let currentLanguage = Locale.current.language.languageCode?.identifier {
             
-            // Define String
+            // Display headline Texts EN
             if currentLanguage == "en" {
                 let stateOneString = try! AttributedString(
                     markdown: "Practice is necessary - flying can become a __risk__.")
@@ -23,24 +23,16 @@ struct HeadlineView: View {
                 let stateTwoString1 = try! AttributedString(
                     markdown: "More practice couldn't hurt – __unexpected events__ can become dangerous.")
                 
-//                let stateTwoString2 = try! AttributedString(
-//                    markdown: "hurt – __unexpected events__ can")
-//                
-//                let stateTwoString3 = try! AttributedString(
-//                    markdown: "become dangerous.")
-                
                 let stateThreeString = try! AttributedString(
                     markdown: "Your practice state is good – but still __be cautious.__")
                 
                 
-                // Display headline Texts EN
                 if trainingState == 1 {
                     Text(stateOneString)
                         .font(.system(size: 32))
                         .padding(.bottom, 40)
                 }
                 else if trainingState == 2 {
-        //            Text("\(stateTwoString1)\n\(stateTwoString2)\n\(stateTwoString3)")
                     Text("\(stateTwoString1)")
                         .font(.system(size: 27))
                         .padding(.bottom, 40)
@@ -54,6 +46,7 @@ struct HeadlineView: View {
             }
             
             
+            // Display headline Texts DE
             if currentLanguage == "de" {
                 let stateOneString = try! AttributedString(
                     markdown: "Übung ist notwendig – Fliegen kann zum __Risiko__ werden.")
@@ -70,7 +63,7 @@ struct HeadlineView: View {
                 let stateThreeString = try! AttributedString(
                     markdown: "Der Übungszustand ist gut – __trotzdem Vorsicht.__")
                 
-                // Display headline Texts DE
+                
                 if trainingState == 1 {
                     Text(stateOneString)
                         .font(.system(size: 34))
@@ -78,7 +71,6 @@ struct HeadlineView: View {
                 }
                 else if trainingState == 2 {
                     Text("\(stateTwoString1)\n\(stateTwoString2)\n\(stateTwoString3)")
-//                    Text("\(stateTwoString1)")
                         .font(.system(size: 31))
                         .padding(.bottom, 40)
                 }

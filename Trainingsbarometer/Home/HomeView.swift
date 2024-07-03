@@ -33,7 +33,7 @@ struct HomeView: View {
                         .padding(.bottom, 13)
                     
                     HeadlineView(trainingState: $trainingState)
-
+                    
                     // Info Card
                     if trainingState == 1 {
                         InfoCardRedView()
@@ -91,6 +91,10 @@ struct HomeView: View {
                     }
                     .padding(35)
                 }
+                
+                // Show warning if app is using sample data
+                SampleDataWarningView()
+                
             }
             .ignoresSafeArea()
             .onAppear {updateTrainingState()}
@@ -108,14 +112,8 @@ struct HomeView: View {
         }
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM dd, yyyy" // Format for English
         
-        // Change Date format for German Localization
-        if let currentLanguage = Locale.current.language.languageCode?.identifier {
-            if currentLanguage == "de" {
-                dateFormatter.dateFormat = "dd.MM.yyyy"
-            }
-        }
+        dateFormatter.dateFormat = (Locale.current.language.languageCode?.identifier ?? "") == "de" ? "dd.MM.yyyy" : "MMMM dd, yyyy"
         
         let todayString = dateFormatter.string(from: today)
         let sixMonthsAgoString = dateFormatter.string(from: sixMonthsAgo)

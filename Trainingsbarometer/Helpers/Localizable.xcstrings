@@ -177,6 +177,16 @@
         }
       }
     },
+    "App is using sample flights" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App zeigt Beispiel-Flüge"
+          }
+        }
+      }
+    },
     "Arcus T" : {
       "localizations" : {
         "de" : {

@@ -145,6 +145,10 @@ struct FlightLogsView: View {
                 .buttonStyle(PlainButtonStyle())
                 .padding(35)
             }
+            
+            // Show warning if app is using sample data
+            SampleDataWarningView()
+            
         }
         .ignoresSafeArea()
         .navigationBarBackButtonHidden(true) // Hides the default back button from NavigationLink in HomeView

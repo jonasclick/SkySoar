@@ -11,10 +11,11 @@ import SwiftData
 struct SettingsView: View {
     
     @Environment(\.modelContext) private var context
+    @Environment(\.dismiss) private var dismiss
     
     @Query private var flightLogs: [FlightLog]
     
-    private var isSampleData: Bool {initializeIsSampleData()}
+    private var isSampleData: Bool {SampleDataHelper.initializeIsSampleData(from: flightLogs)}
     
     @State private var showSampleDataAlert = false
     @State private var isDisclaimerPresented = false
@@ -33,13 +34,13 @@ struct SettingsView: View {
                     .font(.mainHeadline)
                     .padding(.top, 40)
                     .padding(.horizontal)
-                    .padding(.bottom, localizedPadding())
+                    .padding(.bottom, (Locale.current.language.languageCode?.identifier ?? "") == "de" ? 30 : 50)
                 
                 
                 // Disclaimer Card, with different frame heights depending on localization
                 DisclaimerCardView()
                     .padding(.horizontal)
-                    .frame(height: localizedFrameHeight())
+                    .frame(height: (Locale.current.language.languageCode?.identifier ?? "") == "de" ? 180 : 138)
                     .onTapGesture {
                         isDisclaimerPresented.toggle()
                     }
@@ -52,7 +53,7 @@ struct SettingsView: View {
                 // Section "User Guide"
                 Text("User Guide")
                     .font(.flightLogPrimary)
-                    .padding(.top, localizedPadding())
+                    .padding(.top, (Locale.current.language.languageCode?.identifier ?? "") == "de" ? 30 : 50)
                     .padding(.horizontal, 28)
                     .padding(.bottom, -3)
                 
@@ -74,7 +75,9 @@ struct SettingsView: View {
                         Alert(
                             title: Text(isSampleData ? "Sample Flights Added" : "Sample Flights Removed"),
                             message: Text(isSampleData ? "\nTen sample flights have been added. Therefore: Do not mistake the training state shown in the app with your own training state!" : "\nAll sample flights have been removed. Double check your flight data before trusting the indicated practice state."),
-                            dismissButton: .destructive(Text(isSampleData ? "I understand: It's not my training state" : "OK"))
+                            dismissButton: .destructive(Text(isSampleData ? "I understand: It's not my training state" : "OK")) {
+                                dismiss() // Close settings sheet after adding / removing sample data
+                            }
                         )
                     }
                 
@@ -155,7 +158,7 @@ struct SettingsView: View {
         if !isSampleData {
             
             // 1
-            addFlightLog(departureD: setDateTime(dayOffset: 0, hour: 11, minute: 4), arrivalD: setDateTime(dayOffset: 0, hour: 14, minute: 44), flightTime: 13260, departureM: DepartureMode.aerotow)
+            addFlightLog(departureD: setDateTime(dayOffset: -1, hour: 11, minute: 4), arrivalD: setDateTime(dayOffset: -1, hour: 14, minute: 44), flightTime: 13260, departureM: DepartureMode.aerotow)
             // 2
             addFlightLog(departureD: setDateTime(dayOffset: -14, hour: 10, minute: 37), arrivalD: setDateTime(dayOffset: -14, hour: 10, minute: 44), flightTime: 420, departureM: DepartureMode.winch)
             // 3
@@ -183,35 +186,11 @@ struct SettingsView: View {
         showSampleDataAlert.toggle()
     }
     
-    
-    // Different frame height for DisclaimerCardView for Localizations EN and DE
-    private func localizedFrameHeight() -> CGFloat {
-        if let currentLanguage = Locale.current.language.languageCode?.identifier {
-            if currentLanguage == "de" {
-                return 180
-            }
-        }
-        return 138
-    }
-    
-    // Different padding for DisclaimerCardView for Localizations EN and DE
-    private func localizedPadding() -> CGFloat {
-        if let currentLanguage = Locale.current.language.languageCode?.identifier {
-            if currentLanguage == "de" {
-                return 30
-            }
-        }
-        return 50
-    }
-    
     // Different Email URL for Localizations EN and DE
     private func localizedEmailURLString() -> String {
-        if let currentLanguage = Locale.current.language.languageCode?.identifier {
-            if currentLanguage == "de" {
-                return "mailto:jonas@vetschmedia.com?subject=Rückmeldung%20Trainingsbarometer%20App&body=Liebes%20Entwicklerteam"
-            }
-        }
-        return "mailto:jonas@vetschmedia.com?subject=Feedback%20Practice%20State%20Barometer%20App&body=Dear%20Developers"
+        return (Locale.current.language.languageCode?.identifier ?? "") == "de" ?
+                "mailto:jonas@vetschmedia.com?subject=Rückmeldung%20Trainingsbarometer%20App&body=Liebes%20Entwicklerteam" :
+                "mailto:jonas@vetschmedia.com?subject=Feedback%20Practice%20State%20Barometer%20App&body=Dear%20Developers"
     }
     
     // Helper to add samlpe data helper function to add flight data with a Date in relation to the creation date of the flight data.
@@ -227,18 +206,6 @@ struct SettingsView: View {
         }
         
         return date
-    }
-    
-    private func initializeIsSampleData() -> Bool {
-        var count = 0
-        
-        for flightLog in flightLogs {
-            if flightLog.isSampleData {
-                count += 1
-            }
-        }
-        
-        return count != 0
     }
     
     // Add sample flight log, some default values are defined
@@ -262,7 +229,7 @@ struct SettingsView: View {
         flightLog.departureMode = departureM
         flightLog.pilotFunctionTime = PilotFunctionTime.pic
         
-        flightLog.remarks = "CAUTION: THIS IS A DEMO FLIGHT"
+        flightLog.remarks = (Locale.current.language.languageCode?.identifier ?? "") == "de" ? "Achtung: Beispiel-Flug" : "Caution: Sample flight"
         
         context.insert(flightLog)
     }

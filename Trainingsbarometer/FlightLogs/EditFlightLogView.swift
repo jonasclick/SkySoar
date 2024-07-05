@@ -55,6 +55,7 @@ struct EditFlightLogView: View {
             return .winch // Default case
         }
     }
+    @State private var isPopoverPresented = false
     
     
     @State private var remarks = ""
@@ -244,13 +245,26 @@ struct EditFlightLogView: View {
                             
                         }
                         
-                        // Departure Mode
+                        // Departure Mode (w/ info pop-up)
                         HStack {
+                            
+                            // Title
                             Text("Departure Mode")
                                 .font(.paragraphText)
                                 .opacity(0.4)
                                 .padding(.trailing, 10)
                             
+                            // Info pop-up to explain departure mode letters
+                            Menu {
+                                Text("W = Winch, A = Aerotow,\nS = Self Launching")
+                            } label: {
+                                Image(systemName: "questionmark.circle")
+                                    .font(.infoBoxContent)
+                                    .opacity(0.4)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            
+                            // Departure Mode Picker
                             Picker("Departure Mode", selection: $departureModeInput) {
                                 ForEach(departureModes, id: \.self) { m in
                                     Text(m)

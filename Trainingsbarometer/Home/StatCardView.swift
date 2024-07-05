@@ -32,7 +32,7 @@ struct StatCardView: View {
         .frame(width: 130, height: 130)
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 16))
-        .shadow(color: Color.black.opacity(0.2), radius: 7, x: 3, y: 4)
+        .shadow(color: Color.black.opacity(0.08), radius: 7, x: 3, y: 4)
     }
     
     // Handle dispaly of decimal of the Double

@@ -20,6 +20,7 @@ struct DisclaimerCardView: View {
             VStack (alignment: .leading) {
                 HStack {
                     Image(systemName: "exclamationmark.shield.fill")
+                        .font(.system(size: 18))
                         .opacity(0.7)
                     Text("Disclaimer")
                         .font(.system(size: 16, weight: .medium))

@@ -25,6 +25,7 @@ struct CopyrightView: View {
                     .opacity(0.7)
                     .padding(.horizontal, -5)
                     .frame(height: 160)
+                    .allowsHitTesting(false) // remove unnecessary scroll ability from JustifiedText
                 
                 Link("Website", destination: URL(string: "https://www.daec.de/")!)
                     .opacity(0.7)
@@ -59,7 +60,8 @@ struct CopyrightView: View {
                 JustifiedText(text: localizedTextTwo())
                     .opacity(0.7)
                     .padding(.horizontal, -5)
-                    .frame(height: 90)
+                    .frame(height: 110)
+                    .allowsHitTesting(false) // remove unnecessary scroll ability from JustifiedText
                 
                 Text("Read the disclaimer")
                     .font(.system(size: 12, weight: .light))

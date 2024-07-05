@@ -47,7 +47,7 @@ struct FlightLogsView: View {
                 HStack {
                     Text("Flights")
                         .font(.mainHeadline)
-                        
+                    
                     Spacer()
                     
                     // Sort Menu
@@ -90,31 +90,36 @@ struct FlightLogsView: View {
                 }
                 .padding(.top, 80)
                 .padding(.horizontal)
+                .padding(.bottom, -1)
                 
                 // –– Flight Logs List ––
-                List(sortedFlightLogs, id: \.id) { flightLog in
-                    FlightLogCardView(flightLog: flightLog)
-                        .padding(0)
-                        .listRowBackground(Color.clear)
-                        .listRowSeparator(.hidden)
-                        .swipeActions {
-                            // Edit flight log
-                            Button {
-                                newFlightLog = flightLog
-                            } label: {
-                                Label("Edit", systemImage: "pencil")
-                            }.tint(.blue)
-                            
-                            // Delete flight log
-                            Button(role: .destructive) {
-                                selectedFlight = flightLog
-                                showConfirmation = true
-                            } label: {
-                                Label("Delete", systemImage: "trash")
+                List {
+                    ForEach(sortedFlightLogs, id: \.id) { flightLog in // ForEach might not be necessary, as the List also accepts input ()
+                        
+                        FlightLogCardView(flightLog: flightLog)
+                            .padding(.vertical, -6)
+                            .listRowBackground(Color.clear)
+                            .listRowSeparator(.hidden)
+                            .swipeActions {
+                                // Edit flight log
+                                Button {
+                                    newFlightLog = flightLog
+                                } label: {
+                                    Label("Edit", systemImage: "pencil")
+                                }.tint(.blue)
+                                
+                                // Delete flight log
+                                Button(role: .destructive) {
+                                    selectedFlight = flightLog
+                                    showConfirmation = true
+                                } label: {
+                                    Label("Delete", systemImage: "trash")
+                                }
                             }
-                        }
+                    }
                 }
-                .padding(.bottom, 80)
+                .safeAreaPadding(EdgeInsets(top: 0, leading: 0, bottom: 80, trailing: 0)) // Make space for overlaying buttons
+                .background(Color.clear)
                 .listStyle(PlainListStyle())
                 .listRowSpacing(0)
             }
@@ -138,7 +143,7 @@ struct FlightLogsView: View {
                         // Create an empty FlighLog
                         self.newFlightLog = FlightLog()
                     }, label: {
-                        Image(systemName: "plus.circle")
+                        Image(systemName: "plus.circle.fill")
                             .font(.system(size: 30))
                     })
                 }

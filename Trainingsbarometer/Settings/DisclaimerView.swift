@@ -25,7 +25,8 @@ struct DisclaimerView: View {
                 JustifiedText(text: localizedDisclaimerText())
                     .opacity(0.7)
                     .padding(.horizontal, -5)
-                    .frame(height: 300)
+                    .frame(height: 330)
+                    .allowsHitTesting(false) // remove unnecessary scroll ability from JustifiedText
                 
                 // Link to website
                 Text("Developers Website")

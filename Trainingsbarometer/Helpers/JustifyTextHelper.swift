@@ -21,6 +21,7 @@ struct JustifiedText: UIViewRepresentable {
         // Disable edit ans select, as this view is only used for displaying text.
         textView.isEditable = false
         textView.isSelectable = false
+//        textView.isScrollEnabled = false // -> doesn't work. It makes the text suddenly expand horizontally.
         
         
         textView.backgroundColor = .clear

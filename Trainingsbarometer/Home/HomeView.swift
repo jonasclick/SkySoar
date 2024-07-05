@@ -37,12 +37,15 @@ struct HomeView: View {
                     // Info Card
                     if trainingState == 1 {
                         InfoCardRedView()
+                            .padding(.bottom, 40)
                     }
                     else if trainingState == 2 {
                         InfoCardYellowView()
+                            .padding(.bottom, 40)
                     }
                     else if trainingState == 3 {
                         InfoCardGreenView()
+                            .padding(.bottom, 40)
                     }
                     
                     
@@ -94,6 +97,7 @@ struct HomeView: View {
                 
                 // Show warning if app is using sample data
                 SampleDataWarningView()
+                    .padding(.top, 8)
                 
             }
             .ignoresSafeArea()

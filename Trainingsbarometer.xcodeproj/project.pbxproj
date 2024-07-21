@@ -74,6 +74,7 @@
 		DDDD2D792C3158230008E135 /* CloseButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButtonView.swift; sourceTree = "<group>"; };
 		DDDD2D7D2C315FE50008E135 /* DisclaimerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerCardView.swift; sourceTree = "<group>"; };
 		DDDD2D7F2C316F630008E135 /* Why TBARO.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "Why TBARO.mov"; path = "../../../Grafik/Assets/Why TBARO.mov"; sourceTree = "<group>"; };
+		DDE194A52C4DA6C1001680CE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DDE5A0522C27DA1100FF460B /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		DDE5A0562C29473800FF460B /* InfoCardGreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardGreenView.swift; sourceTree = "<group>"; };
 		DDE5A05A2C2947AB00FF460B /* InfoCardYellowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardYellowView.swift; sourceTree = "<group>"; };
@@ -146,6 +147,7 @@
 				DDB60F7C2C0E1D2500ACD9D0 /* Model */,
 				DD7AECBF2C0DDE41002AB8F1 /* Helpers */,
 				DD7AECB52C0DCAE2002AB8F1 /* Assets.xcassets */,
+				DDE194A52C4DA6C1001680CE /* README.md */,
 				DD7AECB72C0DCAE2002AB8F1 /* Preview Content */,
 			);
 			path = Trainingsbarometer;

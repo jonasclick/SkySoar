@@ -10,6 +10,9 @@ import SwiftUI
 struct Onboarding5View: View {
     
     @AppStorage("onboarding") var needsOnboarding = true
+    @Environment(\.modelContext) private var context
+    
+    @State private var showSampleDataAlert = false
     
     var body: some View {
         NavigationStack {
@@ -33,10 +36,9 @@ struct Onboarding5View: View {
             Spacer()
             
             
-            // Dismiss Onboarding and use sample flight data
+            // Dismiss onboarding WITH using sample flight data
             Button(action: {
-                needsOnboarding = false
-//                toggleSampleData() // --> not available in this context yet.
+                showSampleDataAlert = true
             }, label: {
                 VStack {
                     Text("Explore the app")
@@ -49,13 +51,24 @@ struct Onboarding5View: View {
                 }
             })
             .buttonStyle(PlainButtonStyle())
+            .alert("Sample Flights Added", isPresented: $showSampleDataAlert, actions: {
+                Button {
+                    SampleDataHelper.addSampleData(context: context)
+                    needsOnboarding = false
+                } label: {
+                    Text("I understand: It's not my training state")
+                        .foregroundStyle(Color.red)
+                        .bold()
+                }}, message: {
+                    Text("\nTen sample flights have been added. Therefore: Do not mistake the training state shown in the app with your own training state!")
+                })
             
             
             Spacer()
             
             
             
-            // Dismiss Onboarding WITHOUT sample flight data
+            // Dismiss onboarding WITHOUT sample flight data
             Button(action: {
                 needsOnboarding = false
             }, label: {

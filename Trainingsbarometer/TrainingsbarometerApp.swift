@@ -18,6 +18,7 @@ struct TrainingsbarometerApp: App {
             
             if needsOnboarding {
                 Onboarding1View()
+                    .modelContainer(for: FlightLog.self)
             }
             else {
                 HomeView()

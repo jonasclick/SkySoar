@@ -6,7 +6,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Alle Beispiel-Flüge wurden entfernt. Überprüfe stets deine Flugdaten, bevor du dem angezeigten Übungszustand vertraust."
+            "value" : "Alle Beispiel-Flüge wurden entfernt. Überprüfe stets deine Flugdaten, bevor du dem angezeigten Übungsstand vertraust."
           }
         }
       }
@@ -16,7 +16,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zehn Beispiel-Flüge wurden hinzugefügt. Der gezeigte Übungszustand entspricht nun nicht Ihrem eigenen!"
+            "value" : "Zehn Beispiel-Flüge wurden hinzugefügt. Der gezeigte Übungsstand entspricht nun nicht deinem eigenen!"
           }
         }
       }
@@ -352,7 +352,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Abbrechen ohne zu Speichern?"
+            "value" : "Abbrechen ohne zu speichern?"
           }
         }
       }
@@ -896,6 +896,9 @@
           }
         }
       }
+    },
+    "Trigger onboarding" : {
+
     },
     "Try sample flights to explore the app without spending time entering your own details yet." : {
       "localizations" : {

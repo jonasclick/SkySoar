@@ -10,10 +10,19 @@ import SwiftData
 
 @main
 struct TrainingsbarometerApp: App {
+    
+    @AppStorage("onboarding") var needsOnboarding = true
+    
     var body: some Scene {
         WindowGroup {
-            HomeView()
-                .modelContainer(for: FlightLog.self)
+            
+            if needsOnboarding {
+                Onboarding1View()
+            }
+            else {
+                HomeView()
+                    .modelContainer(for: FlightLog.self)
+            }
         }
     }
 }

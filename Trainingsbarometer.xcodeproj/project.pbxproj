@@ -19,6 +19,11 @@
 		DD7AECC12C0DDE55002AB8F1 /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECC02C0DDE55002AB8F1 /* FontHelper.swift */; };
 		DD7AECC32C0DE3D1002AB8F1 /* StatCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECC22C0DE3D1002AB8F1 /* StatCardView.swift */; };
 		DD7AECC52C0DF3BB002AB8F1 /* FlightLogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECC42C0DF3BB002AB8F1 /* FlightLogsView.swift */; };
+		DDA6B7F42C38292B0047DFA9 /* Onboarding2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6B7F32C38292B0047DFA9 /* Onboarding2View.swift */; };
+		DDA6B7F62C3829DF0047DFA9 /* Onboarding3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6B7F52C3829DF0047DFA9 /* Onboarding3View.swift */; };
+		DDA6B7FA2C396A670047DFA9 /* Onboarding4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6B7F92C396A670047DFA9 /* Onboarding4View.swift */; };
+		DDA6B7FC2C3A7CF40047DFA9 /* Onboarding5View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6B7FB2C3A7CF40047DFA9 /* Onboarding5View.swift */; };
+		DDA6B7FE2C3A9B3F0047DFA9 /* Onboarding1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6B7FD2C3A9B3F0047DFA9 /* Onboarding1View.swift */; };
 		DDB60F7E2C0E1D3F00ACD9D0 /* FlightLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB60F7D2C0E1D3F00ACD9D0 /* FlightLog.swift */; };
 		DDB60F9A2C10977D00ACD9D0 /* EditFlightLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB60F992C10977D00ACD9D0 /* EditFlightLogView.swift */; };
 		DDBD0F5B2C1A216B0097432E /* FlightLogCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBD0F5A2C1A216B0097432E /* FlightLogCardView.swift */; };
@@ -53,6 +58,11 @@
 		DD7AECC02C0DDE55002AB8F1 /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		DD7AECC22C0DE3D1002AB8F1 /* StatCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCardView.swift; sourceTree = "<group>"; };
 		DD7AECC42C0DF3BB002AB8F1 /* FlightLogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightLogsView.swift; sourceTree = "<group>"; };
+		DDA6B7F32C38292B0047DFA9 /* Onboarding2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding2View.swift; sourceTree = "<group>"; };
+		DDA6B7F52C3829DF0047DFA9 /* Onboarding3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding3View.swift; sourceTree = "<group>"; };
+		DDA6B7F92C396A670047DFA9 /* Onboarding4View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding4View.swift; sourceTree = "<group>"; };
+		DDA6B7FB2C3A7CF40047DFA9 /* Onboarding5View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding5View.swift; sourceTree = "<group>"; };
+		DDA6B7FD2C3A9B3F0047DFA9 /* Onboarding1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1View.swift; sourceTree = "<group>"; };
 		DDB60F7D2C0E1D3F00ACD9D0 /* FlightLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightLog.swift; sourceTree = "<group>"; };
 		DDB60F992C10977D00ACD9D0 /* EditFlightLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFlightLogView.swift; sourceTree = "<group>"; };
 		DDBD0F5A2C1A216B0097432E /* FlightLogCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightLogCardView.swift; sourceTree = "<group>"; };
@@ -97,6 +107,18 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		DD73AE162C4D3E16000F0883 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				DDA6B7FD2C3A9B3F0047DFA9 /* Onboarding1View.swift */,
+				DDA6B7F32C38292B0047DFA9 /* Onboarding2View.swift */,
+				DDA6B7F52C3829DF0047DFA9 /* Onboarding3View.swift */,
+				DDA6B7F92C396A670047DFA9 /* Onboarding4View.swift */,
+				DDA6B7FB2C3A7CF40047DFA9 /* Onboarding5View.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		DD7AECA52C0DCAE1002AB8F1 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +142,7 @@
 				DD7AECC62C0DF3CA002AB8F1 /* Home */,
 				DD7AECC72C0DF3F4002AB8F1 /* FlightLogs */,
 				DD1DB7BD2C2AC229000FF93F /* Settings */,
+				DD73AE162C4D3E16000F0883 /* Onboarding */,
 				DDB60F7C2C0E1D2500ACD9D0 /* Model */,
 				DD7AECBF2C0DDE41002AB8F1 /* Helpers */,
 				DD7AECB52C0DCAE2002AB8F1 /* Assets.xcassets */,
@@ -262,12 +285,15 @@
 				DDDD2D732C314B190008E135 /* WebsiteView.swift in Sources */,
 				DD7AECC52C0DF3BB002AB8F1 /* FlightLogsView.swift in Sources */,
 				DDDD2D6C2C3148DB0008E135 /* VideoPlayerView.swift in Sources */,
+				DDA6B7FA2C396A670047DFA9 /* Onboarding4View.swift in Sources */,
+				DDA6B7F62C3829DF0047DFA9 /* Onboarding3View.swift in Sources */,
 				DDD323DD2C29DDF7008AE016 /* HeadlineView.swift in Sources */,
 				DDE5A05D2C2947F800FF460B /* InfoCardRedView.swift in Sources */,
 				DDED46DE2C2C3ECD00441280 /* JustifyTextHelper.swift in Sources */,
 				DD7AECC32C0DE3D1002AB8F1 /* StatCardView.swift in Sources */,
 				DDB60F7E2C0E1D3F00ACD9D0 /* FlightLog.swift in Sources */,
 				DDB60F9A2C10977D00ACD9D0 /* EditFlightLogView.swift in Sources */,
+				DDA6B7FC2C3A7CF40047DFA9 /* Onboarding5View.swift in Sources */,
 				DD4DC9F02C35368B0051109E /* SampleDataHelper.swift in Sources */,
 				DD1DB7BC2C2AC223000FF93F /* SettingsView.swift in Sources */,
 				DDDD2D752C3151500008E135 /* ExplainerVideoView.swift in Sources */,
@@ -277,6 +303,7 @@
 				DDE5A0572C29473800FF460B /* InfoCardGreenView.swift in Sources */,
 				DDE5A05B2C2947AB00FF460B /* InfoCardYellowView.swift in Sources */,
 				DD7AECB42C0DCAE1002AB8F1 /* HomeView.swift in Sources */,
+				DDA6B7F42C38292B0047DFA9 /* Onboarding2View.swift in Sources */,
 				DDED46DC2C2C36FC00441280 /* DisclaimerView.swift in Sources */,
 				DD7AECB22C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift in Sources */,
 				DDED46D42C2C17AE00441280 /* WebKit.swift in Sources */,
@@ -284,6 +311,7 @@
 				DDDD2D682C3115290008E135 /* CopyrightView.swift in Sources */,
 				DD1DB7BF2C2AF8C3000FF93F /* SettingsCardView.swift in Sources */,
 				DD4DC9F22C358B130051109E /* SampleDataWarningView.swift in Sources */,
+				DDA6B7FE2C3A9B3F0047DFA9 /* Onboarding1View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +461,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Jonas-Vetsch.Trainingsbarometer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -464,7 +492,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Jonas-Vetsch.Trainingsbarometer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

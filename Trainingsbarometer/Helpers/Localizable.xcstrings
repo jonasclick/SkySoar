@@ -6,7 +6,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Alle Beispiel-Flüge wurden entfernt. Überprüfen Sie stets Ihre Flugdaten, bevor Sie dem angezeigten Übungszustand vertrauen."
+            "value" : "Alle Beispiel-Flüge wurden entfernt. Überprüfe stets deine Flugdaten, bevor du dem angezeigten Übungszustand vertraust."
           }
         }
       }
@@ -172,7 +172,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "und das Poster finden Sie"
+            "value" : "und das Poster findest du"
           }
         }
       }
@@ -233,6 +233,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vorsicht ist geboten beim Start"
+          }
+        }
+      }
+    },
+    "Complete Onboarding" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Onboarding beenden"
+          }
+        }
+      }
+    },
+    "Continue" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weiter"
           }
         }
       }
@@ -322,7 +342,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verlassen Sie sich nicht ausschließlich auf die Informationen dieser Anwendung."
+            "value" : "Verlasse dich nicht ausschließlich auf die Informationen dieser Anwendung."
           }
         }
       }
@@ -377,6 +397,16 @@
         }
       }
     },
+    "Explore the app" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die App kennenlernen"
+          }
+        }
+      }
+    },
     "Flight Time" : {
       "localizations" : {
         "de" : {
@@ -403,6 +433,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Für ungeübte Piloten gilt"
+          }
+        }
+      }
+    },
+    "For the best onboarding experience,\nplease turn on your sound." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Für das beste Onboarding-Erlebnis, bitte schalte deinen Ton ein."
           }
         }
       }
@@ -453,6 +493,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Stunden"
+          }
+        }
+      }
+    },
+    "I understand" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ich verstehe"
           }
         }
       }
@@ -627,6 +677,16 @@
         }
       }
     },
+    "Onboarding" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Onboarding"
+          }
+        }
+      }
+    },
     "Perform the first take-offs after a long break only with familiar aircraft models and in non-critical weather conditions.\n" : {
       "localizations" : {
         "de" : {
@@ -682,7 +742,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lesen Sie den Haftungsausschluss"
+            "value" : "Lese den Haftungsausschluss"
           }
         }
       }
@@ -787,6 +847,16 @@
         }
       }
     },
+    "Start using the app" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die App starten"
+          }
+        }
+      }
+    },
     "Starts" : {
       "localizations" : {
         "de" : {
@@ -812,7 +882,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Den Downloadbereich finden Sie"
+            "value" : "Den Downloadbereich findest du"
           }
         }
       }
@@ -823,6 +893,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Flugzeit Total"
+          }
+        }
+      }
+    },
+    "Try sample flights to explore the app without spending time entering your own details yet." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Probiere Beispiel-Flüge aus, um die App zu erkunden, ohne Zeit damit zu verbringen, deine eigenen Daten einzugeben."
           }
         }
       }
@@ -852,7 +932,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Überprüfen Sie alle Informationen unabhängig, da die Daten fehlerhaft sein können."
+            "value" : "Überprüfe alle Informationen unabhängig, da die Daten fehlerhaft sein können."
           }
         }
       }
@@ -887,6 +967,16 @@
         }
       }
     },
+    "What is this app “Pilot Practice Barometer” for?" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wozu ist die App \"Trainingsbarometer\"?"
+          }
+        }
+      }
+    },
     "Why Pilot Practice Barometer?" : {
       "localizations" : {
         "de" : {
@@ -907,12 +997,42 @@
         }
       }
     },
+    "with sample flights" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mit Beispiel-Flügen"
+          }
+        }
+      }
+    },
+    "without sample flights" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ohne Beispiel-Flüge"
+          }
+        }
+      }
+    },
     "Write your remarks here." : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bemerkungen hier eintragen"
+          }
+        }
+      }
+    },
+    "You can always change your mind later in Settings." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du kannst deine Meinung später jederzeit in den Einstellungen ändern."
           }
         }
       }

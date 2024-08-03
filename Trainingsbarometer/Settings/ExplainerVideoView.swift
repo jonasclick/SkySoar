@@ -23,7 +23,7 @@ struct ExplainerVideoView: View {
                     HStack {
                         Spacer()
                         Button(action: {
-                            dismiss()
+                            NotificationCenter.default.post(name: NSNotification.Name("StopVideoPlayer"), object: nil)
                         }, label: {
                             Text("Done")
                                 .bold()
@@ -36,7 +36,7 @@ struct ExplainerVideoView: View {
                 Spacer()
                 
                 
-                if let localVideoURL = Bundle.main.url(forResource: "Why TBARO", withExtension: "mov") {
+                if let localVideoURL = Bundle.main.url(forResource: "OnboardingVideov2", withExtension: "mov") {
                     VideoPlayerView(videoURL: localVideoURL)
                         .aspectRatio(9/16, contentMode: .fill)
                         .padding(.top, -5)

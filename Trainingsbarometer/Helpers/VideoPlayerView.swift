@@ -20,11 +20,23 @@ struct VideoPlayerView: UIViewControllerRepresentable {
         controller.player = player
         player.play()
         
+        
+        // Add observer to receive a stop video notification
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("StopVideoPlayer"), object: nil, queue: .main) { _ in
+            player.pause()
+            controller.dismiss(animated: true, completion: nil)
+        }
+        
         return controller
     }
-
+    
     func updateUIViewController(_ uiViewController: AVPlayerViewController, context: Context) {
         // Stays empty for now
+    }
+    
+    // Clean up observer when not needed
+    static func dismantleUIViewController(_ uiViewController: AVPlayerViewController, coordinator: ()) {
+        NotificationCenter.default.removeObserver(uiViewController, name: NSNotification.Name("StopVideoPlayer"), object: nil)
     }
 }
 

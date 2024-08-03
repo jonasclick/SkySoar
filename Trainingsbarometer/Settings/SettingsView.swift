@@ -58,7 +58,7 @@ struct SettingsView: View {
                     .padding(.bottom, -3)
                 
                 // Why use Pilot Practice Barometer?
-                SettingsCardView(icon: "thermometer.medium", text: "Why should I use Pilot Practice Barometer?")
+                SettingsCardView(icon: "info.circle", text: "Why should I use Pilot Practice Barometer?")
                     .onTapGesture {
                         isExplainerPresented.toggle()
                     }
@@ -71,18 +71,18 @@ struct SettingsView: View {
                     .onTapGesture {
                         showSampleDataAlert.toggle()
                     }
-                    .alert(isSampleData ? "Sample Flights Added" : "Sample Flights Removed", isPresented: $showSampleDataAlert, actions: {
+                    .alert(!isSampleData ? "Sample Flights Added" : "Sample Flights Removed", isPresented: $showSampleDataAlert, actions: {
                         Button {
                             toggleSampleData()
                             dismiss()
                         } label: {
-                            Text(isSampleData ? "I understand: It's not my training state" : "OK")
+                            Text(!isSampleData ? "I understand: It's not my training state" : "OK")
                                 .foregroundStyle(Color.red)
                                 .bold()
                         }}, message: {
-                            Text(isSampleData ? "\nTen sample flights have been added. Therefore: Do not mistake the training state shown in the app with your own training state!" : "\nAll sample flights have been removed. Double check your flight data before trusting the indicated practice state.")
+                            Text(!isSampleData ? "\nTen sample flights have been added. Therefore do not mistake the training state shown in the app with your own training state!" : "\nAll sample flights have been removed. Double check your flight data before trusting the indicated practice state.")
                         })
-                
+                // Info: Logic of the alert needs to be inverted (!isSampleData), as sample data is only added after confirming the alert.
                 
                 
                 // Section "About"

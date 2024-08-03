@@ -27,6 +27,7 @@
 		DDB60F7E2C0E1D3F00ACD9D0 /* FlightLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB60F7D2C0E1D3F00ACD9D0 /* FlightLog.swift */; };
 		DDB60F9A2C10977D00ACD9D0 /* EditFlightLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB60F992C10977D00ACD9D0 /* EditFlightLogView.swift */; };
 		DDBD0F5B2C1A216B0097432E /* FlightLogCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBD0F5A2C1A216B0097432E /* FlightLogCardView.swift */; };
+		DDCDF96F2C50B6CE00E85B4F /* OnboardingVideov2.mov in Resources */ = {isa = PBXBuildFile; fileRef = DDCDF96E2C50B6CE00E85B4F /* OnboardingVideov2.mov */; };
 		DDD323DD2C29DDF7008AE016 /* HeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD323DC2C29DDF7008AE016 /* HeadlineView.swift */; };
 		DDDD2D682C3115290008E135 /* CopyrightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD2D672C3115290008E135 /* CopyrightView.swift */; };
 		DDDD2D6C2C3148DB0008E135 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD2D6B2C3148DB0008E135 /* VideoPlayerView.swift */; };
@@ -34,7 +35,6 @@
 		DDDD2D752C3151500008E135 /* ExplainerVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD2D742C3151500008E135 /* ExplainerVideoView.swift */; };
 		DDDD2D7A2C3158230008E135 /* CloseButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD2D792C3158230008E135 /* CloseButtonView.swift */; };
 		DDDD2D7E2C315FE50008E135 /* DisclaimerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD2D7D2C315FE50008E135 /* DisclaimerCardView.swift */; };
-		DDDD2D802C316F630008E135 /* Why TBARO.mov in Resources */ = {isa = PBXBuildFile; fileRef = DDDD2D7F2C316F630008E135 /* Why TBARO.mov */; };
 		DDE5A0532C27DA1100FF460B /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5A0522C27DA1100FF460B /* BackgroundView.swift */; };
 		DDE5A0572C29473800FF460B /* InfoCardGreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5A0562C29473800FF460B /* InfoCardGreenView.swift */; };
 		DDE5A05B2C2947AB00FF460B /* InfoCardYellowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5A05A2C2947AB00FF460B /* InfoCardYellowView.swift */; };
@@ -66,6 +66,7 @@
 		DDB60F7D2C0E1D3F00ACD9D0 /* FlightLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightLog.swift; sourceTree = "<group>"; };
 		DDB60F992C10977D00ACD9D0 /* EditFlightLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFlightLogView.swift; sourceTree = "<group>"; };
 		DDBD0F5A2C1A216B0097432E /* FlightLogCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightLogCardView.swift; sourceTree = "<group>"; };
+		DDCDF96E2C50B6CE00E85B4F /* OnboardingVideov2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = OnboardingVideov2.mov; sourceTree = "<group>"; };
 		DDD323DC2C29DDF7008AE016 /* HeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineView.swift; sourceTree = "<group>"; };
 		DDDD2D672C3115290008E135 /* CopyrightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyrightView.swift; sourceTree = "<group>"; };
 		DDDD2D6B2C3148DB0008E135 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
@@ -73,7 +74,6 @@
 		DDDD2D742C3151500008E135 /* ExplainerVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainerVideoView.swift; sourceTree = "<group>"; };
 		DDDD2D792C3158230008E135 /* CloseButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButtonView.swift; sourceTree = "<group>"; };
 		DDDD2D7D2C315FE50008E135 /* DisclaimerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerCardView.swift; sourceTree = "<group>"; };
-		DDDD2D7F2C316F630008E135 /* Why TBARO.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = "Why TBARO.mov"; path = "../../../Grafik/Assets/Why TBARO.mov"; sourceTree = "<group>"; };
 		DDE194A52C4DA6C1001680CE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DDE5A0522C27DA1100FF460B /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		DDE5A0562C29473800FF460B /* InfoCardGreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardGreenView.swift; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 				DDDD2D722C314B190008E135 /* WebsiteView.swift */,
 				DDDD2D6B2C3148DB0008E135 /* VideoPlayerView.swift */,
 				DD78229E2C31B3530024A877 /* Localizable.xcstrings */,
-				DDDD2D7F2C316F630008E135 /* Why TBARO.mov */,
+				DDCDF96E2C50B6CE00E85B4F /* OnboardingVideov2.mov */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -270,7 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD7AECB92C0DCAE2002AB8F1 /* Preview Assets.xcassets in Resources */,
-				DDDD2D802C316F630008E135 /* Why TBARO.mov in Resources */,
+				DDCDF96F2C50B6CE00E85B4F /* OnboardingVideov2.mov in Resources */,
 				DD78229F2C31B3530024A877 /* Localizable.xcstrings in Resources */,
 				DD7AECB62C0DCAE2002AB8F1 /* Assets.xcassets in Resources */,
 			);

@@ -9,8 +9,7 @@ import SwiftUI
 
 struct Onboarding2View: View {
     
-    @State var shouldPlayVideo: Bool = true
-//    @Binding var isOnboardingCompleted: Bool
+    @State private var navigateToNextView: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -23,7 +22,7 @@ struct Onboarding2View: View {
                         VStack (alignment: .leading) {
                             Text("Onboarding")
                                 .font(.mainHeadline)
-                            Text("What is this app “Pilot Practice Barometer” for?")
+                            Text("What is the Pilot Practice Barometer app for?")
                                 .font(.infoBoxContent)
                                 .opacity(0.8)
                                 .padding(.top, -10)
@@ -35,13 +34,12 @@ struct Onboarding2View: View {
                     }
                     
                     // Onboarding Video
-                    if let localVideoURL = Bundle.main.url(forResource: "Why TBARO", withExtension: "mov") {
-                        VideoPlayerView(videoURL: localVideoURL)
-                            .aspectRatio(9/16, contentMode: .fill)
-    //                        .padding(.top, -20)
-                            .frame(height: 600)
-                            .clipped()
-
+                    if let localVideoURL = Bundle.main.url(forResource: "OnboardingVideov2", withExtension: "mov") {
+                        
+                            VideoPlayerView(videoURL: localVideoURL)
+                            .aspectRatio(9/16, contentMode: .fit)
+                            .frame(height: 550)
+                        
                     } else {
                         Text("We're sorry, the explainer video is currently unavailable.")
                             .font(.flightLogPrimary)
@@ -53,17 +51,22 @@ struct Onboarding2View: View {
                 
                 
                 // Button "Continue" to next onboarding step
-                NavigationLink (destination: {
-                    Onboarding3View()
-                }, label: {
+                Button(action: {
+                    NotificationCenter.default.post(name: NSNotification.Name("StopVideoPlayer"), object: nil)
+                    navigateToNextView = true // Navigation triggered by state change
+                }) {
                     HStack {
                         Text("Continue")
                         Image(systemName: "arrow.right.circle.fill")
                     }
                     .font(.flightLogSecondary)
-                })
+                }
                 .buttonStyle(PlainButtonStyle())
                 .padding(.top, 700)
+                .navigationDestination(isPresented: $navigateToNextView) {
+                        Onboarding3View() // Navigation triggered by state change
+                }
+                
                 
                 
             }
@@ -72,6 +75,6 @@ struct Onboarding2View: View {
     }
 }
 
-//#Preview {
-//    Onboarding2View()
-//}
+#Preview {
+    Onboarding2View()
+}

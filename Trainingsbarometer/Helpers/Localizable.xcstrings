@@ -11,6 +11,16 @@
         }
       }
     },
+    "\nTen sample flights have been added. Therefore do not mistake the training state shown in the app with your own training state!" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zehn Beispiel-Flüge wurden hinzugefügt. Der gezeigte Übungsstand entspricht nun nicht deinem eigenen!"
+          }
+        }
+      }
+    },
     "\nTen sample flights have been added. Therefore: Do not mistake the training state shown in the app with your own training state!" : {
       "localizations" : {
         "de" : {
@@ -967,7 +977,7 @@
         }
       }
     },
-    "What is this app “Pilot Practice Barometer” for?" : {
+    "What is the Pilot Practice Barometer app for?" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {

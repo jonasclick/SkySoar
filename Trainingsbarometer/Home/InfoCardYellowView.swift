@@ -77,7 +77,7 @@ struct InfoCardYellowView: View {
         .frame(maxWidth: .infinity, maxHeight: 160, alignment: .leading)
         .background(Color.barometerYellow)
         .clipShape(RoundedRectangle(cornerRadius: 16))
-        .shadow(color: Color.black.opacity(0.18), radius: 7, x: 3, y: 4)
+        .shadow(color: Color.black.opacity(0.08), radius: 7, x: 3, y: 4)
         
     }
 }

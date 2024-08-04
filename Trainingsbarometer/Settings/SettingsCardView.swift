@@ -19,7 +19,7 @@ struct SettingsCardView: View {
             Rectangle()
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .foregroundStyle(.white)
-                .shadow(radius: 5, x: 2, y: 4)
+                .shadow(color: Color.black.opacity(0.08), radius: 5, x: 2, y: 4)
             HStack {
                 Image(systemName: icon)
                     .frame(width: 11)

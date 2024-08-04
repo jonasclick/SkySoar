@@ -96,7 +96,7 @@ struct FlightLogCardView: View {
             .frame(width: 370, height: 116)
             .background(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 16))
-            .shadow(color: Color.black.opacity(0.1), radius: 10, x: 5, y: 5)
+            .shadow(color: Color.black.opacity(0.08), radius: 10, x: 5, y: 5)
         }
     }
     

@@ -35,7 +35,11 @@ struct HomeView: View {
                     HeadlineView(trainingState: $trainingState)
                     
                     // Info Card
-                    if trainingState == 1 {
+                    if trainingState == 0 {
+                        InfoCardZeroView()
+                            .padding(.bottom, 40)
+                    }
+                    else if trainingState == 1 {
                         InfoCardRedView()
                             .padding(.bottom, 40)
                     }
@@ -161,17 +165,24 @@ struct HomeView: View {
         return Double(filteredLogs.count)
     }
     
+    // Calculate Training State
     private func calculateTrainingStateInt(hours: Double, starts: Double) -> Int {
+        
         // Boundary equations according to training barometer
         let redYellowBoundary = (20 - hours) / 0.7
         let yellowGreenBoundary = (39 - hours) / 0.65
         
+        // Return Training State as Int
         if starts > yellowGreenBoundary {
             return 3 // Training State Green
-        } else if starts > redYellowBoundary {
+        } else if starts > redYellowBoundary || starts == yellowGreenBoundary {
             return 2 // Training State Yellow
-        } else {
+        } else if starts > 0 && starts <= redYellowBoundary {
             return 1 // Training State Red
+        } else if starts == 0 {
+            return 0 // No flights have been added yet
+        } else {
+            return 0 // Default return
         }
     }
     

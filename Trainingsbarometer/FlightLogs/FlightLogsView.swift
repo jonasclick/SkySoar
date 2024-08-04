@@ -41,10 +41,11 @@ struct FlightLogsView: View {
             // Background
             BackgroundView()
             
-            // Content
             VStack (alignment: .leading) {
                 
+                // Header: View Title and Sort Menu
                 HStack {
+                    // View Title
                     Text("Flights")
                         .font(.mainHeadline)
                     
@@ -92,9 +93,32 @@ struct FlightLogsView: View {
                 .padding(.horizontal)
                 .padding(.bottom, -1)
                 
-                // –– Flight Logs List ––
-                List {
-                    ForEach(sortedFlightLogs, id: \.id) { flightLog in // ForEach might not be necessary, as the List also accepts input ()
+                
+                // Tutorial Text if no flight logs exist
+                if flightLogs.count == 0 {
+                    VStack {
+                        Spacer()
+                        
+                        Button(action: {
+                            // Create an empty FlighLog
+                            self.newFlightLog = FlightLog()
+                        }, label: {
+                            Text("Tap \(Image(systemName: "plus.circle.fill")) to add your first flight.")
+                                .padding(.horizontal)
+                                .font(.flightLogSecondary)
+                                .opacity(0.8)
+                        })
+                        .buttonStyle(PlainButtonStyle())
+                        
+                        Spacer()
+                        Spacer()
+                    }
+                    .frame(maxWidth: .infinity)
+                }
+                
+                // –– Flight Logs List –– //
+                else {
+                    List (sortedFlightLogs, id: \.id) { flightLog in
                         
                         FlightLogCardView(flightLog: flightLog)
                             .padding(.vertical, -6)
@@ -117,11 +141,11 @@ struct FlightLogsView: View {
                                 }
                             }
                     }
+                    .safeAreaPadding(EdgeInsets(top: 0, leading: 0, bottom: 80, trailing: 0)) // Make space for overlaying buttons
+                    .background(Color.clear)
+                    .listStyle(PlainListStyle())
+                    .listRowSpacing(0)
                 }
-                .safeAreaPadding(EdgeInsets(top: 0, leading: 0, bottom: 80, trailing: 0)) // Make space for overlaying buttons
-                .background(Color.clear)
-                .listStyle(PlainListStyle())
-                .listRowSpacing(0)
             }
             
             

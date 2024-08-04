@@ -42,6 +42,7 @@
       }
     },
     "%@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -153,6 +154,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Beispiel-Flüge hinzufügen und App testen"
+          }
+        }
+      }
+    },
+    "Add your flights of the past six months to see your practice state. Navigate to the flights list by tapping on the list symbol (%@) below." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um deinen Übungsstand zu sehen, füge deine Flüge der letzten sechs Monate hinzu. Navigiere zur Flugliste durch Tippen auf das Listensymbol (%@) unten rechts."
           }
         }
       }
@@ -507,6 +518,16 @@
         }
       }
     },
+    "How is my practice state calculated?" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wie wird mein Übungsstand berechnet?"
+          }
+        }
+      }
+    },
     "I understand" : {
       "localizations" : {
         "de" : {
@@ -732,7 +753,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Trainingsstand"
+            "value" : "Übungsstand"
           }
         }
       }
@@ -877,6 +898,16 @@
         }
       }
     },
+    "Tap %@ to add your first flight." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tippe auf %@, um einen Flug hinzuzufügen."
+          }
+        }
+      }
+    },
     "The developers disclaim any liability." : {
       "localizations" : {
         "de" : {
@@ -893,6 +924,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Den Downloadbereich findest du"
+          }
+        }
+      }
+    },
+    "The practice state for pilots is calculated using your flight data from the past six months.\n" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dein Übungsstand wird anhand deiner Flugdaten der letzten sechs Monate berechnet."
           }
         }
       }

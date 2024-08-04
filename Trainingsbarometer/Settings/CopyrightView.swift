@@ -74,7 +74,7 @@ struct CopyrightView: View {
                     }
                     .sheet(isPresented: $isDisclaimerPresented) {
                         DisclaimerView()
-                            .presentationDetents([.fraction(0.6)])
+                            .presentationDetents([.fraction(0.7)])
                     }
                 
                 Spacer()

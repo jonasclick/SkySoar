@@ -17,6 +17,9 @@ struct HeadlineView: View {
             
             // Display headline Texts EN
             if currentLanguage == "en" {
+                let stateZeroString = try! AttributedString(
+                    markdown: "Start by __adding your first flight.__")
+                
                 let stateOneString = try! AttributedString(
                     markdown: "Practice is necessary - flying can become a __risk__.")
                 
@@ -27,13 +30,19 @@ struct HeadlineView: View {
                     markdown: "Your practice state is good – but still __be cautious.__")
                 
                 
-                if trainingState == 1 {
+                
+                if trainingState == 0 {
+                    Text(stateZeroString)
+                        .font(.system(size: 32))
+                        .padding(.bottom, 40)
+                }
+                else if trainingState == 1 {
                     Text(stateOneString)
                         .font(.system(size: 32))
                         .padding(.bottom, 40)
                 }
                 else if trainingState == 2 {
-                    Text("\(stateTwoString1)")
+                    Text(stateTwoString1)
                         .font(.system(size: 27))
                         .padding(.bottom, 40)
                 }
@@ -48,6 +57,9 @@ struct HeadlineView: View {
             
             // Display headline Texts DE
             if currentLanguage == "de" {
+                let stateZeroString = try! AttributedString(
+                    markdown: "Zum Start, __füge deinen ersten Flug hinzu.__")
+                
                 let stateOneString = try! AttributedString(
                     markdown: "Übung ist notwendig – Fliegen kann zum __Risiko__ werden.")
                 
@@ -64,7 +76,12 @@ struct HeadlineView: View {
                     markdown: "Der Übungszustand ist gut – __trotzdem Vorsicht.__")
                 
                 
-                if trainingState == 1 {
+                if trainingState == 0 {
+                    Text(stateZeroString)
+                        .font(.system(size: 34))
+                        .padding(.bottom, 40)
+                }
+                else if trainingState == 1 {
                     Text(stateOneString)
                         .font(.system(size: 34))
                         .padding(.bottom, 40)

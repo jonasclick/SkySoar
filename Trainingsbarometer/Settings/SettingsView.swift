@@ -173,8 +173,8 @@ struct SettingsView: View {
     // Different Email URL for Localizations EN and DE
     private func localizedEmailURLString() -> String {
         return (Locale.current.language.languageCode?.identifier ?? "") == "de" ?
-        "mailto:jonas@vetschmedia.com?subject=Rückmeldung%20Trainingsbarometer%20App&body=Liebes%20Entwicklerteam" :
-        "mailto:jonas@vetschmedia.com?subject=Feedback%20Practice%20State%20Barometer%20App&body=Dear%20Developers"
+        "mailto:jonas@vetschmedia.com?subject=Rückmeldung Trainingsbarometer App&body=Liebes Entwicklerteam" :
+        "mailto:jonas@vetschmedia.com?subject=Feedback%20Pilot%20Practice%20Barometer%20App&body=Dear%20Developers"
     }
     
     // Delete all sample flight data

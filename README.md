@@ -76,6 +76,12 @@ which returns the integer
  - 3 for training state **green**
 
 
+## Design
+
+You can find the design file for this app [here](https://www.figma.com/design/L1Fn3gFKQ1TWshIywxj2zx/Trainingsbarometer-App?node-id=0-1&t=8CDHrlqvVWP6JOLS-1).
+This app has been designed using figma and almost all the screens in the app have their corresponding frame in the figma file.
+
+
 ## How to Contribute
 
 You're welcome to contribute! Whether you want to add new features, fix bugs, or improve documentation, your help is appreciated.

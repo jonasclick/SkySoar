@@ -100,6 +100,9 @@ struct EditFlightLogView: View {
                                 TextField("Arcus T", text: $aircraftModel)
                                     .padding(.trailing, 10)
                                     .submitLabel(.done)
+                                    .onChange(of: aircraftModel) { oldValue, newValue in
+                                        aircraftModel = TextHelper.limitChars(input: aircraftModel, limit: 25)
+                                    }
                             }
                             VStack (alignment: .leading) {
                                 Text("Registration")
@@ -107,6 +110,9 @@ struct EditFlightLogView: View {
                                     .opacity(0.4)
                                 TextField("HB-1234", text: $aircraftRegistration)
                                     .submitLabel(.done)
+                                    .onChange(of: aircraftRegistration) { oldValue, newValue in
+                                        aircraftRegistration = TextHelper.limitChars(input: aircraftRegistration, limit: 10)
+                                    }
                             }
                         }
                         .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -147,6 +153,9 @@ struct EditFlightLogView: View {
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .submitLabel(.done)
                                 .frame(maxWidth: .infinity, alignment: .trailing)
+                                .onChange(of: departureLocation) { oldValue, newValue in
+                                    departureLocation = TextHelper.limitChars(input: departureLocation, limit: 30)
+                                }
                             
                         }
                         .padding(.bottom, 20)
@@ -184,6 +193,9 @@ struct EditFlightLogView: View {
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .submitLabel(.done)
                                 .frame(maxWidth: .infinity, alignment: .trailing)
+                                .onChange(of: arrivalLocation) { oldValue, newValue in
+                                    arrivalLocation = TextHelper.limitChars(input: arrivalLocation, limit: 30)
+                                }
                             
                         }
                         
@@ -291,6 +303,9 @@ struct EditFlightLogView: View {
                             TextField("Write your remarks here.", text: $remarks, axis: .vertical)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .padding(.bottom, 60)
+                                .onChange(of: remarks) { oldValue, newValue in
+                                    remarks = TextHelper.limitChars(input: remarks, limit: 180)
+                                }
                         }
                         
                         

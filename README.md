@@ -4,31 +4,31 @@
 
 Calculating your practice state as a pilot is a tedious process and is therefore often left out, which impacts safety in the private aviation sector.
 
-The Pilot Practice Barometer app lets glider pilots see their practice state without having to look up their past flight logs and without having to do calculations.
+The Pilot Practice Barometer app gives glider pilots immediate access to their practice state at any time, without having to look up past flight logs and without having to do calculations.
 
 <img src="https://github.com/jonasclick/TBARO-Images/blob/main/Mockup%20Yellow.png?raw=true" alt="Image of the Pilot Practice Barometer App" height="600">
 
-Developed according to the guidelines from [Deutscher Aero Club e.V.](https://www.daec.de), this app lets glider pilots easily keep track of their flight practice, ensuring they can get an accurate information about their practice state.
+This app is developed according to the guidelines from [Deutscher Aero Club e.V.](https://www.daec.de) and shows a pracitce state in accordance to their "Trainingsbarometer".
 
-### Why Pilot Practice Barometer?
+### Why should I use the Pilot Practice Barometer app?
 
 Glider pilots must maintain a certain level of practice to ensure safety during flights: The German Aero Club [Deutscher Aero Club e.V.](https://www.daec.de) calculates practice state by a certain combination of the amount of flight hours in the last six months and the amount of starts in the last six months, as shown on [their Practice Barometer poster](https://www.daec.de/media/files/2023/Sportarten/Segelflug/Downloads/DAeC-Trainingbarometer_A3-Plakat_RZ_Druck_a.pdf), which [can be found here](https://www.daec.de/sportarten/segelflug/downloads-termine/#c505).
 
-Pilot Practice Barometer shows the practice level by evaluating the users flight data, allowing pilots to make informed decisions about their readiness to fly. By integrating practice state information into a user-friendly interface, this app aims to become an essential companion for both novice and experienced glider pilots.
+The App Pilot Practice Barometer evaluates the users flight data and displays a pracitce state of either green, yellow or red. This allows glider pilots to make informed decisions about their readiness to fly. By integrating practice state information into a user-friendly interface, this app aims to become an essential companion for both novice and experienced glider pilots.
 
 ## Features
 
 Pilot Practice Barometer:
 
--   **Flight Log Management**: Allows users to log their flights.
--  **Practice State Visualization**: Displays the pilot's practice state using a color-coded system and displays the currently relevant recommendations from [Deutscher Aero Club e.V.](https://www.daec.de)
--   **User Guide**: Provides a guide on what the Practice Barometer is and on using the app.
+-   **Flight Log Management**: Allows pilots to add, edit and delete flights.
+-  **Practice State Visualization**: Displays the pilot's practice state using a color-coded system and displays the corresponding recommendations from [Deutscher Aero Club e.V.](https://www.daec.de)
+-   **Onboarding**: The app comes with an onboarding sequence and the ability to add sample flight data for new users to explore the app.
 
 
 ## The Practice Barometer Formula
-The poster of [Deutscher Aero Club e.V.](https://www.daec.de), as you can [find it here](https://www.daec.de/media/files/2023/Sportarten/Segelflug/Downloads/DAeC-Trainingbarometer_A3-Plakat_RZ_Druck_a.pdf), differentiates **three training states: red, yellow and green.** In the poster you manually check your flight logs to then sum the amount of flight hours of the past six months and the amount of starts in the past six months. With those two sums you can draw an imaginary line in the poster and the center point of this line will fall in either the red, yellow or green are of the barometer, showing you your training state.
+The poster of [Deutscher Aero Club e.V.](https://www.daec.de), as you can [find it here](https://www.daec.de/media/files/2023/Sportarten/Segelflug/Downloads/DAeC-Trainingbarometer_A3-Plakat_RZ_Druck_a.pdf), differentiates **three training states: red, yellow and green.** If using the poster to determine the practice state a pilot manually checks her/his flight logs to then sum the amount of flight hours of the past six months and the amount of starts in the past six months. With those two sums she/he can draw an imaginary line in the poster and the center point of this line will fall in either the red, yellow or green are of the barometer, representing the current training state.
 
-**This can be approached logically as following:**
+**The app automates this process:**
 
 When creating a graph with 
  - **x** being the amount of **hours** in the last six months
@@ -41,9 +41,6 @@ the areas of the training states red and yellow are separated by the function
 and the areas of the training states yellow and green are separated by the function
 
     y = (39 - x) / 0.65
-
-
-This results in the following graph:
 
 
 <img src="https://github.com/jonasclick/TBARO-Images/blob/main/Separator%20Lines%20Graph.png?raw=true" alt="Image of a graph" height="600">
@@ -72,7 +69,7 @@ This logic is then represented in the Pilot Practice Barometer app using the fol
       
     }
     
-which returns the Int
+which returns the integer
  - 0 if no flight logs exist
  - 1 for training state **red**
  - 2 for training state **yellow**

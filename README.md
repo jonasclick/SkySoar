@@ -8,13 +8,13 @@ The Pilot Practice Barometer app gives glider pilots immediate access to their p
 
 <img src="https://github.com/jonasclick/TBARO-Images/blob/main/Mockup%20Yellow.png?raw=true" alt="Image of the Pilot Practice Barometer App" height="600">
 
-This app is developed according to the guidelines from [Deutscher Aero Club e.V.](https://www.daec.de) and shows a pracitce state in accordance to their "Trainingsbarometer".
+This app is developed according to the guidelines from [Deutscher Aero Club e.V.](https://www.daec.de) and shows a practice state in accordance to their "Trainingsbarometer".
 
 ### Why should I use the Pilot Practice Barometer app?
 
 Glider pilots must maintain a certain level of practice to ensure safety during flights: The German Aero Club [Deutscher Aero Club e.V.](https://www.daec.de) calculates practice state by a certain combination of the amount of flight hours in the last six months and the amount of starts in the last six months, as shown on [their Practice Barometer poster](https://www.daec.de/media/files/2023/Sportarten/Segelflug/Downloads/DAeC-Trainingbarometer_A3-Plakat_RZ_Druck_a.pdf), which [can be found here](https://www.daec.de/sportarten/segelflug/downloads-termine/#c505).
 
-The App Pilot Practice Barometer evaluates the users flight data and displays a pracitce state of either green, yellow or red. This allows glider pilots to make informed decisions about their readiness to fly. By integrating practice state information into a user-friendly interface, this app aims to become an essential companion for both novice and experienced glider pilots.
+The App Pilot Practice Barometer evaluates the users flight data and displays a practice state of either green, yellow or red. This allows glider pilots to make informed decisions about their readiness to fly. By integrating practice state information into a user-friendly interface, this app aims to become an essential companion for both novice and experienced glider pilots.
 
 ## Features
 
@@ -26,7 +26,7 @@ Pilot Practice Barometer:
 
 
 ## The Practice Barometer Formula
-The poster of [Deutscher Aero Club e.V.](https://www.daec.de), as you can [find it here](https://www.daec.de/media/files/2023/Sportarten/Segelflug/Downloads/DAeC-Trainingbarometer_A3-Plakat_RZ_Druck_a.pdf), differentiates **three training states: red, yellow and green.** If using the poster to determine the practice state a pilot manually checks her/his flight logs to then sum the amount of flight hours of the past six months and the amount of starts in the past six months. With those two sums she/he can draw an imaginary line in the poster and the center point of this line will fall in either the red, yellow or green are of the barometer, representing the current training state.
+The poster of [Deutscher Aero Club e.V.](https://www.daec.de), as you can [find it here](https://www.daec.de/media/files/2023/Sportarten/Segelflug/Downloads/DAeC-Trainingbarometer_A3-Plakat_RZ_Druck_a.pdf), differentiates **three training states: red, yellow and green.** If using the poster to determine the practice state a pilot manually checks her/his flight logs to then sum the amount of flight hours of the past six months and the amount of starts in the past six months. With those two sums she/he can draw an imaginary line in the poster and the center point of this line will fall in either the red, yellow or green area of the barometer, representing the current training state.
 
 **The app automates this process:**
 
@@ -76,21 +76,22 @@ which returns the integer
  - 3 for training state **green**
 
 
-## Design
-
-You can find the design file for this app [here](https://www.figma.com/design/L1Fn3gFKQ1TWshIywxj2zx/Trainingsbarometer-App?node-id=0-1&t=8CDHrlqvVWP6JOLS-1).
-This app has been designed using figma and almost all the screens in the app have their corresponding frame in the figma file.
-
-
 ## How to Contribute
 
 You're welcome to contribute! Whether you want to add new features, fix bugs, or improve documentation, your help is appreciated.
 
-## Languages (Localizations)
+### Design
+
+You can find the design file for this app [here](https://www.figma.com/design/L1Fn3gFKQ1TWshIywxj2zx/Trainingsbarometer-App?node-id=0-1&t=8CDHrlqvVWP6JOLS-1).
+This app has been designed using figma and almost all the screens in the app have their corresponding frame in the figma file.
+
+### Languages (Localizations)
 
 The app currently supports English and German. Feel free to contribute by adding another language.
 
-## Disclaimer
+## Disclaimer and Copyright
+
+### Disclaimer
 
 This application is designed to assist your flying hobby and enhance safety by presenting user-provided information in a clear and accessible manner.
 
@@ -99,7 +100,7 @@ However, reliance solely on the information provided by this application is not 
 The developers and the application itself disclaim any liability for actions or decisions, flying-related or not, made based on the information provided by the application.
 
 
-## Copyright
+### Copyright
 
 The concept of the pilot practice barometer and the recommendation texts found in this application are made by
 

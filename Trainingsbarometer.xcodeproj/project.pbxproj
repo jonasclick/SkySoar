@@ -84,6 +84,7 @@
 		DDE5A05A2C2947AB00FF460B /* InfoCardYellowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardYellowView.swift; sourceTree = "<group>"; };
 		DDE5A05C2C2947F800FF460B /* InfoCardRedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardRedView.swift; sourceTree = "<group>"; };
 		DDE5A8DD2C61346800470417 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		DDE5A8DF2C6142DB00470417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DDED46D32C2C17AE00441280 /* WebKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKit.swift; sourceTree = "<group>"; };
 		DDED46DB2C2C36FC00441280 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
 		DDED46DD2C2C3ECD00441280 /* JustifyTextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustifyTextHelper.swift; sourceTree = "<group>"; };
@@ -144,6 +145,7 @@
 		DD7AECB02C0DCAE1002AB8F1 /* Trainingsbarometer */ = {
 			isa = PBXGroup;
 			children = (
+				DDE5A8DF2C6142DB00470417 /* Info.plist */,
 				DD7AECB12C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift */,
 				DDE5A8DD2C61346800470417 /* Launch Screen.storyboard */,
 				DD7AECC62C0DF3CA002AB8F1 /* Home */,
@@ -153,6 +155,7 @@
 				DDB60F7C2C0E1D2500ACD9D0 /* Model */,
 				DD7AECBF2C0DDE41002AB8F1 /* Helpers */,
 				DD7AECB52C0DCAE2002AB8F1 /* Assets.xcassets */,
+				DD78229E2C31B3530024A877 /* Localizable.xcstrings */,
 				DD7AECB72C0DCAE2002AB8F1 /* Preview Content */,
 			);
 			path = Trainingsbarometer;
@@ -178,7 +181,6 @@
 				DDED46D32C2C17AE00441280 /* WebKit.swift */,
 				DDDD2D722C314B190008E135 /* WebsiteView.swift */,
 				DDDD2D6B2C3148DB0008E135 /* VideoPlayerView.swift */,
-				DD78229E2C31B3530024A877 /* Localizable.xcstrings */,
 				DDCDF96E2C50B6CE00E85B4F /* OnboardingVideov2.mov */,
 			);
 			path = Helpers;
@@ -462,14 +464,14 @@
 				DEVELOPMENT_TEAM = 5RLQ565RC5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Trainingsbarometer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Pilot Practice";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -478,9 +480,13 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Jonas-Vetsch.Trainingsbarometer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -495,14 +501,14 @@
 				DEVELOPMENT_TEAM = 5RLQ565RC5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Trainingsbarometer/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Pilot Practice";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -511,9 +517,13 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Jonas-Vetsch.Trainingsbarometer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

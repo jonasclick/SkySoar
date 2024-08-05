@@ -48,7 +48,7 @@ and the areas of the training states yellow and green are separated by the funct
     y = (39 - x) / 0.65
 
 
-<img src="https://github.com/jonasclick/TBARO-Images/blob/main/Separator%20Lines%20Graph.png?raw=true" alt="Image of a graph" height="600">
+<img src="https://github.com/jonasclick/TBARO-Images/blob/main/Separator%20Lines%20Graph.png?raw=true" alt="Image of a graph" style="max-width: 100%; height: auto;">
 
 <br><br>
 This logic is then represented in the Pilot Practice app using the following Swift function:

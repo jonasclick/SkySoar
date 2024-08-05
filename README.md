@@ -6,7 +6,7 @@ The Pilot Practice app gives glider pilots immediate access to their practice st
 Calculating the practice state is a tedious process for pilots and is therefore often left out, which impacts safety in the private aviation sector.
 
 
-<img src="https://github.com/jonasclick/TBARO-Images/blob/main/Sideways%20with%20Text%20small.png" alt="Image of the Pilot Practice Barometer App" height="600">
+<img src="https://github.com/jonasclick/TBARO-Images/blob/main/Sideways%20with%20Text%20small.png" alt="Image of the Pilot Practice App" style="max-width: 100%; height: auto;">
 
 This mobile app is developed for iOS in Swift (SwiftUI). The logic follows the guideline from [Deutscher Aero Club e.V.](https://www.daec.de) and shows a practice state and recommendations in accordance to their "Trainingsbarometer" (for more info see "copyright" section below).
 

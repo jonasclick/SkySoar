@@ -41,6 +41,7 @@
 		DDE5A0572C29473800FF460B /* InfoCardGreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5A0562C29473800FF460B /* InfoCardGreenView.swift */; };
 		DDE5A05B2C2947AB00FF460B /* InfoCardYellowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5A05A2C2947AB00FF460B /* InfoCardYellowView.swift */; };
 		DDE5A05D2C2947F800FF460B /* InfoCardRedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5A05C2C2947F800FF460B /* InfoCardRedView.swift */; };
+		DDE5A8DE2C61346800470417 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE5A8DD2C61346800470417 /* Launch Screen.storyboard */; };
 		DDED46D42C2C17AE00441280 /* WebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED46D32C2C17AE00441280 /* WebKit.swift */; };
 		DDED46DC2C2C36FC00441280 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED46DB2C2C36FC00441280 /* DisclaimerView.swift */; };
 		DDED46DE2C2C3ECD00441280 /* JustifyTextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED46DD2C2C3ECD00441280 /* JustifyTextHelper.swift */; };
@@ -82,6 +83,7 @@
 		DDE5A0562C29473800FF460B /* InfoCardGreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardGreenView.swift; sourceTree = "<group>"; };
 		DDE5A05A2C2947AB00FF460B /* InfoCardYellowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardYellowView.swift; sourceTree = "<group>"; };
 		DDE5A05C2C2947F800FF460B /* InfoCardRedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardRedView.swift; sourceTree = "<group>"; };
+		DDE5A8DD2C61346800470417 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		DDED46D32C2C17AE00441280 /* WebKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKit.swift; sourceTree = "<group>"; };
 		DDED46DB2C2C36FC00441280 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
 		DDED46DD2C2C3ECD00441280 /* JustifyTextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustifyTextHelper.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				DD7AECB12C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift */,
+				DDE5A8DD2C61346800470417 /* Launch Screen.storyboard */,
 				DD7AECC62C0DF3CA002AB8F1 /* Home */,
 				DD7AECC72C0DF3F4002AB8F1 /* FlightLogs */,
 				DD1DB7BD2C2AC229000FF93F /* Settings */,
@@ -276,6 +279,7 @@
 				DD7AECB92C0DCAE2002AB8F1 /* Preview Assets.xcassets in Resources */,
 				DDCDF96F2C50B6CE00E85B4F /* OnboardingVideov2.mov in Resources */,
 				DD78229F2C31B3530024A877 /* Localizable.xcstrings in Resources */,
+				DDE5A8DE2C61346800470417 /* Launch Screen.storyboard in Resources */,
 				DD7AECB62C0DCAE2002AB8F1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,6 +466,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
@@ -494,6 +499,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;

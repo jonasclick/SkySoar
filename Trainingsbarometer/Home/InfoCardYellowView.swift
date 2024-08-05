@@ -29,7 +29,7 @@ struct InfoCardYellowView: View {
                     HStack {
                         Image(systemName: "chevron.forward")
                             .scaleEffect(0.7)
-                        Text("in unfamiliar landscape regions (e.g. mountains)")
+                        Text("in unfamiliar geographical regions (e.g. mountains)")
                     }
                     .padding(.bottom, 2)
                     HStack {
@@ -41,13 +41,13 @@ struct InfoCardYellowView: View {
                     HStack {
                         Image(systemName: "chevron.forward")
                             .scaleEffect(0.7)
-                        Text("on rarely flown glider models")
+                        Text("with rarely flown glider models")
                     }
                     .padding(.bottom, 2)
                     HStack {
                         Image(systemName: "chevron.forward")
                             .scaleEffect(0.7)
-                        Text("in a rarely performed launch method")
+                        Text("with a rarely performed launch method")
                     }
                 }
                 .padding(.leading, 5)

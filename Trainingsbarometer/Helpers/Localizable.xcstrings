@@ -558,16 +558,6 @@
         }
       }
     },
-    "in a rarely performed launch method" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "in einer selten durchgeführten Startart"
-          }
-        }
-      }
-    },
     "In the past six months" : {
       "localizations" : {
         "de" : {
@@ -578,7 +568,7 @@
         }
       }
     },
-    "in unfamiliar landscape regions (e.g. mountains)" : {
+    "in unfamiliar geographical regions (e.g. mountains)" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -698,16 +688,6 @@
         }
       }
     },
-    "on rarely flown glider models" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Auf selten geflogenen Segelflugzeugen"
-          }
-        }
-      }
-    },
     "Onboarding" : {
       "localizations" : {
         "de" : {
@@ -738,7 +718,7 @@
         }
       }
     },
-    "Poorly flown landing pattern (e.g. during outlanding)" : {
+    "Poorly flown landing pattern (e.g., during outlanding)" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1044,6 +1024,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wozu dient das Trainingsbarometer?"
+          }
+        }
+      }
+    },
+    "with a rarely performed launch method" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "in einer selten durchgeführten Startart"
+          }
+        }
+      }
+    },
+    "with rarely flown glider models" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auf selten geflogenen Segelflugzeugen"
           }
         }
       }

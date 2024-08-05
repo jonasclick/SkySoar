@@ -47,11 +47,10 @@ struct InfoCardGreenView: View {
                     HStack {
                         Image(systemName: "chevron.forward")
                             .scaleEffect(0.7)
-                        Text("Poorly flown landing pattern (e.g. during outlanding)")
+                        Text("Poorly flown landing pattern (e.g., during outlanding)")
                     }
                 }
                 .padding(.leading, 5)
-//                .padding(.bottom, 16)
                 .font(.infoBoxContent)
                 
             }

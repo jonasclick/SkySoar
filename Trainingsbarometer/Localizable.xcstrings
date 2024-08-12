@@ -248,6 +248,16 @@
         }
       }
     },
+    "Calculate Automatically" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatisch berechnen"
+          }
+        }
+      }
+    },
     "Caution during takeoff" : {
       "localizations" : {
         "de" : {
@@ -828,6 +838,16 @@
         }
       }
     },
+    "Set Manually" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manuell eingeben"
+          }
+        }
+      }
+    },
     "Settings" : {
       "localizations" : {
         "de" : {
@@ -998,27 +1018,27 @@
         }
       }
     },
-    "What is the Pilot Practice Barometer app for?" : {
+    "What is the app Pilot Practice for?" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wozu ist die App \"Trainingsbarometer\"?"
+            "value" : "Wozu dient die App Trainingsbarometer?"
           }
         }
       }
     },
-    "Why Pilot Practice Barometer?" : {
+    "Why Pilot Practice?" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wozu dient das Trainingsbarometer?"
+            "value" : "Warum Trainingsbarometer?"
           }
         }
       }
     },
-    "Why should I use Pilot Practice Barometer?" : {
+    "Why should I use Pilot Practice?" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {

@@ -45,6 +45,7 @@
 		DDED46D42C2C17AE00441280 /* WebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED46D32C2C17AE00441280 /* WebKit.swift */; };
 		DDED46DC2C2C36FC00441280 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED46DB2C2C36FC00441280 /* DisclaimerView.swift */; };
 		DDED46DE2C2C3ECD00441280 /* JustifyTextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED46DD2C2C3ECD00441280 /* JustifyTextHelper.swift */; };
+		DDFB9BD62C666F52006F1AC0 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFB9BD52C666F52006F1AC0 /* DateHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		DDED46D32C2C17AE00441280 /* WebKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKit.swift; sourceTree = "<group>"; };
 		DDED46DB2C2C36FC00441280 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
 		DDED46DD2C2C3ECD00441280 /* JustifyTextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustifyTextHelper.swift; sourceTree = "<group>"; };
+		DDFB9BD52C666F52006F1AC0 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				DD4DC9F12C358B130051109E /* SampleDataWarningView.swift */,
 				DD62C88A2C5FB55E00A87374 /* TextHelper.swift */,
 				DD7AECC02C0DDE55002AB8F1 /* FontHelper.swift */,
+				DDFB9BD52C666F52006F1AC0 /* DateHelper.swift */,
 				DDED46DD2C2C3ECD00441280 /* JustifyTextHelper.swift */,
 				DDED46D32C2C17AE00441280 /* WebKit.swift */,
 				DDDD2D722C314B190008E135 /* WebsiteView.swift */,
@@ -302,6 +305,7 @@
 				DDA6B7F62C3829DF0047DFA9 /* Onboarding3View.swift in Sources */,
 				DDD323DD2C29DDF7008AE016 /* HeadlineView.swift in Sources */,
 				DDE5A05D2C2947F800FF460B /* InfoCardRedView.swift in Sources */,
+				DDFB9BD62C666F52006F1AC0 /* DateHelper.swift in Sources */,
 				DDED46DE2C2C3ECD00441280 /* JustifyTextHelper.swift in Sources */,
 				DD7AECC32C0DE3D1002AB8F1 /* StatCardView.swift in Sources */,
 				DDB60F7E2C0E1D3F00ACD9D0 /* FlightLog.swift in Sources */,
@@ -459,7 +463,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Trainingsbarometer/Preview Content\"";
 				DEVELOPMENT_TEAM = 5RLQ565RC5;
 				ENABLE_PREVIEWS = YES;
@@ -496,7 +500,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Trainingsbarometer/Preview Content\"";
 				DEVELOPMENT_TEAM = 5RLQ565RC5;
 				ENABLE_PREVIEWS = YES;

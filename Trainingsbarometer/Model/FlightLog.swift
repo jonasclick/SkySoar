@@ -14,6 +14,7 @@ class FlightLog: Identifiable {
     @Attribute(.unique) var id: String
     
     var isSampleData: Bool = false
+    var isAutoFlightTime: Bool = true
     
     var departureLocation: String = ""
     var departureDate: Date?
@@ -24,7 +25,7 @@ class FlightLog: Identifiable {
     var aircraftModel: String = ""
     var aircraftRegistration: String = ""
 
-    var flightTime: TimeInterval = 0 // Flight duration in seconds
+    var flightTime: TimeInterval = 0 // Flight duration stored in seconds but edited and displayed in hours and minutes, no seconds.
 
     var departureMode = DepartureMode.winch
     

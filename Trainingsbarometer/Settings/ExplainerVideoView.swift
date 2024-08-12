@@ -17,13 +17,13 @@ struct ExplainerVideoView: View {
                 // Title Card
                 ZStack {
                     // Title Text
-                    Text("Why Pilot Practice Barometer?")
+                    Text("Why Pilot Practice?")
                         .font(.flightLogPrimary)
                     // Close Button
                     HStack {
                         Spacer()
                         Button(action: {
-                            NotificationCenter.default.post(name: NSNotification.Name("StopVideoPlayer"), object: nil)
+                           dismiss()
                         }, label: {
                             Text("Done")
                                 .bold()

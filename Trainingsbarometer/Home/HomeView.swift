@@ -20,6 +20,10 @@ struct HomeView: View {
     
     @State private var isSettingsPresented = false
     
+    init() {
+        updateTrainingState()
+    }
+    
     var body: some View {
         NavigationStack {
             ZStack {

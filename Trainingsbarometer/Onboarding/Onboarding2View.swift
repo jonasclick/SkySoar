@@ -22,7 +22,7 @@ struct Onboarding2View: View {
                         VStack (alignment: .leading) {
                             Text("Onboarding")
                                 .font(.mainHeadline)
-                            Text("What is the Pilot Practice Barometer app for?")
+                            Text("What is the app Pilot Practice for?")
                                 .font(.infoBoxContent)
                                 .opacity(0.8)
                                 .padding(.top, -10)

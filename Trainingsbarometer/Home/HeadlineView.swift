@@ -73,7 +73,7 @@ struct HeadlineView: View {
                     markdown: "gefährlich werden.")
                 
                 let stateThreeString = try! AttributedString(
-                    markdown: "Der Übungszustand ist gut – __trotzdem Vorsicht.__")
+                    markdown: "Dein Übungszustand ist gut – __trotzdem Vorsicht.__")
                 
                 
                 if trainingState == 0 {

@@ -39,5 +39,5 @@ struct SettingsCardView: View {
 }
 
 #Preview {
-    SettingsCardView(icon: "thermometer.medium", text: "Why should I use Pilot Practice Barometer?")
+    SettingsCardView(icon: "thermometer.medium", text: "Why should I use Pilot Practice?")
 }

@@ -58,12 +58,15 @@ struct SettingsView: View {
                     .padding(.bottom, -3)
                 
                 // Why use Pilot Practice Barometer?
-                SettingsCardView(icon: "info.circle", text: "Why should I use Pilot Practice Barometer?")
+                SettingsCardView(icon: "info.circle", text: "Why should I use Pilot Practice?")
                     .onTapGesture {
                         isExplainerPresented.toggle()
                     }
                     .sheet(isPresented: $isExplainerPresented) {
                         ExplainerVideoView()
+                            .onDisappear {
+                                NotificationCenter.default.post(name: NSNotification.Name("StopVideoPlayer"), object: nil)
+                            }
                     }
                 
                 // Toggle Sample Data

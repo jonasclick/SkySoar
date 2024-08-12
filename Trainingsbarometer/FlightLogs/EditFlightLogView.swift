@@ -16,17 +16,18 @@ struct EditFlightLogView: View {
     var flightLog: FlightLog
     var isEditMode: Bool
     
-    @State private var aircraftModel = ""
-    @State private var aircraftRegistration = ""
-    @State private var departureDate = Date()
-    @State private var departureLocation = ""
-    @State private var arrivalDate = Date()
-    @State private var arrivalLocation = ""
+    @State private var aircraftModel: String = ""
+    @State private var aircraftRegistration: String = ""
+    @State private var departureDate: Date = Date()
+    @State private var departureLocation: String = ""
+    @State private var arrivalDate: Date = Date()
+    @State private var arrivalLocation: String = ""
     
+    @State private var isAutoFlightTime: Bool
     @State private var hours: Int = 0
     @State private var minutes: Int = 0
     
-    @State private var pilotFunctionInput = "PIC" // Default value for the picker
+    @State private var pilotFunctionInput: String = "PIC" // Default value for the picker
     let pilotFunctions = ["PIC", "Dual", "Instructor"] // Array of options for the picker
     private var pilotFunctionTime: PilotFunctionTime { // Read value from the picker and get database-conform value
         switch pilotFunctionInput {
@@ -41,7 +42,7 @@ struct EditFlightLogView: View {
         }
     }
     
-    @State private var departureModeInput = "W" // Default value for the picker
+    @State private var departureModeInput: String = "W" // Default value for the picker
     let departureModes = ["W", "A", "S"] // Array of options for the picker
     private var departureMode: DepartureMode { // Read value from the picker and get database-conform value
         switch departureModeInput {
@@ -55,12 +56,17 @@ struct EditFlightLogView: View {
             return .winch // Default case
         }
     }
-    @State private var isPopoverPresented = false
+    @State private var isPopoverPresented: Bool = false
     
+    @State private var remarks: String = ""
     
-    @State private var remarks = ""
+    @State private var showConfirmation: Bool = false
     
-    @State private var showConfirmation = false
+    init(flightLog: FlightLog, isEditMode: Bool) {
+        self.flightLog = flightLog
+        self.isEditMode = isEditMode
+        self.isAutoFlightTime = flightLog.isAutoFlightTime
+    }
     
     var body: some View {
         ZStack {
@@ -140,6 +146,13 @@ struct EditFlightLogView: View {
                                     DatePicker("Date and Time", selection: $departureDate)
                                         .environment(\.locale, Locale(identifier: "de_CH"))
                                         .labelsHidden()
+                                        .onChange(of: departureDate) { oldValue, newValue in
+                                            if isAutoFlightTime {
+                                                let timeDifference = DateHelper.calculateTimeDifference(from: DateHelper.removeSeconds(from: departureDate) , to: DateHelper.removeSeconds(from: arrivalDate))
+                                                hours = timeDifference.hours
+                                                minutes = timeDifference.minutes
+                                            }
+                                        }
                                 }
                             }
                         }
@@ -180,6 +193,13 @@ struct EditFlightLogView: View {
                                     DatePicker("Date and Time", selection: $arrivalDate)
                                         .environment(\.locale, Locale(identifier: "de_CH"))
                                         .labelsHidden()
+                                        .onChange(of: arrivalDate) { oldValue, newValue in
+                                            if isAutoFlightTime {
+                                                let timeDifference = DateHelper.calculateTimeDifference(from: DateHelper.removeSeconds(from: departureDate) , to: DateHelper.removeSeconds(from: arrivalDate))
+                                                hours = timeDifference.hours
+                                                minutes = timeDifference.minutes
+                                            }
+                                        }
                                 }
                             }
                         }
@@ -218,6 +238,44 @@ struct EditFlightLogView: View {
                                     .frame(maxWidth: .infinity, alignment: .leading)
                             }
                             
+                            // Menu to toggle flight time calculation (automatic / manual)
+                            /*** Some pilots measure departure and arrival to the minute while flight time to the second,
+                             therefore they have to be able to add / subtract one minute from the automatic flight time calculation)
+                             ***/
+                            
+                            Menu {
+                                Text("Flight Time")
+                                
+                                Button(action: {
+                                    isAutoFlightTime = true
+                                    
+                                    // Update flight time
+                                    let timeDifference = DateHelper.calculateTimeDifference(from: DateHelper.removeSeconds(from: departureDate) , to: DateHelper.removeSeconds(from: arrivalDate))
+                                    
+                                    hours = timeDifference.hours
+                                    minutes = timeDifference.minutes
+                                    
+                                }, label: {
+                                    
+                                    Text("Calculate Automatically")
+                                    Image(systemName: "a.square")
+                                })
+                                
+                                Button(action: {
+                                    isAutoFlightTime = false
+                                }, label: {
+                                    Text("Set Manually")
+                                    Image(systemName: "m.square")
+                                })
+                                
+                                
+                            } label: {
+                                Image(systemName: isAutoFlightTime ? "a.square" : "m.square")
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            
+                            
+                            // Picker Wheels to display (and manually choose) flight time
                             // Hours Input
                             Picker("Hours", selection: $hours) {
                                 ForEach(0..<24) { hour in
@@ -226,8 +284,13 @@ struct EditFlightLogView: View {
                             }
                             .pickerStyle(WheelPickerStyle())
                             .frame(width: 50, height: 100)
+                            .disabled(isAutoFlightTime)
+                            .opacity(isAutoFlightTime ? 0.4 : 1)
+                            
                             Text("h")
                                 .padding(.trailing, 20)
+                                .disabled(isAutoFlightTime)
+                                .opacity(isAutoFlightTime ? 0.4 : 1)
                             
                             // Minutes Input
                             Picker("Minutes", selection: $minutes) {
@@ -237,11 +300,19 @@ struct EditFlightLogView: View {
                             }
                             .pickerStyle(WheelPickerStyle())
                             .frame(width: 50, height: 100)
+                            .disabled(isAutoFlightTime)
+                            .opacity(isAutoFlightTime ? 0.4 : 1)
+                            
                             Text("min")
+                                .disabled(isAutoFlightTime)
+                                .opacity(isAutoFlightTime ? 0.4 : 1)
                             
                             Spacer()
+                            
+                            
                         }
                         
+                        // Pilot Function Picker
                         HStack {
                             Text("Pilot Function")
                                 .font(.paragraphText)
@@ -300,9 +371,10 @@ struct EditFlightLogView: View {
                                 .opacity(0.4)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             
-                            TextField("Write your remarks here.", text: $remarks, axis: .vertical)
+                            TextField("Write your remarks here.", text: $remarks)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .padding(.bottom, 60)
+                                .submitLabel(.done)
                                 .onChange(of: remarks) { oldValue, newValue in
                                     remarks = TextHelper.limitChars(input: remarks, limit: 180)
                                 }
@@ -318,20 +390,7 @@ struct EditFlightLogView: View {
                 
                 // When editing a flight, pre-fill all the existing data
                 .onAppear {
-                    aircraftModel = flightLog.aircraftModel
-                    aircraftRegistration = flightLog.aircraftRegistration
-                    departureDate = flightLog.departureDate ?? Date()
-                    departureLocation = flightLog.departureLocation
-                    arrivalDate = flightLog.arrivalDate ?? Date()
-                    arrivalLocation = flightLog.arrivalLocation
-                    
-                    let totalMinutes = Int(flightLog.flightTime) / 60
-                    hours = totalMinutes / 60
-                    minutes = totalMinutes % 60
-                    
-                    pilotFunctionInput = flightLog.pilotFunctionString
-                    departureModeInput = flightLog.departureModeString
-                    remarks = flightLog.remarks
+                    populateFlightData()
                 }
             }
             
@@ -340,26 +399,9 @@ struct EditFlightLogView: View {
             VStack {
                 Spacer()
                 Button(action: {
-                    flightLog.departureLocation = departureLocation
-                    flightLog.departureDate = departureDate
-                    
-                    flightLog.arrivalLocation = arrivalLocation
-                    flightLog.arrivalDate = arrivalDate
-                    
-                    flightLog.aircraftModel = aircraftModel
-                    flightLog.aircraftRegistration = aircraftRegistration
-                    
-                    let totalSeconds = (hours * 3600) + (minutes * 60)
-                    flightLog.flightTime = TimeInterval(totalSeconds)
-                    
-                    flightLog.departureMode = departureMode
-                    flightLog.pilotFunctionTime = pilotFunctionTime
-                    
-                    flightLog.remarks = remarks
-                    
+                    updateFlightLog()
                     if !isEditMode {context.insert(flightLog)}
                     dismiss()
-                    
                 }, label: {
                     Text(isEditMode ? "Save Flight" : "Add Flight")
                         .font(.headline)
@@ -378,12 +420,48 @@ struct EditFlightLogView: View {
             }
             .foregroundStyle(.red)
         }
+        // Prevent data loss if user swipes down the sheet (accidentally?)
         .onDisappear {
-            showConfirmation = true // TODO: Doesn't really work...
+            updateFlightLog()
         }
     }
+    
+    private func populateFlightData() {
+        aircraftModel = flightLog.aircraftModel
+        aircraftRegistration = flightLog.aircraftRegistration
+        departureDate = flightLog.departureDate ?? Date()
+        departureLocation = flightLog.departureLocation
+        arrivalDate = flightLog.arrivalDate ?? Date()
+        arrivalLocation = flightLog.arrivalLocation
+        
+        let totalMinutes = Int(flightLog.flightTime) / 60
+        hours = totalMinutes / 60
+        minutes = totalMinutes % 60
+        
+        pilotFunctionInput = flightLog.pilotFunctionString
+        departureModeInput = flightLog.departureModeString
+        remarks = flightLog.remarks
+    }
+    
+    private func updateFlightLog() {
+        flightLog.departureLocation = departureLocation
+        flightLog.departureDate = departureDate
+        
+        flightLog.arrivalLocation = arrivalLocation
+        flightLog.arrivalDate = arrivalDate
+        
+        flightLog.aircraftModel = aircraftModel
+        flightLog.aircraftRegistration = aircraftRegistration
+        
+        let totalSeconds = (hours * 3600) + (minutes * 60)
+        flightLog.flightTime = TimeInterval(totalSeconds)
+        
+        flightLog.departureMode = departureMode
+        flightLog.pilotFunctionTime = pilotFunctionTime
+        
+        flightLog.remarks = remarks
+        
+        // Save flight time calculation mode to the flightLog for correct setup when editing a flightLog
+        flightLog.isAutoFlightTime = isAutoFlightTime
+    }
 }
-
-//#Preview {
-//    EditFlightLogView()
-//}

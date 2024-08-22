@@ -9,95 +9,51 @@ import SwiftUI
 
 struct HeadlineView: View {
     
-    @Binding var trainingState: Int
+    @Binding var filterLogic: FilterLogic
     
     var body: some View {
         
         if let currentLanguage = Locale.current.language.languageCode?.identifier {
             
-            // Display headline Texts EN
+            // Display headline Texts for Localization EN
             if currentLanguage == "en" {
-                let stateZeroString = try! AttributedString(
-                    markdown: "Start by __adding your first flight.__")
                 
-                let stateOneString = try! AttributedString(
-                    markdown: "Practice is necessary - flying can become a __risk__.")
-                
-                let stateTwoString1 = try! AttributedString(
-                    markdown: "More practice couldn't hurt – __unexpected events__ can become dangerous.")
-                
-                let stateThreeString = try! AttributedString(
-                    markdown: "Your practice state is good – but still __be cautious.__")
-                
-                
-                
-                if trainingState == 0 {
-                    Text(stateZeroString)
-                        .font(.system(size: 32))
-                        .padding(.bottom, 40)
-                }
-                else if trainingState == 1 {
-                    Text(stateOneString)
-                        .font(.system(size: 32))
-                        .padding(.bottom, 40)
-                }
-                else if trainingState == 2 {
-                    Text(stateTwoString1)
+                switch filterLogic {
+                case .total:
+                    Text(try! AttributedString(markdown: "__All__ your flights"))
                         .font(.system(size: 27))
-                        .padding(.bottom, 40)
-                }
-                else if trainingState == 3 {
-                    Text(stateThreeString)
-                        .font(.system(size: 34))
-                        .padding(.bottom, 40)
+                case .lastSixMonths:
+                    Text(try! AttributedString(markdown: "Your flights in the __last six months__"))
+                        .font(.system(size: 27))
+                case .thisYear:
+                    Text(try! AttributedString(markdown: "Your flights __this year__"))
+                        .font(.system(size: 27))
+                case .lastYear:
+                    Text(try! AttributedString(markdown: "Your flights __last year__"))
+                        .font(.system(size: 27))
                 }
                 
             }
             
             
-            // Display headline Texts DE
+            // Display headline Texts Localization DE
             if currentLanguage == "de" {
-                let stateZeroString = try! AttributedString(
-                    markdown: "Zum Start, __füge deinen ersten Flug hinzu.__")
                 
-                let stateOneString = try! AttributedString(
-                    markdown: "Übung ist notwendig – Fliegen kann zum __Risiko__ werden.")
-                
-                let stateTwoString1 = try! AttributedString(
-                    markdown: "Mehr Übung könnte nicht")
-                
-                let stateTwoString2 = try! AttributedString(
-                    markdown: "schaden __– unerwartete Ereignisse__ können")
-                
-                let stateTwoString3 = try! AttributedString(
-                    markdown: "gefährlich werden.")
-                
-                let stateThreeString = try! AttributedString(
-                    markdown: "Dein Übungszustand ist gut – __trotzdem Vorsicht.__")
-                
-                
-                if trainingState == 0 {
-                    Text(stateZeroString)
-                        .font(.system(size: 34))
-                        .padding(.bottom, 40)
+                switch filterLogic {
+                case .total:
+                    Text(try! AttributedString(markdown: "__Alle__ deine Flüge"))
+                        .font(.system(size: 27))
+                case .lastSixMonths:
+                    Text(try! AttributedString(markdown: "Deine Flüge der __letzten sechs Monate__"))
+                        .font(.system(size: 22))
+                case .thisYear:
+                    Text(try! AttributedString(markdown: "Deine Flüge __in diesem Jahr__"))
+                        .font(.system(size: 23))
+                case .lastYear:
+                    Text(try! AttributedString(markdown: "Deine Flüge __im letzten Jahr__"))
+                        .font(.system(size: 23))
                 }
-                else if trainingState == 1 {
-                    Text(stateOneString)
-                        .font(.system(size: 34))
-                        .padding(.bottom, 40)
-                }
-                else if trainingState == 2 {
-                    Text("\(stateTwoString1)\n\(stateTwoString2)\n\(stateTwoString3)")
-                        .font(.system(size: 31))
-                        .padding(.bottom, 40)
-                }
-                else if trainingState == 3 {
-                    Text(stateThreeString)
-                        .font(.system(size: 32))
-                        .padding(.bottom, 40)
-                }
-                
-                
+    
             }
         }
     }

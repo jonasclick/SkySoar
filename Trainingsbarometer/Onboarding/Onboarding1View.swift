@@ -8,38 +8,28 @@
 import SwiftUI
 
 struct Onboarding1View: View {
-    
-//    @Binding var isOnboardingCompleted: Bool
-    
     var body: some View {
         NavigationStack {
             
-            HStack {
-                // Title "Onboarding"
-                Text("Onboarding")
-                    .font(.mainHeadline)
-                    .padding(.top, 40)
-                    .padding(.horizontal)
-                Spacer()
-            }
-            
             VStack (alignment: .center) {
-                
                 
                 Spacer()
                 
                 // Speaker symbol
-                Image(systemName: "speaker.wave.2.fill")
-                    .font(.system(size: 22))
-                    .opacity(0.7)
-                    .padding(.bottom, 10)
+                Image(.launchScreenAppIcon)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 70)
+                    .padding(.bottom, 20)
                 
                 // Info Text
-                Text("For the best onboarding experience,\nplease turn on your sound.")
-                    .font(.flightLogSecondary)
+                Text("Welcome \(Image(systemName: "heart.fill")) to SkySoar")
+                    .font(.title3)
                     .multilineTextAlignment(.center)
                     .padding(.bottom, 40)
                     .padding(.horizontal, 60)
+                
+                Spacer()
                 
                 // Button "Continue" to next onboarding step
                 NavigationLink (destination: {
@@ -49,22 +39,16 @@ struct Onboarding1View: View {
                         Text("Continue")
                         Image(systemName: "arrow.right.circle.fill")
                     }
-                    .font(.flightLogSecondary)
                 })
                 .buttonStyle(PlainButtonStyle())
 
-                
-                Spacer()
                 Spacer()
                 
             }
-            .padding()
-            
-            Spacer()
         }
     }
 }
 
-//#Preview {
-//    Onboarding1View()
-//}
+#Preview {
+    Onboarding1View()
+}

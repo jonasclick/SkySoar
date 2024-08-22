@@ -23,7 +23,7 @@ struct DisclaimerCardView: View {
                         .font(.system(size: 18))
                         .opacity(0.7)
                     Text("Disclaimer")
-                        .font(.system(size: 16, weight: .medium))
+                        .font(.headline)
                     Spacer()
                 }
                 .padding(.bottom, 5)
@@ -41,6 +41,7 @@ struct DisclaimerCardView: View {
                 HStack {
                     Spacer()
                     Text("Read the full disclaimer")
+                        .fontWeight(.medium)
                     Image(systemName: "arrow.right.circle")
                 }
                 .font(.system(size: 14))
@@ -50,6 +51,8 @@ struct DisclaimerCardView: View {
             
             
         }
+        .frame(height: (Locale.current.language.languageCode?.identifier ?? "") == "de" ? 180 : 138)
+        .padding(.horizontal)
     }
 }
 

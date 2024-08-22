@@ -51,30 +51,22 @@ struct FlightLogsView: View {
                     
                     Spacer()
                     
-                    // Sort Menu
+                    // MARK: Sort Menu
                     Menu {
                         Text("Sort Flights by")
-                        Button(action: {
-                            sortRule = "Newest"
-                        }) {
+                        Button(action: { sortRule = "Newest" }) {
                             Label("Newest", systemImage: "calendar")
                         }
                         
-                        Button(action: {
-                            sortRule = "Oldest"
-                        }) {
+                        Button(action: { sortRule = "Oldest" }) {
                             Label("Oldest", systemImage: "calendar")
                         }
                         
-                        Button(action: {
-                            sortRule = "Longest"
-                        }) {
+                        Button(action: { sortRule = "Longest" }) {
                             Label("Longest", systemImage: "clock")
                         }
                         
-                        Button(action: {
-                            sortRule = "Shortest"
-                        }) {
+                        Button(action: { sortRule = "Shortest" }) {
                             Label("Shortest", systemImage: "clock")
                         }
                         
@@ -85,8 +77,7 @@ struct FlightLogsView: View {
                             .opacity(0.7)
                     }
                     .buttonStyle(PlainButtonStyle())
-                    
-                    
+                    .onTapGesture { HapticHelper.impact() }
                     
                 }
                 .padding(.top, 80)
@@ -116,7 +107,7 @@ struct FlightLogsView: View {
                     .frame(maxWidth: .infinity)
                 }
                 
-                // –– Flight Logs List –– //
+                // MARK: Flight Logs List
                 else {
                     List (sortedFlightLogs, id: \.id) { flightLog in
                         
@@ -136,6 +127,7 @@ struct FlightLogsView: View {
                                 Button(role: .destructive) {
                                     selectedFlight = flightLog
                                     showConfirmation = true
+                                    HapticHelper.warning()
                                 } label: {
                                     Label("Delete", systemImage: "trash")
                                 }
@@ -149,13 +141,14 @@ struct FlightLogsView: View {
             }
             
             
-            // Navigation Buttons
+            // MARK: Navigation Buttons
             VStack (alignment: .trailing) {
                 Spacer()
                 HStack {
                     // Back Button
                     Button(action: {
                         self.presentationMode.wrappedValue.dismiss()
+                        HapticHelper.impact()
                     }, label: {
                         Image(systemName: "arrow.left")
                             .font(.system(size: 25))
@@ -166,6 +159,7 @@ struct FlightLogsView: View {
                     Button(action: {
                         // Create an empty FlighLog
                         self.newFlightLog = FlightLog()
+                        HapticHelper.impact()
                     }, label: {
                         Image(systemName: "plus.circle.fill")
                             .font(.system(size: 30))

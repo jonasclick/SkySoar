@@ -16,14 +16,15 @@ struct Onboarding3View: View {
             VStack (alignment: .leading) {
                 
                 // Title
-                Text("Disclaimer")
+                Text("Onboarding")
                     .font(.mainHeadline)
                     .padding(.top, 30)
-                    .padding(.bottom, 10)
+                
+                Text("Disclaimer")
+                    .padding(.bottom, 30)
                 
                 // Text EN
                 JustifiedText(text: localizedDisclaimerText())
-                    .opacity(0.7)
                     .padding(.horizontal, -5)
                     .frame(height: 330)
                     .allowsHitTesting(false) // remove unnecessary scroll ability from JustifiedText
@@ -32,7 +33,6 @@ struct Onboarding3View: View {
                 Text("Developers Website")
                     .font(.system(size: 12, weight: .light))
                     .underline()
-                    .opacity(0.7)
                     .padding(.top, 5)
                     .padding(.bottom, 20)
                     .onTapGesture {
@@ -48,10 +48,12 @@ struct Onboarding3View: View {
             NavigationLink(destination: Onboarding4View()) {
                 Text("I understand")
                     .foregroundStyle(.white)
-                    .padding(.vertical, 10)
-                    .padding(.horizontal, 30)
+                    .font(.headline)
+                    .padding(.vertical, 12)
+                    .padding(.horizontal, 50)
                     .background(.red)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                    .padding(.top, 30)
             }
             
             Spacer()
@@ -67,6 +69,6 @@ struct Onboarding3View: View {
     }
 }
 
-//#Preview {
-//    Onboarding3View()
-//}
+#Preview {
+    Onboarding3View()
+}

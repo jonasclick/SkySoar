@@ -2,98 +2,104 @@
 //  Onboarding4View.swift
 //  Trainingsbarometer
 //
-//  Created by Jonas Vetsch on 06.07.2024.
+//  Created by Jonas Vetsch on 07.07.2024.
 //
 
 import SwiftUI
 
 struct Onboarding4View: View {
+    
+    @AppStorage("onboarding") var needsOnboarding = true
+    @Environment(\.modelContext) private var context
+    
+    @State private var showSampleDataAlert = false
+    
     var body: some View {
-        VStack (alignment: .leading) {
+        NavigationStack {
             
-            // Title
-            Text("Copyright")
-                .font(.mainHeadline)
-                .padding(.top, 30)
-                .padding(.bottom, 10)
-            
-            // Disclaimer Text
-            JustifiedText(text: localizedTextOne())
-                .opacity(0.7)
-                .padding(.horizontal, -5)
-                .frame(height: 160)
-                .allowsHitTesting(false) // remove unnecessary scroll ability from JustifiedText
-            
-            // Link to website
-            Link("Website", destination: URL(string: "https://www.daec.de/")!)
-                .opacity(0.7)
-                .font(.system(size: 15, weight: .light))
-                .padding(.top, -10)
-                .padding(.bottom, 20)
-            
-            // Link to ressources
+            // Title "Onboarding"
             HStack {
-                Text("The pilot practice barometer can be found")
-                    .opacity(0.7)
-                    .font(.system(size: 15, weight: .light))
-                Link("here", destination: URL(string: "https://www.daec.de/sportarten/segelflug/downloads-termine/#c505")!)
-                    .opacity(0.7)
-                    .font(.system(size: 15, weight: .light))
-                    .padding(.leading, -3)
-            }
-            HStack {
-                Text("and the poster can be downloaded")
-                    .opacity(0.7)
-                    .font(.system(size: 15, weight: .light))
-                Link("here", destination: URL(string: "https://www.daec.de/media/files/2023/Sportarten/Segelflug/Downloads/DAeC-Trainingbarometer_A3-Plakat_RZ_Druck_a.pdf")!)
-                    .opacity(0.7)
-                    .font(.system(size: 15, weight: .light))
-                    .padding(.leading, -3)
-                Text(".")
-                    .opacity(0.7)
-                    .font(.system(size: 15, weight: .light))
-                    .padding(.leading, -8)
-            }
-            
-            // Info paragraph about app using same logic as poster of DAEC
-            JustifiedText(text: localizedTextTwo())
-                .opacity(0.7)
-                .padding(.horizontal, -5)
-                .frame(height: 110)
-                .allowsHitTesting(false) // remove unnecessary scroll ability from JustifiedText
-            
-            
-            
-            // Button "Continue" to next onboarding step
-            VStack (alignment: .center) {
-                NavigationLink (destination: {
-                    Onboarding5View()
-                }, label: {
-                    HStack {
-                        Text("Continue")
-                        Image(systemName: "arrow.right.circle.fill")
-                    }
-                    .font(.flightLogSecondary)
-                })
-                .buttonStyle(PlainButtonStyle())
-                .frame(maxWidth: .infinity)
+                VStack (alignment: .leading) {
+                    Text("Onboarding")
+                        .font(.mainHeadline)
+                    Text("Try sample flights to explore the app without having to enter your own details yet.")
+                        .multilineTextAlignment(.leading)
+                        .opacity(0.8)
+                        .padding(.top, -10)
+                }
+                .frame(idealWidth: .infinity)
+                .padding()
+                Spacer()
             }
             
             Spacer()
+            
+            
+            // MARK: WITH sample flight data
+            Button(action: {
+                showSampleDataAlert = true
+            }, label: {
+                VStack {
+                    Image(systemName: "arrow.right.circle.fill")
+                        .padding(.bottom, 4)
+                    Text("Explore the app")
+                        .bold()
+                        .padding(.bottom, 1)
+                    Text("with sample flights")
+                        .font(.footnote)
+                }
+            })
+            .buttonStyle(PlainButtonStyle())
+            .alert("Sample Flights Added", isPresented: $showSampleDataAlert, actions: {
+                Button {
+                    SampleDataHelper.addSampleData(context: context)
+                    needsOnboarding = false
+                } label: {
+                    Text("I understand: It's not my training state")
+                        .foregroundStyle(Color.red)
+                        .bold()
+                }}, message: { Text("\nTen sample flights have been added. Therefore: Do not mistake the training state shown in the app with your own training state!") })
+            
+            
+            Spacer()
+            
+            
+            
+            // MARK: WITHOUT sample flight data
+            Button(action: {
+                needsOnboarding = false
+            }, label: {
+                VStack {
+                    Image(systemName: "arrow.right.circle.fill")
+                        .padding(.bottom, 4)
+                    Text("Start using the app")
+                        .bold()
+                        .padding(.bottom, 1)
+                    Text("without sample flights")
+                        .font(.footnote)
+                }
+            })
+            .buttonStyle(PlainButtonStyle())
+            
+            
+            Spacer()
+            
+            
+            Text("You can always add and remove \nsamlple flights later in settings.")
+                .font(.footnote)
+                .opacity(0.7)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+            
+            
+            Spacer()
+            Spacer()
+            
         }
-        .padding(.horizontal)
         .navigationBarBackButtonHidden(true)
     }
-    
-    private func localizedTextOne() -> String {
-        return (Locale.current.language.languageCode?.identifier ?? "") == "de" ?
-                "Das Konzept des Trainingsbarometers und die Empfehlungstexte in dieser App wurden erstellt gemäss dem Trainingsbarometerplakat des\n\nDeutscher Aero Club e.V.\nHermann-Blenk-Str. 28\n38108 Braunschweig\nDeutschland" :
-                "The concept of the pilot practice barometer and the recommendation texts found in this application are made by\n\nDeutscher Aero Club e.V.\nHermann-Blenk-Str. 28\n38108 Braunschweig\nGermany"
-    }
-    
-    private func localizedTextTwo() -> String {
-        return (Locale.current.language.languageCode?.identifier ?? "") == "de" ?
-                "Diese App nutzt die Logik, die sich aus dem Plakat des Deutschen Aero Clubs ergibt and zeigt denselben Trainingsstand an, vorausgesetzt die*der Nutzer*in hat ihre*seine Flüge in dieser App korrekt erfasst." :
-                "This app uses the same logic as is used in the info poster by Deutscher Aero Club e.V. and therefore shows the same practice state, provided that the user inputs corect data."
-    }
+}
+
+#Preview {
+    Onboarding4View()
 }

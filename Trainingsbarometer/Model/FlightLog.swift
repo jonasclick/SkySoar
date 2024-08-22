@@ -72,14 +72,59 @@ class FlightLog: Identifiable {
     
 }
 
-enum DepartureMode: Codable {
-    case winch
-    case aerotow
-    case selfLaunching
+enum DepartureMode: Int, Codable {
+    case winch = 0
+    case aerotow = 1
+    case selfLaunching = 2
+    
+    
+    func sfSymbol() -> String {
+        switch self {
+        case .winch:
+            return "w.circle.fill"
+        case .aerotow:
+            return "a.circle.fill"
+        case .selfLaunching:
+            return "s.circle.fill"
+        }
+    }
+    
+    func labelEN() -> String {
+        switch self {
+        case .winch:
+            return "Winch Launch."
+        case .aerotow:
+            return "Aerotows"
+        case .selfLaunching:
+            return "Self Launches"
+        }
+    }
 }
 
-enum PilotFunctionTime: Codable {
-    case pic
-    case dual
-    case instructorAndPic
+enum PilotFunctionTime: Int, Codable  {
+    case pic = 0
+    case dual = 1
+    case instructorAndPic = 2
+    
+    func sfSymbol() -> String {
+        switch self {
+        case .pic:
+            return "person"
+        case .dual:
+            return "person.2"
+        case .instructorAndPic:
+            return "graduationcap"
+        }
+    }
+    
+    func labelEN() -> String {
+        switch self {
+        case .pic:
+            return "Hours PIC"
+        case .dual:
+            return "Hours Dual"
+        case .instructorAndPic:
+            return "Hours Instruct."
+        }
+    }
 }

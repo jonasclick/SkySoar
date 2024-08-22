@@ -19,9 +19,7 @@ struct SampleDataHelper {
         
         var date = Calendar.current.date(from: components)!
         
-        if dayOffset != 0 {
-            date = Calendar.current.date(byAdding: .day, value: dayOffset, to: date)!
-        }
+        if dayOffset != 0 { date = Calendar.current.date(byAdding: .day, value: dayOffset, to: date)! }
         
         return date
     }
@@ -86,9 +84,7 @@ struct SampleDataHelper {
         var count = 0
         
         for flightLog in flightLogs {
-            if flightLog.isSampleData {
-                count += 1
-            }
+            if flightLog.isSampleData { count += 1 }
         }
         
         return count != 0

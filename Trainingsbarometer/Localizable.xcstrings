@@ -31,39 +31,12 @@
         }
       }
     },
-    "." : {
+    "%@ Hours" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "."
-          }
-        }
-      }
-    },
-    "%@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@"
-          }
-        }
-      }
-    },
-    "%@\n%@\n%@" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@\n%2$@\n%3$@"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@\n%2$@\n%3$@"
+            "value" : "%@ Stunden"
           }
         }
       }
@@ -78,6 +51,16 @@
         }
       }
     },
+    "%@ Starts" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Starts"
+          }
+        }
+      }
+    },
     "%lld" : {
       "localizations" : {
         "de" : {
@@ -88,12 +71,12 @@
         }
       }
     },
-    "About" : {
+    "About SkySoar" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Über diese App"
+            "value" : "Über SkySoar"
           }
         }
       }
@@ -148,22 +131,22 @@
         }
       }
     },
-    "Add sample flight logs to explore the app" : {
+    "Add sample flights to explore the app" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Beispiel-Flüge hinzufügen und App testen"
+            "value" : "Füge Beispiel-Flüge hinzu"
           }
         }
       }
     },
-    "Add your flights of the past six months to see your practice state. Navigate to the flights list by tapping on the list symbol (%@) below." : {
+    "Aerotow" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Um deinen Übungsstand zu sehen, füge deine Flüge der letzten sechs Monate hinzu. Navigiere zur Flugliste durch Tippen auf das Listensymbol (%@) unten rechts."
+            "value" : "Aerotow"
           }
         }
       }
@@ -184,16 +167,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "und Bestätigungen"
-          }
-        }
-      }
-    },
-    "and the poster can be downloaded" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "und das Poster findest du"
           }
         }
       }
@@ -238,12 +211,12 @@
         }
       }
     },
-    "at unfamiliar airfields" : {
+    "Arrival of your flight can't be in the future." : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "auf unbekannten Fluggeländen"
+            "value" : "Das Ankunftsdatum deines Fluges kann nicht in der Zukunft liegen."
           }
         }
       }
@@ -258,22 +231,32 @@
         }
       }
     },
-    "Caution during takeoff" : {
+    "Can't save flight" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vorsicht ist geboten beim Start"
+            "value" : "Flug kann nicht gespeichert werden"
           }
         }
       }
     },
-    "Complete Onboarding" : {
+    "Change name for greeting on home screen" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Onboarding beenden"
+            "value" : "Name für Begrüssung anpassen"
+          }
+        }
+      }
+    },
+    "Configure Your Dashboard" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dashboard anpassen"
           }
         }
       }
@@ -288,22 +271,22 @@
         }
       }
     },
-    "Copyright" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Copyright"
-          }
-        }
-      }
-    },
     "Date and Time" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Datum und Uhrzeit"
+          }
+        }
+      }
+    },
+    "Date Range" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datumsbereich"
           }
         }
       }
@@ -368,12 +351,22 @@
         }
       }
     },
+    "Display Function Time" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Function Time anzeigen"
+          }
+        }
+      }
+    },
     "Do not rely solely on the information of this application." : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verlasse dich nicht ausschließlich auf die Informationen dieser Anwendung."
+            "value" : "Verlasse dich nicht ausschliesslich auf die Informationen dieser Anwendung."
           }
         }
       }
@@ -389,11 +382,22 @@
       }
     },
     "Done" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fertig"
+          }
+        }
+      }
+    },
+    "Dual" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dual"
           }
         }
       }
@@ -418,12 +422,22 @@
         }
       }
     },
-    "Experienced pilots make the following mistakes" : {
+    "Enter your name" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Geübte Piloten machten folgende Fehler"
+            "value" : "Dein Name"
+          }
+        }
+      }
+    },
+    "Enter your name here" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dein Name"
           }
         }
       }
@@ -458,32 +472,42 @@
         }
       }
     },
-    "For inexperienced pilots" : {
+    "General" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Für ungeübte Piloten gilt"
+            "value" : "Allgemein"
           }
         }
       }
     },
-    "For the best onboarding experience,\nplease turn on your sound." : {
+    "Good afternoon%@" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Für das beste Onboarding-Erlebnis, bitte schalte deinen Ton ein."
+            "value" : "Guten Nachmittag%@"
           }
         }
       }
     },
-    "Glider improperly equipped" : {
+    "Good evening%@" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Segelflugzeug fehlerhaft ausgerüstet"
+            "value" : "Guten Abend%@"
+          }
+        }
+      }
+    },
+    "Good morning%@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guten Morgen%@"
           }
         }
       }
@@ -508,16 +532,6 @@
         }
       }
     },
-    "here" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "hier"
-          }
-        }
-      }
-    },
     "Hours" : {
       "localizations" : {
         "de" : {
@@ -528,12 +542,12 @@
         }
       }
     },
-    "How is my practice state calculated?" : {
+    "How would you like to be called?" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wie wird mein Übungsstand berechnet?"
+            "value" : "Wie sollen wir dich nennen?"
           }
         }
       }
@@ -543,7 +557,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ich verstehe"
+            "value" : "Ich habe verstanden"
           }
         }
       }
@@ -558,32 +572,42 @@
         }
       }
     },
-    "If the last take-off was more than three months ago, training with a flight instructor is the best way to achieve a good practice level." : {
+    "Instructor" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Falls der letzte Start mehr als drei Monate zurück liegt, ist Training mit einem Fluglehrer der beste Weg zu einem guten Übungsstand."
+            "value" : "Instructor"
           }
         }
       }
     },
-    "In the past six months" : {
+    "Last Six Months" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "In den letzten sechs Monaten"
+            "value" : "Letzte sechs Monate"
           }
         }
       }
     },
-    "in unfamiliar geographical regions (e.g. mountains)" : {
+    "Last Year" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "in unbekannten Landschaftsregionen (z.B. Alpen)"
+            "value" : "Letztes Jahr"
+          }
+        }
+      }
+    },
+    "Launch Method" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Startart"
           }
         }
       }
@@ -628,16 +652,6 @@
         }
       }
     },
-    "Misbehavior during aborted takeoffs" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fehlverhalten bei Startunterbrechnungen"
-          }
-        }
-      }
-    },
     "Model" : {
       "localizations" : {
         "de" : {
@@ -664,16 +678,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Neuster"
-          }
-        }
-      }
-    },
-    "Not performing cockpit check correctly" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mangelhafter Cockpitcheck"
           }
         }
       }
@@ -708,12 +712,12 @@
         }
       }
     },
-    "Perform the first take-offs after a long break only with familiar aircraft models and in non-critical weather conditions.\n" : {
+    "PIC" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Die ersten Starts nach einer längeren Pause nur mit vertrauten Mustern und bei unkritischen Wetterlagen durchführen."
+            "value" : "PIC"
           }
         }
       }
@@ -724,36 +728,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Funktion"
-          }
-        }
-      }
-    },
-    "Poorly flown landing pattern (e.g., during outlanding)" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fehler bei der Landeeinteilung (vor allem bei Außenlandungen)"
-          }
-        }
-      }
-    },
-    "Practice State" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Übungsstand"
-          }
-        }
-      }
-    },
-    "Read the disclaimer" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Haftungsausschluss lesen"
           }
         }
       }
@@ -828,12 +802,32 @@
         }
       }
     },
+    "Save" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speichern"
+          }
+        }
+      }
+    },
     "Save Flight" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Flug speichern"
+          }
+        }
+      }
+    },
+    "Self Launching" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Self Launching"
           }
         }
       }
@@ -918,22 +912,32 @@
         }
       }
     },
-    "The pilot practice barometer can be found" : {
+    "The traffic light shows your training state." : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Den Downloadbereich findest du"
+            "value" : "Die Ampel zeigt deinen Übungsstand."
           }
         }
       }
     },
-    "The practice state for pilots is calculated using your flight data from the past six months.\n" : {
+    "This Year" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dein Übungsstand wird anhand deiner Flugdaten der letzten sechs Monate berechnet."
+            "value" : "Dieses Jahr"
+          }
+        }
+      }
+    },
+    "Total" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total"
           }
         }
       }
@@ -948,7 +952,7 @@
         }
       }
     },
-    "Try sample flights to explore the app without spending time entering your own details yet." : {
+    "Try sample flights to explore the app without having to enter your own details yet." : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -958,22 +962,12 @@
         }
       }
     },
-    "User Guide" : {
+    "v1.0.1" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tutorial"
-          }
-        }
-      }
-    },
-    "v1.0.0" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "v1.0.0"
+            "value" : "v.1.0.1"
           }
         }
       }
@@ -999,6 +993,7 @@
       }
     },
     "We're sorry, the explainer video is currently unavailable." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1008,27 +1003,18 @@
         }
       }
     },
-    "Website" : {
+    "Welcome %@ to SkySoar" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Webseite"
-          }
-        }
-      }
-    },
-    "What is the app Pilot Practice for?" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wozu dient die App Trainingsbarometer?"
+            "value" : "Willkommen %@ bei SkySoar"
           }
         }
       }
     },
     "Why Pilot Practice?" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1048,22 +1034,12 @@
         }
       }
     },
-    "with a rarely performed launch method" : {
+    "Winch" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "in einer selten durchgeführten Startart"
-          }
-        }
-      }
-    },
-    "with rarely flown glider models" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Auf selten geflogenen Segelflugzeugen"
+            "value" : "Winch"
           }
         }
       }
@@ -1098,12 +1074,42 @@
         }
       }
     },
-    "You can always change your mind later in Settings." : {
+    "You can always add and remove \nsamlple flights later in settings." : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Du kannst deine Meinung später jederzeit in den Einstellungen ändern."
+            "value" : "Du kannst jederzeit in den Einstellungen Beispiel-Flüge hinzufügen oder entfernen."
+          }
+        }
+      }
+    },
+    "You can change your user name later in settings." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du kannst deinen Namen später in den Einstellungen ändern."
+          }
+        }
+      }
+    },
+    "Your name is used to greet you on the home screen. \nYour name will be stored on your device only and can't be accessed by anyone else." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dein Name wird auf dem Startbildschirm verwendet, um dich zu begrüssen. Dein Name wird nur auf deinem Gerät gespeichert und kann von niemandem sonst eingesehen werden."
+          }
+        }
+      }
+    },
+    "Your Training State" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dein Übungsstand"
           }
         }
       }

@@ -14,6 +14,12 @@ struct HomeView: View {
     
     @Query private var flightLogs: [FlightLog]
     
+    @State private var dateRange: String = "This Year"
+    
+    @AppStorage("FilterLogic") var filterLogic = FilterLogic.total
+    @AppStorage("ShowFunctionTime") var showFunctionTime = PilotFunctionTime.pic
+    @AppStorage("showDepartureMode") var showDepartureMode = DepartureMode.winch
+    
     @State private var hours = Double()
     @State private var starts = Double()
     @State private var trainingState = Int()
@@ -30,171 +36,253 @@ struct HomeView: View {
                 // Background
                 BackgroundView()
                 
-                VStack (alignment: .leading) {
-                    // Headline Section
-                    Text("Practice State")
-                        .font(.sectionHeadline)
-                        .padding(.bottom, 13)
-                    
-                    HeadlineView(trainingState: $trainingState)
-                    
-                    // Info Card
-                    if trainingState == 0 {
-                        InfoCardZeroView()
-                            .padding(.bottom, 40)
-                    }
-                    else if trainingState == 1 {
-                        InfoCardRedView()
-                            .padding(.bottom, 40)
-                    }
-                    else if trainingState == 2 {
-                        InfoCardYellowView()
-                            .padding(.bottom, 40)
-                    }
-                    else if trainingState == 3 {
-                        InfoCardGreenView()
-                            .padding(.bottom, 40)
-                    }
-                    
-                    
-                    // Stats Section
-                    Text("In the past six months")
-                        .font(.sectionHeadline)
-                        .padding(.bottom, 0.5)
-                    Text(sixMonthsRange())
-                        .font(.sectionHeadline)
-                        .opacity(0.5)
-                        .padding(.bottom, 15)
-                    
-                    HStack {
-                        Spacer()
-                        
-                        // Stat Hours
-                        StatCardView(image: "clock", number: flightHoursInSixMonths(flightLogs: flightLogs), label: "Hours")
-                        Spacer()
-                        Spacer()
-                        
-                        // Stat Starts
-                        StatCardView(image: "airplane.departure", number: flightLogsInSixMonths(flightLogs: flightLogs), label: "Starts")
-                        Spacer()
-                    }
-                }
-                .padding(.horizontal, 20)
                 
-                // Navigation Buttons
-                VStack {
-                    Spacer()
+                VStack (alignment: .leading) {
+                    
+                    // Greeting with custom user name
+                    GreetingView()
+                    
+                    // MARK: Section: Dashboard
                     HStack {
                         
-                        Button(action: {
-                            isSettingsPresented = true
-                        }, label: {
-                            Image(systemName: "gearshape")
-                                .font(.system(size: 25))
-                        })
-                        .buttonStyle(PlainButtonStyle())
+                        // Headline, changes dinamically on what date range the user selects for the dashboard
+                        HeadlineView(filterLogic: $filterLogic)
+                        
                         Spacer()
-                        NavigationLink (destination: FlightLogsView()) {
-                            Image(systemName: "list.bullet")
-                                .font(.system(size: 30))
+                        
+                        // MARK: Dashboard Settings
+                        /// User can define a date range and choose between what pilot function and launch method to display data from
+                        Menu {
+                            
+                            Text("Configure Your Dashboard")
+                            
+                            // Configure Date Range for Dashboard
+                            Menu {
+                                Button("Total") { filterLogic = FilterLogic.total }
+                                Button("Last Six Months") { filterLogic = FilterLogic.lastSixMonths }
+                                Button("This Year") { filterLogic = FilterLogic.thisYear }
+                                Button("Last Year") { filterLogic = FilterLogic.lastYear }
+                            } label: {
+                                Label("Date Range", systemImage: "calendar")
+                            }
+                            
+                            // Configure what Function Time to display
+                            Menu {
+                                Button(action: { showFunctionTime = PilotFunctionTime.pic }) {
+                                    Label("PIC", systemImage: "person")}
+                                
+                                Button(action: { showFunctionTime = PilotFunctionTime.dual }) {
+                                    Label("Dual", systemImage: "person.2")}
+                                
+                                Button(action: { showFunctionTime = PilotFunctionTime.instructorAndPic }) {
+                                    Label("Instructor", systemImage: "graduationcap")}
+                            } label: {
+                                Label("Display Function Time", systemImage: "clock")
+                            }
+                            
+                            // Configure what Launch Method to display
+                            Menu {
+                                Button(action: { showDepartureMode = DepartureMode.winch }) {
+                                    Label("Winch", systemImage: "w.circle.fill")}
+                                
+                                Button(action: { showDepartureMode = DepartureMode.aerotow }) {
+                                    Label("Aerotow", systemImage: "a.circle.fill")}
+                                
+                                Button(action: {  showDepartureMode = DepartureMode.selfLaunching }) {
+                                    Label("Self Launching", systemImage: "s.circle.fill")}
+                                
+                            } label: {
+                                Label("Launch Method", systemImage: "airplane.departure")
+                            }
+                        } label: {
+                            Image(systemName: "slider.horizontal.3")
+                                .font(.system(size: 20))
+                                .opacity(0.4)
                         }
                         .buttonStyle(PlainButtonStyle())
+                        .padding(.trailing, 20)
+                        .onTapGesture { HapticHelper.impact() }
+                        
                     }
-                    .padding(35)
+                    .padding(.bottom, 27)
+                    
+                    
+                    // MARK: Stat Cards – Row 1
+                    HStack {
+                        Spacer()
+                        StatCardView(image: "clock", number: flightDataInRange(startMonthsAgo: filterLogic.startDate(), endMonthsAgo: filterLogic.endDate(), isHours: true), label: "Hours")
+                        Spacer()
+                        Spacer()
+                        StatCardView(image: "airplane.departure", number: flightDataInRange(startMonthsAgo: filterLogic.startDate(), endMonthsAgo: filterLogic.endDate(), isHours: false), label: "Starts")
+                        Spacer()
+                    }
+                    .padding(.bottom, 29)
+                
+                    
+                    // MARK: Stat Cards – Row 2
+                    HStack {
+                        Spacer()
+                        StatCardFunctionTimeView(
+                            pilotFunctionTime: showFunctionTime,
+                            value: flightTimeForFunction(selectedFunction: showFunctionTime, startMonthsAgo: filterLogic.startDate(), endMonthsAgo: filterLogic.endDate()))
+                        Spacer()
+                        Spacer()
+                        StatCardDepartureModeView(
+                            departureMode: showDepartureMode,
+                            value: flightsForDepartureMode(departureMode: showDepartureMode, startMonthsAgo: filterLogic.startDate(), endMonthsAgo: filterLogic.endDate()))
+                        Spacer()
+                    }
+                    .padding(.bottom, 64)
+                    
+                    
+                    
+                    // MARK: Section: Training State
+                    Text("Your Training State")
+                        .font(.subheadline)
+                        .bold()
+                    
+                    // Display 6 months date range
+                    Text(DateHelper.sixMonthsRange())
+                        .font(.subheadline)
+                        .fontWeight(.light)
+                        .padding(.bottom, 10)
+                        .opacity(0.6)
+                    
+                    
+                    HStack {
+                        
+                        // 6 Months Stats for Training State
+                        HStack {
+                            VStack(alignment: .leading, spacing: 10) {
+                                Text(String(TrainingStateHelper.noDotZero(TrainingStateHelper.flightHoursInSixMonths(flightLogs: flightLogs))))
+                                    .font(.system(size: 27, weight: .semibold))
+                                Text("\(Image(systemName: "clock")) Hours")
+                                    .font(.sectionHeadline)
+                                    .opacity(0.6)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            }
+                            
+                            VStack(alignment: .leading, spacing: 10) {
+                                Text(String(TrainingStateHelper.noDotZero(TrainingStateHelper.flightLogsInSixMonths(flightLogs: flightLogs))))
+                                    .font(.system(size: 27, weight: .semibold))
+                                Text("\(Image(systemName: "airplane.departure")) Starts")
+                                    .font(.sectionHeadline)
+                                    .opacity(0.6)
+                            }
+                            
+                        }
+                        .padding()
+                        .frame(width: 180, height: 100)
+                        .background(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
+                        .shadow(color: .black.opacity(0.08), radius: 7, x: 3, y: 4)
+                        
+                        Spacer()
+                        
+                        // Traffic Light showing training state
+                        Menu {
+                            Text("The traffic light shows your training state.")
+                        } label: {
+                            TrafficLightView(trainingState: $trainingState)
+                        }
+                        
+                        Spacer()
+                        Spacer()
+                        
+                    }
                 }
+                .padding(.horizontal, 25)
+                
+                
+                // Info sign with link to information material for user to understand training state
+                InfoSignView()
+                
+                
+                // Navigation Buttons
+                NavigationButtonsView(isSettingsPresented: $isSettingsPresented)
+                
                 
                 // Show warning if app is using sample data
                 SampleDataWarningView()
-                    .padding(.top, 8)
                 
             }
             .ignoresSafeArea()
-            .onAppear {updateTrainingState()}
-            .sheet(isPresented: $isSettingsPresented, onDismiss: {updateTrainingState()}) {
-                SettingsView()
-            }
+            .onAppear { updateTrainingState() }
+            .sheet(isPresented: $isSettingsPresented, onDismiss: { updateTrainingState() }) { SettingsView() }
         }
     }
     
-    private func sixMonthsRange() -> String {
-        let today = Date()
-        // Get date 6 months ago
-        guard let sixMonthsAgo = Calendar.current.date(byAdding: .month, value: -6, to: today) else {
-            return ""
-        }
-        
-        let dateFormatter = DateFormatter()
-        
-        dateFormatter.dateFormat = (Locale.current.language.languageCode?.identifier ?? "") == "de" ? "dd.MM.yyyy" : "MMMM dd, yyyy"
-        
-        let todayString = dateFormatter.string(from: today)
-        let sixMonthsAgoString = dateFormatter.string(from: sixMonthsAgo)
-        
-        return "\(sixMonthsAgoString) – \(todayString)"
+    private func updateTrainingState() {
+        trainingState = TrainingStateHelper.calculateTrainingStateInt(
+            hours: flightDataInRange(startMonthsAgo: 6, endMonthsAgo: 0, isHours: true),
+            starts: flightDataInRange(startMonthsAgo: 6, endMonthsAgo: 0, isHours: false))
     }
     
-    private func flightHoursInSixMonths(flightLogs: [FlightLog]) -> Double {
+    
+    func filterFlightLogs(startDate: Date, endDate: Date) -> [FlightLog] {
+        return flightLogs.filter { flightLog in
+            if let arrivalDate = flightLog.arrivalDate { return arrivalDate >= startDate && arrivalDate <= endDate }
+            return false
+        }
+    }
+    
+    
+    private func flightDataInRange(startMonthsAgo: Int, endMonthsAgo: Int, isHours: Bool) -> Double {
         let calendar = Calendar.current
-        let today = Date()
-        guard let sixMonthsAgo = calendar.date(byAdding: .month, value: -6, to: today) else {
-            return 0.0
+        guard let startDate = calendar.date(byAdding: .month, value: -startMonthsAgo, to: Date()) else { return 0.0 }
+        guard let endDate = calendar.date(byAdding: .month, value: -endMonthsAgo, to: Date()) else { return 0.0 }
+        
+        let filteredLogs = filterFlightLogs(startDate: startDate, endDate: endDate)
+        
+        
+        if isHours {
+            // Return Total Hours
+            let totalSeconds = filteredLogs.reduce(0) { $0 + $1.flightTime }
+            let totalHours = totalSeconds / 3600
+            return round(totalHours * 10) / 10.0 // Round to one decimal place
+        } else {
+            // Return Total Number of Starts
+            return Double(filteredLogs.count)
         }
+    }
+    
+    private func flightTimeForFunction(selectedFunction: PilotFunctionTime, startMonthsAgo: Int, endMonthsAgo: Int) -> Double {
+        
+        let calendar = Calendar.current
+        guard let startDate = calendar.date(byAdding: .month, value: -startMonthsAgo, to: Date()) else { return 0.0 }
+        guard let endDate = calendar.date(byAdding: .month, value: -endMonthsAgo, to: Date()) else { return 0.0 }
         
         let filteredLogs = flightLogs.filter { flightLog in
-            if let arrivalDate = flightLog.arrivalDate {
-                return arrivalDate >= sixMonthsAgo && arrivalDate <= today
+            
+            if flightLog.pilotFunctionTime == selectedFunction {
+                if let arrivalDate = flightLog.arrivalDate { return arrivalDate >= startDate && arrivalDate <= endDate }
             }
+            
             return false
         }
         
         let totalSeconds = filteredLogs.reduce(0) { $0 + $1.flightTime }
         let totalHours = totalSeconds / 3600
-        return round(totalHours * 10) / 10.0 // Round to one decimal place
+        return round(totalHours * 10) / 10.0
     }
     
-    private func flightLogsInSixMonths(flightLogs: [FlightLog]) -> Double {
+    
+    private func flightsForDepartureMode(departureMode: DepartureMode, startMonthsAgo: Int, endMonthsAgo: Int) -> Int {
+        
         let calendar = Calendar.current
-        let today = Date()
-        guard let sixMonthsAgo = calendar.date(byAdding: .month, value: -6, to: today) else {
-            return 0.0
-        }
+        guard let startDate = calendar.date(byAdding: .month, value: -startMonthsAgo, to: Date()) else { return 0 }
+        guard let endDate = calendar.date(byAdding: .month, value: -endMonthsAgo, to: Date()) else { return 0 }
         
         let filteredLogs = flightLogs.filter { flightLog in
-            if let arrivalDate = flightLog.arrivalDate {
-                return arrivalDate >= sixMonthsAgo && arrivalDate <= today
+            if flightLog.departureMode == departureMode {
+                if let arrivalDate = flightLog.arrivalDate { return arrivalDate >= startDate && arrivalDate <= endDate }
             }
             return false
         }
         
-        return Double(filteredLogs.count)
+        return filteredLogs.count
     }
     
-    // Calculate Training State
-    private func calculateTrainingStateInt(hours: Double, starts: Double) -> Int {
-        
-        // Boundary equations according to training barometer
-        let redYellowBoundary = (20 - hours) / 0.7
-        let yellowGreenBoundary = (39 - hours) / 0.65
-        
-        // Return Training State as Int
-        if starts > yellowGreenBoundary {
-            return 3 // Training State Green
-        } else if starts > redYellowBoundary || starts == yellowGreenBoundary {
-            return 2 // Training State Yellow
-        } else if starts > 0 && starts <= redYellowBoundary {
-            return 1 // Training State Red
-        } else if starts == 0 {
-            return 0 // No flights have been added yet
-        } else {
-            return 0 // Default return
-        }
-    }
-    
-    private func updateTrainingState() {
-        hours = flightHoursInSixMonths(flightLogs: flightLogs)
-        starts = flightLogsInSixMonths(flightLogs: flightLogs)
-        trainingState = calculateTrainingStateInt(hours: hours, starts: starts)
-    }
 }
 
 #Preview {

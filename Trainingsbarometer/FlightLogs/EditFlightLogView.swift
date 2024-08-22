@@ -60,7 +60,9 @@ struct EditFlightLogView: View {
     
     @State private var remarks: String = ""
     
+    @State private var showDateAlert: Bool = false
     @State private var showConfirmation: Bool = false
+    
     
     init(flightLog: FlightLog, isEditMode: Bool) {
         self.flightLog = flightLog
@@ -79,6 +81,7 @@ struct EditFlightLogView: View {
                         Spacer()
                         Button(action: {
                             showConfirmation = true
+                            HapticHelper.warning()
                         }, label: {
                             Image("close button")
                                 .padding(.horizontal, 16)
@@ -94,7 +97,7 @@ struct EditFlightLogView: View {
                     // Sheet Content
                     VStack (alignment: .leading) {
                         
-                        // Aircraft Information
+                        // MARK: Aircraft Information
                         Text("Aircraft")
                             .font(.paragraphHeadline)
                             .padding(.bottom, 0.005)
@@ -128,7 +131,7 @@ struct EditFlightLogView: View {
                             .padding(.vertical, 30)
                         
                         
-                        // Departure Information
+                        // MARK: Departure Information
                         HStack {
                             VStack (alignment: .leading) {
                                 Text("Departure")
@@ -175,7 +178,7 @@ struct EditFlightLogView: View {
                         
                         
                         
-                        // Arrival Information
+                        // MARK: Arrival Information
                         HStack {
                             VStack (alignment: .leading) {
                                 Text("Arrival")
@@ -225,7 +228,7 @@ struct EditFlightLogView: View {
                         
                         
                         
-                        // Flight Time Information
+                        // MARK: Flight Time Information
                         HStack {
                             VStack (alignment: .leading) {
                                 Text("Flight Time")
@@ -312,7 +315,7 @@ struct EditFlightLogView: View {
                             
                         }
                         
-                        // Pilot Function Picker
+                        // MARK: Pilot Function Picker
                         HStack {
                             Text("Pilot Function")
                                 .font(.paragraphText)
@@ -328,7 +331,7 @@ struct EditFlightLogView: View {
                             
                         }
                         
-                        // Departure Mode (w/ info pop-up)
+                        // MARK: Departure Mode Picker
                         HStack {
                             
                             // Title
@@ -360,7 +363,7 @@ struct EditFlightLogView: View {
                             .padding(.horizontal, -16)
                             .padding(.vertical, 30)
                         
-                        // Remarks and Endorsements
+                        // MARK: Remarks and Endorsements
                         VStack (alignment: .leading) {
                             Text("Remarks")
                                 .font(.paragraphHeadline)
@@ -399,9 +402,15 @@ struct EditFlightLogView: View {
             VStack {
                 Spacer()
                 Button(action: {
-                    updateFlightLog()
-                    if !isEditMode {context.insert(flightLog)}
-                    dismiss()
+                    if arrivalDate < Date() {
+                        updateFlightLog()
+                        if !isEditMode {context.insert(flightLog)}
+                        dismiss()
+                        
+                        HapticHelper.success()
+                    } else {
+                        showDateAlert = true
+                    }
                 }, label: {
                     Text(isEditMode ? "Save Flight" : "Add Flight")
                         .font(.headline)
@@ -420,9 +429,14 @@ struct EditFlightLogView: View {
             }
             .foregroundStyle(.red)
         }
-        // Prevent data loss if user swipes down the sheet (accidentally?)
+        .alert(isPresented: $showDateAlert) {
+            Alert(title: Text("Can't save flight"), message: Text("Arrival of your flight can't be in the future."), dismissButton: .default(Text("OK")))
+        }
+        // Auto-save to prevent data loss if user swipes down the sheet (accidentally)
         .onDisappear {
-            updateFlightLog()
+            if arrivalDate < Date() {
+                updateFlightLog()
+            }
         }
     }
     

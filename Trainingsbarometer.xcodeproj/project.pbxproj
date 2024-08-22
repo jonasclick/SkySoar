@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		DD1DB7BC2C2AC223000FF93F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1DB7BB2C2AC223000FF93F /* SettingsView.swift */; };
 		DD1DB7BF2C2AF8C3000FF93F /* SettingsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1DB7BE2C2AF8C3000FF93F /* SettingsCardView.swift */; };
+		DD283CA62C7720C3009B4788 /* HapticHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD283CA52C7720C3009B4788 /* HapticHelper.swift */; };
 		DD4DC9F02C35368B0051109E /* SampleDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4DC9EF2C35368B0051109E /* SampleDataHelper.swift */; };
 		DD4DC9F22C358B130051109E /* SampleDataWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4DC9F12C358B130051109E /* SampleDataWarningView.swift */; };
-		DD62C8892C5F685D00A87374 /* InfoCardZeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD62C8882C5F685D00A87374 /* InfoCardZeroView.swift */; };
 		DD62C88B2C5FB55E00A87374 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD62C88A2C5FB55E00A87374 /* TextHelper.swift */; };
 		DD78229F2C31B3530024A877 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DD78229E2C31B3530024A877 /* Localizable.xcstrings */; };
 		DD7AECB22C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECB12C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift */; };
@@ -23,24 +23,24 @@
 		DD7AECC52C0DF3BB002AB8F1 /* FlightLogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECC42C0DF3BB002AB8F1 /* FlightLogsView.swift */; };
 		DDA6B7F42C38292B0047DFA9 /* Onboarding2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6B7F32C38292B0047DFA9 /* Onboarding2View.swift */; };
 		DDA6B7F62C3829DF0047DFA9 /* Onboarding3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6B7F52C3829DF0047DFA9 /* Onboarding3View.swift */; };
-		DDA6B7FA2C396A670047DFA9 /* Onboarding4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6B7F92C396A670047DFA9 /* Onboarding4View.swift */; };
-		DDA6B7FC2C3A7CF40047DFA9 /* Onboarding5View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6B7FB2C3A7CF40047DFA9 /* Onboarding5View.swift */; };
+		DDA6B7FC2C3A7CF40047DFA9 /* Onboarding4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6B7FB2C3A7CF40047DFA9 /* Onboarding4View.swift */; };
 		DDA6B7FE2C3A9B3F0047DFA9 /* Onboarding1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6B7FD2C3A9B3F0047DFA9 /* Onboarding1View.swift */; };
+		DDB2215D2C73DB94002BE919 /* TrainingStateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2215C2C73DB94002BE919 /* TrainingStateHelper.swift */; };
+		DDB2215F2C74DE52002BE919 /* FilterLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2215E2C74DE52002BE919 /* FilterLogic.swift */; };
+		DDB221612C74E824002BE919 /* StatCardFunctionTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB221602C74E824002BE919 /* StatCardFunctionTimeView.swift */; };
+		DDB221632C74F11A002BE919 /* StatCardDepartureModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB221622C74F11A002BE919 /* StatCardDepartureModeView.swift */; };
+		DDB221672C74F5CF002BE919 /* TrafficLightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB221662C74F5CF002BE919 /* TrafficLightView.swift */; };
+		DDB221692C74FB9D002BE919 /* InfoSignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB221682C74FB9D002BE919 /* InfoSignView.swift */; };
+		DDB2216B2C752A3E002BE919 /* NavigationButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2216A2C752A3E002BE919 /* NavigationButtonsView.swift */; };
+		DDB2216D2C75C063002BE919 /* GreetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2216C2C75C063002BE919 /* GreetingView.swift */; };
 		DDB60F7E2C0E1D3F00ACD9D0 /* FlightLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB60F7D2C0E1D3F00ACD9D0 /* FlightLog.swift */; };
 		DDB60F9A2C10977D00ACD9D0 /* EditFlightLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB60F992C10977D00ACD9D0 /* EditFlightLogView.swift */; };
 		DDBD0F5B2C1A216B0097432E /* FlightLogCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBD0F5A2C1A216B0097432E /* FlightLogCardView.swift */; };
-		DDCDF96F2C50B6CE00E85B4F /* OnboardingVideov2.mov in Resources */ = {isa = PBXBuildFile; fileRef = DDCDF96E2C50B6CE00E85B4F /* OnboardingVideov2.mov */; };
 		DDD323DD2C29DDF7008AE016 /* HeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD323DC2C29DDF7008AE016 /* HeadlineView.swift */; };
-		DDDD2D682C3115290008E135 /* CopyrightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD2D672C3115290008E135 /* CopyrightView.swift */; };
-		DDDD2D6C2C3148DB0008E135 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD2D6B2C3148DB0008E135 /* VideoPlayerView.swift */; };
 		DDDD2D732C314B190008E135 /* WebsiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD2D722C314B190008E135 /* WebsiteView.swift */; };
-		DDDD2D752C3151500008E135 /* ExplainerVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD2D742C3151500008E135 /* ExplainerVideoView.swift */; };
 		DDDD2D7A2C3158230008E135 /* CloseButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD2D792C3158230008E135 /* CloseButtonView.swift */; };
 		DDDD2D7E2C315FE50008E135 /* DisclaimerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD2D7D2C315FE50008E135 /* DisclaimerCardView.swift */; };
 		DDE5A0532C27DA1100FF460B /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5A0522C27DA1100FF460B /* BackgroundView.swift */; };
-		DDE5A0572C29473800FF460B /* InfoCardGreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5A0562C29473800FF460B /* InfoCardGreenView.swift */; };
-		DDE5A05B2C2947AB00FF460B /* InfoCardYellowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5A05A2C2947AB00FF460B /* InfoCardYellowView.swift */; };
-		DDE5A05D2C2947F800FF460B /* InfoCardRedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5A05C2C2947F800FF460B /* InfoCardRedView.swift */; };
 		DDE5A8DE2C61346800470417 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE5A8DD2C61346800470417 /* Launch Screen.storyboard */; };
 		DDED46D42C2C17AE00441280 /* WebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED46D32C2C17AE00441280 /* WebKit.swift */; };
 		DDED46DC2C2C36FC00441280 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED46DB2C2C36FC00441280 /* DisclaimerView.swift */; };
@@ -51,9 +51,9 @@
 /* Begin PBXFileReference section */
 		DD1DB7BB2C2AC223000FF93F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DD1DB7BE2C2AF8C3000FF93F /* SettingsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCardView.swift; sourceTree = "<group>"; };
+		DD283CA52C7720C3009B4788 /* HapticHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticHelper.swift; sourceTree = "<group>"; };
 		DD4DC9EF2C35368B0051109E /* SampleDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataHelper.swift; sourceTree = "<group>"; };
 		DD4DC9F12C358B130051109E /* SampleDataWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataWarningView.swift; sourceTree = "<group>"; };
-		DD62C8882C5F685D00A87374 /* InfoCardZeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardZeroView.swift; sourceTree = "<group>"; };
 		DD62C88A2C5FB55E00A87374 /* TextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
 		DD78229E2C31B3530024A877 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		DD7AECAE2C0DCAE1002AB8F1 /* Trainingsbarometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trainingsbarometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,24 +66,24 @@
 		DD7AECC42C0DF3BB002AB8F1 /* FlightLogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightLogsView.swift; sourceTree = "<group>"; };
 		DDA6B7F32C38292B0047DFA9 /* Onboarding2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding2View.swift; sourceTree = "<group>"; };
 		DDA6B7F52C3829DF0047DFA9 /* Onboarding3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding3View.swift; sourceTree = "<group>"; };
-		DDA6B7F92C396A670047DFA9 /* Onboarding4View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding4View.swift; sourceTree = "<group>"; };
-		DDA6B7FB2C3A7CF40047DFA9 /* Onboarding5View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding5View.swift; sourceTree = "<group>"; };
+		DDA6B7FB2C3A7CF40047DFA9 /* Onboarding4View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding4View.swift; sourceTree = "<group>"; };
 		DDA6B7FD2C3A9B3F0047DFA9 /* Onboarding1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1View.swift; sourceTree = "<group>"; };
+		DDB2215C2C73DB94002BE919 /* TrainingStateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingStateHelper.swift; sourceTree = "<group>"; };
+		DDB2215E2C74DE52002BE919 /* FilterLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterLogic.swift; sourceTree = "<group>"; };
+		DDB221602C74E824002BE919 /* StatCardFunctionTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCardFunctionTimeView.swift; sourceTree = "<group>"; };
+		DDB221622C74F11A002BE919 /* StatCardDepartureModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCardDepartureModeView.swift; sourceTree = "<group>"; };
+		DDB221662C74F5CF002BE919 /* TrafficLightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightView.swift; sourceTree = "<group>"; };
+		DDB221682C74FB9D002BE919 /* InfoSignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSignView.swift; sourceTree = "<group>"; };
+		DDB2216A2C752A3E002BE919 /* NavigationButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtonsView.swift; sourceTree = "<group>"; };
+		DDB2216C2C75C063002BE919 /* GreetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingView.swift; sourceTree = "<group>"; };
 		DDB60F7D2C0E1D3F00ACD9D0 /* FlightLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightLog.swift; sourceTree = "<group>"; };
 		DDB60F992C10977D00ACD9D0 /* EditFlightLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFlightLogView.swift; sourceTree = "<group>"; };
 		DDBD0F5A2C1A216B0097432E /* FlightLogCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightLogCardView.swift; sourceTree = "<group>"; };
-		DDCDF96E2C50B6CE00E85B4F /* OnboardingVideov2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = OnboardingVideov2.mov; sourceTree = "<group>"; };
 		DDD323DC2C29DDF7008AE016 /* HeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineView.swift; sourceTree = "<group>"; };
-		DDDD2D672C3115290008E135 /* CopyrightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyrightView.swift; sourceTree = "<group>"; };
-		DDDD2D6B2C3148DB0008E135 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		DDDD2D722C314B190008E135 /* WebsiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteView.swift; sourceTree = "<group>"; };
-		DDDD2D742C3151500008E135 /* ExplainerVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainerVideoView.swift; sourceTree = "<group>"; };
 		DDDD2D792C3158230008E135 /* CloseButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButtonView.swift; sourceTree = "<group>"; };
 		DDDD2D7D2C315FE50008E135 /* DisclaimerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerCardView.swift; sourceTree = "<group>"; };
 		DDE5A0522C27DA1100FF460B /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
-		DDE5A0562C29473800FF460B /* InfoCardGreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardGreenView.swift; sourceTree = "<group>"; };
-		DDE5A05A2C2947AB00FF460B /* InfoCardYellowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardYellowView.swift; sourceTree = "<group>"; };
-		DDE5A05C2C2947F800FF460B /* InfoCardRedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardRedView.swift; sourceTree = "<group>"; };
 		DDE5A8DD2C61346800470417 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		DDE5A8DF2C6142DB00470417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DDED46D32C2C17AE00441280 /* WebKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKit.swift; sourceTree = "<group>"; };
@@ -110,8 +110,6 @@
 				DDDD2D7D2C315FE50008E135 /* DisclaimerCardView.swift */,
 				DD1DB7BE2C2AF8C3000FF93F /* SettingsCardView.swift */,
 				DDED46DB2C2C36FC00441280 /* DisclaimerView.swift */,
-				DDDD2D742C3151500008E135 /* ExplainerVideoView.swift */,
-				DDDD2D672C3115290008E135 /* CopyrightView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -122,8 +120,7 @@
 				DDA6B7FD2C3A9B3F0047DFA9 /* Onboarding1View.swift */,
 				DDA6B7F32C38292B0047DFA9 /* Onboarding2View.swift */,
 				DDA6B7F52C3829DF0047DFA9 /* Onboarding3View.swift */,
-				DDA6B7F92C396A670047DFA9 /* Onboarding4View.swift */,
-				DDA6B7FB2C3A7CF40047DFA9 /* Onboarding5View.swift */,
+				DDA6B7FB2C3A7CF40047DFA9 /* Onboarding4View.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -151,6 +148,8 @@
 				DD7AECB12C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift */,
 				DDE5A8DD2C61346800470417 /* Launch Screen.storyboard */,
 				DD7AECC62C0DF3CA002AB8F1 /* Home */,
+				DDB221682C74FB9D002BE919 /* InfoSignView.swift */,
+				DDB221662C74F5CF002BE919 /* TrafficLightView.swift */,
 				DD7AECC72C0DF3F4002AB8F1 /* FlightLogs */,
 				DD1DB7BD2C2AC229000FF93F /* Settings */,
 				DD73AE162C4D3E16000F0883 /* Onboarding */,
@@ -174,17 +173,16 @@
 		DD7AECBF2C0DDE41002AB8F1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				DDDD2D792C3158230008E135 /* CloseButtonView.swift */,
+				DDB2215B2C73DB5F002BE919 /* Training State Calculations */,
+				DDB2215A2C73DB38002BE919 /* Views */,
 				DD4DC9EF2C35368B0051109E /* SampleDataHelper.swift */,
-				DD4DC9F12C358B130051109E /* SampleDataWarningView.swift */,
+				DDFB9BD52C666F52006F1AC0 /* DateHelper.swift */,
 				DD62C88A2C5FB55E00A87374 /* TextHelper.swift */,
 				DD7AECC02C0DDE55002AB8F1 /* FontHelper.swift */,
-				DDFB9BD52C666F52006F1AC0 /* DateHelper.swift */,
 				DDED46DD2C2C3ECD00441280 /* JustifyTextHelper.swift */,
+				DD283CA52C7720C3009B4788 /* HapticHelper.swift */,
 				DDED46D32C2C17AE00441280 /* WebKit.swift */,
 				DDDD2D722C314B190008E135 /* WebsiteView.swift */,
-				DDDD2D6B2C3148DB0008E135 /* VideoPlayerView.swift */,
-				DDCDF96E2C50B6CE00E85B4F /* OnboardingVideov2.mov */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -193,13 +191,10 @@
 			isa = PBXGroup;
 			children = (
 				DD7AECB32C0DCAE1002AB8F1 /* HomeView.swift */,
+				DDB2216C2C75C063002BE919 /* GreetingView.swift */,
 				DDD323DC2C29DDF7008AE016 /* HeadlineView.swift */,
-				DD62C8882C5F685D00A87374 /* InfoCardZeroView.swift */,
-				DDE5A05C2C2947F800FF460B /* InfoCardRedView.swift */,
-				DDE5A05A2C2947AB00FF460B /* InfoCardYellowView.swift */,
-				DDE5A0562C29473800FF460B /* InfoCardGreenView.swift */,
-				DD7AECC22C0DE3D1002AB8F1 /* StatCardView.swift */,
-				DDE5A0522C27DA1100FF460B /* BackgroundView.swift */,
+				DDB2216A2C752A3E002BE919 /* NavigationButtonsView.swift */,
+				DDB221642C74F121002BE919 /* StatCards */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -214,10 +209,39 @@
 			path = FlightLogs;
 			sourceTree = "<group>";
 		};
+		DDB2215A2C73DB38002BE919 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DDE5A0522C27DA1100FF460B /* BackgroundView.swift */,
+				DDDD2D792C3158230008E135 /* CloseButtonView.swift */,
+				DD4DC9F12C358B130051109E /* SampleDataWarningView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DDB2215B2C73DB5F002BE919 /* Training State Calculations */ = {
+			isa = PBXGroup;
+			children = (
+				DDB2215C2C73DB94002BE919 /* TrainingStateHelper.swift */,
+			);
+			path = "Training State Calculations";
+			sourceTree = "<group>";
+		};
+		DDB221642C74F121002BE919 /* StatCards */ = {
+			isa = PBXGroup;
+			children = (
+				DD7AECC22C0DE3D1002AB8F1 /* StatCardView.swift */,
+				DDB221602C74E824002BE919 /* StatCardFunctionTimeView.swift */,
+				DDB221622C74F11A002BE919 /* StatCardDepartureModeView.swift */,
+			);
+			path = StatCards;
+			sourceTree = "<group>";
+		};
 		DDB60F7C2C0E1D2500ACD9D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				DDB60F7D2C0E1D3F00ACD9D0 /* FlightLog.swift */,
+				DDB2215E2C74DE52002BE919 /* FilterLogic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,7 +306,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD7AECB92C0DCAE2002AB8F1 /* Preview Assets.xcassets in Resources */,
-				DDCDF96F2C50B6CE00E85B4F /* OnboardingVideov2.mov in Resources */,
 				DD78229F2C31B3530024A877 /* Localizable.xcstrings in Resources */,
 				DDE5A8DE2C61346800470417 /* Launch Screen.storyboard in Resources */,
 				DD7AECB62C0DCAE2002AB8F1 /* Assets.xcassets in Resources */,
@@ -300,33 +323,34 @@
 				DD62C88B2C5FB55E00A87374 /* TextHelper.swift in Sources */,
 				DDDD2D732C314B190008E135 /* WebsiteView.swift in Sources */,
 				DD7AECC52C0DF3BB002AB8F1 /* FlightLogsView.swift in Sources */,
-				DDDD2D6C2C3148DB0008E135 /* VideoPlayerView.swift in Sources */,
-				DDA6B7FA2C396A670047DFA9 /* Onboarding4View.swift in Sources */,
 				DDA6B7F62C3829DF0047DFA9 /* Onboarding3View.swift in Sources */,
 				DDD323DD2C29DDF7008AE016 /* HeadlineView.swift in Sources */,
-				DDE5A05D2C2947F800FF460B /* InfoCardRedView.swift in Sources */,
+				DDB221632C74F11A002BE919 /* StatCardDepartureModeView.swift in Sources */,
+				DDB2215D2C73DB94002BE919 /* TrainingStateHelper.swift in Sources */,
 				DDFB9BD62C666F52006F1AC0 /* DateHelper.swift in Sources */,
 				DDED46DE2C2C3ECD00441280 /* JustifyTextHelper.swift in Sources */,
+				DDB2215F2C74DE52002BE919 /* FilterLogic.swift in Sources */,
+				DDB221672C74F5CF002BE919 /* TrafficLightView.swift in Sources */,
+				DDB2216D2C75C063002BE919 /* GreetingView.swift in Sources */,
 				DD7AECC32C0DE3D1002AB8F1 /* StatCardView.swift in Sources */,
 				DDB60F7E2C0E1D3F00ACD9D0 /* FlightLog.swift in Sources */,
 				DDB60F9A2C10977D00ACD9D0 /* EditFlightLogView.swift in Sources */,
-				DDA6B7FC2C3A7CF40047DFA9 /* Onboarding5View.swift in Sources */,
+				DDA6B7FC2C3A7CF40047DFA9 /* Onboarding4View.swift in Sources */,
 				DD4DC9F02C35368B0051109E /* SampleDataHelper.swift in Sources */,
 				DD1DB7BC2C2AC223000FF93F /* SettingsView.swift in Sources */,
-				DDDD2D752C3151500008E135 /* ExplainerVideoView.swift in Sources */,
 				DD7AECC12C0DDE55002AB8F1 /* FontHelper.swift in Sources */,
 				DDDD2D7E2C315FE50008E135 /* DisclaimerCardView.swift in Sources */,
-				DD62C8892C5F685D00A87374 /* InfoCardZeroView.swift in Sources */,
 				DDDD2D7A2C3158230008E135 /* CloseButtonView.swift in Sources */,
-				DDE5A0572C29473800FF460B /* InfoCardGreenView.swift in Sources */,
-				DDE5A05B2C2947AB00FF460B /* InfoCardYellowView.swift in Sources */,
 				DD7AECB42C0DCAE1002AB8F1 /* HomeView.swift in Sources */,
+				DD283CA62C7720C3009B4788 /* HapticHelper.swift in Sources */,
 				DDA6B7F42C38292B0047DFA9 /* Onboarding2View.swift in Sources */,
 				DDED46DC2C2C36FC00441280 /* DisclaimerView.swift in Sources */,
 				DD7AECB22C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift in Sources */,
+				DDB221612C74E824002BE919 /* StatCardFunctionTimeView.swift in Sources */,
+				DDB221692C74FB9D002BE919 /* InfoSignView.swift in Sources */,
 				DDED46D42C2C17AE00441280 /* WebKit.swift in Sources */,
+				DDB2216B2C752A3E002BE919 /* NavigationButtonsView.swift in Sources */,
 				DDBD0F5B2C1A216B0097432E /* FlightLogCardView.swift in Sources */,
-				DDDD2D682C3115290008E135 /* CopyrightView.swift in Sources */,
 				DD1DB7BF2C2AF8C3000FF93F /* SettingsCardView.swift in Sources */,
 				DD4DC9F22C358B130051109E /* SampleDataWarningView.swift in Sources */,
 				DDA6B7FE2C3A9B3F0047DFA9 /* Onboarding1View.swift in Sources */,
@@ -469,7 +493,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Trainingsbarometer/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Pilot Practice";
+				INFOPLIST_KEY_CFBundleDisplayName = SkySoar;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -506,7 +530,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Trainingsbarometer/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Pilot Practice";
+				INFOPLIST_KEY_CFBundleDisplayName = SkySoar;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

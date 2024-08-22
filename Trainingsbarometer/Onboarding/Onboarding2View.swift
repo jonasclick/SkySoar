@@ -9,67 +9,82 @@ import SwiftUI
 
 struct Onboarding2View: View {
     
+    @AppStorage("Username") var userName: String = ""
+    
+    @State private var userNameEntered: String = ""
     @State private var navigateToNextView: Bool = false
     
     var body: some View {
         NavigationStack {
-            ZStack {
+            VStack (alignment: .center) {
                 
-                VStack (alignment: .center) {
-                    
-                    // Title "Onboarding"
-                    HStack {
-                        VStack (alignment: .leading) {
-                            Text("Onboarding")
-                                .font(.mainHeadline)
-                            Text("What is the app Pilot Practice for?")
-                                .font(.infoBoxContent)
-                                .opacity(0.8)
-                                .padding(.top, -10)
-                        }
-                        .frame(idealWidth: .infinity)
-                        .padding()
-                        
-                        Spacer()
+                // Title "Onboarding"
+                HStack {
+                    VStack (alignment: .leading) {
+                        Text("Onboarding")
+                            .font(.mainHeadline)
                     }
-                    
-                    // Onboarding Video
-                    if let localVideoURL = Bundle.main.url(forResource: "OnboardingVideov2", withExtension: "mov") {
-                        
-                            VideoPlayerView(videoURL: localVideoURL)
-                            .aspectRatio(9/16, contentMode: .fit)
-                            .frame(height: 550)
-                        
-                    } else {
-                        Text("We're sorry, the explainer video is currently unavailable.")
-                            .font(.flightLogPrimary)
-                    }
+                    .frame(idealWidth: .infinity)
                     
                     Spacer()
-                    
                 }
+                
+                Spacer()
+                Spacer()
+                
+                // Set User Name
+                Text("How would you like to be called?")
+                    .padding(.bottom)
+                
+                TextField("Enter your name here", text: $userNameEntered)
+                    .multilineTextAlignment(.center)
+                    .padding(.vertical, 12)
+                    .background(.washedGray)
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                
+                Text("You can change your user name later in settings.")
+                    .font(.footnote)
+                    .opacity(0.6)
+                    .multilineTextAlignment(.center)
+                    .padding(.top, 5)
+                
+                
+                Spacer()
+                Spacer()
+                
+                Image(systemName: "shield.lefthalf.filled.badge.checkmark")
+                    .imageScale(.large)
+                    .font(.title2)
+                    .opacity(0.8)
+                
+                Text("Your name is used to greet you on the home screen. \nYour name will be stored on your device only and can't be accessed by anyone else.")
+                    .font(.caption)
+                    .multilineTextAlignment(.center)
+                    .padding(.top, 5)
+                    .opacity(0.8)
+                 
+                Spacer()
+                
+                Spacer()
                 
                 
                 // Button "Continue" to next onboarding step
                 Button(action: {
-                    NotificationCenter.default.post(name: NSNotification.Name("StopVideoPlayer"), object: nil)
+                    userName = userNameEntered.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "" : String(", " + userNameEntered)
                     navigateToNextView = true // Navigation triggered by state change
                 }) {
                     HStack {
                         Text("Continue")
                         Image(systemName: "arrow.right.circle.fill")
                     }
-                    .font(.flightLogSecondary)
                 }
                 .buttonStyle(PlainButtonStyle())
-                .padding(.top, 700)
-                .navigationDestination(isPresented: $navigateToNextView) {
-                        Onboarding3View() // Navigation triggered by state change
-                }
+                // Navigation triggered by state change
+                .navigationDestination(isPresented: $navigateToNextView) { Onboarding3View() }
                 
-                
-                
+                Spacer()
             }
+            .padding()
         }
         .navigationBarBackButtonHidden(true)
     }

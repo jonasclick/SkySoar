@@ -13,14 +13,17 @@ struct SettingsView: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
     
+    @AppStorage("Username") var userName: String = ""
+    
     @Query private var flightLogs: [FlightLog]
     
     private var isSampleData: Bool {SampleDataHelper.initializeIsSampleData(from: flightLogs)}
     
-    @State private var showSampleDataAlert = false
     @State private var isDisclaimerPresented = false
-    @State private var isExplainerPresented = false
-    @State private var isCopyrightPresented = false
+    @State private var isEditingUsername = false
+    @State private var usernameInput = ""
+    @FocusState private var isTextFieldFocused: Bool
+    @State private var showSampleDataAlert = false
     @State private var isGitHubPresented = false
     
     var body: some View {
@@ -37,12 +40,11 @@ struct SettingsView: View {
                     .padding(.bottom, (Locale.current.language.languageCode?.identifier ?? "") == "de" ? 30 : 50)
                 
                 
-                // Disclaimer Card, with different frame heights depending on localization
+                // MARK: Disclaimer Card
                 DisclaimerCardView()
-                    .padding(.horizontal)
-                    .frame(height: (Locale.current.language.languageCode?.identifier ?? "") == "de" ? 180 : 138)
                     .onTapGesture {
                         isDisclaimerPresented.toggle()
+                        HapticHelper.impact()
                     }
                     .sheet(isPresented: $isDisclaimerPresented) {
                         DisclaimerView()
@@ -50,29 +52,58 @@ struct SettingsView: View {
                     }
                 
                 
-                // Section "User Guide"
-                Text("User Guide")
-                    .font(.flightLogPrimary)
+                // MARK: Section: General
+                Text("General")
+                    .font(.subheadline)
+                    .fontWeight(.medium)
                     .padding(.top, (Locale.current.language.languageCode?.identifier ?? "") == "de" ? 30 : 50)
                     .padding(.horizontal, 28)
                     .padding(.bottom, -3)
                 
-                // Why use Pilot Practice Barometer?
-                SettingsCardView(icon: "info.circle", text: "Why should I use Pilot Practice?")
-                    .onTapGesture {
-                        isExplainerPresented.toggle()
-                    }
-                    .sheet(isPresented: $isExplainerPresented) {
-                        ExplainerVideoView()
-                            .onDisappear {
-                                NotificationCenter.default.post(name: NSNotification.Name("StopVideoPlayer"), object: nil)
-                            }
-                    }
                 
-                // Toggle Sample Data
-                SettingsCardView(icon: "tray.and.arrow.\(isSampleData ? "up" : "down")", text: isSampleData ? "Remove sample flights to start using the app" : "Add sample flight logs to explore the app")
+                // MARK: Change Username
+                if !isEditingUsername {
+                    SettingsCardView(icon: "person", text: "Change name for greeting on home screen")
+                        .onTapGesture {
+                            isEditingUsername = true
+                            isTextFieldFocused = true
+                        }
+                }
+                else {
+                    // Change Username Input field and save button
+                    ZStack {
+                        Rectangle()
+                            .clipShape(RoundedRectangle(cornerRadius: 16))
+                            .foregroundStyle(.white)
+                            .shadow(color: Color.black.opacity(0.08), radius: 5, x: 2, y: 4)
+                        HStack {
+                            Image(systemName: "person")
+                                .frame(width: 11)
+                                .padding(.trailing, 5)
+                            TextField("Enter your name", text: $usernameInput)
+                                .focused($isTextFieldFocused)
+                            Spacer()
+                            Button("Save") {
+                                HapticHelper.success()
+                                userName = usernameInput.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "" : String(", " + usernameInput)
+                                isEditingUsername = false
+                                dismiss()
+                            }
+                        }
+                        .padding(.horizontal)
+                        .font(.flightLogSecondary)
+                    }
+                    .padding(.horizontal)
+                    .frame(height: 41)
+                    .padding(.bottom, -2)
+                }
+                
+                
+                // MARK: Toggle Sample Data
+                SettingsCardView(icon: "tray.and.arrow.\(isSampleData ? "up" : "down")", text: isSampleData ? "Remove sample flights to start using the app" : "Add sample flights to explore the app")
                     .onTapGesture {
                         showSampleDataAlert.toggle()
+                        HapticHelper.warning()
                     }
                     .alert(!isSampleData ? "Sample Flights Added" : "Sample Flights Removed", isPresented: $showSampleDataAlert, actions: {
                         Button {
@@ -88,31 +119,25 @@ struct SettingsView: View {
                 // Info: Logic of the alert needs to be inverted (!isSampleData), as sample data is only added after confirming the alert.
                 
                 
-                // Section "About"
-                Text("About")
-                    .font(.flightLogPrimary)
+                // MARK: Section: "About"
+                Text("About SkySoar")
+                    .font(.subheadline)
+                    .fontWeight(.medium)
                     .padding(.top, 30)
                     .padding(.horizontal, 28)
                     .padding(.bottom, -3)
                 
-                // Copyright
-                SettingsCardView(icon: "c.circle", text: "Copyright")
-                    .onTapGesture {
-                        isCopyrightPresented.toggle()
-                    }
-                    .sheet(isPresented: $isCopyrightPresented) {
-                        CopyrightView()
-                            .presentationDetents([.fraction(0.7)])
-                    }
                 
-                // Request a feature / report bug
+                // MARK: Request feature, report bug
                 Link(destination: URL(string: localizedEmailURLString())!, label: {
-                    SettingsCardView(icon: "lightbulb.max", text: "Request a feature or report a bug")
-                        .foregroundStyle(.black)
-                })
+                    SettingsCardView(icon: "lightbulb.max", text: "Request a feature or report a bug") })
+                .buttonStyle(PlainButtonStyle())
+                .simultaneousGesture(TapGesture().onEnded { HapticHelper.impact() })
                 
                 
-                // Link to Github Page Link (custom image)
+                // TODO: Donation Link?
+                
+                // MARK: Link to GitHub Page
                 ZStack {
                     Rectangle()
                         .clipShape(RoundedRectangle(cornerRadius: 16))
@@ -141,13 +166,12 @@ struct SettingsView: View {
                 // Display Version Number
                 HStack {
                     Spacer()
-                    Text("v1.0.0")
+                    Text("v1.0.1")
                         .padding(.horizontal)
-                        .font(.infoBoxContent)
+                        .font(.caption2)
                         .opacity(0.5)
                         .padding(.top, 5)
                 }
-                
                 
                 Spacer()
             }
@@ -161,34 +185,26 @@ struct SettingsView: View {
     }
     
     private func toggleSampleData() {
+        // Add 10 sample flights to the context
+        if !isSampleData { SampleDataHelper.addSampleData(context: context) }
         
-        if !isSampleData {
-            
-            // Add 10 sample flights to the context
-            SampleDataHelper.addSampleData(context: context)
-        }
-        
-        if isSampleData {
-            deleteSampleData()
-        }
+        // Remove all sample flights
+        if isSampleData { deleteSampleData() }
     }
     
     // Different Email URL for Localizations EN and DE
     private func localizedEmailURLString() -> String {
         return (Locale.current.language.languageCode?.identifier ?? "") == "de" ?
-        "mailto:jonas@vetschmedia.com?subject=Rückmeldung Trainingsbarometer App&body=Liebes Entwicklerteam" :
-        "mailto:jonas@vetschmedia.com?subject=Feedback%20Pilot%20Practice%20Barometer%20App&body=Dear%20Developers"
+        "mailto:jonas@vetschmedia.com?subject=Rückmeldung SkySoar App&body=Liebes Entwicklerteam" :
+        "mailto:jonas@vetschmedia.com?subject=Feedback%20SkySoar%20App&body=Dear%20Developers"
     }
     
     // Delete all sample flight data
     private func deleteSampleData() {
         for flightLog in flightLogs {
-            if flightLog.isSampleData {
-                context.delete(flightLog)
-            }
+            if flightLog.isSampleData { context.delete(flightLog) }
         }
     }
-    
 }
 
 #Preview {

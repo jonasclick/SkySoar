@@ -832,6 +832,9 @@
         }
       }
     },
+    "Set default app icon" : {
+
+    },
     "Set Manually" : {
       "localizations" : {
         "de" : {
@@ -841,6 +844,9 @@
           }
         }
       }
+    },
+    "Set Supporter App Icon" : {
+
     },
     "Settings" : {
       "localizations" : {
@@ -892,6 +898,9 @@
         }
       }
     },
+    "Support the development of SkySoar" : {
+
+    },
     "Tap %@ to add your first flight." : {
       "localizations" : {
         "de" : {
@@ -901,6 +910,9 @@
           }
         }
       }
+    },
+    "Thank you %@ for supporting the continuous development of SkySoar." : {
+
     },
     "The developers disclaim any liability." : {
       "localizations" : {
@@ -1093,6 +1105,9 @@
           }
         }
       }
+    },
+    "You have now access to this Supporter App Icon, as a way of saying thank you for your support." : {
+
     },
     "Your name is used to greet you on the home screen. \nYour name will be stored on your device only and can't be accessed by anyone else." : {
       "localizations" : {

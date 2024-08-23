@@ -7,6 +7,8 @@
 
 import SwiftUI
 import SwiftData
+import RevenueCat
+import RevenueCatUI
 
 struct SettingsView: View {
     
@@ -24,6 +26,7 @@ struct SettingsView: View {
     @State private var usernameInput = ""
     @FocusState private var isTextFieldFocused: Bool
     @State private var showSampleDataAlert = false
+    @State private var isSubscriptionPresented = false
     @State private var isGitHubPresented = false
     
     var body: some View {
@@ -65,6 +68,7 @@ struct SettingsView: View {
                 if !isEditingUsername {
                     SettingsCardView(icon: "person", text: "Change name for greeting on home screen")
                         .onTapGesture {
+                            HapticHelper.impact()
                             isEditingUsername = true
                             isTextFieldFocused = true
                         }
@@ -128,6 +132,17 @@ struct SettingsView: View {
                     .padding(.bottom, -3)
                 
                 
+                // MARK: Subscription
+                SettingsCardView(icon: "heart.fill", text: "Support the development of SkySoar")
+                    .onTapGesture {
+                        isSubscriptionPresented = true
+                        HapticHelper.impact()
+                    }
+                    .sheet(isPresented: $isSubscriptionPresented) { SubscriptionView() }
+                    
+                
+                
+                
                 // MARK: Request feature, report bug
                 Link(destination: URL(string: localizedEmailURLString())!, label: {
                     SettingsCardView(icon: "lightbulb.max", text: "Request a feature or report a bug") })
@@ -135,7 +150,6 @@ struct SettingsView: View {
                 .simultaneousGesture(TapGesture().onEnded { HapticHelper.impact() })
                 
                 
-                // TODO: Donation Link?
                 
                 // MARK: Link to GitHub Page
                 ZStack {
@@ -157,6 +171,7 @@ struct SettingsView: View {
                 .frame(height: 41)
                 .onTapGesture {
                     isGitHubPresented.toggle()
+                    HapticHelper.impact()
                 }
                 .sheet(isPresented: $isGitHubPresented) {
                     WebsiteView(title: "About this App", url: "https://github.com/jonasclick/Trainingsbarometer")

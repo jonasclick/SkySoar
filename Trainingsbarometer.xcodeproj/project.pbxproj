@@ -46,6 +46,9 @@
 		DDED46DC2C2C36FC00441280 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED46DB2C2C36FC00441280 /* DisclaimerView.swift */; };
 		DDED46DE2C2C3ECD00441280 /* JustifyTextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED46DD2C2C3ECD00441280 /* JustifyTextHelper.swift */; };
 		DDFB9BD62C666F52006F1AC0 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFB9BD52C666F52006F1AC0 /* DateHelper.swift */; };
+		DDFD7EC52C78788D007B38D6 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = DDFD7EC42C78788D007B38D6 /* RevenueCat */; };
+		DDFD7EC72C78788D007B38D6 /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = DDFD7EC62C78788D007B38D6 /* RevenueCatUI */; };
+		DDFD7EC92C787D5E007B38D6 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFD7EC82C787D5E007B38D6 /* SubscriptionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,9 +57,9 @@
 		DD283CA52C7720C3009B4788 /* HapticHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticHelper.swift; sourceTree = "<group>"; };
 		DD4DC9EF2C35368B0051109E /* SampleDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataHelper.swift; sourceTree = "<group>"; };
 		DD4DC9F12C358B130051109E /* SampleDataWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataWarningView.swift; sourceTree = "<group>"; };
+		DD5942EA2C78A98C0019C0E3 /* Trainingsbarometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trainingsbarometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD62C88A2C5FB55E00A87374 /* TextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
 		DD78229E2C31B3530024A877 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		DD7AECAE2C0DCAE1002AB8F1 /* Trainingsbarometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trainingsbarometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD7AECB12C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingsbarometerApp.swift; sourceTree = "<group>"; };
 		DD7AECB32C0DCAE1002AB8F1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DD7AECB52C0DCAE2002AB8F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,6 +93,7 @@
 		DDED46DB2C2C36FC00441280 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
 		DDED46DD2C2C3ECD00441280 /* JustifyTextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustifyTextHelper.swift; sourceTree = "<group>"; };
 		DDFB9BD52C666F52006F1AC0 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		DDFD7EC82C787D5E007B38D6 /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDFD7EC72C78788D007B38D6 /* RevenueCatUI in Frameworks */,
+				DDFD7EC52C78788D007B38D6 /* RevenueCat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +116,7 @@
 				DDDD2D7D2C315FE50008E135 /* DisclaimerCardView.swift */,
 				DD1DB7BE2C2AF8C3000FF93F /* SettingsCardView.swift */,
 				DDED46DB2C2C36FC00441280 /* DisclaimerView.swift */,
+				DDFD7EC82C787D5E007B38D6 /* SubscriptionView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -129,16 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				DD7AECB02C0DCAE1002AB8F1 /* Trainingsbarometer */,
-				DD7AECAF2C0DCAE1002AB8F1 /* Products */,
+				DD5942EA2C78A98C0019C0E3 /* Trainingsbarometer.app */,
 			);
-			sourceTree = "<group>";
-		};
-		DD7AECAF2C0DCAE1002AB8F1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DD7AECAE2C0DCAE1002AB8F1 /* Trainingsbarometer.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		DD7AECB02C0DCAE1002AB8F1 /* Trainingsbarometer */ = {
@@ -262,8 +261,12 @@
 			dependencies = (
 			);
 			name = Trainingsbarometer;
+			packageProductDependencies = (
+				DDFD7EC42C78788D007B38D6 /* RevenueCat */,
+				DDFD7EC62C78788D007B38D6 /* RevenueCatUI */,
+			);
 			productName = Trainingsbarometer;
-			productReference = DD7AECAE2C0DCAE1002AB8F1 /* Trainingsbarometer.app */;
+			productReference = DD5942EA2C78A98C0019C0E3 /* Trainingsbarometer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -291,7 +294,10 @@
 				de,
 			);
 			mainGroup = DD7AECA52C0DCAE1002AB8F1;
-			productRefGroup = DD7AECAF2C0DCAE1002AB8F1 /* Products */;
+			packageReferences = (
+				DDFD7EC32C78788D007B38D6 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */,
+			);
+			productRefGroup = DD7AECA52C0DCAE1002AB8F1;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -348,6 +354,7 @@
 				DD7AECB22C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift in Sources */,
 				DDB221612C74E824002BE919 /* StatCardFunctionTimeView.swift in Sources */,
 				DDB221692C74FB9D002BE919 /* InfoSignView.swift in Sources */,
+				DDFD7EC92C787D5E007B38D6 /* SubscriptionView.swift in Sources */,
 				DDED46D42C2C17AE00441280 /* WebKit.swift in Sources */,
 				DDB2216B2C752A3E002BE919 /* NavigationButtonsView.swift in Sources */,
 				DDBD0F5B2C1A216B0097432E /* FlightLogCardView.swift in Sources */,
@@ -484,6 +491,7 @@
 		DD7AECBD2C0DCAE2002AB8F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = AppIconSupporter;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -522,6 +530,7 @@
 		DD7AECBE2C0DCAE2002AB8F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = AppIconSupporter;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -579,6 +588,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DDFD7EC32C78788D007B38D6 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DDFD7EC42C78788D007B38D6 /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDFD7EC32C78788D007B38D6 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */;
+			productName = RevenueCat;
+		};
+		DDFD7EC62C78788D007B38D6 /* RevenueCatUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DDFD7EC32C78788D007B38D6 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */;
+			productName = RevenueCatUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DD7AECA62C0DCAE1002AB8F1 /* Project object */;
 }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD0C18F22C7B55380081BF17 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0C18F12C7B55380081BF17 /* StoreKit.framework */; };
 		DD0C18F42C7B58640081BF17 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0C18F32C7B58640081BF17 /* UserViewModel.swift */; };
 		DD0C18F72C7B68A40081BF17 /* SubscriptionActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0C18F62C7B68A40081BF17 /* SubscriptionActiveView.swift */; };
 		DD0C18F92C7B68EC0081BF17 /* SubscriptionInactiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0C18F82C7B68EC0081BF17 /* SubscriptionInactiveView.swift */; };
@@ -41,6 +40,8 @@
 		DDB60F9A2C10977D00ACD9D0 /* EditFlightLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB60F992C10977D00ACD9D0 /* EditFlightLogView.swift */; };
 		DDBD0F5B2C1A216B0097432E /* FlightLogCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBD0F5A2C1A216B0097432E /* FlightLogCardView.swift */; };
 		DDD323DD2C29DDF7008AE016 /* HeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD323DC2C29DDF7008AE016 /* HeadlineView.swift */; };
+		DDDCB4CD2C7CE64700E80015 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = DDDCB4CC2C7CE64700E80015 /* RevenueCat */; };
+		DDDCB4CF2C7CE64700E80015 /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = DDDCB4CE2C7CE64700E80015 /* RevenueCatUI */; };
 		DDDD2D732C314B190008E135 /* WebsiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD2D722C314B190008E135 /* WebsiteView.swift */; };
 		DDDD2D7A2C3158230008E135 /* CloseButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD2D792C3158230008E135 /* CloseButtonView.swift */; };
 		DDDD2D7E2C315FE50008E135 /* DisclaimerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD2D7D2C315FE50008E135 /* DisclaimerCardView.swift */; };
@@ -50,8 +51,6 @@
 		DDED46DC2C2C36FC00441280 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED46DB2C2C36FC00441280 /* DisclaimerView.swift */; };
 		DDED46DE2C2C3ECD00441280 /* JustifyTextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED46DD2C2C3ECD00441280 /* JustifyTextHelper.swift */; };
 		DDFB9BD62C666F52006F1AC0 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFB9BD52C666F52006F1AC0 /* DateHelper.swift */; };
-		DDFD7EC52C78788D007B38D6 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = DDFD7EC42C78788D007B38D6 /* RevenueCat */; };
-		DDFD7EC72C78788D007B38D6 /* RevenueCatUI in Frameworks */ = {isa = PBXBuildFile; productRef = DDFD7EC62C78788D007B38D6 /* RevenueCatUI */; };
 		DDFD7EC92C787D5E007B38D6 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFD7EC82C787D5E007B38D6 /* SubscriptionView.swift */; };
 /* End PBXBuildFile section */
 
@@ -109,9 +108,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD0C18F22C7B55380081BF17 /* StoreKit.framework in Frameworks */,
-				DDFD7EC72C78788D007B38D6 /* RevenueCatUI in Frameworks */,
-				DDFD7EC52C78788D007B38D6 /* RevenueCat in Frameworks */,
+				DDDCB4CF2C7CE64700E80015 /* RevenueCatUI in Frameworks */,
+				DDDCB4CD2C7CE64700E80015 /* RevenueCat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,8 +289,8 @@
 			);
 			name = SkySoar;
 			packageProductDependencies = (
-				DDFD7EC42C78788D007B38D6 /* RevenueCat */,
-				DDFD7EC62C78788D007B38D6 /* RevenueCatUI */,
+				DDDCB4CC2C7CE64700E80015 /* RevenueCat */,
+				DDDCB4CE2C7CE64700E80015 /* RevenueCatUI */,
 			);
 			productName = Trainingsbarometer;
 			productReference = DD5942EA2C78A98C0019C0E3 /* SkySoar.app */;
@@ -633,12 +631,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DDFD7EC42C78788D007B38D6 /* RevenueCat */ = {
+		DDDCB4CC2C7CE64700E80015 /* RevenueCat */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DDFD7EC32C78788D007B38D6 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */;
 			productName = RevenueCat;
 		};
-		DDFD7EC62C78788D007B38D6 /* RevenueCatUI */ = {
+		DDDCB4CE2C7CE64700E80015 /* RevenueCatUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DDFD7EC32C78788D007B38D6 /* XCRemoteSwiftPackageReference "purchases-ios-spm" */;
 			productName = RevenueCatUI;

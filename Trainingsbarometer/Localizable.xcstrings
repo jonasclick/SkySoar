@@ -301,17 +301,6 @@
         }
       }
     },
-    "Date Range" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Datumsbereich"
-          }
-        }
-      }
-    },
     "Delete" : {
       "localizations" : {
         "de" : {
@@ -383,7 +372,14 @@
       }
     },
     "Display Launch Method" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Startart"
+          }
+        }
+      }
     },
     "Do not rely solely on the information of this application." : {
       "localizations" : {
@@ -611,17 +607,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Letztes Jahr"
-          }
-        }
-      }
-    },
-    "Launch Method" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Startart"
           }
         }
       }
@@ -857,7 +842,14 @@
       }
     },
     "Set Date Range" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datumsbereich"
+          }
+        }
+      }
     },
     "Set default app icon" : {
       "localizations" : {
@@ -905,6 +897,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kürzester"
+          }
+        }
+      }
+    },
+    "SkySoar stores all your data locally on your device. \nYour data stays offline and can't be accessed by anyone else." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkySoar speichert alle deine Daten lokal auf deinem Gerät. Deine Daten bleiben offline und können von niemandem eingesehen werden. Auch nicht von den Entwicklern von SkySoar."
           }
         }
       }

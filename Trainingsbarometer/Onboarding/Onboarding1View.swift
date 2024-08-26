@@ -31,6 +31,22 @@ struct Onboarding1View: View {
                 
                 Spacer()
                 
+                // Privacy Information
+                Image(systemName: "shield.lefthalf.filled.badge.checkmark")
+                    .imageScale(.large)
+                    .font(.title2)
+                    .opacity(0.8)
+                
+                Text("SkySoar stores all your data locally on your device. \nYour data stays offline and can't be accessed by anyone else.")
+                    .font(.caption)
+                    .multilineTextAlignment(.center)
+                    .padding(.top, 5)
+                    .opacity(0.8)
+                
+                Spacer()
+                Spacer()
+                
+                
                 // Button "Continue" to next onboarding step
                 NavigationLink (destination: {
                     Onboarding2View()
@@ -45,6 +61,7 @@ struct Onboarding1View: View {
                 Spacer()
                 
             }
+            .padding(.horizontal, 30)
         }
     }
 }

@@ -28,7 +28,7 @@ struct WebsiteView: View {
             
             // Close button top right
             CloseButtonView()
-                
+            
         }
     }
 }

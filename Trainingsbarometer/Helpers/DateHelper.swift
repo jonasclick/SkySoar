@@ -9,12 +9,14 @@ import Foundation
 
 struct DateHelper {
     
-    
-    // Return a string: "today six months ago" – "today"
+    // Return String: "today six months ago" + "–" + "today"
     static func sixMonthsRange() -> String {
         let today = Date()
         // Get date 6 months ago
-        guard let sixMonthsAgo = Calendar.current.date(byAdding: .month, value: -6, to: today) else { return "" }
+        guard let sixMonthsAgo = Calendar.current.date(
+            byAdding: .month,
+            value: -6,
+            to: today) else { return "" }
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = (Locale.current.language.languageCode?.identifier ?? "") == "de" ? "dd.MM.yyyy" : "MMMM dd, yyyy"

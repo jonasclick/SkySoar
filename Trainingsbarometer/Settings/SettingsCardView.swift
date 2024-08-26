@@ -16,10 +16,14 @@ struct SettingsCardView: View {
         
         // Settings Card
         ZStack {
+            
+            // Background
             Rectangle()
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .foregroundStyle(.white)
                 .shadow(color: Color.black.opacity(0.08), radius: 5, x: 2, y: 4)
+            
+            // Icon and Text
             HStack {
                 Image(systemName: icon)
                     .frame(width: 11)

@@ -221,6 +221,16 @@
         }
       }
     },
+    "As a supporter you will get access to this Supporter App Icon." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als Unterstützer*in bekommst du Zugriff auf das Unterstützer-App-Icon."
+          }
+        }
+      }
+    },
     "Calculate Automatically" : {
       "localizations" : {
         "de" : {
@@ -261,6 +271,16 @@
         }
       }
     },
+    "Consider supporting %@ the continuous development of SkySoar." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unterstütze %@ SkySoar und ermögliche damit dessen kontinuierliche Weiterentwicklung."
+          }
+        }
+      }
+    },
     "Continue" : {
       "localizations" : {
         "de" : {
@@ -282,6 +302,7 @@
       }
     },
     "Date Range" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -361,6 +382,9 @@
         }
       }
     },
+    "Display Launch Method" : {
+
+    },
     "Do not rely solely on the information of this application." : {
       "localizations" : {
         "de" : {
@@ -377,17 +401,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Abbrechen ohne zu speichern?"
-          }
-        }
-      }
-    },
-    "Done" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fertig"
           }
         }
       }
@@ -603,6 +616,7 @@
       }
     },
     "Launch Method" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -822,6 +836,16 @@
         }
       }
     },
+    "See support options" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unterstützungsoptionen ansehen"
+          }
+        }
+      }
+    },
     "Self Launching" : {
       "localizations" : {
         "de" : {
@@ -832,8 +856,18 @@
         }
       }
     },
-    "Set default app icon" : {
+    "Set Date Range" : {
 
+    },
+    "Set default app icon" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App-Icon auf Standard zurücksetzen"
+          }
+        }
+      }
     },
     "Set Manually" : {
       "localizations" : {
@@ -846,7 +880,14 @@
       }
     },
     "Set Supporter App Icon" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unterstützer-App-Icon verwenden"
+          }
+        }
+      }
     },
     "Settings" : {
       "localizations" : {
@@ -899,7 +940,14 @@
       }
     },
     "Support the development of SkySoar" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unterstütze die Entwicklung von SkySoar"
+          }
+        }
+      }
     },
     "Tap %@ to add your first flight." : {
       "localizations" : {
@@ -912,7 +960,24 @@
       }
     },
     "Thank you %@ for supporting the continuous development of SkySoar." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Danke %@, dass du die Entwicklung von SkySoar unterstützt."
+          }
+        }
+      }
+    },
+    "Thank you for supporting SkySoar" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Danke, dass du SkySoar unterstützt."
+          }
+        }
+      }
     },
     "The developers disclaim any liability." : {
       "localizations" : {
@@ -1004,34 +1069,12 @@
         }
       }
     },
-    "We're sorry, the explainer video is currently unavailable." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Es tut uns leid, das Erklärvideo ist derzeit nicht verfügbar."
-          }
-        }
-      }
-    },
     "Welcome %@ to SkySoar" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Willkommen %@ bei SkySoar"
-          }
-        }
-      }
-    },
-    "Why Pilot Practice?" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Warum Trainingsbarometer?"
           }
         }
       }
@@ -1107,7 +1150,14 @@
       }
     },
     "You have now access to this Supporter App Icon, as a way of saying thank you for your support." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als Dank für deine Unterstützung hast du nun Zugriff auf das Unterstützer-App-Icon."
+          }
+        }
+      }
     },
     "Your name is used to greet you on the home screen. \nYour name will be stored on your device only and can't be accessed by anyone else." : {
       "localizations" : {

@@ -9,42 +9,7 @@ import Foundation
 
 struct TrainingStateHelper {
     
-    static func flightHoursInSixMonths(flightLogs: [FlightLog]) -> Double {
-        let calendar = Calendar.current
-        let today = Date()
-        guard let sixMonthsAgo = calendar.date(byAdding: .month, value: -6, to: today) else {
-            return 0.0
-        }
-        
-        let filteredLogs = flightLogs.filter { flightLog in
-            if let arrivalDate = flightLog.arrivalDate {
-                return arrivalDate >= sixMonthsAgo && arrivalDate <= today
-            }
-            return false
-        }
-        
-        let totalSeconds = filteredLogs.reduce(0) { $0 + $1.flightTime }
-        let totalHours = totalSeconds / 3600
-        return round(totalHours * 10) / 10.0 // Round to one decimal place
-    }
-    
-    static func flightLogsInSixMonths(flightLogs: [FlightLog]) -> Double {
-        let calendar = Calendar.current
-        let today = Date()
-        guard let sixMonthsAgo = calendar.date(byAdding: .month, value: -6, to: today) else {
-            return 0.0
-        }
-        
-        let filteredLogs = flightLogs.filter { flightLog in
-            if let arrivalDate = flightLog.arrivalDate {
-                return arrivalDate >= sixMonthsAgo && arrivalDate <= today
-            }
-            return false
-        }
-        
-        return Double(filteredLogs.count)
-    }
-    
+    // MARK: Training State Logic
     // Calculate Training State using hours and starts within last 6 months
     static func calculateTrainingStateInt(hours: Double, starts: Double) -> Int {
         
@@ -66,6 +31,43 @@ struct TrainingStateHelper {
         }
     }
     
+    // Return total flight time hours within last 6 months
+    static func flightHoursInSixMonths(flightLogs: [FlightLog]) -> Double {
+        let calendar = Calendar.current
+        let today = Date()
+        guard let sixMonthsAgo = calendar.date(byAdding: .month, value: -6, to: today) else {
+            return 0.0
+        }
+        
+        let filteredLogs = flightLogs.filter { flightLog in
+            if let arrivalDate = flightLog.arrivalDate {
+                return arrivalDate >= sixMonthsAgo && arrivalDate <= today
+            }
+            return false
+        }
+        
+        let totalSeconds = filteredLogs.reduce(0) { $0 + $1.flightTime }
+        let totalHours = totalSeconds / 3600
+        return round(totalHours * 10) / 10.0 // Round to one decimal place
+    }
+    
+    // Return total number of starts within last 6 months
+    static func flightLogsInSixMonths(flightLogs: [FlightLog]) -> Double {
+        let calendar = Calendar.current
+        let today = Date()
+        guard let sixMonthsAgo = calendar.date(byAdding: .month, value: -6, to: today) else {
+            return 0.0
+        }
+        
+        let filteredLogs = flightLogs.filter { flightLog in
+            if let arrivalDate = flightLog.arrivalDate {
+                return arrivalDate >= sixMonthsAgo && arrivalDate <= today
+            }
+            return false
+        }
+        
+        return Double(filteredLogs.count)
+    }
     
     // Only dispaly one decimal of a double and only if not .0
     static func noDotZero(_ number: Double) -> String {

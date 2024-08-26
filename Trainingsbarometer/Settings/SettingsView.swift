@@ -14,6 +14,7 @@ struct SettingsView: View {
     
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var userViewModel: UserViewModel
     
     @AppStorage("Username") var userName: String = ""
     
@@ -66,12 +67,13 @@ struct SettingsView: View {
                 
                 // MARK: Change Username
                 if !isEditingUsername {
-                    SettingsCardView(icon: "person", text: "Change name for greeting on home screen")
-                        .onTapGesture {
-                            HapticHelper.impact()
-                            isEditingUsername = true
-                            isTextFieldFocused = true
-                        }
+                    SettingsCardView(icon: "person", 
+                                     text: "Change name for greeting on home screen")
+                    .onTapGesture {
+                        HapticHelper.impact()
+                        isEditingUsername = true
+                        isTextFieldFocused = true
+                    }
                 }
                 else {
                     // Change Username Input field and save button
@@ -89,7 +91,8 @@ struct SettingsView: View {
                             Spacer()
                             Button("Save") {
                                 HapticHelper.success()
-                                userName = usernameInput.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "" : String(", " + usernameInput)
+                                userName = usernameInput.trimmingCharacters(
+                                    in: .whitespacesAndNewlines).isEmpty ? "" : String(", " + usernameInput)
                                 isEditingUsername = false
                                 dismiss()
                             }
@@ -104,23 +107,27 @@ struct SettingsView: View {
                 
                 
                 // MARK: Toggle Sample Data
-                SettingsCardView(icon: "tray.and.arrow.\(isSampleData ? "up" : "down")", text: isSampleData ? "Remove sample flights to start using the app" : "Add sample flights to explore the app")
-                    .onTapGesture {
-                        showSampleDataAlert.toggle()
-                        HapticHelper.warning()
-                    }
-                    .alert(!isSampleData ? "Sample Flights Added" : "Sample Flights Removed", isPresented: $showSampleDataAlert, actions: {
-                        Button {
-                            toggleSampleData()
-                            dismiss()
-                        } label: {
-                            Text(!isSampleData ? "I understand: It's not my training state" : "OK")
-                                .foregroundStyle(Color.red)
-                                .bold()
-                        }}, message: {
-                            Text(!isSampleData ? "\nTen sample flights have been added. Therefore do not mistake the training state shown in the app with your own training state!" : "\nAll sample flights have been removed. Double check your flight data before trusting the indicated practice state.")
-                        })
-                // Info: Logic of the alert needs to be inverted (!isSampleData), as sample data is only added after confirming the alert.
+                SettingsCardView(icon: "tray.and.arrow.\(isSampleData ? "up" : "down")", 
+                                 text: isSampleData ? "Remove sample flights to start using the app" : "Add sample flights to explore the app")
+                .onTapGesture {
+                    showSampleDataAlert.toggle()
+                    HapticHelper.warning()
+                }
+                // Inform the user how to safely use sample data
+                /// Info: Logic of the alert needs to be inverted (!isSampleData), as sample data is only added after confirming the alert.
+                .alert(!isSampleData ? "Sample Flights Added" : "Sample Flights Removed",
+                       isPresented: $showSampleDataAlert,
+                       actions: {
+                    Button {
+                        toggleSampleData()
+                        dismiss()
+                    } label: {
+                        Text(!isSampleData ? "I understand: It's not my training state" : "OK")
+                            .foregroundStyle(Color.red)
+                            .bold()
+                    }}, message: {
+                        Text(!isSampleData ? "\nTen sample flights have been added. Therefore do not mistake the training state shown in the app with your own training state!" : "\nAll sample flights have been removed. Double check your flight data before trusting the indicated practice state.")
+                    })
                 
                 
                 // MARK: Section: "About"
@@ -133,13 +140,13 @@ struct SettingsView: View {
                 
                 
                 // MARK: Subscription
-                SettingsCardView(icon: "heart.fill", text: "Support the development of SkySoar")
+                SettingsCardView(icon: "heart.fill", text: userViewModel.isSubscriptionActive ? "Thank you for supporting SkySoar" : "Support the development of SkySoar")
                     .onTapGesture {
                         isSubscriptionPresented = true
                         HapticHelper.impact()
                     }
                     .sheet(isPresented: $isSubscriptionPresented) { SubscriptionView() }
-                    
+                
                 
                 
                 

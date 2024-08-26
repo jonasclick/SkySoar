@@ -24,12 +24,12 @@ struct Onboarding3View: View {
                     .padding(.bottom, 30)
                 
                 // Text EN
-                JustifiedText(text: localizedDisclaimerText())
+                JustifyTextHelper(text: localizedDisclaimerText())
                     .padding(.horizontal, -5)
                     .frame(height: 330)
                     .allowsHitTesting(false) // remove unnecessary scroll ability from JustifiedText
                 
-                // Link to website
+                // Link to developers website
                 Text("Developers Website")
                     .font(.system(size: 12, weight: .light))
                     .underline()

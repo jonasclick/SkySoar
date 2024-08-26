@@ -27,9 +27,15 @@ struct EditFlightLogView: View {
     @State private var hours: Int = 0
     @State private var minutes: Int = 0
     
-    @State private var pilotFunctionInput: String = "PIC" // Default value for the picker
-    let pilotFunctions = ["PIC", "Dual", "Instructor"] // Array of options for the picker
-    private var pilotFunctionTime: PilotFunctionTime { // Read value from the picker and get database-conform value
+    // MARK: Pilot Function
+    // Default value for the picker
+    @State private var pilotFunctionInput: String = "PIC"
+    
+    // Array of options for the picker
+    let pilotFunctions = ["PIC", "Dual", "Instructor"]
+    
+    // Read value from the picker and get database-conform value
+    private var pilotFunctionTime: PilotFunctionTime {
         switch pilotFunctionInput {
         case "PIC":
             return .pic
@@ -42,9 +48,15 @@ struct EditFlightLogView: View {
         }
     }
     
-    @State private var departureModeInput: String = "W" // Default value for the picker
-    let departureModes = ["W", "A", "S"] // Array of options for the picker
-    private var departureMode: DepartureMode { // Read value from the picker and get database-conform value
+    // MARK: Departure Mode
+    // Default value for the picker
+    @State private var departureModeInput: String = "W"
+    
+    // Array of options for the picker
+    let departureModes = ["W", "A", "S"]
+    
+    // Read value from the picker and get database-conform value
+    private var departureMode: DepartureMode {
         switch departureModeInput {
         case "W":
             return .winch
@@ -56,6 +68,7 @@ struct EditFlightLogView: View {
             return .winch // Default case
         }
     }
+    
     @State private var isPopoverPresented: Bool = false
     
     @State private var remarks: String = ""
@@ -151,7 +164,9 @@ struct EditFlightLogView: View {
                                         .labelsHidden()
                                         .onChange(of: departureDate) { oldValue, newValue in
                                             if isAutoFlightTime {
-                                                let timeDifference = DateHelper.calculateTimeDifference(from: DateHelper.removeSeconds(from: departureDate) , to: DateHelper.removeSeconds(from: arrivalDate))
+                                                let timeDifference = DateHelper.calculateTimeDifference(
+                                                    from: DateHelper.removeSeconds(from: departureDate),
+                                                    to: DateHelper.removeSeconds(from: arrivalDate))
                                                 hours = timeDifference.hours
                                                 minutes = timeDifference.minutes
                                             }
@@ -198,7 +213,9 @@ struct EditFlightLogView: View {
                                         .labelsHidden()
                                         .onChange(of: arrivalDate) { oldValue, newValue in
                                             if isAutoFlightTime {
-                                                let timeDifference = DateHelper.calculateTimeDifference(from: DateHelper.removeSeconds(from: departureDate) , to: DateHelper.removeSeconds(from: arrivalDate))
+                                                let timeDifference = DateHelper.calculateTimeDifference(
+                                                    from: DateHelper.removeSeconds(from: departureDate),
+                                                    to: DateHelper.removeSeconds(from: arrivalDate))
                                                 hours = timeDifference.hours
                                                 minutes = timeDifference.minutes
                                             }
@@ -241,11 +258,10 @@ struct EditFlightLogView: View {
                                     .frame(maxWidth: .infinity, alignment: .leading)
                             }
                             
-                            // Menu to toggle flight time calculation (automatic / manual)
-                            /*** Some pilots measure departure and arrival to the minute while flight time to the second,
-                             therefore they have to be able to add / subtract one minute from the automatic flight time calculation)
-                             ***/
                             
+                            // Menu to toggle flight time calculation (automatic / manual)
+                            /// Some pilots measure departure and arrival to the minute while flight time to the second,
+                            /// therefore they have to be able to add / subtract one minute from the automatic flight time calculation)
                             Menu {
                                 Text("Flight Time")
                                 
@@ -253,7 +269,9 @@ struct EditFlightLogView: View {
                                     isAutoFlightTime = true
                                     
                                     // Update flight time
-                                    let timeDifference = DateHelper.calculateTimeDifference(from: DateHelper.removeSeconds(from: departureDate) , to: DateHelper.removeSeconds(from: arrivalDate))
+                                    let timeDifference = DateHelper.calculateTimeDifference(
+                                        from: DateHelper.removeSeconds(from: departureDate),
+                                        to: DateHelper.removeSeconds(from: arrivalDate))
                                     
                                     hours = timeDifference.hours
                                     minutes = timeDifference.minutes
@@ -423,21 +441,25 @@ struct EditFlightLogView: View {
             .ignoresSafeArea()
             
         }
-        .confirmationDialog("Do you want to exit without saving your changes?", isPresented: $showConfirmation, titleVisibility: .visible) {
+        .confirmationDialog("Do you want to exit without saving your changes?",
+                            isPresented: $showConfirmation,
+                            titleVisibility: .visible) {
             Button("Discard Changes", role: .destructive) {
                 dismiss()
             }
             .foregroundStyle(.red)
         }
-        .alert(isPresented: $showDateAlert) {
-            Alert(title: Text("Can't save flight"), message: Text("Arrival of your flight can't be in the future."), dismissButton: .default(Text("OK")))
-        }
+                            .alert(isPresented: $showDateAlert) {
+                                Alert(title: Text("Can't save flight"),
+                                      message: Text("Arrival of your flight can't be in the future."),
+                                      dismissButton: .default(Text("OK")))
+                            }
         // Auto-save to prevent data loss if user swipes down the sheet (accidentally)
-        .onDisappear {
-            if arrivalDate < Date() {
-                updateFlightLog()
-            }
-        }
+                            .onDisappear {
+                                if arrivalDate < Date() {
+                                    updateFlightLog()
+                                }
+                            }
     }
     
     private func populateFlightData() {
@@ -475,7 +497,8 @@ struct EditFlightLogView: View {
         
         flightLog.remarks = remarks
         
-        // Save flight time calculation mode to the flightLog for correct setup when editing a flightLog
+        // Save flight time calculation mode to the flightLog
+        // for correct setup when editing a flightLog
         flightLog.isAutoFlightTime = isAutoFlightTime
     }
 }

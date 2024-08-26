@@ -53,7 +53,7 @@ struct HeadlineView: View {
                     Text(try! AttributedString(markdown: "Deine Flüge __im letzten Jahr__"))
                         .font(.system(size: 23))
                 }
-    
+                
             }
         }
     }

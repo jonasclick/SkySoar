@@ -37,6 +37,7 @@ struct Onboarding4View: View {
             
             // MARK: WITH sample flight data
             Button(action: {
+                HapticHelper.warning()
                 showSampleDataAlert = true
             }, label: {
                 VStack {
@@ -52,6 +53,7 @@ struct Onboarding4View: View {
             .buttonStyle(PlainButtonStyle())
             .alert("Sample Flights Added", isPresented: $showSampleDataAlert, actions: {
                 Button {
+                    HapticHelper.success()
                     SampleDataHelper.addSampleData(context: context)
                     needsOnboarding = false
                 } label: {

@@ -63,7 +63,7 @@ struct HomeView: View {
                                 Button("This Year") { filterLogic = FilterLogic.thisYear }
                                 Button("Last Year") { filterLogic = FilterLogic.lastYear }
                             } label: {
-                                Label("Date Range", systemImage: "calendar")
+                                Label("Set Date Range", systemImage: "calendar")
                             }
                             
                             // Configure what Function Time to display
@@ -92,7 +92,7 @@ struct HomeView: View {
                                     Label("Self Launching", systemImage: "s.circle.fill")}
                                 
                             } label: {
-                                Label("Launch Method", systemImage: "airplane.departure")
+                                Label("Display Launch Method", systemImage: "airplane.departure")
                             }
                         } label: {
                             Image(systemName: "slider.horizontal.3")
@@ -110,26 +110,42 @@ struct HomeView: View {
                     // MARK: Stat Cards – Row 1
                     HStack {
                         Spacer()
-                        StatCardView(image: "clock", number: flightDataInRange(startMonthsAgo: filterLogic.startDate(), endMonthsAgo: filterLogic.endDate(), isHours: true), label: "Hours")
+                        StatCardView(image: "clock",
+                                     number: flightDataInRange(
+                                        startMonthsAgo: filterLogic.startDate(),
+                                        endMonthsAgo: filterLogic.endDate(),
+                                        isHours: true),
+                                     label: "Hours")
                         Spacer()
                         Spacer()
-                        StatCardView(image: "airplane.departure", number: flightDataInRange(startMonthsAgo: filterLogic.startDate(), endMonthsAgo: filterLogic.endDate(), isHours: false), label: "Starts")
+                        StatCardView(image: "airplane.departure",
+                                     number: flightDataInRange(
+                                        startMonthsAgo: filterLogic.startDate(),
+                                        endMonthsAgo: filterLogic.endDate(),
+                                        isHours: false),
+                                     label: "Starts")
                         Spacer()
                     }
                     .padding(.bottom, 29)
-                
+                    
                     
                     // MARK: Stat Cards – Row 2
                     HStack {
                         Spacer()
                         StatCardFunctionTimeView(
                             pilotFunctionTime: showFunctionTime,
-                            value: flightTimeForFunction(selectedFunction: showFunctionTime, startMonthsAgo: filterLogic.startDate(), endMonthsAgo: filterLogic.endDate()))
+                            value: flightTimeForFunction(
+                                selectedFunction: showFunctionTime,
+                                startMonthsAgo: filterLogic.startDate(),
+                                endMonthsAgo: filterLogic.endDate()))
                         Spacer()
                         Spacer()
                         StatCardDepartureModeView(
                             departureMode: showDepartureMode,
-                            value: flightsForDepartureMode(departureMode: showDepartureMode, startMonthsAgo: filterLogic.startDate(), endMonthsAgo: filterLogic.endDate()))
+                            value: flightsForDepartureMode(
+                                departureMode: showDepartureMode,
+                                startMonthsAgo: filterLogic.startDate(),
+                                endMonthsAgo: filterLogic.endDate()))
                         Spacer()
                     }
                     .padding(.bottom, 64)
@@ -154,8 +170,9 @@ struct HomeView: View {
                         // 6 Months Stats for Training State
                         HStack {
                             VStack(alignment: .leading, spacing: 10) {
-                                Text(String(TrainingStateHelper.noDotZero(TrainingStateHelper.flightHoursInSixMonths(flightLogs: flightLogs))))
-                                    .font(.system(size: 27, weight: .semibold))
+                                Text(String(TrainingStateHelper.noDotZero(
+                                    TrainingStateHelper.flightHoursInSixMonths(flightLogs: flightLogs))))
+                                .font(.system(size: 27, weight: .semibold))
                                 Text("\(Image(systemName: "clock")) Hours")
                                     .font(.sectionHeadline)
                                     .opacity(0.6)
@@ -163,8 +180,9 @@ struct HomeView: View {
                             }
                             
                             VStack(alignment: .leading, spacing: 10) {
-                                Text(String(TrainingStateHelper.noDotZero(TrainingStateHelper.flightLogsInSixMonths(flightLogs: flightLogs))))
-                                    .font(.system(size: 27, weight: .semibold))
+                                Text(String(TrainingStateHelper.noDotZero(
+                                    TrainingStateHelper.flightLogsInSixMonths(flightLogs: flightLogs))))
+                                .font(.system(size: 27, weight: .semibold))
                                 Text("\(Image(systemName: "airplane.departure")) Starts")
                                     .font(.sectionHeadline)
                                     .opacity(0.6)
@@ -211,6 +229,7 @@ struct HomeView: View {
             .sheet(isPresented: $isSettingsPresented, onDismiss: { updateTrainingState() }) { SettingsView() }
         }
     }
+    
     
     private func updateTrainingState() {
         trainingState = TrainingStateHelper.calculateTrainingStateInt(

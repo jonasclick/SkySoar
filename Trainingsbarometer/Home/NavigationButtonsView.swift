@@ -9,8 +9,6 @@ import SwiftUI
 
 struct NavigationButtonsView: View {
     
-    @AppStorage("onboarding") var needsOnboarding = true
-    
     @Binding var isSettingsPresented: Bool
     
     var body: some View {
@@ -28,17 +26,6 @@ struct NavigationButtonsView: View {
                 })
                 .buttonStyle(PlainButtonStyle())
                 
-                Spacer()
-                
-                // MARK: Reset Onboarding (for development purposes only)
-//                Button(action: {
-//                    needsOnboarding = true
-//                }, label: {
-//                    Image(systemName: "gobackward")
-//                        .imageScale(.large)
-//                        .padding(.trailing, 10)
-//                })
-//                .buttonStyle(PlainButtonStyle())
                 
                 Spacer()
                 

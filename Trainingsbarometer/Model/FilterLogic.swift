@@ -27,30 +27,30 @@ enum FilterLogic: Int {
     }
     
     func startDate() -> Int {
-            switch self {
-            case .total:
-                return 1200
-            case .lastSixMonths:
-                return 6
-            case .thisYear:
-                return 12
-            case .lastYear:
-                return 24
-            }
+        switch self {
+        case .total:
+            return 1200
+        case .lastSixMonths:
+            return 6
+        case .thisYear:
+            return 12
+        case .lastYear:
+            return 24
         }
+    }
     
     func endDate() -> Int {
-            switch self {
-            case .total:
-                return 0
-            case .lastSixMonths:
-                return 0
-            case .thisYear:
-                return 0
-            case .lastYear:
-                return 12
-            }
+        switch self {
+        case .total:
+            return 0
+        case .lastSixMonths:
+            return 0
+        case .thisYear:
+            return 0
+        case .lastYear:
+            return 12
         }
+    }
     
     
 }

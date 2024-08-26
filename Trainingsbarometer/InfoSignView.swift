@@ -19,21 +19,22 @@ struct InfoSignView: View {
                 Spacer()
                 ZStack {
                     
-                    // Thin Connecting Lines
-                    RoundedRectangle(cornerRadius: 0)
-                        .foregroundStyle(.trafficLightGray)
-                        .frame(width: 2, height: 12)
+                    Group {
+                        // Thin Connecting Lines
+                        RoundedRectangle(cornerRadius: 0)
+                            .frame(width: 2, height: 12)
+                        
+                        RoundedRectangle(cornerRadius: 0)
+                            .frame(width: 2, height: 12)
+                            .offset(x: 25)
+                        
+                        // Horizontal Pole
+                        RoundedRectangle(cornerRadius: 4)
+                            .frame(width: 69, height: 6)
+                            .offset(x: 20, y: -8)
+                    }
+                    .foregroundStyle(.trafficLightGray)
                     
-                    RoundedRectangle(cornerRadius: 0)
-                        .foregroundStyle(.trafficLightGray)
-                        .frame(width: 2, height: 12)
-                        .offset(x: 25)
-                    
-                    // Horizontal Pole
-                    RoundedRectangle(cornerRadius: 4)
-                        .foregroundStyle(.trafficLightGray)
-                        .frame(width: 69, height: 6)
-                        .offset(x: 20, y: -8)
                     
                     // Sign
                     Link(destination: URL(string: url)!, label: {
@@ -42,11 +43,14 @@ struct InfoSignView: View {
                                 .foregroundStyle(.trafficLightGray)
                                 .frame(width: 45, height: 38)
                             Image(systemName: "info.circle")
-                                .font(.system(size: 20, weight: .medium))
                                 .foregroundStyle(.white.opacity(0.8))
+                                .font(.system(size: 20, weight: .medium))
+                            
                         }
                         .offset(x: 13, y: 25)
                     })
+                    
+                    
                 }
                 .shadow(color: .black.opacity(0.3), radius: 7, x: 3, y: 4)
                 .padding(.trailing, 17)

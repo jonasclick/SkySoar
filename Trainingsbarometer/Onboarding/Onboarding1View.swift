@@ -41,7 +41,7 @@ struct Onboarding1View: View {
                     }
                 })
                 .buttonStyle(PlainButtonStyle())
-
+                
                 Spacer()
                 
             }

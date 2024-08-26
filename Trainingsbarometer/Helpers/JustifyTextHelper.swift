@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 // Helper to display multiline text with justified allignment.
-struct JustifiedText: UIViewRepresentable {
+struct JustifyTextHelper: UIViewRepresentable {
     
     var text: String
     
@@ -18,11 +18,9 @@ struct JustifiedText: UIViewRepresentable {
         textView.font = UIFont.systemFont(ofSize: 15, weight: .light, width: .standard)
         textView.textAlignment = .justified
         
-        // Disable edit ans select, as this view is only used for displaying text.
+        // Disable edit and select, as this view is only used for displaying text.
         textView.isEditable = false
         textView.isSelectable = false
-//        textView.isScrollEnabled = false // -> doesn't work. It makes the text suddenly expand horizontally.
-        
         
         textView.backgroundColor = .clear
         return textView

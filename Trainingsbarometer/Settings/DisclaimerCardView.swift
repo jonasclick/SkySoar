@@ -18,6 +18,8 @@ struct DisclaimerCardView: View {
             
             
             VStack (alignment: .leading) {
+                
+                // Title
                 HStack {
                     Image(systemName: "exclamationmark.shield.fill")
                         .font(.system(size: 18))
@@ -28,6 +30,7 @@ struct DisclaimerCardView: View {
                 }
                 .padding(.bottom, 5)
                 
+                // Body
                 Text("Do not rely solely on the information of this application.")
                     .font(.infoBoxContent)
                     .padding(.bottom, 2)
@@ -38,6 +41,8 @@ struct DisclaimerCardView: View {
                 Text("The developers disclaim any liability.")
                     .font(.infoBoxContent)
                     .padding(.bottom, 2)
+                
+                // "Read the full disclaimer"
                 HStack {
                     Spacer()
                     Text("Read the full disclaimer")

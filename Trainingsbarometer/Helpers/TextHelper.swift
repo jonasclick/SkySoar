@@ -11,10 +11,11 @@ import Foundation
 struct TextHelper {
     
     static func limitChars(input: String, limit: Int) -> String {
-        // If the input is above the limit, take the first "limit" number of characters
-        if input.count > limit {
-            return String(input.prefix(limit))
-        }
+        
+        // Don't return charactes over the limit number
+        if input.count > limit { return String(input.prefix(limit)) }
+        
+        // else, return the input
         return input
     }
     

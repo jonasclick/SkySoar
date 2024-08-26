@@ -14,7 +14,7 @@ struct BackgroundView: View {
         
         Rectangle()
             .foregroundStyle(Color.washedGray)
-            .frame(width: 783, height: 347)
+            .frame(width: 890, height: 347)
             .position(x: 200, y: 398)
             .rotationEffect(Angle(degrees: -36.57))
             .shadow(color: Color.black.opacity(0.03), radius: 10, x: -5, y: -5)

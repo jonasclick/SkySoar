@@ -113,6 +113,7 @@ struct FlightLogsView: View {
                         
                         FlightLogCardView(flightLog: flightLog)
                             .padding(.vertical, -6)
+                            .padding(.horizontal, -5)
                             .listRowBackground(Color.clear)
                             .listRowSeparator(.hidden)
                             .swipeActions {

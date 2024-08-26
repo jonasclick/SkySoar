@@ -52,6 +52,7 @@ struct Onboarding2View: View {
                 Spacer()
                 Spacer()
                 
+                // Privacy Information
                 Image(systemName: "shield.lefthalf.filled.badge.checkmark")
                     .imageScale(.large)
                     .font(.title2)
@@ -62,7 +63,7 @@ struct Onboarding2View: View {
                     .multilineTextAlignment(.center)
                     .padding(.top, 5)
                     .opacity(0.8)
-                 
+                
                 Spacer()
                 
                 Spacer()

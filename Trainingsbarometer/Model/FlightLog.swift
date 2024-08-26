@@ -18,15 +18,15 @@ class FlightLog: Identifiable {
     
     var departureLocation: String = ""
     var departureDate: Date?
-
+    
     var arrivalLocation: String = ""
     var arrivalDate: Date?
     
     var aircraftModel: String = ""
     var aircraftRegistration: String = ""
-
+    
     var flightTime: TimeInterval = 0 // Flight duration stored in seconds but edited and displayed in hours and minutes, no seconds.
-
+    
     var departureMode = DepartureMode.winch
     
     var pilotFunctionTime = PilotFunctionTime.pic
@@ -38,15 +38,15 @@ class FlightLog: Identifiable {
     }
     
     var pilotFunctionString: String {
-            switch pilotFunctionTime {
-            case .pic:
-                return "PIC"
-            case .dual:
-                return "Dual"
-            case .instructorAndPic:
-                return "Instructor"
-            }
+        switch pilotFunctionTime {
+        case .pic:
+            return "PIC"
+        case .dual:
+            return "Dual"
+        case .instructorAndPic:
+            return "Instructor"
         }
+    }
     
     var departureModeString: String {
         switch departureMode {

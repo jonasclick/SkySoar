@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD0C18F22C7B55380081BF17 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0C18F12C7B55380081BF17 /* StoreKit.framework */; };
+		DD0C18F42C7B58640081BF17 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0C18F32C7B58640081BF17 /* UserViewModel.swift */; };
+		DD0C18F72C7B68A40081BF17 /* SubscriptionActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0C18F62C7B68A40081BF17 /* SubscriptionActiveView.swift */; };
+		DD0C18F92C7B68EC0081BF17 /* SubscriptionInactiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0C18F82C7B68EC0081BF17 /* SubscriptionInactiveView.swift */; };
 		DD1DB7BC2C2AC223000FF93F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1DB7BB2C2AC223000FF93F /* SettingsView.swift */; };
 		DD1DB7BF2C2AF8C3000FF93F /* SettingsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1DB7BE2C2AF8C3000FF93F /* SettingsCardView.swift */; };
 		DD283CA62C7720C3009B4788 /* HapticHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD283CA52C7720C3009B4788 /* HapticHelper.swift */; };
@@ -14,7 +18,7 @@
 		DD4DC9F22C358B130051109E /* SampleDataWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4DC9F12C358B130051109E /* SampleDataWarningView.swift */; };
 		DD62C88B2C5FB55E00A87374 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD62C88A2C5FB55E00A87374 /* TextHelper.swift */; };
 		DD78229F2C31B3530024A877 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DD78229E2C31B3530024A877 /* Localizable.xcstrings */; };
-		DD7AECB22C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECB12C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift */; };
+		DD7AECB22C0DCAE1002AB8F1 /* SkySoarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECB12C0DCAE1002AB8F1 /* SkySoarApp.swift */; };
 		DD7AECB42C0DCAE1002AB8F1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECB32C0DCAE1002AB8F1 /* HomeView.swift */; };
 		DD7AECB62C0DCAE2002AB8F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD7AECB52C0DCAE2002AB8F1 /* Assets.xcassets */; };
 		DD7AECB92C0DCAE2002AB8F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD7AECB82C0DCAE2002AB8F1 /* Preview Assets.xcassets */; };
@@ -52,15 +56,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD0C18F12C7B55380081BF17 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		DD0C18F32C7B58640081BF17 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		DD0C18F62C7B68A40081BF17 /* SubscriptionActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionActiveView.swift; sourceTree = "<group>"; };
+		DD0C18F82C7B68EC0081BF17 /* SubscriptionInactiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionInactiveView.swift; sourceTree = "<group>"; };
 		DD1DB7BB2C2AC223000FF93F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DD1DB7BE2C2AF8C3000FF93F /* SettingsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCardView.swift; sourceTree = "<group>"; };
 		DD283CA52C7720C3009B4788 /* HapticHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticHelper.swift; sourceTree = "<group>"; };
 		DD4DC9EF2C35368B0051109E /* SampleDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataHelper.swift; sourceTree = "<group>"; };
 		DD4DC9F12C358B130051109E /* SampleDataWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataWarningView.swift; sourceTree = "<group>"; };
-		DD5942EA2C78A98C0019C0E3 /* Trainingsbarometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trainingsbarometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD5942EA2C78A98C0019C0E3 /* SkySoar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkySoar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD62C88A2C5FB55E00A87374 /* TextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
 		DD78229E2C31B3530024A877 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		DD7AECB12C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingsbarometerApp.swift; sourceTree = "<group>"; };
+		DD7AECB12C0DCAE1002AB8F1 /* SkySoarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkySoarApp.swift; sourceTree = "<group>"; };
 		DD7AECB32C0DCAE1002AB8F1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DD7AECB52C0DCAE2002AB8F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD7AECB82C0DCAE2002AB8F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -101,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD0C18F22C7B55380081BF17 /* StoreKit.framework in Frameworks */,
 				DDFD7EC72C78788D007B38D6 /* RevenueCatUI in Frameworks */,
 				DDFD7EC52C78788D007B38D6 /* RevenueCat in Frameworks */,
 			);
@@ -109,6 +118,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD0C18F02C7B55380081BF17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD0C18F12C7B55380081BF17 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD0C18F52C7B58670081BF17 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DD0C18F32C7B58640081BF17 /* UserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DD0C18FA2C7B6CFB0081BF17 /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				DDFD7EC82C787D5E007B38D6 /* SubscriptionView.swift */,
+				DD0C18F82C7B68EC0081BF17 /* SubscriptionInactiveView.swift */,
+				DD0C18F62C7B68A40081BF17 /* SubscriptionActiveView.swift */,
+			);
+			path = Subscription;
+			sourceTree = "<group>";
+		};
 		DD1DB7BD2C2AC229000FF93F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,7 +151,7 @@
 				DDDD2D7D2C315FE50008E135 /* DisclaimerCardView.swift */,
 				DD1DB7BE2C2AF8C3000FF93F /* SettingsCardView.swift */,
 				DDED46DB2C2C36FC00441280 /* DisclaimerView.swift */,
-				DDFD7EC82C787D5E007B38D6 /* SubscriptionView.swift */,
+				DD0C18FA2C7B6CFB0081BF17 /* Subscription */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -136,7 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				DD7AECB02C0DCAE1002AB8F1 /* Trainingsbarometer */,
-				DD5942EA2C78A98C0019C0E3 /* Trainingsbarometer.app */,
+				DD5942EA2C78A98C0019C0E3 /* SkySoar.app */,
+				DD0C18F02C7B55380081BF17 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,7 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				DDE5A8DF2C6142DB00470417 /* Info.plist */,
-				DD7AECB12C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift */,
+				DD7AECB12C0DCAE1002AB8F1 /* SkySoarApp.swift */,
 				DDE5A8DD2C61346800470417 /* Launch Screen.storyboard */,
 				DD7AECC62C0DF3CA002AB8F1 /* Home */,
 				DDB221682C74FB9D002BE919 /* InfoSignView.swift */,
@@ -152,6 +188,7 @@
 				DD7AECC72C0DF3F4002AB8F1 /* FlightLogs */,
 				DD1DB7BD2C2AC229000FF93F /* Settings */,
 				DD73AE162C4D3E16000F0883 /* Onboarding */,
+				DD0C18F52C7B58670081BF17 /* ViewModel */,
 				DDB60F7C2C0E1D2500ACD9D0 /* Model */,
 				DD7AECBF2C0DDE41002AB8F1 /* Helpers */,
 				DD7AECB52C0DCAE2002AB8F1 /* Assets.xcassets */,
@@ -172,16 +209,14 @@
 		DD7AECBF2C0DDE41002AB8F1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				DDB2215B2C73DB5F002BE919 /* Training State Calculations */,
-				DDB2215A2C73DB38002BE919 /* Views */,
 				DD4DC9EF2C35368B0051109E /* SampleDataHelper.swift */,
+				DDB2215C2C73DB94002BE919 /* TrainingStateHelper.swift */,
 				DDFB9BD52C666F52006F1AC0 /* DateHelper.swift */,
 				DD62C88A2C5FB55E00A87374 /* TextHelper.swift */,
 				DD7AECC02C0DDE55002AB8F1 /* FontHelper.swift */,
 				DDED46DD2C2C3ECD00441280 /* JustifyTextHelper.swift */,
 				DD283CA52C7720C3009B4788 /* HapticHelper.swift */,
-				DDED46D32C2C17AE00441280 /* WebKit.swift */,
-				DDDD2D722C314B190008E135 /* WebsiteView.swift */,
+				DDB2215A2C73DB38002BE919 /* HelperViews */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -208,22 +243,16 @@
 			path = FlightLogs;
 			sourceTree = "<group>";
 		};
-		DDB2215A2C73DB38002BE919 /* Views */ = {
+		DDB2215A2C73DB38002BE919 /* HelperViews */ = {
 			isa = PBXGroup;
 			children = (
 				DDE5A0522C27DA1100FF460B /* BackgroundView.swift */,
 				DDDD2D792C3158230008E135 /* CloseButtonView.swift */,
 				DD4DC9F12C358B130051109E /* SampleDataWarningView.swift */,
+				DDDD2D722C314B190008E135 /* WebsiteView.swift */,
+				DDED46D32C2C17AE00441280 /* WebKit.swift */,
 			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		DDB2215B2C73DB5F002BE919 /* Training State Calculations */ = {
-			isa = PBXGroup;
-			children = (
-				DDB2215C2C73DB94002BE919 /* TrainingStateHelper.swift */,
-			);
-			path = "Training State Calculations";
+			path = HelperViews;
 			sourceTree = "<group>";
 		};
 		DDB221642C74F121002BE919 /* StatCards */ = {
@@ -248,9 +277,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DD7AECAD2C0DCAE1002AB8F1 /* Trainingsbarometer */ = {
+		DD7AECAD2C0DCAE1002AB8F1 /* SkySoar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DD7AECBC2C0DCAE2002AB8F1 /* Build configuration list for PBXNativeTarget "Trainingsbarometer" */;
+			buildConfigurationList = DD7AECBC2C0DCAE2002AB8F1 /* Build configuration list for PBXNativeTarget "SkySoar" */;
 			buildPhases = (
 				DD7AECAA2C0DCAE1002AB8F1 /* Sources */,
 				DD7AECAB2C0DCAE1002AB8F1 /* Frameworks */,
@@ -260,13 +289,13 @@
 			);
 			dependencies = (
 			);
-			name = Trainingsbarometer;
+			name = SkySoar;
 			packageProductDependencies = (
 				DDFD7EC42C78788D007B38D6 /* RevenueCat */,
 				DDFD7EC62C78788D007B38D6 /* RevenueCatUI */,
 			);
 			productName = Trainingsbarometer;
-			productReference = DD5942EA2C78A98C0019C0E3 /* Trainingsbarometer.app */;
+			productReference = DD5942EA2C78A98C0019C0E3 /* SkySoar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -301,7 +330,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DD7AECAD2C0DCAE1002AB8F1 /* Trainingsbarometer */,
+				DD7AECAD2C0DCAE1002AB8F1 /* SkySoar */,
 			);
 		};
 /* End PBXProject section */
@@ -333,11 +362,13 @@
 				DDD323DD2C29DDF7008AE016 /* HeadlineView.swift in Sources */,
 				DDB221632C74F11A002BE919 /* StatCardDepartureModeView.swift in Sources */,
 				DDB2215D2C73DB94002BE919 /* TrainingStateHelper.swift in Sources */,
+				DD0C18F72C7B68A40081BF17 /* SubscriptionActiveView.swift in Sources */,
 				DDFB9BD62C666F52006F1AC0 /* DateHelper.swift in Sources */,
 				DDED46DE2C2C3ECD00441280 /* JustifyTextHelper.swift in Sources */,
 				DDB2215F2C74DE52002BE919 /* FilterLogic.swift in Sources */,
 				DDB221672C74F5CF002BE919 /* TrafficLightView.swift in Sources */,
 				DDB2216D2C75C063002BE919 /* GreetingView.swift in Sources */,
+				DD0C18F42C7B58640081BF17 /* UserViewModel.swift in Sources */,
 				DD7AECC32C0DE3D1002AB8F1 /* StatCardView.swift in Sources */,
 				DDB60F7E2C0E1D3F00ACD9D0 /* FlightLog.swift in Sources */,
 				DDB60F9A2C10977D00ACD9D0 /* EditFlightLogView.swift in Sources */,
@@ -351,7 +382,8 @@
 				DD283CA62C7720C3009B4788 /* HapticHelper.swift in Sources */,
 				DDA6B7F42C38292B0047DFA9 /* Onboarding2View.swift in Sources */,
 				DDED46DC2C2C36FC00441280 /* DisclaimerView.swift in Sources */,
-				DD7AECB22C0DCAE1002AB8F1 /* TrainingsbarometerApp.swift in Sources */,
+				DD0C18F92C7B68EC0081BF17 /* SubscriptionInactiveView.swift in Sources */,
+				DD7AECB22C0DCAE1002AB8F1 /* SkySoarApp.swift in Sources */,
 				DDB221612C74E824002BE919 /* StatCardFunctionTimeView.swift in Sources */,
 				DDB221692C74FB9D002BE919 /* InfoSignView.swift in Sources */,
 				DDFD7EC92C787D5E007B38D6 /* SubscriptionView.swift in Sources */,
@@ -578,7 +610,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DD7AECBC2C0DCAE2002AB8F1 /* Build configuration list for PBXNativeTarget "Trainingsbarometer" */ = {
+		DD7AECBC2C0DCAE2002AB8F1 /* Build configuration list for PBXNativeTarget "SkySoar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DD7AECBD2C0DCAE2002AB8F1 /* Debug */,

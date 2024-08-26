@@ -14,7 +14,7 @@ struct TrafficLightView: View {
     var body: some View {
         ZStack {
             
-           
+            
             // MARK: Traffic Light Structure
             // Pole
             RoundedRectangle(cornerRadius: 0)
@@ -32,20 +32,18 @@ struct TrafficLightView: View {
             VStack {
                 // Red Light
                 Circle()
-                    .frame(width: 28)
                     .foregroundStyle(.barometerRed)
                     .opacity(trainingState == 1 ? 1 : 0.2)
                 // Yellow Light
                 Circle()
-                    .frame(width: 28)
                     .foregroundStyle(.barometerYellow)
                     .opacity(trainingState == 2 ? 1 : 0.2)
                 // Green Light
                 Circle()
-                    .frame(width: 28)
                     .foregroundStyle(.barometerGreen)
                     .opacity(trainingState == 3 ? 1 : 0.2)
             }
+            .frame(width: 28)
         }
         .shadow(color: .black.opacity(0.3), radius: 7, x: 3, y: 4)
     }

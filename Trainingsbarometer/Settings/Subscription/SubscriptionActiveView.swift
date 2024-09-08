@@ -11,6 +11,8 @@ struct SubscriptionActiveView: View {
     
     @EnvironmentObject var userViewModel: UserViewModel
     
+    @State private var isDefaultAppIcon = UIApplication.shared.alternateIconName == nil ? false : true
+    
     var body: some View {
         Spacer()
         
@@ -37,6 +39,7 @@ struct SubscriptionActiveView: View {
         // Button for user to change app icon
         Button(action: {
             setAppIcon(isDefault: UIApplication.shared.alternateIconName == nil ? false : true)
+            updateIsDefaultAppIcon()
         }, label: {
             Text(UIApplication.shared.alternateIconName == nil ? "Set Supporter App Icon" : "Set default app icon")
         })
@@ -58,6 +61,10 @@ struct SubscriptionActiveView: View {
                 print("Failed request to update the app’s icon: \(error)")
             }
         }
+    }
+    
+    private func updateIsDefaultAppIcon() {
+        isDefaultAppIcon = UIApplication.shared.alternateIconName == nil ? false : true
     }
     
 }

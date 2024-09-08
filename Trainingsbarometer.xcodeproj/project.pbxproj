@@ -24,6 +24,7 @@
 		DD7AECC12C0DDE55002AB8F1 /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECC02C0DDE55002AB8F1 /* FontHelper.swift */; };
 		DD7AECC32C0DE3D1002AB8F1 /* StatCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECC22C0DE3D1002AB8F1 /* StatCardView.swift */; };
 		DD7AECC52C0DF3BB002AB8F1 /* FlightLogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECC42C0DF3BB002AB8F1 /* FlightLogsView.swift */; };
+		DD9E0E022C8DE3D600E24071 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9E0E012C8DE3D600E24071 /* ContentView.swift */; };
 		DDA6B7F42C38292B0047DFA9 /* Onboarding2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6B7F32C38292B0047DFA9 /* Onboarding2View.swift */; };
 		DDA6B7F62C3829DF0047DFA9 /* Onboarding3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6B7F52C3829DF0047DFA9 /* Onboarding3View.swift */; };
 		DDA6B7FC2C3A7CF40047DFA9 /* Onboarding4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6B7FB2C3A7CF40047DFA9 /* Onboarding4View.swift */; };
@@ -74,6 +75,7 @@
 		DD7AECC02C0DDE55002AB8F1 /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		DD7AECC22C0DE3D1002AB8F1 /* StatCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCardView.swift; sourceTree = "<group>"; };
 		DD7AECC42C0DF3BB002AB8F1 /* FlightLogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightLogsView.swift; sourceTree = "<group>"; };
+		DD9E0E012C8DE3D600E24071 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DDA6B7F32C38292B0047DFA9 /* Onboarding2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding2View.swift; sourceTree = "<group>"; };
 		DDA6B7F52C3829DF0047DFA9 /* Onboarding3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding3View.swift; sourceTree = "<group>"; };
 		DDA6B7FB2C3A7CF40047DFA9 /* Onboarding4View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding4View.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			children = (
 				DDE5A8DF2C6142DB00470417 /* Info.plist */,
 				DD7AECB12C0DCAE1002AB8F1 /* SkySoarApp.swift */,
+				DD9E0E012C8DE3D600E24071 /* ContentView.swift */,
 				DDE5A8DD2C61346800470417 /* Launch Screen.storyboard */,
 				DD7AECC62C0DF3CA002AB8F1 /* Home */,
 				DDB221682C74FB9D002BE919 /* InfoSignView.swift */,
@@ -378,6 +381,7 @@
 				DDDD2D7A2C3158230008E135 /* CloseButtonView.swift in Sources */,
 				DD7AECB42C0DCAE1002AB8F1 /* HomeView.swift in Sources */,
 				DD283CA62C7720C3009B4788 /* HapticHelper.swift in Sources */,
+				DD9E0E022C8DE3D600E24071 /* ContentView.swift in Sources */,
 				DDA6B7F42C38292B0047DFA9 /* Onboarding2View.swift in Sources */,
 				DDED46DC2C2C36FC00441280 /* DisclaimerView.swift in Sources */,
 				DD0C18F92C7B68EC0081BF17 /* SubscriptionInactiveView.swift in Sources */,
@@ -525,7 +529,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Trainingsbarometer/Preview Content\"";
 				DEVELOPMENT_TEAM = 5RLQ565RC5;
 				ENABLE_PREVIEWS = YES;
@@ -564,7 +568,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Trainingsbarometer/Preview Content\"";
 				DEVELOPMENT_TEAM = 5RLQ565RC5;
 				ENABLE_PREVIEWS = YES;

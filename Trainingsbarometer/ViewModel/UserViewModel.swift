@@ -34,17 +34,17 @@ class UserViewModel: ObservableObject {
         Purchases.shared.getCustomerInfo { customerInfo, error in
             if let customerInfo = customerInfo {
                 if customerInfo.entitlements["Supporter"]?.isActive == true {
-                    print("User identified as 'Supporter'")
+                    print("checkAppIcon() identified User as 'Supporter'")
                     return
                 }
                 else { UIApplication.shared.setAlternateIconName(nil) { (error) in
                     if let error = error {
-                        print("Failed request to reset the app’s icon: \(error)")
+                        print("checkAppIcon() failed to reset the app’s icon: \(error)")
                     }
                 }
                 }
             } else if let error = error {
-                print("Failed to fetch customer info: \(error)")
+                print("checkAppIcon() failed to fetch customer info: \(error)")
                 return
             }
         }

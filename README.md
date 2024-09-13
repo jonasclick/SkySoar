@@ -1,49 +1,53 @@
 
 
-# Pilot Practice App
+# SkySoar (Mobile App for iOS)
 
-The Pilot Practice app gives glider pilots immediate access to their practice state at any time, without having to look up past flight logs and without having to do calculations.
-Calculating the practice state is a tedious process for pilots and is therefore often left out, which impacts safety in the private aviation sector.
+SkySoar lets glider pilots keep track of their flights and gives them immediate access to their practice state, without the manual work of having to look up past flight logs and doing calculations.
+Calculating the practice state is a tedious process and is therefore often left out, which impacts safety in the private aviation sector.
 
 
-<img src="https://github.com/jonasclick/TBARO-Images/blob/main/Sideways%20with%20Text%20small.png" alt="Image of the Pilot Practice App" style="max-width: 100%; height: auto;">
+<img src="https://github.com/jonasclick/TBARO-Images/blob/main/Sideways%20with%20Text%20small.png" alt="Image of the SkySoar App" style="max-width: 100%; height: auto;">
 
-This mobile app is developed for iOS in Swift (SwiftUI). The logic follows the guideline from [Deutscher Aero Club e.V.](https://www.daec.de) and shows a practice state and recommendations in accordance to their "Trainingsbarometer" (for more info see "copyright" section below).
+This mobile app is developed for iOS in Swift (mostly SwiftUI). It has been released in the AppStore and [can be downloaded here.](https://apps.apple.com/ch/app/skysoar/id6608979357?)
 
 <br><br>
 
-### Why should I use the Pilot Practice app?
+### Why should I use SkySoar?
 
-Glider pilots must maintain a certain level of practice to ensure safety during flights: The German Aero Club [Deutscher Aero Club e.V.](https://www.daec.de) calculates practice state by a certain combination of the amount of flight hours in the last six months and the amount of starts in the last six months, as shown on [their Practice Barometer poster](https://www.daec.de/media/files/2023/Sportarten/Segelflug/Downloads/DAeC-Trainingbarometer_A3-Plakat_RZ_Druck_a.pdf), which [can be found here](https://www.daec.de/sportarten/segelflug/downloads-termine/#c505).
+SkySoar gives you the ability to keep track of your flights in well-designed and easy to use app. It's your digital flight book with superpowers: The dashboard let's you see and sort your flight data and even calculates your practice state. 
 
-The app Pilot Practice evaluates the users flight data and displays a practice state of either green, yellow or red alongside with safety recommendations. This allows glider pilots to make informed decisions about their readiness to fly. By making practice state information easily accessible through a user-friendly interface, this app aims to become an essential companion for both novice and experienced glider pilots.
+The German Aero Club [Deutscher Aero Club e.V.](https://www.daec.de) calculates practice state by a certain combination of the amount of flight hours in the last six months and the amount of starts in the last six months, as shown on [their Practice Barometer poster](https://www.daec.de/media/files/2023/Sportarten/Segelflug/Downloads/DAeC-Trainingbarometer_A3-Plakat_RZ_Druck_a.pdf), which [can be found here](https://www.daec.de/sportarten/segelflug/downloads-termine/#c505).
+
+SkySoar evaluates the users flight data and displays a practice state of either green, yellow or red with the traffic light that can be found on the home screen. This allows glider pilots to make informed decisions about their readiness to fly. By making practice state information easily accessible through a user-friendly interface, this app aims to become an essential companion for both novice and experienced glider pilots.
 
 <br><br>
 
 ## Features
 
--   **Flight Log Management**: Allows pilots to add and edit their flights.
--  **Practice State Visualization**: Displays the pilot's practice state using a color-coded system and displays the corresponding recommendations from [Deutscher Aero Club e.V.](https://www.daec.de)
--   **Onboarding**: The app comes with an onboarding sequence and the ability to add sample flight data for new users to explore the app without having to add their flight details first.
+- **Flight Log Management**: Allows pilots to add and edit their flights.
+- **Practice State Visualization**: Displays the pilot's practice state using a color-coded system.
+- **Onboarding**: The app comes with an onboarding sequence and the ability to add sample flight data for new users to explore the app without having to add their flight details first.
 
 <br><br>
 
-## The Practice Barometer Formula
-The poster of [Deutscher Aero Club e.V.](https://www.daec.de), as you can [find it here](https://www.daec.de/media/files/2023/Sportarten/Segelflug/Downloads/DAeC-Trainingbarometer_A3-Plakat_RZ_Druck_a.pdf), differentiates **three training states: red, yellow and green.** If using the poster to determine the practice state a pilot manually checks her/his flight logs to then sum the amount of flight hours of the past six months and the amount of starts in the past six months. With those two sums she/he can draw an imaginary line in the poster and the center point of this line will fall in either the red, yellow or green area of the barometer, representing the current training state.
+## How is the practice state calculated?
+The poster of [Deutscher Aero Club e.V.](https://www.daec.de), as you can [find it here](https://www.daec.de/media/files/2023/Sportarten/Segelflug/Downloads/DAeC-Trainingbarometer_A3-Plakat_RZ_Druck_a.pdf), differentiates **three practice states: red, yellow and green.** When using the poster to determine the practice state a pilot manually checks her/his flight logs to then sum the amount of flight hours in the past six months and the amount of starts in the past six months. With those two sums she/he can draw an imaginary line in the poster and the center point of this line will fall in either the red, yellow or green area of the barometer, representing the current practice state.
 
 <br>
 
-**The app automates this process:**
+**Practice State Calculation in SkySoar:**
+
+SkySoar follows the example of the German Aero Club ([Deutscher Aero Club e.V.](https://www.daec.de)) and calculates practice state accordingly.
 
 When creating a graph with 
  - **x** being the amount of **hours** in the last six months
  - **y** being the amount of **starts** in the last six months
 
-the areas of the training states red and yellow are separated by the function
+the areas of the practice states red and yellow are separated by the function
 
     y = (20 - x) / 0.7
     
-and the areas of the training states yellow and green are separated by the function
+and the areas of the practice states yellow and green are separated by the function
 
     y = (39 - x) / 0.65
 
@@ -51,7 +55,7 @@ and the areas of the training states yellow and green are separated by the funct
 <img src="https://github.com/jonasclick/TBARO-Images/blob/main/Separator%20Lines%20Graph.png?raw=true" alt="Image of a graph" style="max-width: 100%; height: auto;">
 
 <br><br>
-This logic is then represented in the Pilot Practice app using the following Swift function:
+This logic is then represented in SkySoar using the following Swift function:
         
     // Calculate Training State
     private func calculateTrainingStateInt(hours: Double, starts: Double) -> Int {
@@ -77,9 +81,9 @@ This logic is then represented in the Pilot Practice app using the following Swi
     
 The function returns the integer
  - 0 if no flight logs exist,
- - 1 for training state **red**,
- - 2 for training state **yellow**,
- - 3 for training state **green**.
+ - 1 for practice state **red**,
+ - 2 for practice state **yellow**,
+ - 3 for practice state **green**.
 
 
 
@@ -120,11 +124,11 @@ The developers and the application itself disclaim any liability for actions or 
 
 ### Copyright
 
-The concept of the pilot practice barometer and the recommendation texts found in this application are made by
+The concept of the pilot practice barometer found in this application was first introduced by
 
 Deutscher Aero Club e.V.  
 Hermann-Blenk-Str. 28  
 38108 Braunschweig  
 [www.daec.de](https://www.daec.de)
 
-This app uses the same logic as is used in the info poster by Deutscher Aero Club e.V. and therefore shows the same practice state.
+This app follows the logic of the German Aero Club and calculates practice state accordingly.

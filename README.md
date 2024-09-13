@@ -8,7 +8,7 @@ Calculating the practice state is a tedious process and is therefore often left 
 
 <img src="https://github.com/jonasclick/hosting-images/blob/main/SkySoar%20Promo%20Banner.png" alt="Image of the SkySoar App" style="max-width: 100%; height: auto;"> 
 
-This mobile app is developed for iOS in Swift (mostly SwiftUI). It has been released in the AppStore and [can be downloaded here.](https://apps.apple.com/ch/app/skysoar/id6608979357?)
+This mobile app is developed for iOS in Swift (mostly SwiftUI). It has been released in the App Store and [can be downloaded here.](https://apps.apple.com/ch/app/skysoar/id6608979357?)
 
 <br><br>
 

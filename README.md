@@ -6,7 +6,7 @@ SkySoar lets glider pilots keep track of their flights and gives them immediate 
 Calculating the practice state is a tedious process and is therefore often left out, which impacts safety in the private aviation sector.
 
 
-<img src="https://github.com/jonasclick/TBARO-Images/blob/main/Sideways%20with%20Text%20small.png" alt="Image of the SkySoar App" style="max-width: 100%; height: auto;">
+<img src="https://github.com/jonasclick/hosting-images/blob/main/SkySoar%20Promo%20Banner.png" alt="Image of the SkySoar App" style="max-width: 100%; height: auto;"> 
 
 This mobile app is developed for iOS in Swift (mostly SwiftUI). It has been released in the AppStore and [can be downloaded here.](https://apps.apple.com/ch/app/skysoar/id6608979357?)
 

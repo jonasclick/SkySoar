@@ -16,6 +16,9 @@
 		DD4DC9F02C35368B0051109E /* SampleDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4DC9EF2C35368B0051109E /* SampleDataHelper.swift */; };
 		DD4DC9F22C358B130051109E /* SampleDataWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4DC9F12C358B130051109E /* SampleDataWarningView.swift */; };
 		DD62C88B2C5FB55E00A87374 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD62C88A2C5FB55E00A87374 /* TextHelper.swift */; };
+		DD63A60D2CA47EDC0013DBE0 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD63A60C2CA47EDC0013DBE0 /* DocumentPicker.swift */; };
+		DD63A6122CA52CA00013DBE0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD63A6112CA52CA00013DBE0 /* HomeViewModel.swift */; };
+		DD63A6162CA52F220013DBE0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD63A6152CA52F220013DBE0 /* Extensions.swift */; };
 		DD78229F2C31B3530024A877 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DD78229E2C31B3530024A877 /* Localizable.xcstrings */; };
 		DD7AECB22C0DCAE1002AB8F1 /* SkySoarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECB12C0DCAE1002AB8F1 /* SkySoarApp.swift */; };
 		DD7AECB42C0DCAE1002AB8F1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7AECB32C0DCAE1002AB8F1 /* HomeView.swift */; };
@@ -29,7 +32,6 @@
 		DDA6B7F62C3829DF0047DFA9 /* Onboarding3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6B7F52C3829DF0047DFA9 /* Onboarding3View.swift */; };
 		DDA6B7FC2C3A7CF40047DFA9 /* Onboarding4View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6B7FB2C3A7CF40047DFA9 /* Onboarding4View.swift */; };
 		DDA6B7FE2C3A9B3F0047DFA9 /* Onboarding1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA6B7FD2C3A9B3F0047DFA9 /* Onboarding1View.swift */; };
-		DDB2215D2C73DB94002BE919 /* TrainingStateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2215C2C73DB94002BE919 /* TrainingStateHelper.swift */; };
 		DDB2215F2C74DE52002BE919 /* FilterLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2215E2C74DE52002BE919 /* FilterLogic.swift */; };
 		DDB221612C74E824002BE919 /* StatCardFunctionTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB221602C74E824002BE919 /* StatCardFunctionTimeView.swift */; };
 		DDB221632C74F11A002BE919 /* StatCardDepartureModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB221622C74F11A002BE919 /* StatCardDepartureModeView.swift */; };
@@ -48,6 +50,10 @@
 		DDDD2D7E2C315FE50008E135 /* DisclaimerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD2D7D2C315FE50008E135 /* DisclaimerCardView.swift */; };
 		DDE5A0532C27DA1100FF460B /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5A0522C27DA1100FF460B /* BackgroundView.swift */; };
 		DDE5A8DE2C61346800470417 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE5A8DD2C61346800470417 /* Launch Screen.storyboard */; };
+		DDE5C90A2CA45C3800F20AE9 /* PilotFunctionTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5C9092CA45C3800F20AE9 /* PilotFunctionTime.swift */; };
+		DDE5C90C2CA45C4D00F20AE9 /* DepartureMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5C90B2CA45C4D00F20AE9 /* DepartureMode.swift */; };
+		DDE5C90E2CA4671E00F20AE9 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5C90D2CA4671E00F20AE9 /* ShareSheet.swift */; };
+		DDE5C9102CA47B4C00F20AE9 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5C90F2CA47B4C00F20AE9 /* SettingsViewModel.swift */; };
 		DDED46D42C2C17AE00441280 /* WebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED46D32C2C17AE00441280 /* WebKit.swift */; };
 		DDED46DC2C2C36FC00441280 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED46DB2C2C36FC00441280 /* DisclaimerView.swift */; };
 		DDED46DE2C2C3ECD00441280 /* JustifyTextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED46DD2C2C3ECD00441280 /* JustifyTextHelper.swift */; };
@@ -67,6 +73,9 @@
 		DD4DC9F12C358B130051109E /* SampleDataWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataWarningView.swift; sourceTree = "<group>"; };
 		DD5942EA2C78A98C0019C0E3 /* SkySoar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkySoar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD62C88A2C5FB55E00A87374 /* TextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
+		DD63A60C2CA47EDC0013DBE0 /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
+		DD63A6112CA52CA00013DBE0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		DD63A6152CA52F220013DBE0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DD78229E2C31B3530024A877 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		DD7AECB12C0DCAE1002AB8F1 /* SkySoarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkySoarApp.swift; sourceTree = "<group>"; };
 		DD7AECB32C0DCAE1002AB8F1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -80,7 +89,6 @@
 		DDA6B7F52C3829DF0047DFA9 /* Onboarding3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding3View.swift; sourceTree = "<group>"; };
 		DDA6B7FB2C3A7CF40047DFA9 /* Onboarding4View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding4View.swift; sourceTree = "<group>"; };
 		DDA6B7FD2C3A9B3F0047DFA9 /* Onboarding1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1View.swift; sourceTree = "<group>"; };
-		DDB2215C2C73DB94002BE919 /* TrainingStateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingStateHelper.swift; sourceTree = "<group>"; };
 		DDB2215E2C74DE52002BE919 /* FilterLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterLogic.swift; sourceTree = "<group>"; };
 		DDB221602C74E824002BE919 /* StatCardFunctionTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCardFunctionTimeView.swift; sourceTree = "<group>"; };
 		DDB221622C74F11A002BE919 /* StatCardDepartureModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCardDepartureModeView.swift; sourceTree = "<group>"; };
@@ -98,6 +106,10 @@
 		DDE5A0522C27DA1100FF460B /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		DDE5A8DD2C61346800470417 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		DDE5A8DF2C6142DB00470417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DDE5C9092CA45C3800F20AE9 /* PilotFunctionTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotFunctionTime.swift; sourceTree = "<group>"; };
+		DDE5C90B2CA45C4D00F20AE9 /* DepartureMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureMode.swift; sourceTree = "<group>"; };
+		DDE5C90D2CA4671E00F20AE9 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		DDE5C90F2CA47B4C00F20AE9 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		DDED46D32C2C17AE00441280 /* WebKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKit.swift; sourceTree = "<group>"; };
 		DDED46DB2C2C36FC00441280 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
 		DDED46DD2C2C3ECD00441280 /* JustifyTextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustifyTextHelper.swift; sourceTree = "<group>"; };
@@ -126,14 +138,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DD0C18F52C7B58670081BF17 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				DD0C18F32C7B58640081BF17 /* UserViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		DD0C18FA2C7B6CFB0081BF17 /* Subscription */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,13 +151,55 @@
 		DD1DB7BD2C2AC229000FF93F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				DD63A6102CA5298A0013DBE0 /* ViewModel */,
+				DD63A60F2CA529310013DBE0 /* View */,
+				DDE5C90D2CA4671E00F20AE9 /* ShareSheet.swift */,
+				DD63A60C2CA47EDC0013DBE0 /* DocumentPicker.swift */,
+				DD0C18FA2C7B6CFB0081BF17 /* Subscription */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DD63A60F2CA529310013DBE0 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				DD1DB7BB2C2AC223000FF93F /* SettingsView.swift */,
 				DDDD2D7D2C315FE50008E135 /* DisclaimerCardView.swift */,
 				DD1DB7BE2C2AF8C3000FF93F /* SettingsCardView.swift */,
 				DDED46DB2C2C36FC00441280 /* DisclaimerView.swift */,
-				DD0C18FA2C7B6CFB0081BF17 /* Subscription */,
 			);
-			path = Settings;
+			path = View;
+			sourceTree = "<group>";
+		};
+		DD63A6102CA5298A0013DBE0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DDE5C90F2CA47B4C00F20AE9 /* SettingsViewModel.swift */,
+				DD0C18F32C7B58640081BF17 /* UserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DD63A6132CA52CBA0013DBE0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DD63A6112CA52CA00013DBE0 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DD63A6142CA52CDF0013DBE0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DD7AECB32C0DCAE1002AB8F1 /* HomeView.swift */,
+				DDB2216C2C75C063002BE919 /* GreetingView.swift */,
+				DDD323DC2C29DDF7008AE016 /* HeadlineView.swift */,
+				DDB2216A2C752A3E002BE919 /* NavigationButtonsView.swift */,
+				DDB221642C74F121002BE919 /* StatCards */,
+				DDB221682C74FB9D002BE919 /* InfoSignView.swift */,
+				DDB221662C74F5CF002BE919 /* TrafficLightView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		DD73AE162C4D3E16000F0883 /* Onboarding */ = {
@@ -184,12 +230,9 @@
 				DD9E0E012C8DE3D600E24071 /* ContentView.swift */,
 				DDE5A8DD2C61346800470417 /* Launch Screen.storyboard */,
 				DD7AECC62C0DF3CA002AB8F1 /* Home */,
-				DDB221682C74FB9D002BE919 /* InfoSignView.swift */,
-				DDB221662C74F5CF002BE919 /* TrafficLightView.swift */,
 				DD7AECC72C0DF3F4002AB8F1 /* FlightLogs */,
 				DD1DB7BD2C2AC229000FF93F /* Settings */,
 				DD73AE162C4D3E16000F0883 /* Onboarding */,
-				DD0C18F52C7B58670081BF17 /* ViewModel */,
 				DDB60F7C2C0E1D2500ACD9D0 /* Model */,
 				DD7AECBF2C0DDE41002AB8F1 /* Helpers */,
 				DD7AECB52C0DCAE2002AB8F1 /* Assets.xcassets */,
@@ -211,7 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				DD4DC9EF2C35368B0051109E /* SampleDataHelper.swift */,
-				DDB2215C2C73DB94002BE919 /* TrainingStateHelper.swift */,
+				DD63A6152CA52F220013DBE0 /* Extensions.swift */,
 				DDFB9BD52C666F52006F1AC0 /* DateHelper.swift */,
 				DD62C88A2C5FB55E00A87374 /* TextHelper.swift */,
 				DD7AECC02C0DDE55002AB8F1 /* FontHelper.swift */,
@@ -225,11 +268,8 @@
 		DD7AECC62C0DF3CA002AB8F1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				DD7AECB32C0DCAE1002AB8F1 /* HomeView.swift */,
-				DDB2216C2C75C063002BE919 /* GreetingView.swift */,
-				DDD323DC2C29DDF7008AE016 /* HeadlineView.swift */,
-				DDB2216A2C752A3E002BE919 /* NavigationButtonsView.swift */,
-				DDB221642C74F121002BE919 /* StatCards */,
+				DD63A6132CA52CBA0013DBE0 /* ViewModel */,
+				DD63A6142CA52CDF0013DBE0 /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -270,7 +310,9 @@
 			isa = PBXGroup;
 			children = (
 				DDB60F7D2C0E1D3F00ACD9D0 /* FlightLog.swift */,
+				DDE5C90B2CA45C4D00F20AE9 /* DepartureMode.swift */,
 				DDB2215E2C74DE52002BE919 /* FilterLogic.swift */,
+				DDE5C9092CA45C3800F20AE9 /* PilotFunctionTime.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -307,7 +349,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					DD7AECAD2C0DCAE1002AB8F1 = {
 						CreatedOnToolsVersion = 15.4;
@@ -360,18 +402,22 @@
 				DDDD2D732C314B190008E135 /* WebsiteView.swift in Sources */,
 				DD7AECC52C0DF3BB002AB8F1 /* FlightLogsView.swift in Sources */,
 				DDA6B7F62C3829DF0047DFA9 /* Onboarding3View.swift in Sources */,
+				DD63A6122CA52CA00013DBE0 /* HomeViewModel.swift in Sources */,
 				DDD323DD2C29DDF7008AE016 /* HeadlineView.swift in Sources */,
 				DDB221632C74F11A002BE919 /* StatCardDepartureModeView.swift in Sources */,
-				DDB2215D2C73DB94002BE919 /* TrainingStateHelper.swift in Sources */,
 				DD0C18F72C7B68A40081BF17 /* SubscriptionActiveView.swift in Sources */,
 				DDFB9BD62C666F52006F1AC0 /* DateHelper.swift in Sources */,
 				DDED46DE2C2C3ECD00441280 /* JustifyTextHelper.swift in Sources */,
+				DDE5C90E2CA4671E00F20AE9 /* ShareSheet.swift in Sources */,
+				DDE5C90A2CA45C3800F20AE9 /* PilotFunctionTime.swift in Sources */,
+				DD63A60D2CA47EDC0013DBE0 /* DocumentPicker.swift in Sources */,
 				DDB2215F2C74DE52002BE919 /* FilterLogic.swift in Sources */,
 				DDB221672C74F5CF002BE919 /* TrafficLightView.swift in Sources */,
 				DDB2216D2C75C063002BE919 /* GreetingView.swift in Sources */,
 				DD0C18F42C7B58640081BF17 /* UserViewModel.swift in Sources */,
 				DD7AECC32C0DE3D1002AB8F1 /* StatCardView.swift in Sources */,
 				DDB60F7E2C0E1D3F00ACD9D0 /* FlightLog.swift in Sources */,
+				DDE5C9102CA47B4C00F20AE9 /* SettingsViewModel.swift in Sources */,
 				DDB60F9A2C10977D00ACD9D0 /* EditFlightLogView.swift in Sources */,
 				DDA6B7FC2C3A7CF40047DFA9 /* Onboarding4View.swift in Sources */,
 				DD4DC9F02C35368B0051109E /* SampleDataHelper.swift in Sources */,
@@ -383,6 +429,7 @@
 				DD283CA62C7720C3009B4788 /* HapticHelper.swift in Sources */,
 				DD9E0E022C8DE3D600E24071 /* ContentView.swift in Sources */,
 				DDA6B7F42C38292B0047DFA9 /* Onboarding2View.swift in Sources */,
+				DDE5C90C2CA45C4D00F20AE9 /* DepartureMode.swift in Sources */,
 				DDED46DC2C2C36FC00441280 /* DisclaimerView.swift in Sources */,
 				DD0C18F92C7B68EC0081BF17 /* SubscriptionInactiveView.swift in Sources */,
 				DD7AECB22C0DCAE1002AB8F1 /* SkySoarApp.swift in Sources */,
@@ -392,6 +439,7 @@
 				DDED46D42C2C17AE00441280 /* WebKit.swift in Sources */,
 				DDB2216B2C752A3E002BE919 /* NavigationButtonsView.swift in Sources */,
 				DDBD0F5B2C1A216B0097432E /* FlightLogCardView.swift in Sources */,
+				DD63A6162CA52F220013DBE0 /* Extensions.swift in Sources */,
 				DD1DB7BF2C2AF8C3000FF93F /* SettingsCardView.swift in Sources */,
 				DD4DC9F22C358B130051109E /* SampleDataWarningView.swift in Sources */,
 				DDA6B7FE2C3A9B3F0047DFA9 /* Onboarding1View.swift in Sources */,
@@ -406,6 +454,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -470,6 +519,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

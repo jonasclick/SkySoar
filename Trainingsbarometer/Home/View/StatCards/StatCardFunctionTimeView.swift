@@ -20,7 +20,7 @@ struct StatCardFunctionTimeView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .opacity(0.6)
             Spacer()
-            Text(TrainingStateHelper.noDotZero(value))
+            Text(value.noDotZero)
                 .font(.statNumber)
             Text(pilotFunctionTime.labelEN())
                 .font(.sectionHeadline)

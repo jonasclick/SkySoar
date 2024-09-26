@@ -57,10 +57,10 @@ struct Onboarding4View: View {
                     SampleDataHelper.addSampleData(context: context)
                     needsOnboarding = false
                 } label: {
-                    Text("I understand: It's not my training state")
+                    Text("I understand: It's not my practice state")
                         .foregroundStyle(Color.red)
                         .bold()
-                }}, message: { Text("\nTen sample flights have been added. Therefore: Do not mistake the training state shown in the app with your own training state!") })
+                }}, message: { Text("\nTen sample flights have been added. Therefore: Do not mistake the practice state shown in the app with your own practice state!") })
             
             
             Spacer()

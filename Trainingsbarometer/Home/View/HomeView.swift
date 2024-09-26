@@ -11,19 +11,18 @@ import SwiftData
 struct HomeView: View {
     
     @Environment(\.modelContext) private var context
-    
     @Query private var flightLogs: [FlightLog]
     
-    @State private var dateRange: String = "This Year"
+    @ObservedObject private var viewModel = HomeViewModel()
     
     @AppStorage("FilterLogic") var filterLogic = FilterLogic.total
     @AppStorage("ShowFunctionTime") var showFunctionTime = PilotFunctionTime.pic
     @AppStorage("showDepartureMode") var showDepartureMode = DepartureMode.winch
     
+    @State private var dateRange: String = "This Year"
     @State private var hours = Double()
     @State private var starts = Double()
     @State private var trainingState = Int()
-    
     @State private var isSettingsPresented = false
     
     init() {
@@ -110,6 +109,7 @@ struct HomeView: View {
                     // MARK: Stat Cards – Row 1
                     HStack {
                         Spacer()
+                        // Stat Card Hours
                         StatCardView(image: "clock",
                                      number: flightDataInRange(
                                         startMonthsAgo: filterLogic.startDate(),
@@ -118,6 +118,7 @@ struct HomeView: View {
                                      label: "Hours")
                         Spacer()
                         Spacer()
+                        // Stat Card Starts
                         StatCardView(image: "airplane.departure",
                                      number: flightDataInRange(
                                         startMonthsAgo: filterLogic.startDate(),
@@ -132,17 +133,21 @@ struct HomeView: View {
                     // MARK: Stat Cards – Row 2
                     HStack {
                         Spacer()
+                        // Stat Card Function Time
                         StatCardFunctionTimeView(
                             pilotFunctionTime: showFunctionTime,
-                            value: flightTimeForFunction(
+                            value: viewModel.flightTimeForFunction(
+                                flightLogs: flightLogs,
                                 selectedFunction: showFunctionTime,
                                 startMonthsAgo: filterLogic.startDate(),
                                 endMonthsAgo: filterLogic.endDate()))
                         Spacer()
                         Spacer()
+                        // Stat Card Departure Mode
                         StatCardDepartureModeView(
                             departureMode: showDepartureMode,
-                            value: flightsForDepartureMode(
+                            value: viewModel.flightsForDepartureMode(
+                                flightLogs: flightLogs,
                                 departureMode: showDepartureMode,
                                 startMonthsAgo: filterLogic.startDate(),
                                 endMonthsAgo: filterLogic.endDate()))
@@ -152,8 +157,8 @@ struct HomeView: View {
                     
                     
                     
-                    // MARK: Section: Training State
-                    Text("Your Training State")
+                    // MARK: Section: Practice State
+                    Text("Your Practice State")
                         .font(.subheadline)
                         .bold()
                     
@@ -167,11 +172,10 @@ struct HomeView: View {
                     
                     HStack {
                         
-                        // 6 Months Stats for Training State
+                        // 6 Months Stats for Practice State
                         HStack {
                             VStack(alignment: .leading, spacing: 10) {
-                                Text(String(TrainingStateHelper.noDotZero(
-                                    TrainingStateHelper.flightHoursInSixMonths(flightLogs: flightLogs))))
+                                Text(String(flightDataInRange(startMonthsAgo: 6, endMonthsAgo: 0, isHours: true).noDotZero))
                                 .font(.system(size: 27, weight: .semibold))
                                 Text("\(Image(systemName: "clock")) Hours")
                                     .font(.sectionHeadline)
@@ -180,8 +184,7 @@ struct HomeView: View {
                             }
                             
                             VStack(alignment: .leading, spacing: 10) {
-                                Text(String(TrainingStateHelper.noDotZero(
-                                    TrainingStateHelper.flightLogsInSixMonths(flightLogs: flightLogs))))
+                                Text(String(flightDataInRange(startMonthsAgo: 6, endMonthsAgo: 0, isHours: false).noDotZero))
                                 .font(.system(size: 27, weight: .semibold))
                                 Text("\(Image(systemName: "airplane.departure")) Starts")
                                     .font(.sectionHeadline)
@@ -197,9 +200,9 @@ struct HomeView: View {
                         
                         Spacer()
                         
-                        // Traffic Light showing training state
+                        // Traffic Light showing practice state
                         Menu {
-                            Text("The traffic light shows your training state.")
+                            Text("The traffic light shows your practice state.")
                         } label: {
                             TrafficLightView(trainingState: $trainingState)
                         }
@@ -212,7 +215,7 @@ struct HomeView: View {
                 .padding(.horizontal, 25)
                 
                 
-                // Info sign with link to information material for user to understand training state
+                // Info sign with link to information material for user to understand practice state
                 InfoSignView()
                 
                 
@@ -232,19 +235,10 @@ struct HomeView: View {
     
     
     private func updateTrainingState() {
-        trainingState = TrainingStateHelper.calculateTrainingStateInt(
+        trainingState = viewModel.calculatePracticeStateInt(
             hours: flightDataInRange(startMonthsAgo: 6, endMonthsAgo: 0, isHours: true),
             starts: flightDataInRange(startMonthsAgo: 6, endMonthsAgo: 0, isHours: false))
     }
-    
-    
-    func filterFlightLogs(startDate: Date, endDate: Date) -> [FlightLog] {
-        return flightLogs.filter { flightLog in
-            if let arrivalDate = flightLog.arrivalDate { return arrivalDate >= startDate && arrivalDate <= endDate }
-            return false
-        }
-    }
-    
     
     private func flightDataInRange(startMonthsAgo: Int, endMonthsAgo: Int, isHours: Bool) -> Double {
         let calendar = Calendar.current
@@ -265,43 +259,12 @@ struct HomeView: View {
         }
     }
     
-    private func flightTimeForFunction(selectedFunction: PilotFunctionTime, startMonthsAgo: Int, endMonthsAgo: Int) -> Double {
-        
-        let calendar = Calendar.current
-        guard let startDate = calendar.date(byAdding: .month, value: -startMonthsAgo, to: Date()) else { return 0.0 }
-        guard let endDate = calendar.date(byAdding: .month, value: -endMonthsAgo, to: Date()) else { return 0.0 }
-        
-        let filteredLogs = flightLogs.filter { flightLog in
-            
-            if flightLog.pilotFunctionTime == selectedFunction {
-                if let arrivalDate = flightLog.arrivalDate { return arrivalDate >= startDate && arrivalDate <= endDate }
-            }
-            
+    func filterFlightLogs(startDate: Date, endDate: Date) -> [FlightLog] {
+        return flightLogs.filter { flightLog in
+            if let arrivalDate = flightLog.arrivalDate { return arrivalDate >= startDate && arrivalDate <= endDate }
             return false
         }
-        
-        let totalSeconds = filteredLogs.reduce(0) { $0 + $1.flightTime }
-        let totalHours = totalSeconds / 3600
-        return round(totalHours * 10) / 10.0
     }
-    
-    
-    private func flightsForDepartureMode(departureMode: DepartureMode, startMonthsAgo: Int, endMonthsAgo: Int) -> Int {
-        
-        let calendar = Calendar.current
-        guard let startDate = calendar.date(byAdding: .month, value: -startMonthsAgo, to: Date()) else { return 0 }
-        guard let endDate = calendar.date(byAdding: .month, value: -endMonthsAgo, to: Date()) else { return 0 }
-        
-        let filteredLogs = flightLogs.filter { flightLog in
-            if flightLog.departureMode == departureMode {
-                if let arrivalDate = flightLog.arrivalDate { return arrivalDate >= startDate && arrivalDate <= endDate }
-            }
-            return false
-        }
-        
-        return filteredLogs.count
-    }
-    
 }
 
 #Preview {

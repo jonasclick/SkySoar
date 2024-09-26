@@ -11,7 +11,7 @@
         }
       }
     },
-    "\nTen sample flights have been added. Therefore do not mistake the training state shown in the app with your own training state!" : {
+    "\nTen sample flights have been added. Therefore do not mistake the practice state shown in the app with your own practice state!" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -21,7 +21,7 @@
         }
       }
     },
-    "\nTen sample flights have been added. Therefore: Do not mistake the training state shown in the app with your own training state!" : {
+    "\nTen sample flights have been added. Therefore: Do not mistake the practice state shown in the app with your own practice state!" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -77,16 +77,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Über SkySoar"
-          }
-        }
-      }
-    },
-    "About this app" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Über diese App"
           }
         }
       }
@@ -401,6 +391,16 @@
         }
       }
     },
+    "Done" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fertig"
+          }
+        }
+      }
+    },
     "Dual" : {
       "localizations" : {
         "de" : {
@@ -461,6 +461,26 @@
         }
       }
     },
+    "Export and import flight logs" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import und Export von Flugdaten"
+          }
+        }
+      }
+    },
+    "Export Flight Data" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flüge exportieren"
+          }
+        }
+      }
+    },
     "Flight Time" : {
       "localizations" : {
         "de" : {
@@ -477,6 +497,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Flüge"
+          }
+        }
+      }
+    },
+    "Flights imported" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flüge importiert"
           }
         }
       }
@@ -571,12 +601,32 @@
         }
       }
     },
-    "I understand: It's not my training state" : {
+    "I understand: It's not my practice state" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ich habe verstanden"
+          }
+        }
+      }
+    },
+    "Import failed" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import fehlgeschlagen"
+          }
+        }
+      }
+    },
+    "Import Flight Data" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flüge importieren"
           }
         }
       }
@@ -991,7 +1041,7 @@
         }
       }
     },
-    "The traffic light shows your training state." : {
+    "The traffic light shows your practice state." : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1041,12 +1091,12 @@
         }
       }
     },
-    "v1.0.1" : {
+    "v1.1.0" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "v.1.0.1"
+            "value" : "v1.1.0"
           }
         }
       }
@@ -1077,16 +1127,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Willkommen %@ bei SkySoar"
-          }
-        }
-      }
-    },
-    "Why should I use Pilot Practice?" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wozu dient das Trainingsbarometer?"
           }
         }
       }
@@ -1161,6 +1201,26 @@
         }
       }
     },
+    "Your flights have been imported successfully." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deine Flüge wurden erfolgreich importiert."
+          }
+        }
+      }
+    },
+    "Your flights have not been imported due to an error while trying to read flight data in the file provided. If you need assistance, please contact the developer." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deine Flüge wurden nicht importiert. Die Flugdaten konnten nicht gelesen werden. Wenn du Hilfe brauchst, kontaktiere bitte den Entwickler."
+          }
+        }
+      }
+    },
     "Your name is used to greet you on the home screen. \nYour name will be stored on your device only and can't be accessed by anyone else." : {
       "localizations" : {
         "de" : {
@@ -1171,7 +1231,7 @@
         }
       }
     },
-    "Your Training State" : {
+    "Your Practice State" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {

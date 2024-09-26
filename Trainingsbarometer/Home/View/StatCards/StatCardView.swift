@@ -21,7 +21,7 @@ struct StatCardView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .opacity(0.6)
             Spacer()
-            Text(TrainingStateHelper.noDotZero(number))
+            Text(number.noDotZero)
                 .font(.statNumber)
             Text(label)
                 .font(.sectionHeadline)

@@ -16,6 +16,8 @@ struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var userViewModel: UserViewModel
     
+    @ObservedObject private var viewModel = SettingsViewModel()
+    
     @AppStorage("Username") var userName: String = ""
     
     @Query private var flightLogs: [FlightLog]
@@ -27,6 +29,15 @@ struct SettingsView: View {
     @State private var usernameInput = ""
     @FocusState private var isTextFieldFocused: Bool
     @State private var showSampleDataAlert = false
+    
+    @State private var showShareSheet = false
+    @State private var shareURL: URL?
+    
+    @State private var showDocumentPicker = false
+    @State private var showImportSuccessAlert = false
+    @State private var showImportErrorAlert = false
+    
+    
     @State private var isSubscriptionPresented = false
     @State private var isGitHubPresented = false
     
@@ -41,7 +52,7 @@ struct SettingsView: View {
                     .font(.mainHeadline)
                     .padding(.top, 40)
                     .padding(.horizontal)
-                    .padding(.bottom, (Locale.current.language.languageCode?.identifier ?? "") == "de" ? 30 : 50)
+                    .padding(.bottom, (Locale.current.language.languageCode?.identifier ?? "") == "de" ? 10 : 20)
                 
                 
                 // MARK: Disclaimer Card
@@ -56,18 +67,18 @@ struct SettingsView: View {
                     }
                 
                 
-                // MARK: Section: General
+                // MARK: – Section: General
                 Text("General")
                     .font(.subheadline)
                     .fontWeight(.medium)
-                    .padding(.top, (Locale.current.language.languageCode?.identifier ?? "") == "de" ? 30 : 50)
+                    .padding(.top, (Locale.current.language.languageCode?.identifier ?? "") == "de" ? 10 : 20)
                     .padding(.horizontal, 28)
                     .padding(.bottom, -3)
                 
                 
                 // MARK: Change Username
                 if !isEditingUsername {
-                    SettingsCardView(icon: "person", 
+                    SettingsCardView(icon: "person",
                                      text: "Change name for greeting on home screen")
                     .onTapGesture {
                         HapticHelper.impact()
@@ -122,19 +133,73 @@ struct SettingsView: View {
                         toggleSampleData()
                         dismiss()
                     } label: {
-                        Text(!isSampleData ? "I understand: It's not my training state" : "OK")
+                        Text(!isSampleData ? "I understand: It's not my practice state" : "OK")
                             .foregroundStyle(Color.red)
                             .bold()
                     }}, message: {
-                        Text(!isSampleData ? "\nTen sample flights have been added. Therefore do not mistake the training state shown in the app with your own training state!" : "\nAll sample flights have been removed. Double check your flight data before trusting the indicated practice state.")
+                        Text(!isSampleData ? "\nTen sample flights have been added. Therefore do not mistake the practice state shown in the app with your own practice state!" : "\nAll sample flights have been removed. Double check your flight data before trusting the indicated practice state.")
                     })
                 
                 
-                // MARK: Section: "About"
+                // MARK: – Section: Import / Export Flight Data
+                Text("Export and import flight logs")
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .padding(.top, 20)
+                    .padding(.horizontal, 28)
+                    .padding(.bottom, -3)
+                
+                // MARK: Export Flight Data
+                SettingsCardView(icon: "square.and.arrow.up.on.square", text: "Export Flight Data")
+                    .onTapGesture {
+                        HapticHelper.impact()
+                        
+                        // Export Flight Data to JSON and present sheet for sharing
+                        viewModel.exportFlightLogsToJSON(flightLogs: flightLogs) { url in
+                            if let url = url {
+                                shareURL = url
+                                showShareSheet = true
+                            }
+                        }
+                    }
+                
+                // MARK: Import Flight Data
+                SettingsCardView(icon: "square.and.arrow.down.on.square", text: "Import Flight Data")
+                    .onTapGesture {
+                        HapticHelper.impact()
+                        
+                        // Show Document Picker to let user select file for import
+                        showDocumentPicker.toggle()
+                    }
+                // Success
+                    .alert("Flights imported",
+                           isPresented: $showImportSuccessAlert,
+                           actions: {
+                        Button {
+                            dismiss()
+                        } label: {
+                            Text("Done")
+                        }}, message: {
+                            Text("Your flights have been imported successfully.")
+                        })
+                // Error
+                    .alert("Import failed",
+                           isPresented: $showImportErrorAlert,
+                           actions: {
+                        Button {
+                            dismiss()
+                        } label: {
+                            Text("Done")
+                        }}, message: {
+                            Text("Your flights have not been imported due to an error while trying to read flight data in the file provided. If you need assistance, please contact the developer.")
+                        })
+                
+                
+                // MARK: – Section: About
                 Text("About SkySoar")
                     .font(.subheadline)
                     .fontWeight(.medium)
-                    .padding(.top, 30)
+                    .padding(.top, 20)
                     .padding(.horizontal, 28)
                     .padding(.bottom, -3)
                 
@@ -151,7 +216,7 @@ struct SettingsView: View {
                 
                 
                 // MARK: Request feature, report bug
-                Link(destination: URL(string: localizedEmailURLString())!, label: {
+                Link(destination: URL(string: viewModel.localizedEmailURLString())!, label: {
                     SettingsCardView(icon: "lightbulb.max", text: "Request a feature or report a bug") })
                 .buttonStyle(PlainButtonStyle())
                 .simultaneousGesture(TapGesture().onEnded { HapticHelper.impact() })
@@ -188,7 +253,7 @@ struct SettingsView: View {
                 // Display Version Number
                 HStack {
                     Spacer()
-                    Text("v1.0.1")
+                    Text("v1.1.0")
                         .padding(.horizontal)
                         .font(.caption2)
                         .opacity(0.5)
@@ -197,13 +262,34 @@ struct SettingsView: View {
                 
                 Spacer()
             }
+            // Export Data: Share Sheet
+            .sheet(isPresented: $showShareSheet) {
+                if let shareURL = shareURL {
+                    ShareSheet(activityItems: [shareURL])
+                }
+            }
+            // Import Data: Document Picker Sheet
+            .sheet(isPresented: $showDocumentPicker) {
+                DocumentPicker(onPick: { fileURL in
+                    
+                    do {
+                        try viewModel.decodeFlightLogsFromJSON(fileURL: fileURL) { flights in
+                            for flight in flights {
+                                context.insert(flight)
+                            }
+                        }
+                        showImportSuccessAlert.toggle()
+                    } catch {
+                        print("DEBUG: Import failed with error: \(error.localizedDescription)")
+                        showImportErrorAlert.toggle()
+                    }
+                    
+                })
+            }
             
             // Close Button Top Right of Sheet
             CloseButtonView()
-            
         }
-        .ignoresSafeArea()
-        .navigationBarBackButtonHidden(true) // Hide default back button coming from NavigationLink in HomeView
     }
     
     private func toggleSampleData() {
@@ -212,13 +298,6 @@ struct SettingsView: View {
         
         // Remove all sample flights
         if isSampleData { deleteSampleData() }
-    }
-    
-    // Different Email URL for Localizations EN and DE
-    private func localizedEmailURLString() -> String {
-        return (Locale.current.language.languageCode?.identifier ?? "") == "de" ?
-        "mailto:jonas@vetschmedia.com?subject=Rückmeldung SkySoar App&body=Liebes Entwicklerteam" :
-        "mailto:jonas@vetschmedia.com?subject=Feedback%20SkySoar%20App&body=Dear%20Developers"
     }
     
     // Delete all sample flight data

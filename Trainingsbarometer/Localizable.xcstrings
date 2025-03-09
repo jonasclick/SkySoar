@@ -1092,6 +1092,7 @@
       }
     },
     "v1.1.0" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1110,6 +1111,9 @@
           }
         }
       }
+    },
+    "Version %@" : {
+
     },
     "W = Winch, A = Aerotow,\nS = Self Launching" : {
       "localizations" : {

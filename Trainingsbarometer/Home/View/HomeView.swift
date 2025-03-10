@@ -22,11 +22,11 @@ struct HomeView: View {
     @State private var dateRange: String = "This Year"
     @State private var hours = Double()
     @State private var starts = Double()
-    @State private var trainingState = Int()
+    @State private var practiceState = Int()
     @State private var isSettingsPresented = false
     
     init() {
-        updateTrainingState()
+        updatePracticeState()
     }
     
     var body: some View {
@@ -204,7 +204,7 @@ struct HomeView: View {
                         Menu {
                             Text("The traffic light shows your practice state.")
                         } label: {
-                            TrafficLightView(trainingState: $trainingState)
+                            TrafficLightView(practiceState: $practiceState)
                         }
                         
                         Spacer()
@@ -228,14 +228,14 @@ struct HomeView: View {
                 
             }
             .ignoresSafeArea()
-            .onAppear { updateTrainingState() }
-            .sheet(isPresented: $isSettingsPresented, onDismiss: { updateTrainingState() }) { SettingsView() }
+            .onAppear { updatePracticeState() }
+            .sheet(isPresented: $isSettingsPresented, onDismiss: { updatePracticeState() }) { SettingsView() }
         }
     }
     
     
-    private func updateTrainingState() {
-        trainingState = viewModel.calculatePracticeStateInt(
+    private func updatePracticeState() {
+        practiceState = viewModel.calculatePracticeStateInt(
             hours: flightDataInRange(startMonthsAgo: 6, endMonthsAgo: 0, isHours: true),
             starts: flightDataInRange(startMonthsAgo: 6, endMonthsAgo: 0, isHours: false))
     }

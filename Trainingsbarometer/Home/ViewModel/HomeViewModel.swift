@@ -14,7 +14,7 @@ class HomeViewModel: ObservableObject {
     // Calculate Practice State using hours and starts within last 6 months
     func calculatePracticeStateInt(hours: Double, starts: Double) -> Int {
         
-        // Boundary equations according to training barometer
+        // Boundary equations according to practice barometer
         let redYellowBoundary = (20 - hours) / 0.7
         let yellowGreenBoundary = (39 - hours) / 0.65
         

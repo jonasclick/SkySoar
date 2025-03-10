@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TrafficLightView: View {
     
-    @Binding var trainingState: Int
+    @Binding var practiceState: Int
     
     var body: some View {
         ZStack {
@@ -33,15 +33,15 @@ struct TrafficLightView: View {
                 // Red Light
                 Circle()
                     .foregroundStyle(.barometerRed)
-                    .opacity(trainingState == 1 ? 1 : 0.2)
+                    .opacity(practiceState == 1 ? 1 : 0.2)
                 // Yellow Light
                 Circle()
                     .foregroundStyle(.barometerYellow)
-                    .opacity(trainingState == 2 ? 1 : 0.2)
+                    .opacity(practiceState == 2 ? 1 : 0.2)
                 // Green Light
                 Circle()
                     .foregroundStyle(.barometerGreen)
-                    .opacity(trainingState == 3 ? 1 : 0.2)
+                    .opacity(practiceState == 3 ? 1 : 0.2)
             }
             .frame(width: 28)
         }
@@ -50,5 +50,5 @@ struct TrafficLightView: View {
 }
 
 #Preview {
-    TrafficLightView(trainingState: .constant(3))
+  TrafficLightView(practiceState: .constant(3))
 }

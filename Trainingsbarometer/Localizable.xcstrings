@@ -1061,6 +1061,16 @@
         }
       }
     },
+    "Time" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zeit"
+          }
+        }
+      }
+    },
     "Total" : {
       "localizations" : {
         "de" : {
@@ -1091,17 +1101,6 @@
         }
       }
     },
-    "v1.1.0" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "v1.1.0"
-          }
-        }
-      }
-    },
     "Verify all information independently, as data may be incorrect." : {
       "localizations" : {
         "de" : {
@@ -1113,7 +1112,14 @@
       }
     },
     "Version %@" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version %@"
+          }
+        }
+      }
     },
     "W = Winch, A = Aerotow,\nS = Self Launching" : {
       "localizations" : {

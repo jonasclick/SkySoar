@@ -951,6 +951,26 @@
         }
       }
     },
+    "Show detailed practice state visualization" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " Trainingsstand detailliert anzeigen"
+          }
+        }
+      }
+    },
+    "Show simple practice state visualization" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trainingsstand vereinfacht anzeigen"
+          }
+        }
+      }
+    },
     "SkySoar stores all your data locally on your device. \nYour data stays offline and can't be accessed by anyone else." : {
       "localizations" : {
         "de" : {

@@ -10,6 +10,8 @@
 		DD0C18F42C7B58640081BF17 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0C18F32C7B58640081BF17 /* UserViewModel.swift */; };
 		DD0C18F72C7B68A40081BF17 /* SubscriptionActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0C18F62C7B68A40081BF17 /* SubscriptionActiveView.swift */; };
 		DD0C18F92C7B68EC0081BF17 /* SubscriptionInactiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0C18F82C7B68EC0081BF17 /* SubscriptionInactiveView.swift */; };
+		DD19B6762DC69D0400AD062F /* PracticeStateGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD19B6752DC69D0400AD062F /* PracticeStateGraphView.swift */; };
+		DD19B6782DC6A12900AD062F /* TrafficLightDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD19B6772DC6A12900AD062F /* TrafficLightDetailView.swift */; };
 		DD1DB7BC2C2AC223000FF93F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1DB7BB2C2AC223000FF93F /* SettingsView.swift */; };
 		DD1DB7BF2C2AF8C3000FF93F /* SettingsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1DB7BE2C2AF8C3000FF93F /* SettingsCardView.swift */; };
 		DD283CA62C7720C3009B4788 /* HapticHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD283CA52C7720C3009B4788 /* HapticHelper.swift */; };
@@ -66,6 +68,8 @@
 		DD0C18F32C7B58640081BF17 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		DD0C18F62C7B68A40081BF17 /* SubscriptionActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionActiveView.swift; sourceTree = "<group>"; };
 		DD0C18F82C7B68EC0081BF17 /* SubscriptionInactiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionInactiveView.swift; sourceTree = "<group>"; };
+		DD19B6752DC69D0400AD062F /* PracticeStateGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeStateGraphView.swift; sourceTree = "<group>"; };
+		DD19B6772DC6A12900AD062F /* TrafficLightDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightDetailView.swift; sourceTree = "<group>"; };
 		DD1DB7BB2C2AC223000FF93F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DD1DB7BE2C2AF8C3000FF93F /* SettingsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCardView.swift; sourceTree = "<group>"; };
 		DD283CA52C7720C3009B4788 /* HapticHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticHelper.swift; sourceTree = "<group>"; };
@@ -198,6 +202,8 @@
 				DDB221642C74F121002BE919 /* StatCards */,
 				DDB221682C74FB9D002BE919 /* InfoSignView.swift */,
 				DDB221662C74F5CF002BE919 /* TrafficLightView.swift */,
+				DD19B6752DC69D0400AD062F /* PracticeStateGraphView.swift */,
+				DD19B6772DC6A12900AD062F /* TrafficLightDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -425,9 +431,11 @@
 				DD7AECC12C0DDE55002AB8F1 /* FontHelper.swift in Sources */,
 				DDDD2D7E2C315FE50008E135 /* DisclaimerCardView.swift in Sources */,
 				DDDD2D7A2C3158230008E135 /* CloseButtonView.swift in Sources */,
+				DD19B6782DC6A12900AD062F /* TrafficLightDetailView.swift in Sources */,
 				DD7AECB42C0DCAE1002AB8F1 /* HomeView.swift in Sources */,
 				DD283CA62C7720C3009B4788 /* HapticHelper.swift in Sources */,
 				DD9E0E022C8DE3D600E24071 /* ContentView.swift in Sources */,
+				DD19B6762DC69D0400AD062F /* PracticeStateGraphView.swift in Sources */,
 				DDA6B7F42C38292B0047DFA9 /* Onboarding2View.swift in Sources */,
 				DDE5C90C2CA45C4D00F20AE9 /* DepartureMode.swift in Sources */,
 				DDED46DC2C2C36FC00441280 /* DisclaimerView.swift in Sources */,
@@ -598,7 +606,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "Jonas-Vetsch.Trainingsbarometer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -637,7 +645,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "Jonas-Vetsch.Trainingsbarometer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

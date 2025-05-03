@@ -18,11 +18,13 @@ struct HomeView: View {
   @AppStorage("FilterLogic") var filterLogic = FilterLogic.total
   @AppStorage("ShowFunctionTime") var showFunctionTime = PilotFunctionTime.pic
   @AppStorage("showDepartureMode") var showDepartureMode = DepartureMode.winch
+  @AppStorage("isPracticeStateDetailed") var isPracticeStateDetailed = false
   
   @State private var dateRange: String = "This Year"
   @State private var hours = Double()
   @State private var starts = Double()
   @State private var practiceState = Int()
+  @State private var practiceStateDouble = Double()
   @State private var isSettingsPresented = false
   
   init() {
@@ -208,7 +210,11 @@ struct HomeView: View {
             Menu {
               Text("The traffic light shows your practice state.")
             } label: {
-              TrafficLightView(practiceState: $practiceState)
+              if isPracticeStateDetailed {
+                TrafficLightDetailView(practiceState: $practiceStateDouble)
+              } else {
+                TrafficLightView(practiceState: $practiceState)
+              }
             }
             
             Spacer()
@@ -242,9 +248,15 @@ struct HomeView: View {
     let calendar = Calendar.current
     let endDate = Date()
     let startDate = calendar.date(byAdding: .month, value: -6, to: endDate)!
-    practiceState = viewModel.calculatePracticeStateInt(
-      hours: flightDataInRange(startDate: startDate, endDate: endDate, isHours: true),
-      starts: flightDataInRange(startDate: startDate, endDate: endDate, isHours: false))
+    if isPracticeStateDetailed {
+      practiceStateDouble = viewModel.calculatePracticeStateDouble(
+        hours: flightDataInRange(startDate: startDate, endDate: endDate, isHours: true),
+        starts: flightDataInRange(startDate: startDate, endDate: endDate, isHours: false))
+    } else {
+      practiceState = viewModel.calculatePracticeStateInt(
+        hours: flightDataInRange(startDate: startDate, endDate: endDate, isHours: true),
+        starts: flightDataInRange(startDate: startDate, endDate: endDate, isHours: false))
+    }
   }
   
   private func flightDataInRange(startDate: Date, endDate: Date, isHours: Bool) -> Double {

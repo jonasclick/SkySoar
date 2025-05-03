@@ -32,6 +32,37 @@ class HomeViewModel: ObservableObject {
     }
   }
   
+  /// Calculates a continuous practice state value as Double
+  /// 1.00 - 1.99 for the red area, 2.00 - 2.99 for the yellow area
+  /// > 3.00 for the green area
+  func calculatePracticeStateDouble(hours: Double, starts: Double) -> Double {
+    
+    // Boundary equations according to practice barometer
+    let redYellowBoundary = (20 - hours) / 0.7
+    let yellowGreenBoundary = (39 - hours) / 0.65
+    
+    if starts <= 0 {
+      return 0.0
+    } else if starts <= redYellowBoundary {
+      // Linear scale from 1.0 to just below 2.0
+      let ratio = starts / redYellowBoundary
+      return max(1.0, 1.0 + ratio * 0.99)
+    } else if starts <= yellowGreenBoundary {
+      // Linear scale from 2.0 to just below 3.0
+      let ratio = (starts - redYellowBoundary) / (yellowGreenBoundary - redYellowBoundary)
+      return max(2.0, 2.0 + ratio * 0.99)
+    } else {
+      // Linear scale from 3.0 upwards
+      // Aim: at around 30 hours and 45 starts, the value should be ~4.0
+      // Derive slope so that (starts = 45) ⇒ score = 4.0 when hours = 30
+      let targetStarts = 45.0
+      let targetScore = 4.0
+      let slope = (targetScore - 3.0) / (targetStarts - yellowGreenBoundary)
+      let ratio = starts - yellowGreenBoundary
+      return max(3.0, 3.0 + ratio * slope)
+    }
+  }
+  
   func flightTimeForFunction(flightLogs: [FlightLog], selectedFunction: PilotFunctionTime, startDate: Date, endDate: Date) -> Double {
     
     let filteredLogs = flightLogs.filter { flightLog in

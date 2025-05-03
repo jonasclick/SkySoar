@@ -1101,6 +1101,16 @@
         }
       }
     },
+    "Use Last Flights Information" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daten des letzten Fluges verwenden"
+          }
+        }
+      }
+    },
     "Verify all information independently, as data may be incorrect." : {
       "localizations" : {
         "de" : {

@@ -12,6 +12,7 @@ struct EditFlightLogView: View {
   
   @Environment(\.dismiss) private var dismiss
   @Environment(\.modelContext) private var context
+  @Query(sort: \FlightLog.departureDate, order: .reverse) private var allFlightLogs: [FlightLog]
   
   var flightLog: FlightLog
   var isEditMode: Bool
@@ -109,6 +110,24 @@ struct EditFlightLogView: View {
           
           // Sheet Content
           VStack (alignment: .leading) {
+            
+            // Button to copy last flights information for efficient data entry
+            HStack {
+              Spacer()
+              
+              if !isEditMode {
+                Button(action: {
+                  importMostRecentFlight()
+                }) {
+                  Text("Use Last Flights Information")
+                    .font(.subheadline)
+                    .foregroundColor(.blue)
+                }
+                .padding(.bottom, 5)
+              }
+              
+              Spacer()
+            }
             
             // MARK: Aircraft Information
             Text("Aircraft")
@@ -437,9 +456,11 @@ struct EditFlightLogView: View {
         }
         .scrollIndicators(.hidden)
         
-        // When editing a flight, pre-fill all the existing data
+        // When editing a flight, pre-fill all the flights data
         .onAppear {
-          populateFlightData()
+          if isEditMode {
+            populateFlightData()
+          }
         }
       }
       
@@ -528,5 +549,19 @@ struct EditFlightLogView: View {
     // Save flight time calculation mode to the flightLog
     // for correct setup when editing a flightLog
     flightLog.isAutoFlightTime = isAutoFlightTime
+  }
+  
+  // When creating a new flight, prefill the info from the last flight
+  // to make flight data entry more efficient, as it's usually
+  // very similar info from one flight to the next.
+  private func importMostRecentFlight() {
+    guard let lastFlight = allFlightLogs.first else { return }
+    aircraftModel = lastFlight.aircraftModel
+    aircraftRegistration = lastFlight.aircraftRegistration
+    departureLocation = lastFlight.departureLocation
+    arrivalLocation = lastFlight.arrivalLocation
+    pilotFunctionInput = lastFlight.pilotFunctionString
+    departureModeInput = lastFlight.departureModeString
+    remarks = lastFlight.remarks
   }
 }

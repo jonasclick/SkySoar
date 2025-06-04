@@ -370,6 +370,7 @@
 				en,
 				Base,
 				de,
+				pl,
 			);
 			mainGroup = DD7AECA52C0DCAE1002AB8F1;
 			packageReferences = (

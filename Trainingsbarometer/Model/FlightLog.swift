@@ -70,7 +70,6 @@ class FlightLog: Identifiable, Codable {
         }
     }
     
-    
     enum CodingKeys: String, CodingKey {
         case id
         case isSampleData
@@ -128,5 +127,3 @@ class FlightLog: Identifiable, Codable {
     
     
 }
-
-

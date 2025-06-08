@@ -8,6 +8,12 @@
             "state" : "translated",
             "value" : "Alle Beispiel-Flüge wurden entfernt. Überprüfe stets deine Flugdaten, bevor du dem angezeigten Übungsstand vertraust."
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wszystkie przykładowe loty zostały usunięte. Zanim zaufasz wskazywanemu nalotowi, sprawdź wszystkie loty."
+          }
         }
       }
     },
@@ -17,6 +23,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zehn Beispiel-Flüge wurden hinzugefügt. Der gezeigte Übungsstand entspricht nun nicht deinem eigenen!"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodano dziesięć przykładowych lotów. Dlatego nie myl wskazywanego w aplikacji nalotu ze swoim własnym nalotem!\n"
           }
         }
       }
@@ -28,6 +40,12 @@
             "state" : "translated",
             "value" : "Zehn Beispiel-Flüge wurden hinzugefügt. Der gezeigte Übungsstand entspricht nun nicht deinem eigenen!"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodano dziesięć przykładowych lotów. Dlatego nie myl wskazywanego w aplikacji nalotu ze swoim własnym nalotem!"
+          }
         }
       }
     },
@@ -37,6 +55,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ Stunden"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Godziny"
           }
         }
       }
@@ -48,6 +72,12 @@
             "state" : "translated",
             "value" : "%@ Uhr"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ godz"
+          }
         }
       }
     },
@@ -58,12 +88,24 @@
             "state" : "translated",
             "value" : "%@ Starts"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Starty"
+          }
         }
       }
     },
     "%lld" : {
       "localizations" : {
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld"
@@ -78,6 +120,12 @@
             "state" : "translated",
             "value" : "Über SkySoar"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O SkySoar"
+          }
         }
       }
     },
@@ -87,6 +135,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Über diese App"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O tej apilkacji"
           }
         }
       }
@@ -98,6 +152,12 @@
             "state" : "translated",
             "value" : "Projektinformationen auf GitHub"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O tym projekcie i jak go wesprzeć"
+          }
         }
       }
     },
@@ -107,6 +167,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Einen Flug hinzufügen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodaj lot"
           }
         }
       }
@@ -118,6 +184,12 @@
             "state" : "translated",
             "value" : "Flug hinzufügen"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodaj lot"
+          }
         }
       }
     },
@@ -127,6 +199,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Füge Beispiel-Flüge hinzu"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodaj przykładowe loty"
           }
         }
       }
@@ -138,6 +216,29 @@
             "state" : "translated",
             "value" : "Aerotow"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hol za samolotem"
+          }
+        }
+      }
+    },
+    "aerotows" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aerotows"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Za samolotem"
+          }
         }
       }
     },
@@ -147,6 +248,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Flugzeug"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statek powietrzny"
           }
         }
       }
@@ -158,6 +265,12 @@
             "state" : "translated",
             "value" : "und Bestätigungen"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "i opinie"
+          }
         }
       }
     },
@@ -168,12 +281,24 @@
             "state" : "translated",
             "value" : "App zeigt Beispiel-Flüge"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplikacja używa przykładowych lotów"
+          }
         }
       }
     },
     "Arcus T" : {
       "localizations" : {
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arcus T"
+          }
+        },
+        "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Arcus T"
@@ -188,6 +313,12 @@
             "state" : "translated",
             "value" : "Den Flug wirklich löschen?"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czy na pewno chcesz usunąć ten lot?"
+          }
         }
       }
     },
@@ -197,6 +328,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Landung"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przylot"
           }
         }
       }
@@ -208,6 +345,12 @@
             "state" : "translated",
             "value" : "Das Ankunftsdatum deines Fluges kann nicht in der Zukunft liegen."
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czas przylotu nie może być w przyszłości"
+          }
         }
       }
     },
@@ -217,6 +360,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Als Unterstützer*in bekommst du Zugriff auf das Unterstützer-App-Icon."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jako wspierający otrzymasz dostęp do tej ikony aplikacji."
           }
         }
       }
@@ -228,6 +377,12 @@
             "state" : "translated",
             "value" : "Automatisch berechnen"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oblicz automatycznie"
+          }
         }
       }
     },
@@ -237,6 +392,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Flug kann nicht gespeichert werden"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie można zapisać lotu"
           }
         }
       }
@@ -248,6 +409,12 @@
             "state" : "translated",
             "value" : "Name für Begrüssung anpassen"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmień nazwę wyświetlaną w powitaniu"
+          }
         }
       }
     },
@@ -257,6 +424,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dashboard anpassen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skonfiguruj swój pulpit"
           }
         }
       }
@@ -268,6 +441,12 @@
             "state" : "translated",
             "value" : "Unterstütze %@ SkySoar und ermögliche damit dessen kontinuierliche Weiterentwicklung."
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozważ wsparcie %@ na rzecz ciągłego rozwoju SkySoar."
+          }
         }
       }
     },
@@ -277,6 +456,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Weiter"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kontynuuj"
           }
         }
       }
@@ -288,6 +473,12 @@
             "state" : "translated",
             "value" : "Datum und Uhrzeit"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data i czas"
+          }
         }
       }
     },
@@ -297,6 +488,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Löschen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuń"
           }
         }
       }
@@ -308,6 +505,12 @@
             "state" : "translated",
             "value" : "Start"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odlot"
+          }
         }
       }
     },
@@ -317,6 +520,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Startart"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metoda startu"
           }
         }
       }
@@ -328,6 +537,12 @@
             "state" : "translated",
             "value" : "Webseite der Entwickler"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Strona dewelopera"
+          }
         }
       }
     },
@@ -337,6 +552,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Änderungen verwerfen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odrzuć zmiany"
           }
         }
       }
@@ -348,6 +569,35 @@
             "state" : "translated",
             "value" : "Haftungsausschluss"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ostrzeżenie"
+          }
+        }
+      }
+    },
+    "disclaimer_text" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese Anwendung soll Segelflugpilot*innen und deren Sicherheit unterstützen, indem benutzer-bereitgestellte Informationen dargestellt und einfach zugänglich gemacht werden.\n\nDie Entwickler raten stark davon ab, sich ausschließlich auf die Informationen in dieser Anwendung zu verlassen. Die*der Nutzer*in muss alle Informationen immer unabhängig überprüfen, da die Anwendung funktionale Fehler oder Ungenauigkeiten enthalten kann und von Benutzer*innen eingegebene Daten fehlerhaft sein können.\n\nDie Entwickler lehnen jegliche Haftung für Handlungen und Folgen ab, ob im Aviatikkontext oder nicht, die auf dieser Anwendung basieren."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This application is designed to assist your flying hobby and enhance safety by presenting user-provided information in a clear and accessible manner.\n\nHowever, reliance solely on the information provided by this application is not recommended. It is crucial to verify all information independently, as the application may contain functional errors or inaccuracies, and user-entered data may be incorrect.\n\nThe developers and the application itself disclaim any liability for actions or decisions, flying-related or not, made based on the information provided by the application."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ta aplikacja ma na celu wspieranie Twojego hobby oraz zwiększanie bezpieczeństwa poprzez pokazywanie informacji w przejrzysty sposób\n\nPoleganie wyłącznie na danych z aplikacji nie jest wskazane. Weryfikacja danych samodzielnie jest niezwykle istotna, jako, że aplikacja może zawierać błędy i nieścisłości oraz dane wprowadzone przez użytkownika mogą być błędne.\n\nTwórcy aplikacji oraz sama aplikacja zrzekają się jakiejkolwiek odpowiedzialności za działania lub decyzje — związane z lataniem lub nie — podjęte na podstawie informacji dostarczanych przez aplikację."
+          }
         }
       }
     },
@@ -357,6 +607,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Function Time"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyświetl czas funkcji"
           }
         }
       }
@@ -368,6 +624,12 @@
             "state" : "translated",
             "value" : "Startart"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyświetl metodę startu"
+          }
         }
       }
     },
@@ -377,6 +639,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Verlasse dich nicht ausschliesslich auf die Informationen dieser Anwendung."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie polegaj wyłącznie na informacjach zawartych w tej aplikacji."
           }
         }
       }
@@ -388,6 +656,12 @@
             "state" : "translated",
             "value" : "Abbrechen ohne zu speichern?"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czy chcesz wyjść bez zapisywania wprowadzonych zmian?"
+          }
         }
       }
     },
@@ -397,6 +671,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fertig"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zrobione"
           }
         }
       }
@@ -408,6 +688,12 @@
             "state" : "translated",
             "value" : "Dual"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lot szkoleniowy"
+          }
         }
       }
     },
@@ -417,6 +703,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bearbeiten"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edytuj"
           }
         }
       }
@@ -428,6 +720,12 @@
             "state" : "translated",
             "value" : "Flug bearbeiten"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edytuj lot"
+          }
         }
       }
     },
@@ -437,6 +735,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dein Name"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wpisz swoją nazwę"
           }
         }
       }
@@ -448,6 +752,12 @@
             "state" : "translated",
             "value" : "Dein Name"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wpisz swoje nazwę użytkownika tutaj"
+          }
         }
       }
     },
@@ -457,6 +767,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Die App kennenlernen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poznaj aplikację"
           }
         }
       }
@@ -468,6 +784,12 @@
             "state" : "translated",
             "value" : "Import und Export von Flugdaten"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eksportuj i importuj logi lotu"
+          }
         }
       }
     },
@@ -477,6 +799,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Flüge exportieren"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eksportuj dane lotu"
           }
         }
       }
@@ -488,6 +816,12 @@
             "state" : "translated",
             "value" : "Flugzeit"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czas lotu"
+          }
         }
       }
     },
@@ -497,6 +831,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Flüge"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loty"
           }
         }
       }
@@ -508,6 +848,12 @@
             "state" : "translated",
             "value" : "Flüge importiert"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaimportowano loty"
+          }
         }
       }
     },
@@ -517,6 +863,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Allgemein"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ogólne"
           }
         }
       }
@@ -528,6 +880,12 @@
             "state" : "translated",
             "value" : "Guten Nachmittag%@"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dzień dobry%@"
+          }
         }
       }
     },
@@ -537,6 +895,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Guten Abend%@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dobry wieczór%@"
           }
         }
       }
@@ -548,6 +912,12 @@
             "state" : "translated",
             "value" : "Guten Morgen%@"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dzień dobry%@"
+          }
         }
       }
     },
@@ -557,6 +927,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "h"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "g"
           }
         }
       }
@@ -568,6 +944,104 @@
             "state" : "translated",
             "value" : "HB-1234"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HB-1234"
+          }
+        }
+      }
+    },
+    "headline_lastSixMonths" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deine Flüge der __letzten sechs Monate__"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your flights in the __last six months__"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twoje loty w __ostatnim półroczu__"
+          }
+        }
+      }
+    },
+    "headline_lastYear" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deine Flüge __im letzten Jahr__"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your flights __last year__"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twoje loty w __zeszłym roku__"
+          }
+        }
+      }
+    },
+    "headline_thisYear" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deine Flüge __in diesem Jahr__"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your flights __this year__"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twoje loty w __tym roku__"
+          }
+        }
+      }
+    },
+    "headline_total" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "__Alle__ deine Flüge"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "__All__ your flights"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "__Wszystkie__ Twoje loty"
+          }
         }
       }
     },
@@ -577,6 +1051,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Stunden"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Godziny"
           }
         }
       }
@@ -588,6 +1068,12 @@
             "state" : "translated",
             "value" : "Wie sollen wir dich nennen?"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jak mamy się do Ciebie zwracać?"
+          }
         }
       }
     },
@@ -597,6 +1083,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ich habe verstanden"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozumiem"
           }
         }
       }
@@ -608,6 +1100,12 @@
             "state" : "translated",
             "value" : "Ich habe verstanden"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozumiem: To nie jest mój nalot\n"
+          }
         }
       }
     },
@@ -617,6 +1115,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Import fehlgeschlagen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import nie powiódł się"
           }
         }
       }
@@ -628,6 +1132,12 @@
             "state" : "translated",
             "value" : "Flüge importieren"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importuj dane lotu"
+          }
         }
       }
     },
@@ -637,6 +1147,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Instructor"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instruktor"
           }
         }
       }
@@ -648,6 +1164,12 @@
             "state" : "translated",
             "value" : "Letzte sechs Monate"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W ostatnim półroczu"
+          }
         }
       }
     },
@@ -657,6 +1179,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Letztes Jahr"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W ostanim roku"
           }
         }
       }
@@ -668,6 +1196,12 @@
             "state" : "translated",
             "value" : "Ort"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miejsce"
+          }
         }
       }
     },
@@ -678,12 +1212,24 @@
             "state" : "translated",
             "value" : "Längster"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Najdłuższy"
+          }
         }
       }
     },
     "min" : {
       "localizations" : {
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "min"
+          }
+        },
+        "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "min"
@@ -698,6 +1244,12 @@
             "state" : "translated",
             "value" : "Minuten"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minuty"
+          }
         }
       }
     },
@@ -708,12 +1260,24 @@
             "state" : "translated",
             "value" : "Modell"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Model"
+          }
         }
       }
     },
     "Mollis" : {
       "localizations" : {
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mollis"
+          }
+        },
+        "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mollis"
@@ -728,12 +1292,24 @@
             "state" : "translated",
             "value" : "Neuster"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Najnowszy"
+          }
         }
       }
     },
     "OK" : {
       "localizations" : {
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "OK"
@@ -748,12 +1324,24 @@
             "state" : "translated",
             "value" : "Ältester"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Najstarszy"
+          }
         }
       }
     },
     "Onboarding" : {
       "localizations" : {
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Onboarding"
+          }
+        },
+        "pl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Onboarding"
@@ -768,6 +1356,12 @@
             "state" : "translated",
             "value" : "PIC"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dowódca"
+          }
         }
       }
     },
@@ -777,6 +1371,63 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Funktion"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Funkcja"
+          }
+        }
+      }
+    },
+    "pilotFunctionTime_dual" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hours Dual"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jako uczeń"
+          }
+        }
+      }
+    },
+    "pilotFunctionTime_instructorAndPic" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hours Instructor"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jako instruktor"
+          }
+        }
+      }
+    },
+    "pilotFunctionTime_pic" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hours PIC"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jako PIC"
           }
         }
       }
@@ -788,6 +1439,12 @@
             "state" : "translated",
             "value" : "Lese den Haftungsausschluss"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przeczytaj całe ostrzeżenie"
+          }
         }
       }
     },
@@ -797,6 +1454,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Registration"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rejestracja"
           }
         }
       }
@@ -808,6 +1471,12 @@
             "state" : "translated",
             "value" : "Bemerkungen"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uwagi"
+          }
         }
       }
     },
@@ -817,6 +1486,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Beispiel-Flüge löschen und App selbst nutzen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuń przykładowe loty, aby zacząć używać aplikacji"
           }
         }
       }
@@ -828,6 +1503,12 @@
             "state" : "translated",
             "value" : "Ein Feature vorschlagen oder Bug melden"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zgłoś propozycję funkcji lub zaraportuj błąd"
+          }
         }
       }
     },
@@ -837,6 +1518,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Beispiel-Flüge hinzugefügt"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodano przykładowe loty"
           }
         }
       }
@@ -848,6 +1535,12 @@
             "state" : "translated",
             "value" : "Beispiel-Flüge gelöscht"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usunięto przykładowe loty"
+          }
         }
       }
     },
@@ -857,6 +1550,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Speichern"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapisz"
           }
         }
       }
@@ -868,6 +1567,12 @@
             "state" : "translated",
             "value" : "Flug speichern"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapisz lot"
+          }
         }
       }
     },
@@ -877,6 +1582,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Unterstützungsoptionen ansehen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sprawdź opcje wsparcia"
           }
         }
       }
@@ -888,6 +1599,29 @@
             "state" : "translated",
             "value" : "Self Launching"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samodzielny start"
+          }
+        }
+      }
+    },
+    "self_launches" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Self launches"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samodzielnych"
+          }
         }
       }
     },
@@ -897,6 +1631,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Datumsbereich"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ustaw zakres dat"
           }
         }
       }
@@ -908,6 +1648,12 @@
             "state" : "translated",
             "value" : "App-Icon auf Standard zurücksetzen"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ustaw domyślną ikonę aplikacji"
+          }
         }
       }
     },
@@ -917,6 +1663,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Manuell eingeben"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ustaw samodzielnie"
           }
         }
       }
@@ -928,6 +1680,12 @@
             "state" : "translated",
             "value" : "Unterstützer-App-Icon verwenden"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ustaw ikonę wspierającego"
+          }
         }
       }
     },
@@ -937,6 +1695,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Einstellungen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ustawienia"
           }
         }
       }
@@ -948,6 +1712,12 @@
             "state" : "translated",
             "value" : "Kürzester"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Najkrótszy"
+          }
         }
       }
     },
@@ -957,6 +1727,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Übungsstand detailliert anzeigen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokaż dokładną wizualizację postępu praktyki"
           }
         }
       }
@@ -968,6 +1744,12 @@
             "state" : "translated",
             "value" : "Übungsstand vereinfacht anzeigen"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokaż uproszczoną wizualizację nalotu"
+          }
         }
       }
     },
@@ -977,6 +1759,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "SkySoar speichert alle deine Daten lokal auf deinem Gerät. Deine Daten bleiben offline und können von niemandem eingesehen werden. Auch nicht von den Entwicklern von SkySoar."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SkySoar przechowuje wszystkie Twoje dane lokalnie na urządzeniu.\nTwoje dane pozostają offline i nie są dostępne dla nikogo innego."
           }
         }
       }
@@ -988,6 +1776,12 @@
             "state" : "translated",
             "value" : "Flüge sortieren nach"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sortuj loty wedug"
+          }
         }
       }
     },
@@ -997,6 +1791,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Die App starten"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zacznij używać aplikacji"
           }
         }
       }
@@ -1008,6 +1808,12 @@
             "state" : "translated",
             "value" : "Starts"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starty"
+          }
         }
       }
     },
@@ -1017,6 +1823,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Unterstütze die Entwicklung von SkySoar"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wspieraj rozwój SkySoar"
           }
         }
       }
@@ -1028,6 +1840,12 @@
             "state" : "translated",
             "value" : "Tippe auf %@, um einen Flug hinzuzufügen."
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stuknij %@, aby dodać swój pierwszy lot."
+          }
         }
       }
     },
@@ -1037,6 +1855,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Danke %@, dass du die Entwicklung von SkySoar unterstützt."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dziękujemy %@ za wspieranie ciągłego rozwoju SkySoar."
           }
         }
       }
@@ -1048,6 +1872,12 @@
             "state" : "translated",
             "value" : "Danke, dass du SkySoar unterstützt"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dziękujemy za wspieranie SkySoar"
+          }
         }
       }
     },
@@ -1057,6 +1887,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Die Entwickler lehnen jegliche Haftung ab."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twórcy zastrzegają sobie brak odpowiedzialności."
           }
         }
       }
@@ -1068,6 +1904,12 @@
             "state" : "translated",
             "value" : "Die Ampel zeigt deinen Übungsstand."
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Światło wizualizuje stan Twojego nalotu"
+          }
         }
       }
     },
@@ -1077,6 +1919,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dieses Jahr"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W tym roku"
           }
         }
       }
@@ -1088,6 +1936,12 @@
             "state" : "translated",
             "value" : "Zeit"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czas"
+          }
         }
       }
     },
@@ -1097,6 +1951,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Total"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Całkowity"
           }
         }
       }
@@ -1108,6 +1968,12 @@
             "state" : "translated",
             "value" : "Flugzeit Total"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Całkowity czas lotu"
+          }
         }
       }
     },
@@ -1117,6 +1983,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Probiere Beispiel-Flüge aus, um die App zu erkunden, ohne Zeit damit zu verbringen, deine eigenen Daten einzugeben."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wypróbuj przykładowe loty, aby poznać aplikację, bez konieczności wprowadzania własnych danych."
           }
         }
       }
@@ -1128,6 +2000,12 @@
             "state" : "translated",
             "value" : "Daten des letzten Fluges verwenden"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Użyj informacji z ostatnich lotów"
+          }
         }
       }
     },
@@ -1137,6 +2015,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Überprüfe alle Informationen unabhängig, da die Daten fehlerhaft sein können."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zweryfikuj wszystkie dane samodzielnie, jako, że dane mogą być nie poprawne."
           }
         }
       }
@@ -1148,6 +2032,12 @@
             "state" : "translated",
             "value" : "Version %@"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wersja %@"
+          }
         }
       }
     },
@@ -1157,6 +2047,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "W = Winch, A = Aerotow,\nS = Self Launching"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W = Wyciągarka, A = Holowanie za samolotem, S = Start samodzielny"
           }
         }
       }
@@ -1168,6 +2064,12 @@
             "state" : "translated",
             "value" : "Willkommen %@ bei SkySoar"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Witaj %@ w SkySoar"
+          }
         }
       }
     },
@@ -1177,6 +2079,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Winch"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyciągarka"
+          }
+        }
+      }
+    },
+    "winch_launches" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Winch launches"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Za wyciągarką"
           }
         }
       }
@@ -1188,6 +2113,12 @@
             "state" : "translated",
             "value" : "mit Beispiel-Flügen"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "z przykładowymi lotami"
+          }
         }
       }
     },
@@ -1197,6 +2128,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ohne Beispiel-Flüge"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bez przykładowych lotów"
           }
         }
       }
@@ -1208,6 +2145,12 @@
             "state" : "translated",
             "value" : "Bemerkungen hier eintragen"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Napisz swoje uwagi tutaj"
+          }
         }
       }
     },
@@ -1217,6 +2160,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Du kannst jederzeit in den Einstellungen Beispiel-Flüge hinzufügen oder entfernen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Możesz zawsze dodać lub usunąć przykładowe loty w ustawieniach."
           }
         }
       }
@@ -1228,6 +2177,12 @@
             "state" : "translated",
             "value" : "Du kannst deinen Namen später in den Einstellungen ändern."
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Możesz zmienić nazwę użytkownika później w ustawieniach."
+          }
         }
       }
     },
@@ -1237,6 +2192,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Als Dank für deine Unterstützung hast du nun Zugriff auf das Unterstützer-App-Icon."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Masz teraz dostęp do ikony aplikacji dla wspierających, jako wyraz podziękowania za Twoje wsparcie."
           }
         }
       }
@@ -1248,6 +2209,12 @@
             "state" : "translated",
             "value" : "Deine Flüge wurden erfolgreich importiert."
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twoje loty zostały zaimportowane pomyślnie."
+          }
         }
       }
     },
@@ -1257,6 +2224,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Deine Flüge wurden nicht importiert. Die Flugdaten konnten nicht gelesen werden. Wenn du Hilfe brauchst, kontaktiere bitte den Entwickler."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twoje loty nie zostały zaimportowane z powodu błędu podczas odczytu danych lotu z podanego pliku. W razie potrzeby skontaktuj się z twórcą aplikacji."
           }
         }
       }
@@ -1268,6 +2241,12 @@
             "state" : "translated",
             "value" : "Dein Name wird auf dem Startbildschirm verwendet, um dich zu begrüssen. Dein Name wird nur auf deinem Gerät gespeichert und kann von niemandem sonst eingesehen werden."
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twoja nazwa użytkownika jest używane do powitania na ekranie głównym. Twoja nazwa użytkownika będzie przechowywane wyłącznie na Twoim urządzeniu i nie będzie dostępne dla nikogo innego."
+          }
         }
       }
     },
@@ -1277,6 +2256,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dein Übungsstand"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twój nalot"
           }
         }
       }

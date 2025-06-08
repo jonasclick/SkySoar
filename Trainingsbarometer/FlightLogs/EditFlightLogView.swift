@@ -207,21 +207,21 @@ struct EditFlightLogView: View {
               }
             }
             
-            HStack {
-              Text("Location")
-                .font(.paragraphText)
-                .opacity(0.4)
-                .padding(.trailing, 115)
-              TextField("Mollis", text: $departureLocation)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .submitLabel(.done)
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                .onChange(of: departureLocation) { oldValue, newValue in
-                  departureLocation = TextHelper.limitChars(input: departureLocation, limit: 30)
+              HStack {
+                Text("Location")
+                    .font(.paragraphText)
+                    .opacity(0.4)
+                    .padding(.trailing, 115)
+                TextField("Mollis", text: $departureLocation)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .submitLabel(.done)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .onChange(of: departureLocation) { oldValue, newValue in
+                        departureLocation = TextHelper.limitChars(input: departureLocation, limit: 30)
+                    }
+                            
                 }
-              
-            }
-            .padding(.bottom, 20)
+                .padding(.bottom, 20)
             
             
             

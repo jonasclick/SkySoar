@@ -16,13 +16,13 @@ struct StatCardFunctionTimeView: View {
         
         // Stat Card
         VStack (alignment: .leading) {
-            Image(systemName: pilotFunctionTime.sfSymbol())
+            Image(systemName: pilotFunctionTime.sfSymbolName)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .opacity(0.6)
             Spacer()
             Text(value.noDotZero)
                 .font(.statNumber)
-            Text(pilotFunctionTime.labelEN())
+            Text(pilotFunctionTime.localizedLabel)
                 .font(.sectionHeadline)
                 .opacity(0.6)
             

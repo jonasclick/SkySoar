@@ -12,8 +12,7 @@ enum DepartureMode: Int, Codable {
     case aerotow = 1
     case selfLaunching = 2
     
-    
-    func sfSymbol() -> String {
+    var sfSymbolName: String {
         switch self {
         case .winch:
             return "w.circle.fill"
@@ -24,14 +23,16 @@ enum DepartureMode: Int, Codable {
         }
     }
     
-    func labelEN() -> String {
+    private var labelKey: String {
         switch self {
-        case .winch:
-            return "Winch Launch."
-        case .aerotow:
-            return "Aerotows"
-        case .selfLaunching:
-            return "Self Launches"
+        case .winch: return "winch_launches"
+        case .aerotow: return "aerotows"
+        case .selfLaunching: return "self_launches"
         }
     }
+    
+    var localizedLabel: String {
+        NSLocalizedString(labelKey, comment: "Label for start types")
+    }
+    
 }

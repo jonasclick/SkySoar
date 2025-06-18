@@ -338,7 +338,11 @@
         }
       }
     },
+    "Arrival of your flight can't be before the date of departure" : {
+
+    },
     "Arrival of your flight can't be before the date of departure." : {
+      "extractionState" : "manual",
       "localizations" : {
         "pl" : {
           "stringUnit" : {
@@ -348,7 +352,11 @@
         }
       }
     },
+    "Arrival of your flight can't be in the future" : {
+
+    },
     "Arrival of your flight can't be in the future." : {
+      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -397,6 +405,7 @@
       }
     },
     "Can't save flight" : {
+      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1978,8 +1987,11 @@
         }
       }
     },
+    "Time of departure and arrival of flight cannot be equal" : {
+
+    },
     "Time of departure and arrival of flight cannot be equal," : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "pl" : {
           "stringUnit" : {
@@ -1988,9 +2000,6 @@
           }
         }
       }
-    },
-    "Time of departure and arrival of flight cannot be equal." : {
-
     },
     "Total" : {
       "localizations" : {
@@ -2089,10 +2098,17 @@
       }
     },
     "W = Winch,\nA = Aerotow,\nS = Self Launching" : {
-
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W = za wyciągarką\nA = za samolotem\nS = samodzielny"
+          }
+        }
+      }
     },
     "W = Winch, A = Aerotow,\nS = Self Launching" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {

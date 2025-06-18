@@ -14,13 +14,13 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-    <key>UIRequiresFullScreen</key>
-    <true/>
+	<key>UIRequiresFullScreen</key>
+	<true/>
 	<key>CFBundleLocalizations</key>
 	<array>
 		<string>en</string>
 		<string>de</string>
-        <string>pl</string>
+		<string>Polish</string>
 	</array>
 </dict>
 </plist>

@@ -27,11 +27,6 @@ struct JustifyTextHelper: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UITextView, context: Context) {
-        
-        if let attrStr = try? AttributedString(markdown: text) {
-            uiView.attributedText = NSAttributedString(attrStr)
-        } else {
-            uiView.text = text
-        }
+        uiView.text = text
     }
 }

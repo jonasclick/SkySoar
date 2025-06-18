@@ -338,6 +338,16 @@
         }
       }
     },
+    "Arrival of your flight can't be before the date of departure." : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data przylotu nie może być przed datą odlotu."
+          }
+        }
+      }
+    },
     "Arrival of your flight can't be in the future." : {
       "localizations" : {
         "de" : {
@@ -596,7 +606,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ta aplikacja ma na celu wspieranie Twojego hobby oraz zwiększanie bezpieczeństwa poprzez pokazywanie informacji w przejrzysty sposób\n\nPoleganie wyłącznie na danych z aplikacji nie jest wskazane. Weryfikacja danych samodzielnie jest niezwykle istotna, jako, że aplikacja może zawierać błędy i nieścisłości oraz dane wprowadzone przez użytkownika mogą być błędne.\n\nTwórcy aplikacji oraz sama aplikacja zrzekają się jakiejkolwiek odpowiedzialności za działania lub decyzje — związane z lataniem lub nie — podjęte na podstawie informacji dostarczanych przez aplikację."
+            "value" : "Ta aplikacja ma na celu wspieranie Twojego hobby oraz zwiększanie bezpieczeństwa poprzez ukazywanie informacji w przejrzysty sposób.\n\nPoleganie wyłącznie na danych z aplikacji nie jest wskazane. Weryfikacja danych samodzielnie jest niezwykle istotna, jako, że aplikacja może zawierać błędy i nieścisłości oraz dane wprowadzone przez użytkownika mogą być błędne.\n\nTwórcy aplikacji oraz sama aplikacja zrzekają się jakiejkolwiek odpowiedzialności za działania lub decyzje — związane z lataniem lub nie — podjęte na podstawie informacji dostarczanych przez aplikację."
           }
         }
       }
@@ -1184,7 +1194,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "W ostanim roku"
+            "value" : "W zeszłym roku"
           }
         }
       }
@@ -1491,7 +1501,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Usuń przykładowe loty, aby zacząć używać aplikacji"
+            "value" : "Usuń przykładowe loty"
           }
         }
       }
@@ -1540,6 +1550,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Usunięto przykładowe loty"
+          }
+        }
+      }
+    },
+    "sample_flight_warning" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achtung: Beispiel-Flug"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caution: Sample flight"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uwaga: Przykładowy lot"
           }
         }
       }
@@ -1780,7 +1813,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sortuj loty wedug"
+            "value" : "Sortuj loty według"
           }
         }
       }
@@ -1945,6 +1978,20 @@
         }
       }
     },
+    "Time of departure and arrival of flight cannot be equal," : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czas odlotu i przylotu nie mogą być równe."
+          }
+        }
+      }
+    },
+    "Time of departure and arrival of flight cannot be equal." : {
+
+    },
     "Total" : {
       "localizations" : {
         "de" : {
@@ -2004,7 +2051,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Użyj informacji z ostatnich lotów"
+            "value" : "Użyj informacji z ostatniego lotu"
           }
         }
       }
@@ -2041,7 +2088,11 @@
         }
       }
     },
+    "W = Winch,\nA = Aerotow,\nS = Self Launching" : {
+
+    },
     "W = Winch, A = Aerotow,\nS = Self Launching" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2142,7 +2193,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Bemerkungen hier eintragen"
           }
         },

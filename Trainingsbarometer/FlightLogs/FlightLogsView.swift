@@ -132,7 +132,9 @@ struct FlightLogsView: View {
                                 } label: {
                                     Label("Delete", systemImage: "trash")
                                 }
+                            
                             }
+                            
                     }
                     .safeAreaPadding(EdgeInsets(top: 0, leading: 0, bottom: 80, trailing: 0)) // Make space for overlaying buttons
                     .background(Color.clear)
@@ -166,7 +168,12 @@ struct FlightLogsView: View {
                             .font(.system(size: 30))
                     })
                 }
+                .padding(.horizontal, 15)
+                .padding(.vertical, 8)
                 .buttonStyle(PlainButtonStyle())
+                .background(Color.white)
+                .clipShape(Capsule())
+                .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 3)
                 .padding(35)
             }
             

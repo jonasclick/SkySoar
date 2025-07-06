@@ -35,6 +35,9 @@ struct EditFlightLogView: View {
   // Array of options for the picker
   let pilotFunctions = ["PIC", "Dual", "Instructor"]
   
+  // Max number of characters for remarks
+  private let characterLimit = 180
+  
   // Read value from the picker and get database-conform value
   private var pilotFunctionTime: PilotFunctionTime {
     switch pilotFunctionInput {
@@ -74,9 +77,14 @@ struct EditFlightLogView: View {
   
   @State private var remarks: String = ""
   
-  @State private var showDateAlert: Bool = false
+  @State private var activeError: FlightError?
+  @State private var showFutureAlert: Bool = false
+  @State private var showNegativeDurationAlert: Bool = false
+  @State private var showZeroDurationAlert: Bool = false
   @State private var showConfirmation: Bool = false
   
+  @FocusState var isFocused: Bool
+  private let editorInsets = EdgeInsets(top: 8, leading: 5, bottom: 8, trailing: 5)
   
   init(flightLog: FlightLog, isEditMode: Bool) {
     self.flightLog = flightLog
@@ -207,21 +215,21 @@ struct EditFlightLogView: View {
               }
             }
             
-            HStack {
-              Text("Location")
-                .font(.paragraphText)
-                .opacity(0.4)
-                .padding(.trailing, 115)
-              TextField("Mollis", text: $departureLocation)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .submitLabel(.done)
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                .onChange(of: departureLocation) { oldValue, newValue in
-                  departureLocation = TextHelper.limitChars(input: departureLocation, limit: 30)
+              HStack {
+                Text("Location")
+                    .font(.paragraphText)
+                    .opacity(0.4)
+                    .padding(.trailing, 115)
+                TextField("Mollis", text: $departureLocation)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .submitLabel(.done)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .onChange(of: departureLocation) { oldValue, newValue in
+                        departureLocation = TextHelper.limitChars(input: departureLocation, limit: 30)
+                    }
+                            
                 }
-              
-            }
-            .padding(.bottom, 20)
+                .padding(.bottom, 20)
             
             
             
@@ -407,7 +415,7 @@ struct EditFlightLogView: View {
               
               // Info pop-up to explain departure mode letters
               Menu {
-                Text("W = Winch, A = Aerotow,\nS = Self Launching")
+                Text("W = Winch,\nA = Aerotow,\nS = Self Launching")
               } label: {
                 Image(systemName: "questionmark.circle")
                   .font(.infoBoxContent)
@@ -439,15 +447,34 @@ struct EditFlightLogView: View {
                 .opacity(0.4)
                 .frame(maxWidth: .infinity, alignment: .leading)
               
-              TextField("Write your remarks here.", text: $remarks)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(.bottom, 60)
-                .submitLabel(.done)
-                .onChange(of: remarks) { oldValue, newValue in
-                  remarks = TextHelper.limitChars(input: remarks, limit: 180)
+                ZStack (alignment: .topLeading) {
+                    
+                    if remarks.isEmpty && !isFocused {
+                        Text("Write your remarks here.")
+                            .foregroundColor(.secondary)
+                            .padding(editorInsets)
+
+                    }
+                    
+                    TextEditor(text: $remarks)
+                        .focused($isFocused)
+                        .scrollContentBackground(.hidden)
+                        .background(Color.clear)
+                        .submitLabel(.done)
+                        .onChange(of: remarks) { oldValue, newValue in
+                            remarks = TextHelper.limitChars(input: remarks, limit: characterLimit)
+                        }
+                    
                 }
+                .frame(minHeight: 100, maxHeight: 200)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.secondary.opacity(0.5), lineWidth: 0.4)
+                
+                )
+                .padding(.bottom, 60)
+                
             }
-            
             
           }
           .padding()
@@ -464,51 +491,97 @@ struct EditFlightLogView: View {
         }
       }
       
-      
       // Add Flight Button
       VStack {
         Spacer()
-        Button(action: {
-          if arrivalDate < Date() {
-            updateFlightLog()
-            if !isEditMode {context.insert(flightLog)}
-            dismiss()
-            
-            HapticHelper.success()
-          } else {
-            showDateAlert = true
-          }
-        }, label: {
+          Button(action: validateAndSave) {
           Text(isEditMode ? "Save Flight" : "Add Flight")
             .font(.headline)
             .padding(.horizontal, 100)
             .padding(.vertical, 5)
-        })
-        .buttonStyle(BorderedProminentButtonStyle())
+        }
+        .foregroundColor(.white)
+        .padding(.horizontal, 15)
+        .padding(.vertical, 8)
+        .buttonStyle(PlainButtonStyle())
+        .background(Color.blue)
+        .clipShape(Capsule())
+        .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 3)
         .padding(.bottom, 35)
       }
       .ignoresSafeArea()
       
     }
-    .confirmationDialog("Do you want to exit without saving your changes?",
-                        isPresented: $showConfirmation,
-                        titleVisibility: .visible) {
-      Button("Discard Changes", role: .destructive) {
-        dismiss()
-      }
-      .foregroundStyle(.red)
+    .confirmationDialog("Do you want to exit without saving your changes?", isPresented: $showConfirmation, titleVisibility: .visible) {
+            Button("Discard Changes", role: .destructive) {
+                dismiss()
+            }
+            .foregroundStyle(.red)
     }
-                        .alert(isPresented: $showDateAlert) {
-                          Alert(title: Text("Can't save flight"),
-                                message: Text("Arrival of your flight can't be in the future."),
-                                dismissButton: .default(Text("OK")))
-                        }
+    .alert(item: $activeError) { error in
+        Alert(title: Text(error.title),
+              message: Text(error.message),
+              dismissButton: .default(Text("OK"))
+        )
+    }
     // Auto-save to prevent data loss if user swipes down the sheet (accidentally)
-                        .onDisappear {
-                          if arrivalDate < Date() {
-                            updateFlightLog()
-                          }
-                        }
+    .onDisappear {
+        if arrivalDate <= Date(), arrivalDate >= departureDate {
+            updateFlightLog()
+        }
+    }
+  }
+    
+  enum FlightError: Identifiable {
+      case future, negativeDuration, zeroDuration
+      
+      var id: Int {
+          hashValue
+      }
+      
+      var title: String {
+          NSLocalizedString("Can't save flight", comment: "")
+      }
+      
+      var message: String {
+          switch self {
+           case .future:
+              return NSLocalizedString("Arrival of your flight can't be in the future", comment: "")
+           case .negativeDuration:
+              return NSLocalizedString("Arrival of your flight can't be before the date of departure", comment: "")
+           case .zeroDuration:
+              return NSLocalizedString("Time of departure and arrival of flight cannot be equal", comment: "")
+          }
+      }
+  }
+    
+  private func validateAndSave() {
+      let now = Date()
+      
+      if arrivalDate > now {
+          activeError = .future; return
+      }
+      
+      if arrivalDate < departureDate {
+          activeError = .negativeDuration; return
+      }
+      
+      if arrivalDate == departureDate {
+          activeError = .zeroDuration; return
+      }
+      
+      let duration = Calendar.current.dateComponents([.hour, .minute], from: departureDate, to: arrivalDate)
+      
+      hours = duration.hour ?? 0
+      minutes = duration.minute ?? 0
+      
+      updateFlightLog()
+          
+      if !isEditMode { context.insert(flightLog) }
+      
+      dismiss()
+      HapticHelper.success()
+      
   }
   
   private func populateFlightData() {

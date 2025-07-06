@@ -32,13 +32,16 @@ struct DisclaimerCardView: View {
                 
                 // Body
                 Text("Do not rely solely on the information of this application.")
+                    .fixedSize(horizontal: false, vertical: true)
                     .font(.infoBoxContent)
                     .padding(.bottom, 2)
                 Text("Verify all information independently, as data may be incorrect.")
+                    .fixedSize(horizontal: false, vertical: true)
                     .font(.infoBoxContent)
                     .tracking(-0.3)
                     .padding(.bottom, 2)
                 Text("The developers disclaim any liability.")
+                    .fixedSize(horizontal: false, vertical: true)
                     .font(.infoBoxContent)
                     .padding(.bottom, 2)
                 
@@ -56,7 +59,6 @@ struct DisclaimerCardView: View {
             
             
         }
-        .frame(height: (Locale.current.language.languageCode?.identifier ?? "") == "de" ? 180 : 138)
         .padding(.horizontal)
     }
 }

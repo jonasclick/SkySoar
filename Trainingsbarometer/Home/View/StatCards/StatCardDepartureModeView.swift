@@ -16,13 +16,13 @@ struct StatCardDepartureModeView: View {
         
         // Stat Card
         VStack (alignment: .leading) {
-            Image(systemName: departureMode.sfSymbol())
+            Image(systemName: departureMode.sfSymbolName)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .opacity(0.6)
             Spacer()
             Text(String(value))
                 .font(.statNumber)
-            Text(departureMode.labelEN())
+            Text(departureMode.localizedLabel)
                 .font(.sectionHeadline)
                 .opacity(0.6)
             

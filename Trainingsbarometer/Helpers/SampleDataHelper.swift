@@ -47,7 +47,7 @@ struct SampleDataHelper {
         flightLog.departureMode = departureM
         flightLog.pilotFunctionTime = PilotFunctionTime.pic
         
-        flightLog.remarks = (Locale.current.language.languageCode?.identifier ?? "") == "de" ? "Achtung: Beispiel-Flug" : "Caution: Sample flight"
+        flightLog.remarks = NSLocalizedString("sample_flight_warning", comment: "Remark describing sample flights")
         
         context.insert(flightLog)
     }

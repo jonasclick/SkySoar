@@ -13,25 +13,24 @@ enum PilotFunctionTime: Int, Codable  {
     case dual = 1
     case instructorAndPic = 2
     
-    func sfSymbol() -> String {
+    var sfSymbolName: String {
         switch self {
-        case .pic:
-            return "person"
-        case .dual:
-            return "person.2"
-        case .instructorAndPic:
-            return "graduationcap"
+        case .pic: return "person"
+        case .dual: return "person.2"
+        case .instructorAndPic: return "graduationcap"
         }
     }
     
-    func labelEN() -> String {
+    private var labelKey: String {
         switch self {
-        case .pic:
-            return "Hours PIC"
-        case .dual:
-            return "Hours Dual"
-        case .instructorAndPic:
-            return "Hours Instruct."
+        case .pic: return "pilotFunctionTime_pic"
+        case .dual: return "pilotFunctionTime_dual"
+        case .instructorAndPic: return "pilotFunctionTime_instructorAndPic"
         }
     }
+    
+    var localizedLabel: String {
+        NSLocalizedString(labelKey, comment: "Label for pilot function time")
+    }
+    
 }

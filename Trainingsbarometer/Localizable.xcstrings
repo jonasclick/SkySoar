@@ -198,7 +198,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Füge Beispiel-Flüge hinzu"
+            "value" : "Beispiel-Flüge hinzufügen"
           }
         },
         "pl" : {
@@ -210,6 +210,7 @@
       }
     },
     "Aerotow" : {
+      "comment" : "German flight log books use english here.",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -226,8 +227,15 @@
       }
     },
     "aerotows" : {
+      "comment" : "German flight log books use english here.",
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aerotows"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -339,11 +347,31 @@
       }
     },
     "Arrival of your flight can't be before the date of departure" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Ankunftszeit kann nicht vor der Abflugzeit sein."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data przylotu nie może być przed datą odlotu."
+          }
+        }
+      }
     },
     "Arrival of your flight can't be before the date of departure." : {
+      "comment" : "Why is this entry twice?",
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Ankunftszeit kann nicht vor der Abflugzeit sein."
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
@@ -353,15 +381,29 @@
       }
     },
     "Arrival of your flight can't be in the future" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Ankunftszeit kann nicht in der Zukunft sein."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czas przylotu nie może być w przyszłości"
+          }
+        }
+      }
     },
     "Arrival of your flight can't be in the future." : {
+      "comment" : "Why is this entry twice?",
       "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Das Ankunftsdatum deines Fluges kann nicht in der Zukunft liegen."
+            "value" : "Die Ankunftszeit kann nicht in der Zukunft sein."
           }
         },
         "pl" : {
@@ -603,7 +645,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Diese Anwendung soll Segelflugpilot*innen und deren Sicherheit unterstützen, indem benutzer-bereitgestellte Informationen dargestellt und einfach zugänglich gemacht werden.\n\nDie Entwickler raten stark davon ab, sich ausschließlich auf die Informationen in dieser Anwendung zu verlassen. Die*der Nutzer*in muss alle Informationen immer unabhängig überprüfen, da die Anwendung funktionale Fehler oder Ungenauigkeiten enthalten kann und von Benutzer*innen eingegebene Daten fehlerhaft sein können.\n\nDie Entwickler lehnen jegliche Haftung für Handlungen und Folgen ab, ob im Aviatikkontext oder nicht, die auf dieser Anwendung basieren."
+            "value" : "Diese Anwendung soll Segelflugpilot*innen und deren Sicherheit unterstützen, indem benutzer-bereitgestellte Informationen dargestellt und einfach zugänglich gemacht werden.\n\nDie Entwickler raten stark davon ab, sich ausschliesslich auf die Informationen in dieser Anwendung zu verlassen. Die*der Nutzer*in muss alle Informationen immer unabhängig überprüfen, da die Anwendung funktionale Fehler oder Ungenauigkeiten enthalten kann und von Benutzer*innen eingegebene Daten fehlerhaft sein können.\n\nDie Entwickler lehnen jegliche Haftung für Handlungen und Folgen ab, ob im Aviatikkontext oder nicht, die auf dieser Anwendung basieren."
           }
         },
         "en" : {
@@ -1403,6 +1445,12 @@
     "pilotFunctionTime_dual" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stunden Dual"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1420,6 +1468,12 @@
     "pilotFunctionTime_instructorAndPic" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stunden Instruktor"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1437,6 +1491,12 @@
     "pilotFunctionTime_pic" : {
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stunden PIC"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1651,8 +1711,15 @@
       }
     },
     "self_launches" : {
+      "comment" : "German flight log books use english here.",
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Self launches"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1988,11 +2055,31 @@
       }
     },
     "Time of departure and arrival of flight cannot be equal" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Abflug- und Ankunftszeit können nicht gleich sein."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czas odlotu i przylotu nie mogą być równe."
+          }
+        }
+      }
     },
     "Time of departure and arrival of flight cannot be equal," : {
+      "comment" : "Why is this twice?",
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Abflug- und Ankunftszeit können nicht gleich sein."
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2098,7 +2185,14 @@
       }
     },
     "W = Winch,\nA = Aerotow,\nS = Self Launching" : {
+      "comment" : "German flight log books use english here.",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W = Winch,\nA = Aerotow,\nS = Self Launching"
+          }
+        },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2108,6 +2202,7 @@
       }
     },
     "W = Winch, A = Aerotow,\nS = Self Launching" : {
+      "comment" : "German flight log books use english here.",
       "extractionState" : "manual",
       "localizations" : {
         "de" : {
@@ -2157,8 +2252,15 @@
       }
     },
     "winch_launches" : {
+      "comment" : "German flight log books use english here.",
       "extractionState" : "manual",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Winch launches"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2209,8 +2311,8 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Bemerkungen hier eintragen"
+            "state" : "translated",
+            "value" : "Bemerkungen hier eintragen."
           }
         },
         "pl" : {
